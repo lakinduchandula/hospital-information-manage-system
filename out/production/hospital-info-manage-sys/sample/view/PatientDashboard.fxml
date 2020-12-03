@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="576.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.PatientDashboardController">
+    <children>
+        <VBox layoutX="7.0" layoutY="7.0" prefHeight="568.0" prefWidth="260.0" style="-fx-background-color: #6a1b9a;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Pane prefHeight="128.0" prefWidth="260.0" />
+                <JFXButton fx:id="MODashAppoinmentBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Appoinments" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../assets/images/dash-receptionist/dash-recep-appoinment.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="MODashUserBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Account Settings" textAlignment="RIGHT" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../assets/images/dash-admin/user-settings.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

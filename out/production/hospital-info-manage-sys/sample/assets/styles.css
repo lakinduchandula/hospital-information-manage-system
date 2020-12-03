@@ -1,0 +1,25 @@
+.combo-box,
+.choice-box {
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: #304ffe;
+    -fx-background-color: #304ffe;
+}
+.combo-box-popup .list-view .list-cell:filled:hover,
+.combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: #00c853;
+    -fx-text-fill: white;
+}
+.combo-box .list-cell:filled:selected ,
+.choice-box .list-cell:filled:selected  {
+    -fx-text-fill: white;
+}
+.combo-box .arrow,
+.choice-box .arrow {
+    -fx-background-color: #304ffe;
+}
+.text-input {
+    -fx-prompt-text-fill:  #fafafa;
+    -fx-text-inner-color:  #fafafa;
+}
+
+
