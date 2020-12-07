@@ -4,7 +4,7 @@
     -fx-text-fill: #304ffe;
     -fx-background-color: #304ffe;
 }
-.combo-box,
+.combo-box-admin-dash,
 .choice-box-admin-dash {
     -fx-prompt-text-fill: #424242;
     -fx-text-fill: #424242;
