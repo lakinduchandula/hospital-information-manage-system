@@ -4,11 +4,19 @@
     -fx-text-fill: #304ffe;
     -fx-background-color: #304ffe;
 }
+.combo-box,
+.choice-box-admin-dash {
+    -fx-prompt-text-fill: #424242;
+    -fx-text-fill: #424242;
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+}
 .combo-box-popup .list-view .list-cell:filled:hover,
 .combo-box-popup .list-view .list-cell:filled:hover {
     -fx-background-color: #00c853;
     -fx-text-fill: white;
 }
+
 .combo-box .list-cell:filled:selected ,
 .choice-box .list-cell:filled:selected  {
     -fx-text-fill: white;
@@ -22,4 +30,44 @@
     -fx-text-inner-color:  #fafafa;
 }
 
+.text-input-common-admin-dash {
+    -fx-prompt-text-fill:  #424242;
+    -fx-text-inner-color:  #424242;
+}
+
+
+.tab .tab-label
+{
+    -fx-background-color: #00838f;
+    -fx-font-family: 'Noto Sans JP', sans-serif;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+    -fx-text-fill: White;
+    -fx-pref-width: 200px;
+    -fx-pref-height: 40px;
+}
+
+.tab:selected
+{
+    /*-fx-text-fill: White;*/
+    -fx-font-weight: bold;
+
+}
+.tab-header-background {
+    -fx-background-color: #00838f;
+}
+
+.jfx-date-picker .text-field{
+    -jfx-unfocus-color: #424242;
+    -fx-prompt-text-fill: #424242;
+    -fx-text-fill: #424242;
+    -fx-font-size: 14px;
+}
+
+.text-area {
+    -fx-font-family: 'Noto Sans JP', sans-serif;
+    -fx-prompt-text-fill: #424242;
+    -fx-text-fill: #424242;
+    -fx-font-size: 14px;
+}
 

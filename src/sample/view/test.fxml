@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ScrollPane fitToWidth="true"
+                    AnchorPane.leftAnchor="10"
+                    AnchorPane.rightAnchor="10"
+                    AnchorPane.topAnchor="10"
+                    AnchorPane.bottomAnchor="10">
+            <content>
+                <GridPane hgap="10">
+                    <padding>
+                        <Insets topRightBottomLeft="10"/>
+                    </padding>
+                    <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints fillWidth="true" hgrow="ALWAYS" />
+                    </columnConstraints>
+                    <children>
+                        <Text text="Family Name:"/>
+                        <TextField GridPane.columnIndex="1"/>
+                    </children>
+                </GridPane>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>
