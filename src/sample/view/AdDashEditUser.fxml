@@ -26,11 +26,11 @@
             </Label>
          </children>
       </Pane>
-      <ScrollPane hbarPolicy="NEVER" layoutY="48.0" prefHeight="600.0" prefWidth="790.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
+      <ScrollPane hbarPolicy="NEVER" layoutY="49.0" prefHeight="600.0" prefWidth="790.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
          <content>
-            <AnchorPane prefHeight="665.0" prefWidth="775.0">
+            <AnchorPane prefHeight="677.0" prefWidth="775.0">
                <children>
-                  <JFXTabPane fx:id="mainEditUserTabPane" prefHeight="664.0" prefWidth="775.0" stylesheets="@../assets/styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <JFXTabPane fx:id="mainEditUserTabPane" layoutY="28.0" prefHeight="664.0" prefWidth="775.0" stylesheets="@../assets/styles.css" AnchorPane.bottomAnchor="-27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <tabs>
                         <Tab fx:id="CreateUserAccount" text="Create User Account">
                            <content>
@@ -170,7 +170,8 @@
                                                             <Font name="System Bold" size="14.0" />
                                                          </font>
                                                       </JFXButton>
-                                                   </children></AnchorPane>
+                                                   </children>
+                                                </AnchorPane>
                                              </content>
                                              <graphic>
                                                 <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -200,7 +201,8 @@
                                                             <Font name="System Bold" size="14.0" />
                                                          </font>
                                                       </JFXButton>
-                                                   </children></AnchorPane>
+                                                   </children>
+                                                </AnchorPane>
                                              </content>
                                              <graphic>
                                                 <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -221,7 +223,8 @@
                                           </Label>
                                        </children>
                                     </Pane>
-                                 </children></AnchorPane>
+                                 </children>
+                              </AnchorPane>
                            </content>
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -233,7 +236,34 @@
                         </Tab>
                         <Tab fx:id="EditUserAccount" text="Edit User Account">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="696.0" prefWidth="775.0" />
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="696.0" prefWidth="775.0">
+                                 <children>
+                                    <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+                                       <children>
+                                          <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="485.0" text="Enter valid Username and Usermode to edit user account">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <JFXTextField fx:id="EditUserUsername1" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="25.0" prefWidth="230.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXComboBox fx:id="EditUserGender1" focusColor="#424242" layoutX="280.0" layoutY="66.0" prefHeight="25.0" prefWidth="230.0" promptText="Gender" styleClass="choice-box-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242" />
+                                    <JFXButton fx:id="ViewComplaintBtn" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit User Account" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="580.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="50.0">
+                                       <image>
+                                          <Image url="@../assets/images/hims-base-img/platform.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children></AnchorPane>
                            </content>
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
@@ -245,7 +275,34 @@
                         </Tab>
                         <Tab fx:id="DeleteUserAccount" text="Delete User Account">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <JFXTextField fx:id="EditUserUsername11" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="25.0" prefWidth="230.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXComboBox fx:id="EditUserGender11" focusColor="#424242" layoutX="280.0" layoutY="66.0" prefHeight="25.0" prefWidth="230.0" promptText="Gender" styleClass="choice-box-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242" />
+                                    <JFXButton fx:id="ViewComplaintBtn1" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit User Account" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="580.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="50.0">
+                                       <image>
+                                          <Image url="@../assets/images/hims-base-img/platform.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+                                       <children>
+                                          <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="485.0" text="Enter valid Username and Usermode to delete user account">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children></AnchorPane>
                            </content>
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">

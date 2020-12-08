@@ -49,7 +49,7 @@
 
 .tab:selected
 {
-    /*-fx-text-fill: White;*/
+    -fx-text-fill: White;
     -fx-font-weight: bold;
 
 }

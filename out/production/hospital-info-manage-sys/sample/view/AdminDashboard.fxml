@@ -97,7 +97,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
                            <image>
-                              <Image url="@../assets/images/dash-admin/user-settings.png" />
+                              <Image url="@../assets/images/dash-admin/dash-admin-user-settings.png" />
                            </image>
                         </ImageView>
                      </graphic>
