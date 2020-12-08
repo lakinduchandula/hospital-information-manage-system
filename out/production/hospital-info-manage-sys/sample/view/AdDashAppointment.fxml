@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -42,16 +43,21 @@
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton fx:id="ViewAppointmentBtn" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Appointment" textFill="WHITE">
+                        <JFXButton fx:id="ViewAppointmentBtn" layoutX="14.0" layoutY="127.0" onMouseClicked="#view_appointment" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Appointment" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </JFXButton>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="576.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="52.0">
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="571.7747192382812" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="23.68603515625" AnchorPane.topAnchor="44.0">
                            <image>
                               <Image url="@../assets/images/hims-base-img/disruption-section-3.png" />
                            </image>
                         </ImageView>
+                        <BorderPane fx:id="ViewAppointmentBorderPane" layoutX="14.0" layoutY="197.0" prefHeight="286.0" prefWidth="780.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="197.0">
+                           <center>
+                              <AnchorPane prefHeight="219.0" prefWidth="716.0" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
                      </children></AnchorPane>
               </content>
                <graphic>
