@@ -39,6 +39,9 @@ public class AdDashAppointmentController {
     @FXML
     private BorderPane ViewAppointmentBorderPane;
 
+    @FXML
+    private BorderPane DeleteAppointmentBorderPane;
+
     public AdDashAppointmentController() {
     }
 
@@ -46,6 +49,12 @@ public class AdDashAppointmentController {
     void view_appointment(MouseEvent event) throws IOException {
         Parent viewAppointment = FXMLLoader.load(getClass().getResource("/sample/view/ViewAppointment.fxml"));
         ViewAppointmentBorderPane.setCenter(viewAppointment);
+    }
+
+    @FXML
+    void view_before_delete(MouseEvent event) throws IOException {
+        Parent viewBeforeDelete = FXMLLoader.load(getClass().getResource("/sample/view/DeleteAppointment.fxml"));
+        DeleteAppointmentBorderPane.setCenter(viewBeforeDelete);
     }
 
     @FXML

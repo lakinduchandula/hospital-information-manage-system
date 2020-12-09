@@ -81,7 +81,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <JFXButton fx:id="DeleteAppointmentBtn" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Delete Appointment" textFill="WHITE">
+                        <JFXButton fx:id="DeleteAppointmentBtn" layoutX="14.0" layoutY="127.0" onMouseClicked="#view_before_delete" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View before Delete" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -96,6 +96,16 @@
                               <Image url="@../assets/images/hims-base-img/disruption-section-3.png" />
                            </image>
                         </ImageView>
+                        <JFXButton fx:id="DeleteAppointmentBtn1" layoutX="258.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #d32f2f;" text="Delete Appointment" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <BorderPane fx:id="DeleteAppointmentBorderPane" layoutX="5.0" layoutY="207.0" prefHeight="273.0" prefWidth="775.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                           <center>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
                      </children></AnchorPane>
               </content>
                <graphic>
