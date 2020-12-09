@@ -8,5 +8,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="com.jfoenix:jfoenix:9.0.101" level="application" />
+    <orderEntry type="library" name="hospital-information-manage-system" level="project" />
+    <orderEntry type="library" name="com.jfoenix:jfoenix:9.0.102" level="application" />
+    <orderEntry type="library" name="com.jfoenix:jfoenix:9.0.10" level="project" />
   </component>
 </module>

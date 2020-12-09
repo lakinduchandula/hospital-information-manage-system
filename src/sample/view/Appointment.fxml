@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #00838f;">
+         <children>
+            <Label layoutX="14.0" layoutY="8.0" text="Appointment Reports" textFill="#fffafa">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <JFXTabPane layoutX="2.0" layoutY="49.0" prefHeight="528.0" prefWidth="790.0" stylesheets="@../assets/patient.css">
+         <tabs>
+            <Tab text="Add Appointment">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" stylesheets="@../assets/patient.css">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+                           <children>
+                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Common Information of the User">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <JFXTextField fx:id="EditUserFirstName" focusColor="#424242" layoutX="14.0" layoutY="63.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="EditUserLastName" focusColor="#424242" layoutX="274.0" layoutY="63.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="EditUserUsername" focusColor="#424242" layoutX="14.0" layoutY="119.0" prefHeight="25.0" prefWidth="200.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="EditUserIDCardNumber" focusColor="#424242" layoutX="274.0" layoutY="119.0" prefHeight="25.0" prefWidth="200.0" promptText="Patient ID" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="EditUserPhoneNumber" focusColor="#424242" layoutX="14.0" layoutY="174.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXDatePicker layoutX="14.0" layoutY="232.0" prefHeight="25.0" prefWidth="200.0" promptText="Appointment Date" />
+                        <JFXTimePicker layoutX="274.0" layoutY="232.0" prefHeight="25.0" prefWidth="200.0" promptText="Appointment Time" />
+                        <Label layoutX="14.0" layoutY="290.0" prefHeight="19.0" prefWidth="198.0" text="Symptoms">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea layoutX="14.0" layoutY="319.0" prefHeight="74.0" prefWidth="578.0" stylesheets="@../assets/patient.css" />
+                        <JFXComboBox layoutX="19.0" layoutY="415.0" prefHeight="25.0" prefWidth="139.0" promptText="Medical Officer" />
+                        <JFXButton layoutX="649.0" layoutY="440.0" prefHeight="40.0" prefWidth="116.0" style="-fx-background-color: #00c853;" text="ADD" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="View Appoinment">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="8.0" layoutY="14.0" prefHeight="30.0" prefWidth="568.0" style="-fx-background-color: #64b5f6;">
+                           <children>
+                              <Label layoutX="21.0" layoutY="4.0" prefHeight="20.0" prefWidth="304.0" text="Appointment Details">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Label layoutX="9.0" layoutY="65.0" prefHeight="25.0" prefWidth="200.0" text="Full Name                : ">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="9.0" layoutY="107.0" prefHeight="25.0" prefWidth="200.0" text="Patient ID                 :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="9.0" layoutY="154.0" prefHeight="25.0" prefWidth="200.0" text="Medical Officer        :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="9.0" layoutY="203.0" prefHeight="25.0" prefWidth="200.0" text="Appointment Date   :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="9.0" layoutY="246.0" prefHeight="25.0" prefWidth="200.0" text="Appointment Time   :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField disable="true" layoutX="149.0" layoutY="65.0" prefHeight="25.0" prefWidth="436.0" />
+                        <JFXTextField disable="true" layoutX="149.0" layoutY="107.0" prefHeight="25.0" prefWidth="436.0" />
+                        <JFXTextField disable="true" layoutX="149.0" layoutY="203.0" prefHeight="25.0" prefWidth="436.0" />
+                        <JFXTextField disable="true" layoutX="149.0" layoutY="154.0" prefHeight="25.0" prefWidth="436.0" />
+                        <JFXTextField disable="true" layoutX="149.0" layoutY="246.0" prefHeight="25.0" prefWidth="436.0" />
+                        <JFXButton layoutX="592.0" layoutY="426.0" prefHeight="40.0" prefWidth="190.0" style="-fx-background-color: #00c853;" text="Print Appointment" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>
