@@ -5,24 +5,16 @@ import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.image.ImageView;
 
-public class AdDashMOApplicationController {
+public class MOAppointmentController {
 
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private URL location;
-
-    @FXML
-    private ImageView appointmentIconMO;
-
-    @FXML
-    private Label approvedAppointmentLblMO;
 
     @FXML
     private TableView<?> approvedAppointmentTableMO;
@@ -46,31 +38,11 @@ public class AdDashMOApplicationController {
     private TableColumn<?, ?> medicalOfficerColMO;
 
     @FXML
-    private JFXTextField appointmentNoTxtF;
+    private JFXTextField appointmentNoTextField;
 
     @FXML
-    private JFXButton seeDetailsBttn;
+    private JFXButton changeStatusButton;
 
-
-    @FXML
-    private Label patientLbl;
-
-    @FXML
-    private Label dateLbl;
-
-    @FXML
-    private Label timeLbl;
-
-    @FXML
-    private Label symptomsLbl;
-
-    @FXML
-    private Label medicalOfficerLbl;
-
-    @FXML
-    private JFXButton changeStatusBtn;
-
-    
     @FXML
     void initialize() {
 

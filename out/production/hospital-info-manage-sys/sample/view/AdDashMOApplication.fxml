@@ -3,177 +3,104 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdDashMOApplicationController">
+<AnchorPane prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MOAppointmentController">
     <children>
-        <JFXTabPane layoutX="9.0" layoutY="10.0" prefHeight="500.0" prefWidth="700.0" stylesheets="@../assets/tabstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #0277bd;">
+         <children>
+            <Label layoutX="14.0" layoutY="8.0" text="Appointment" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+        <JFXTabPane layoutX="-2.0" layoutY="49.0" prefHeight="528.0" prefWidth="790.0" stylesheets="@../assets/MedicalOfficerStyles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <tabs>
                 <Tab style="-fx-background-color: #65499c;" text="Approved Appointments">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #c7a4ff;">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                             <children>
-                                <HBox prefHeight="48.0" prefWidth="700.0" style="-fx-background-color: #9575cd;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                    <children>
-                                        <ImageView fx:id="appointmentIconMO" fitHeight="44.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                                            <HBox.margin>
-                                                <Insets bottom="10.0" left="10.0" top="10.0" />
-                                            </HBox.margin>
-                                            <image>
-                                                <Image url="@../assets/images/moapplication/icons8-planner-64.png" />
-                                            </image>
-                                        </ImageView>
-                                        <Label fx:id="approvedAppointmentLblMO" prefHeight="44.0" prefWidth="267.0" text="Approved Appointments">
-                                            <HBox.margin>
-                                                <Insets left="10.0" right="20.0" top="10.0" />
-                                            </HBox.margin>
-                                            <font>
-                                                <Font name="Arial Bold" size="18.0" />
-                                            </font>
-                                        </Label>
-                                    </children>
-                                </HBox>
-                                <TableView fx:id="approvedAppointmentTableMO" layoutX="10.0" layoutY="82.0" prefHeight="370.0" prefWidth="685.0" style="-fx-background-color: #c7a4ff;" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #58a5f0;">
+                           <children>
+                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Approved Appointment LIst">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                                <TableView fx:id="approvedAppointmentTableMO" layoutX="10.0" layoutY="82.0" prefHeight="370.0" prefWidth="790.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
                                     <columns>
-                                        <TableColumn fx:id="appointmentNoColMO" prefWidth="106.39996194839478" text="Appointment No" />
-                                        <TableColumn fx:id="patientColMO" prefWidth="136.00006866455078" text="Patient" />
-                                        <TableColumn fx:id="appointmentDateColMO" prefWidth="106.39996194839478" text=" Date" />
-                                        <TableColumn fx:id="appointmentTimeColMO" prefWidth="82.4000244140625" text=" Time" />
-                                        <TableColumn fx:id="symptomsColMO" prefWidth="130.39993286132812" text="Symptoms" />
-                                        <TableColumn fx:id="medicalOfficerColMO" maxWidth="1.7976931348623157E308" prefWidth="124.00004882812505" resizable="false" text="Medical Officer" />
+                                        <TableColumn fx:id="appointmentNoColMO" prefWidth="100.0" text="Appointment No" />
+                                        <TableColumn fx:id="patientColMO" prefWidth="200.0" text="Patient" />
+                                        <TableColumn fx:id="appointmentDateColMO" prefWidth="70.0" text=" Date" />
+                                        <TableColumn fx:id="appointmentTimeColMO" prefWidth="70.0" text=" Time" />
+                                        <TableColumn fx:id="symptomsColMO" prefWidth="200.0" text="Symptoms" />
+                                        <TableColumn fx:id="medicalOfficerColMO" maxWidth="1.7976931348623157E308" prefWidth="150.0" resizable="false" text="Medical Officer" />
                                     </columns>
                                 </TableView>
                             </children>
                         </AnchorPane>
                     </content>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/moapplication/icons8-planner-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Tab>
                 <Tab style="-fx-background-color: #00867d;" text="Change Appointment Status">
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                            <children>
-                                <HBox layoutX="7.0" prefHeight="97.0" prefWidth="700.0" style="-fx-background-color: #4db6ac;" AnchorPane.bottomAnchor="360.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                    <children>
-                                        <JFXTextField alignment="CENTER_RIGHT" focusColor="#211e1f" labelFloat="true" prefHeight="49.0" prefWidth="262.0" promptText="Enter Appointment Number" unFocusColor="#492828">
-                                            <HBox.margin>
-                                                <Insets left="20.0" top="20.0" />
-                                            </HBox.margin>
-                                            <padding>
-                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                            </padding>
-                                            <font>
-                                                <Font size="14.0" />
-                                            </font>
-                                        </JFXTextField>
-                                        <JFXButton buttonType="RAISED" prefHeight="54.0" prefWidth="199.0" style="-fx-background-color: #00695c;" text="See Details" textFill="WHITE">
-                                            <HBox.margin>
-                                                <Insets left="30.0" top="20.0" />
-                                            </HBox.margin>
-                                            <font>
-                                                <Font name="Comic Sans MS" size="18.0" />
-                                            </font>
-                                 <ripplerFill>
-                                    <LinearGradient endX="1.0" endY="1.0">
-                                       <stops>
-                                          <Stop color="#cdc2c6" />
-                                          <Stop color="WHITE" offset="1.0" />
-                                       </stops>
-                                    </LinearGradient>
-                                 </ripplerFill>
-                                        </JFXButton>
-                                    </children>
-                                </HBox>
-                                <HBox layoutY="92.0" prefHeight="370.0" prefWidth="700.0" style="-fx-background-color: #82e9de;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="92.0">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #58a5f0;">
                            <children>
-                              <VBox prefHeight="370.0" prefWidth="703.0">
-                                 <children>
-                                    <Label fx:id="patientLbl" prefHeight="50.0" prefWidth="294.0" text="Patient">
-                                       <font>
-                                          <Font name="Corbel Italic" size="19.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets left="50.0" top="10.0" />
-                                       </VBox.margin>
-                                       <padding>
-                                          <Insets left="50.0" />
-                                       </padding>
-                                    </Label>
-                                    <Label fx:id="dateLbl" layoutX="50.0" layoutY="20.0" prefHeight="50.0" prefWidth="294.0" text="Appointment Date">
-                                       <font>
-                                          <Font name="Corbel Italic" size="19.0" />
-                                       </font>
-                                       <padding>
-                                          <Insets left="50.0" />
-                                       </padding>
-                                       <VBox.margin>
-                                          <Insets left="50.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Label fx:id="timeLbl" layoutX="10.0" layoutY="71.0" prefHeight="50.0" prefWidth="294.0" text="Appointment Time">
-                                       <font>
-                                          <Font name="Corbel Italic" size="19.0" />
-                                       </font>
-                                       <padding>
-                                          <Insets left="50.0" />
-                                       </padding>
-                                       <VBox.margin>
-                                          <Insets left="50.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Label fx:id="symptomsLbl" layoutX="10.0" layoutY="121.0" prefHeight="50.0" prefWidth="294.0" text="Symptoms">
-                                       <font>
-                                          <Font name="Corbel Italic" size="19.0" />
-                                       </font>
-                                       <padding>
-                                          <Insets left="50.0" />
-                                       </padding>
-                                       <VBox.margin>
-                                          <Insets left="50.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                    <Label fx:id="medicalOfficerLbl" layoutX="10.0" layoutY="172.0" prefHeight="50.0" prefWidth="294.0" text="Medical Officer">
-                                       <font>
-                                          <Font name="Corbel Italic" size="19.0" />
-                                       </font>
-                                       <padding>
-                                          <Insets left="50.0" />
-                                       </padding>
-                                       <VBox.margin>
-                                          <Insets left="50.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                    <JFXButton fx:id="changeStatusBtn" buttonType="RAISED" prefHeight="51.0" prefWidth="188.0" style="-fx-background-color: #00675b;" text="Change Status" textFill="WHITE">
-                                       <font>
-                                          <Font name="Constantia" size="16.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets left="400.0" top="10.0" />
-                                       </VBox.margin>
-                                    </JFXButton>
-                                 </children>
-                              </VBox>
-                           </children></HBox>
-                            </children>
+                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Appointment No to Change Status">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <JFXTextField focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Appointment No" styleClass="text-input-common-medicalO-dash" stylesheets="@../assets/MedicalOfficerStyles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Change Status" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="581.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="52.0">
+                           <image>
+                              <Image url="@../assets/images/moapplication/images3.png" />
+                           </image>
+                        </ImageView>
+                     </children>
                         </AnchorPane>
                     </content>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/moapplication/icons8-appointment-scheduling-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </Tab>
             </tabs>
-            <effect>
-                <DropShadow />
-            </effect>
             <cursor>
                 <Cursor fx:constant="OPEN_HAND" />
             </cursor>

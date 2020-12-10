@@ -16,7 +16,7 @@
 
 <AnchorPane prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MOAppointmentController">
     <children>
-      <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #0277bd;">
+      <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #0277bd;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label layoutX="14.0" layoutY="8.0" text="Appointment" textFill="WHITE">
                <font>
@@ -74,12 +74,12 @@
                               </Label>
                            </children>
                         </Pane>
-                        <JFXTextField focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Appointment No" styleClass="text-input-common-medicalO-dash" stylesheets="@../assets/MedicalOfficerStyles.css" unFocusColor="#424242">
+                        <JFXTextField fx:id="appointmentNoTextField" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Appointment No" styleClass="text-input-common-medicalO-dash" stylesheets="@../assets/MedicalOfficerStyles.css" unFocusColor="#424242">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Change Status" textFill="WHITE">
+                        <JFXButton fx:id="changeStatusButton" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Change Status" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>

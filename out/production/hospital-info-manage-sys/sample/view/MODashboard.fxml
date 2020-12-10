@@ -25,18 +25,6 @@
                         </ImageView>
                     </graphic>
                 </JFXButton>
-                <JFXButton fx:id="PatientDashComplaintBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Complaint" textAlignment="RIGHT" textFill="WHITE">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                    <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../assets/images/dash-receptionist/dash-recep-complaint.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </JFXButton>
                 <JFXButton fx:id="PatientDashUserBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Account Settings" textAlignment="RIGHT" textFill="WHITE">
                     <font>
                         <Font size="14.0" />
@@ -44,7 +32,7 @@
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../assets/images/dash-admin/user-settings.png" />
+                                <Image url="@../assets/images/dash-admin/dash-admin-user-settings.png" />
                             </image>
                         </ImageView>
                     </graphic>
