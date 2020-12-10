@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jfonix">
+    <CLASSES>
+      <root url="file://C:/Java/jfonix" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://C:/Java/jfonix" recursive="false" />
+  </library>
+</component>
