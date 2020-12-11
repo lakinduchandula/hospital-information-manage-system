@@ -2,10 +2,15 @@ package sample.controller;
 
 import com.jfoenix.controls.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Tab;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 
 public class AdDashEditUserController {
 
@@ -114,18 +119,28 @@ public class AdDashEditUserController {
     @FXML
     private JFXButton ViewComplaintBtn1;
 
+    @FXML
+    private JFXButton EditUserEditAccount;
+
+    @FXML
+    private BorderPane EditUserEditBoarderPane;
+
+    @FXML
+    void edit_user_account(MouseEvent event) throws IOException {
+        Parent editUserAccount = FXMLLoader.load(getClass().getResource("/sample/view/EditReceptionistAccount.fxml"));
+        EditUserEditBoarderPane.setCenter(editUserAccount);
+    }
+
     public AdDashEditUserController() {
     }
 
     @FXML
     void initialize() {
         // combo-box items for gender at create user account
-        EditUserGender.setStyle("-fx-text-fill: #424242");
         EditUserGender.getItems().add("Male");
         EditUserGender.getItems().add("Female");
 
         // combo-box items for marital status at create user account
-        EditUserMaritalStatus.setStyle("-fx-text-fill: #424242");
         EditUserMaritalStatus.getItems().add("Unmarried");
         EditUserMaritalStatus.getItems().add("Married");
         EditUserMaritalStatus.getItems().add("Divorced");
@@ -133,7 +148,6 @@ public class AdDashEditUserController {
         EditUserMaritalStatus.getItems().add("Legally Separated");
 
         // combo-box items for blood-group status at create user account
-        EditUserPatientBlood.setStyle("-fx-text-fill: #424242");
         EditUserPatientBlood.getItems().add("A+");
         EditUserPatientBlood.getItems().add("A-");
         EditUserPatientBlood.getItems().add("B+");
@@ -142,12 +156,6 @@ public class AdDashEditUserController {
         EditUserPatientBlood.getItems().add("O-");
         EditUserPatientBlood.getItems().add("AB+");
         EditUserPatientBlood.getItems().add("AB-");
-
-
-
-
-
-
 
     }
 }

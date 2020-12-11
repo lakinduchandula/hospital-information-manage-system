@@ -13,6 +13,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -31,7 +32,7 @@
          <content>
             <AnchorPane prefHeight="677.0" prefWidth="775.0">
                <children>
-                  <JFXTabPane fx:id="mainEditUserTabPane" layoutY="28.0" prefHeight="664.0" prefWidth="775.0" stylesheets="@../assets/styles.css" AnchorPane.bottomAnchor="-27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <JFXTabPane fx:id="mainEditUserTabPane" layoutY="-1.0" prefHeight="677.0" prefWidth="775.0" stylesheets="@../assets/styles.css" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
                      <tabs>
                         <Tab fx:id="CreateUserAccount" text="Create User Account">
                            <content>
@@ -87,7 +88,7 @@
                                           <Font size="14.0" />
                                        </font>
                                     </JFXTextField>
-                                    <JFXTextField fx:id="EditUserAddLine2" focusColor="#424242" layoutX="263.0" layoutY="221.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 1" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                    <JFXTextField fx:id="EditUserAddLine2" focusColor="#424242" layoutX="263.0" layoutY="221.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 2" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -107,7 +108,7 @@
                                           <Font size="14.0" />
                                        </font>
                                     </JFXTextField>
-                                    <JFXTabPane fx:id="subEditUserTabPane" layoutY="354.0" prefHeight="313.0" prefWidth="775.0" stylesheets="@../assets/styles.css" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="354.0">
+                                    <JFXTabPane fx:id="subEditUserTabPane" layoutY="350.0" prefHeight="290.0" prefWidth="775.0" stylesheets="@../assets/styles.css" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="350.0">
                                        <tabs>
                                           <Tab fx:id="Receptionist" text="Receptionist">
                                              <content>
@@ -153,7 +154,7 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="388.0" prefWidth="775.0">
                                                    <children>
-                                                      <JFXComboBox fx:id="EditUserMOSpecificArea" focusColor="#424242" layoutX="263.0" layoutY="105.0" prefHeight="30.0" prefWidth="200.0" promptText="Speciality Area" styleClass="choice-box-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242" />
+                                                      <JFXComboBox fx:id="EditUserMOSpecificArea" focusColor="#424242" layoutX="263.0" layoutY="105.0" prefHeight="30.0" prefWidth="200.0" promptText="Speciality Area" styleClass="choice-box-admin-dash" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242" />
                                                       <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
                                                          <children>
                                                             <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Information for a specific Medical Officer">
@@ -194,7 +195,7 @@
                                              <content>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <JFXComboBox fx:id="EditUserPatientBlood" focusColor="#424242" layoutX="31.0" layoutY="74.0" prefHeight="30.0" prefWidth="300.0" promptText="Blood Group" styleClass="choice-box-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242" />
+                                                      <JFXComboBox fx:id="EditUserPatientBlood" focusColor="#424242" layoutX="31.0" layoutY="74.0" prefHeight="30.0" prefWidth="300.0" promptText="Blood Group" styleClass="choice-box-admin-dash" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242" />
                                                       <JFXTextArea fx:id="EditUserPatientAllergies" focusColor="#424242" layoutX="31.0" layoutY="121.0" prefHeight="82.0" prefWidth="300.0" promptText="Allergies" styleClass="text-area" stylesheets="@../assets/styles.css" />
                                                       <Pane layoutX="14.0" layoutY="11.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
                                                          <children>
@@ -261,8 +262,8 @@
                                           <Font size="14.0" />
                                        </font>
                                     </JFXTextField>
-                                    <JFXComboBox fx:id="EditUserEditUsermode" focusColor="#424242" layoutX="280.0" layoutY="66.0" prefHeight="25.0" prefWidth="230.0" promptText="Usermode" styleClass="choice-box-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242" />
-                                    <JFXButton fx:id="ViewComplaintBtn" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit User Account" textFill="WHITE">
+                                    <JFXComboBox fx:id="EditUserEditUsermode" focusColor="#424242" layoutX="280.0" layoutY="66.0" prefHeight="25.0" prefWidth="230.0" promptText="Usermode" styleClass="choice-box-admin-dash" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242" />
+                                    <JFXButton fx:id="EditUserEditAccount" layoutX="14.0" layoutY="127.0" onMouseClicked="#edit_user_account" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit User Account" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -272,6 +273,11 @@
                                           <Image url="@../assets/images/hims-base-img/platform.png" />
                                        </image>
                                     </ImageView>
+                                    <BorderPane fx:id="EditUserEditBoarderPane" layoutX="3.0" layoutY="199.0" prefHeight="434.0" prefWidth="760.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+                                       <center>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
                                  </children></AnchorPane>
                            </content>
                            <graphic>
@@ -291,8 +297,8 @@
                                           <Font size="14.0" />
                                        </font>
                                     </JFXTextField>
-                                    <JFXComboBox fx:id="EditUserDeleteUsermode" focusColor="#424242" layoutX="280.0" layoutY="66.0" prefHeight="25.0" prefWidth="230.0" promptText="Usermode" styleClass="choice-box-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242" />
-                                    <JFXButton fx:id="ViewComplaintBtn1" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit User Account" textFill="WHITE">
+                                    <JFXComboBox fx:id="EditUserDeleteUsermode" focusColor="#424242" layoutX="280.0" layoutY="66.0" prefHeight="25.0" prefWidth="230.0" promptText="Usermode" styleClass="choice-box-admin-dash" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242" />
+                                    <JFXButton fx:id="ViewComplaintBtn1" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Account before Delete" textFill="WHITE">
                                        <font>
                                           <Font name="System Bold" size="14.0" />
                                        </font>
@@ -311,6 +317,11 @@
                                           </Label>
                                        </children>
                                     </Pane>
+                                    <JFXButton fx:id="ViewComplaintBtn11" layoutX="273.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #d32f2f;" text="Delete Account" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </JFXButton>
                                  </children></AnchorPane>
                            </content>
                            <graphic>
