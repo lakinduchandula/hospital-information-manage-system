@@ -14,7 +14,7 @@
    <children>
       <BorderPane fx:id="ReceptDashBoarderPane" prefHeight="576.0" prefWidth="1059.0">
          <left>
-            <VBox prefHeight="568.0" prefWidth="260.0" style="-fx-background-color: #0277bd;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="576.0" prefWidth="260.0" style="-fx-background-color: #0277bd;" BorderPane.alignment="CENTER">
                <children>
                   <Pane prefHeight="128.0" prefWidth="260.0" />
                   <JFXButton fx:id="RecepDashAppoinmentBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_appointment" prefHeight="35.0" prefWidth="260.0" text="Appoinments" textAlignment="RIGHT" textFill="WHITE">
@@ -95,7 +95,7 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <ScrollPane prefHeight="576.0" prefWidth="799.0">
+                  <ScrollPane prefHeight="576.0" prefWidth="1090.0">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
                     </content>
