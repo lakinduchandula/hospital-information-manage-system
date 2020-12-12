@@ -30,3 +30,11 @@
     -fx-text-fill: #424242;
     -fx-font-size: 14px;
 }
+
+.combo-box-admin-dash,
+.choice-box-admin-dash {
+    -fx-prompt-text-fill: #424242;
+    -fx-text-fill: #424242;
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+}
