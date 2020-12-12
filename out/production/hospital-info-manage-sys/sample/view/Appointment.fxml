@@ -63,8 +63,8 @@
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTimePicker layoutX="263.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" promptText="Appointment Time" stylesheets="@../../../../../patient.css" />
-                        <JFXComboBox focusColor="#009688" layoutX="33.0" layoutY="262.0" prefHeight="25.0" prefWidth="200.0" promptText="Medical Officer" stylesheets="@../../../../../patient.css" unFocusColor="#009688" />
+                        <JFXTimePicker defaultColor="#6a1b9a" layoutX="263.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" promptText="Appointment Time" stylesheets="@../assets/patient.css" />
+                        <JFXComboBox focusColor="#6a1b9a" layoutX="33.0" layoutY="262.0" prefHeight="25.0" prefWidth="200.0" promptText="Medical Officer" stylesheets="@../assets/patient.css" unFocusColor="#152523" />
                         <JFXButton layoutX="603.0" layoutY="432.0" prefHeight="40.0" prefWidth="180.0" style="-fx-background-color: #00c853;" text="Add Appointment" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
@@ -75,7 +75,7 @@
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXDatePicker layoutX="33.0" layoutY="180.0" prefHeight="28.0" prefWidth="203.0" promptText="Appointment Name" stylesheets="@../../../../../patient.css" />
+                        <JFXDatePicker defaultColor="#6a1b9a" layoutX="33.0" layoutY="180.0" prefHeight="28.0" prefWidth="203.0" promptText="Appointment Name" stylesheets="@../assets/patient.css" />
                      </children>
                   </AnchorPane>
               </content>
