@@ -7,7 +7,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
     <orderEntry type="library" name="com.jfoenix:jfoenix:9.0.10" level="application" />
+=======
+    <orderEntry type="library" name="com.jfoenix:jfoenix:9.0.10" level="project" />
+>>>>>>> a1486068cd07ce202a0aed938354af5682e63fcf
     <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

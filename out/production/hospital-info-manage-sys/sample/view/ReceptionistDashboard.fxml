@@ -1,91 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="576.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptionistDashboardController">
-    <children>
-        <VBox layoutX="7.0" layoutY="7.0" prefHeight="568.0" prefWidth="260.0" style="-fx-background-color: #0277bd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <children>
-                <Pane prefHeight="128.0" prefWidth="260.0" />
-                <JFXButton fx:id="RecepDashAppoinmentBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Appoinments" textAlignment="RIGHT" textFill="WHITE">
-                    <font>
+   <children>
+      <BorderPane fx:id="ReceptDashBoarderPane" prefHeight="576.0" prefWidth="1059.0">
+         <left>
+            <VBox prefHeight="576.0" prefWidth="260.0" style="-fx-background-color: #0277bd;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="128.0" prefWidth="260.0" />
+                  <JFXButton fx:id="RecepDashAppoinmentBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_appointment" prefHeight="35.0" prefWidth="260.0" text="Appoinments" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
                         <Font size="14.0" />
-                    </font>
-                    <graphic>
+                     </font>
+                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../assets/images/dash-receptionist/dash-recep-appoinment.png" />
-                            </image>
+                           <image>
+                              <Image url="@../assets/images/dash-receptionist/dash-recep-appoinment.png" />
+                           </image>
                         </ImageView>
-                    </graphic>
-                </JFXButton>
-                <JFXButton fx:id="RecepDashComplaintBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Complaint" textAlignment="RIGHT" textFill="WHITE">
-                    <font>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="RecepDashComplaintBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Complaint" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
                         <Font size="14.0" />
-                    </font>
-                    <graphic>
+                     </font>
+                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../assets/images/dash-receptionist/dash-recep-complaint.png" />
-                            </image>
+                           <image>
+                              <Image url="@../assets/images/dash-receptionist/dash-recep-complaint.png" />
+                           </image>
                         </ImageView>
-                    </graphic>
-                </JFXButton>
-                <JFXButton fx:id="RecepDashPostalBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="261.0" text="Postal Mail Records" textFill="WHITE">
-                    <font>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="RecepDashPostalBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="261.0" text="Postal Mail Records" textFill="WHITE">
+                     <font>
                         <Font size="14.0" />
-                    </font>
-                    <graphic>
+                     </font>
+                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../assets/images/dash-receptionist/dash-recep-postal.png" />
-                            </image>
+                           <image>
+                              <Image url="@../assets/images/dash-receptionist/dash-recep-postal.png" />
+                           </image>
                         </ImageView>
-                    </graphic>
-                </JFXButton>
-                <JFXButton fx:id="RecepDashVisitorBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Visitor Records" textAlignment="RIGHT" textFill="WHITE">
-                    <font>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="RecepDashVisitorBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Visitor Records" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
                         <Font size="14.0" />
-                    </font>
-                    <graphic>
+                     </font>
+                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../assets/images/dash-receptionist/dash-recep-visitor.png" />
-                            </image>
+                           <image>
+                              <Image url="@../assets/images/dash-receptionist/dash-recep-visitor.png" />
+                           </image>
                         </ImageView>
-                    </graphic>
-                </JFXButton>
-            <JFXButton fx:id="RecepDashPatientBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Patient Records" textAlignment="RIGHT" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/images/dash-receptionist/dash-recep-patient-rec.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="RecepDashUserBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Account Settings" textAlignment="RIGHT" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/images/dash-admin/user-settings.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            </children>
-        </VBox>
-    </children>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="RecepDashPatientBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Patient Records" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/dash-receptionist/dash-recep-patient-rec.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="RecepDashUserBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Account Settings" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/dash-receptionist/user-settings.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ScrollPane prefHeight="576.0" prefWidth="1090.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                    </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
 </AnchorPane>
