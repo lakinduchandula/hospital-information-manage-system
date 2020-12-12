@@ -8,7 +8,6 @@
     -fx-pref-width: 200px;
     -fx-pref-height: 40px;
 }
-
 .tab:selected
 {
     -fx-text-fill: White;
@@ -17,4 +16,17 @@
 }
 .tab-header-background {
     -fx-background-color: #0277bd;
+}
+.jfx-date-picker .text-field{
+    -jfx-unfocus-color: #424242;
+    -fx-prompt-text-fill: #424242;
+    -fx-text-fill: #424242;
+    -fx-font-size: 14px;
+}
+
+.text-area {
+    -fx-font-family: 'Noto Sans JP', sans-serif;
+    -fx-prompt-text-fill: #424242;
+    -fx-text-fill: #424242;
+    -fx-font-size: 14px;
 }
