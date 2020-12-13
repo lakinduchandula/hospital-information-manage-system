@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b8254883-365f-4914-bffd-c34d7ddd44e7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/module/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ComplaintRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/ComplaintRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/DispatchPostalMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/DispatchPostalMail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/MedicalOfficer.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/MedicalOfficer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/PostalMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/PostalMail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ReceivedPostalMail.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/ReceivedPostalMail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/Receptionist.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Receptionist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/ReceptionistORMedicalOfficer.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/ReceptionistORMedicalOfficer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/model/Visitor.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1lanOurXl7kE0WYY3bkoKgDt0US" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b8254883-365f-4914-bffd-c34d7ddd44e7" name="Default Changelist" comment="" />
+      <created>1607844043435</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607844043435</updated>
+      <workItem from="1607844046113" duration="48000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
