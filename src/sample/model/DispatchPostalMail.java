@@ -1,4 +1,4 @@
-package sample.module;
+package sample.model;
 
 public class DispatchPostalMail extends ReceivedPostalMail{
         private String toName;

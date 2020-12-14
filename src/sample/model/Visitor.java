@@ -1,4 +1,4 @@
-package sample.module;
+package sample.model;
 
 import java.io.File;
 import java.sql.Time;
