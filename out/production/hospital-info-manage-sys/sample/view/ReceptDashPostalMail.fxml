@@ -38,28 +38,28 @@
                               </Label>
                            </children>
                         </Pane>
-                        <JFXTextField fx:id="ComplaintPersonPhoneNumber1" focusColor="#424242" layoutX="14.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                        <JFXTextField fx:id="AddPostalMailRefereneceNum" focusColor="#424242" layoutX="14.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="ComplaintPersonPhoneNumber11" focusColor="#424242" layoutX="295.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" promptText="From Address" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                        <JFXTextField fx:id="AddPostalMailFromAddress" focusColor="#424242" layoutX="295.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" promptText="From Address" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="ComplaintPersonPhoneNumber12" focusColor="#424242" layoutX="14.0" layoutY="105.0" prefHeight="25.0" prefWidth="200.0" promptText="Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                        <JFXTextField fx:id="AddPostalMailName" focusColor="#424242" layoutX="14.0" layoutY="105.0" prefHeight="25.0" prefWidth="200.0" promptText="Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField fx:id="ComplaintPersonPhoneNumber121" focusColor="#424242" layoutX="295.0" layoutY="105.0" prefHeight="25.0" prefWidth="200.0" promptText="To Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                        <JFXTextField fx:id="AddPostalMailToName" focusColor="#424242" layoutX="295.0" layoutY="105.0" prefHeight="25.0" prefWidth="200.0" promptText="To Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXDatePicker fx:id="ComplaintDate" defaultColor="#424242" layoutX="14.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" promptText="Date" />
-                        <JFXTextField fx:id="ComplaintPersonPhoneNumber1211" focusColor="#424242" layoutX="295.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" promptText="Note" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                        <JFXDatePicker fx:id="AddPostalMailDate" defaultColor="#424242" layoutX="14.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" promptText="Date" />
+                        <JFXTextField fx:id="AddPostalMailNote" focusColor="#424242" layoutX="295.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" promptText="Note" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -69,13 +69,13 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <JFXButton fx:id="ComplaintAttachDoc" layoutX="295.0" layoutY="224.0" prefHeight="25.0" prefWidth="148.0" style="-fx-background-color: #9be7ff;" text="Choose File" />
+                        <JFXButton fx:id="AddPostalMailAttachBtn" layoutX="295.0" layoutY="224.0" prefHeight="25.0" prefWidth="148.0" style="-fx-background-color: #9be7ff;" text="Choose File" />
                         <JFXTextField fx:id="ComplaintActionTaken" focusColor="#424242" layoutX="14.0" layoutY="264.0" prefHeight="50.0" prefWidth="200.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton fx:id="AddComplaintBtn" layoutX="590.0" layoutY="386.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Postal Mail" textFill="WHITE">
+                        <JFXButton fx:id="AddPostalMailBtn" layoutX="590.0" layoutY="386.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Postal Mail" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -108,12 +108,12 @@
                               </Label>
                            </children>
                         </Pane>
-                        <JFXTextField fx:id="EditAppointmentUsername" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
+                        <JFXTextField fx:id="EditPostalMailRefereneceNum" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton fx:id="AddComplaintBtn1" layoutX="14.0" layoutY="130.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit Postal Mail" textFill="WHITE">
+                        <JFXButton fx:id="EditPostalMailBtn" layoutX="14.0" layoutY="130.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit Postal Mail" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -126,7 +126,7 @@
                      </children></AnchorPane>
               </content>
             </Tab>
-            <Tab text="View Postal Mail">
+            <Tab fx:id="ViewPostalMailReferenceNum" text="View Postal Mail">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -139,12 +139,12 @@
                               </Label>
                            </children>
                         </Pane>
-                        <JFXTextField fx:id="ComplaintPersonPhoneNumber" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="200.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                        <JFXTextField fx:id="ViewPostalMailReferenceNum" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="200.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton fx:id="AddComplaintBtn11" layoutX="14.0" layoutY="130.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Postal Mail" textFill="WHITE">
+                        <JFXButton fx:id="ViewPostalMailBtn" layoutX="14.0" layoutY="130.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Postal Mail" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -170,12 +170,12 @@
                               </Label>
                            </children>
                         </Pane>
-                        <JFXButton fx:id="AddComplaintBtn111" layoutX="14.0" layoutY="130.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: Red;" text="DeletePostal Mail" textFill="WHITE">
+                        <JFXButton fx:id="DeletePostalMailBtn" layoutX="14.0" layoutY="130.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: Red;" text="DeletePostal Mail" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXTextField fx:id="ComplaintPersonPhoneNumber2" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="200.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                        <JFXTextField fx:id="DeletePostalMailReferenceNum" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="200.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                            <font>
                               <Font size="14.0" />
                            </font>
