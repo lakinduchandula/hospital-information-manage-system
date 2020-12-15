@@ -1,4 +1,4 @@
-package sample.module;
+package sample.model;
 
 import java.sql.Time;
 import java.util.Date;
