@@ -42,5 +42,20 @@ public class ReceptionistDashboardController {
         Parent complaintPane = FXMLLoader.load(getClass().getResource("/sample/view/ReceptDashComplaint.fxml"));
         ReceptDashBoarderPane.setCenter(complaintPane);
     }
+    @FXML
+    void show_postalMail(MouseEvent event) throws IOException {
+        Parent complaintPane = FXMLLoader.load(getClass().getResource("/sample/view/ReceptDashPostalMail.fxml"));
+        ReceptDashBoarderPane.setCenter(complaintPane);
+    }
 
+    @FXML
+    void show_patientRecords(MouseEvent event) throws IOException {
+        Parent complaintPane = FXMLLoader.load(getClass().getResource("/sample/view/ReceptDashPatientRecords.fxml"));
+        ReceptDashBoarderPane.setCenter(complaintPane);
+    }
+    @FXML
+    void show_visitorRecords(MouseEvent event) throws IOException {
+        Parent complaintPane = FXMLLoader.load(getClass().getResource("/sample/view/ReceptDashVisitorRecords.fxml"));
+        ReceptDashBoarderPane.setCenter(complaintPane);
+    }
 }

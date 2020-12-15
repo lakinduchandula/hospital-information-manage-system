@@ -29,9 +29,9 @@
                   </Label>
                </children>
             </Pane>
-            <ScrollPane layoutX="6.0" layoutY="48.0" prefHeight="603.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
+            <ScrollPane layoutX="6.0" layoutY="48.0" prefHeight="603.0" prefWidth="790.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="677.0" prefWidth="775.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="677.0" prefWidth="1103.0">
                      <children>
                         <JFXTabPane layoutX="-1.0" prefHeight="603.0" prefWidth="790.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <tabs>
@@ -39,16 +39,7 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #4fc3f7;">
-                                             <children>
-                                                <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Application Form">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </Pane>
-                                          <Pane layoutX="14.0" layoutY="52.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Patient Information">
                                                    <font>
@@ -57,28 +48,28 @@
                                                 </Label>
                                              </children>
                                           </Pane>
-                                          <JFXTextField fx:id="AddAppointmentFirstname" focusColor="#424242" layoutX="14.0" layoutY="98.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
+                                          <JFXTextField fx:id="AddAppointmentFirstname" focusColor="#424242" layoutX="14.0" layoutY="65.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <JFXTextField fx:id="AddAppointmentMiddlename" focusColor="#424242" layoutX="14.0" layoutY="137.0" prefHeight="25.0" prefWidth="200.0" promptText="Middle Name" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
+                                          <JFXTextField fx:id="AddAppointmentMiddlename" focusColor="#424242" layoutX="14.0" layoutY="107.0" prefHeight="25.0" prefWidth="200.0" promptText="Middle Name" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <JFXTextField fx:id="AddAppointmentLastname" focusColor="#424242" layoutX="14.0" layoutY="176.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
+                                          <JFXTextField fx:id="AddAppointmentLastname" focusColor="#424242" layoutX="14.0" layoutY="149.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <JFXDatePicker fx:id="AddAppointmentDOB" defaultColor="#424242" layoutX="288.0" layoutY="98.0" prefHeight="28.0" prefWidth="200.0" promptText="Date of Birith" />
-                                          <JFXTextField fx:id="AddAppointmentPhoneNumber" focusColor="#424242" layoutX="288.0" layoutY="137.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
+                                          <JFXDatePicker fx:id="AddAppointmentDOB" defaultColor="#424242" layoutX="288.0" layoutY="65.0" prefHeight="28.0" prefWidth="200.0" promptText="Date of Birith" />
+                                          <JFXTextField fx:id="AddAppointmentPhoneNumber" focusColor="#424242" layoutX="288.0" layoutY="107.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <Pane layoutX="14.0" layoutY="234.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                          <Pane layoutX="14.0" layoutY="207.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Symptoms Information">
                                                    <font>
@@ -87,13 +78,13 @@
                                                 </Label>
                                              </children>
                                           </Pane>
-                                          <JFXTextField fx:id="AddAppointmentSymptoms" focusColor="#424242" layoutX="14.0" layoutY="282.0" prefHeight="25.0" prefWidth="200.0" promptText="Symptoms" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
+                                          <JFXTextField fx:id="AddAppointmentSymptoms" focusColor="#424242" layoutX="14.0" layoutY="256.0" prefHeight="25.0" prefWidth="200.0" promptText="Symptoms" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <JFXDatePicker fx:id="AddAppointmentFromDate" defaultColor="#424242" layoutX="14.0" layoutY="323.0" prefHeight="28.0" prefWidth="200.0" promptText="From Date" />
-                                          <Pane layoutX="14.0" layoutY="383.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                          <JFXDatePicker fx:id="AddAppointmentFromDate" defaultColor="#424242" layoutX="14.0" layoutY="298.0" prefHeight="28.0" prefWidth="200.0" promptText="From Date" />
+                                          <Pane layoutX="14.0" layoutY="362.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
                                              <children>
                                                 <Label fx:id="AddAppointmentDate" layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Apponitement Information">
                                                    <font>
@@ -102,24 +93,24 @@
                                                 </Label>
                                              </children>
                                           </Pane>
-                                          <JFXTimePicker fx:id="AddAppointmentAppointmentTime" defaultColor="#424242" layoutX="14.0" layoutY="486.0" promptText="Time" />
-                                          <JFXTextField fx:id="AddAppointmentAppointmentNumber" focusColor="#424242" layoutX="324.0" layoutY="435.0" prefHeight="25.0" prefWidth="200.0" promptText="Appointment Number" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
+                                          <JFXTimePicker fx:id="AddAppointmentAppointmentTime" defaultColor="#424242" layoutX="14.0" layoutY="460.0" promptText="Time" />
+                                          <JFXTextField fx:id="AddAppointmentAppointmentNumber" focusColor="#424242" layoutX="316.0" layoutY="411.0" prefHeight="25.0" prefWidth="200.0" promptText="Appointment Number" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <JFXComboBox fx:id="AddAppointmentAppointmentPrefferedMO" focusColor="#424242" layoutX="323.0" layoutY="485.0" prefHeight="25.0" prefWidth="202.0" promptText="Preffered Medical Officer" styleClass="combo-box-admin-dash" stylesheets="@../assets/DashStyle.css" unFocusColor="#424242" />
-                                          <JFXButton fx:id="AddAppointmentBtn" layoutX="599.0" layoutY="509.0" prefHeight="40.0" prefWidth="108.0" style="-fx-background-color: #00c853;" text="Add" textFill="WHITE">
+                                          <JFXComboBox fx:id="AddAppointmentAppointmentPrefferedMO" focusColor="#424242" layoutX="315.0" layoutY="460.0" prefHeight="25.0" prefWidth="202.0" promptText="Preffered Medical Officer" styleClass="combo-box-admin-dash" stylesheets="@../assets/DashStyle.css" unFocusColor="#424242" />
+                                          <JFXButton fx:id="AddAppointmentBtn" layoutX="590.0" layoutY="490.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Appointment" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </JFXButton>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="799.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="532.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
                                              <image>
                                                 <Image url="@../assets/images/hims-base-img/disruption-section-3.png" />
                                              </image>
                                           </ImageView>
-                                          <JFXDatePicker fx:id="AddAppointmentDate1" defaultColor="#424242" layoutX="14.0" layoutY="435.0" prefHeight="28.0" prefWidth="200.0" promptText="Date" />
+                                          <JFXDatePicker fx:id="AddAppointmentDate1" defaultColor="#424242" layoutX="14.0" layoutY="411.0" prefHeight="28.0" prefWidth="200.0" promptText="Date" />
                                        </children></AnchorPane>
                                 </content>
                                  <graphic>
@@ -134,7 +125,7 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #4fc3f7;">
+                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter valid Username to Edit the Appoinment">
                                                    <font>
@@ -172,7 +163,7 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter valid Username to View the Appoinment">
                                                    <font>
@@ -215,7 +206,7 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter valid Username to Delete the Appoinment">
                                                    <font>
