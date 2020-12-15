@@ -9,68 +9,73 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="576.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginController">
+<StackPane fx:id="loginRootStack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginController">
    <children>
-      <AnchorPane layoutX="647.0" prefHeight="576.0" prefWidth="400.0" style="-fx-background-color: #304ffe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="700.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="loginRootAnchorPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../assets/styles.css">
          <children>
-            <Label layoutX="138.0" layoutY="75.0" text="WELCOME !" textFill="#ede7f6">
+            <AnchorPane layoutX="700.0" prefHeight="576.0" prefWidth="350.0" style="-fx-background-color: #304ffe;">
+               <children>
+                  <Label layoutX="138.0" layoutY="75.0" text="WELCOME !" textFill="#ede7f6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="103.0" layoutY="100.0" text="Sign in to your account" textFill="#ede7f6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="65.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/login/username.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="65.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/login/user-password.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="65.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/login/user-change.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="LoginButton" layoutX="82.0" layoutY="358.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #ff5252;" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="130.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/login/help-support.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="149.0" layoutY="422.0" text="Help and Support" textFill="WHITE" />
+                  <JFXTextField fx:id="LoginUsername" focusColor="WHITE" layoutX="100.0" layoutY="189.0" prefHeight="25.0" prefWidth="190.0" promptText="Username" styleClass="text-input" stylesheets="@../assets/styles.css" unFocusColor="WHITE" />
+                  <JFXPasswordField fx:id="LoginPassword" focusColor="WHITE" layoutX="100.0" layoutY="230.0" prefHeight="25.0" prefWidth="190.0" promptText="Password" styleClass="text-input" stylesheets="@../assets/styles.css" unFocusColor="WHITE" />
+                  <JFXComboBox fx:id="LoginUsermod" focusColor="WHITE" layoutX="100.0" layoutY="267.0" prefHeight="25.0" prefWidth="190.0" promptText="Usermode" stylesheets="@../assets/styles.css" unFocusColor="WHITE" />
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="450.0" fitWidth="450.0" layoutX="110.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/login/HIMS.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="138.0" layoutY="450.0" prefHeight="30.0" prefWidth="350.0" text="Perform your task in manageable way" textFill="#6200ea">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="219.0" layoutY="480.0" text="Get ready for your presence to make sense ">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="103.0" layoutY="100.0" text="Sign in to your account" textFill="#ede7f6">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="76.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/images/login/username.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="76.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/images/login/user-password.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="76.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/images/login/user-change.png" />
-               </image>
-            </ImageView>
-            <JFXButton fx:id="LoginButton" layoutX="82.0" layoutY="358.0" prefHeight="37.0" prefWidth="203.0" style="-fx-background-color: #ff5252;" text="Login" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </JFXButton>
-            <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="130.0" layoutY="423.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/images/login/help-support.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="149.0" layoutY="422.0" text="Help and Support" textFill="WHITE" />
-            <JFXTextField fx:id="LoginUsername" focusColor="WHITE" layoutX="108.0" layoutY="189.0" prefHeight="25.0" prefWidth="169.0" promptText="Username" styleClass="text-input" stylesheets="@../assets/styles.css" unFocusColor="WHITE" />
-            <JFXPasswordField fx:id="LoginPassword" focusColor="WHITE" layoutX="108.0" layoutY="230.0" prefHeight="25.0" prefWidth="169.0" promptText="Password" styleClass="text-input" stylesheets="@../assets/styles.css" unFocusColor="WHITE" />
-            <JFXComboBox fx:id="LoginUsermod" focusColor="WHITE" layoutX="109.0" layoutY="267.0" prefHeight="25.0" prefWidth="169.0" promptText="Usermode" stylesheets="@../assets/styles.css" unFocusColor="WHITE" />
+            <JFXDialog />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="450.0" fitWidth="450.0" layoutX="111.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/images/login/HIMS.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="161.0" layoutY="474.0" prefHeight="30.0" prefWidth="350.0" text="Perform your task in manageable way" textFill="#6200ea">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="242.0" layoutY="504.0" text="Get ready for your presence to make sense ">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <JFXDialog />
    </children>
-</AnchorPane>
+</StackPane>

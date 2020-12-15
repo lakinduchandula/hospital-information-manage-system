@@ -1,16 +1,28 @@
 package sample.controller;
 
 import com.jfoenix.controls.*;
+import com.jfoenix.controls.events.JFXDialogEvent;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.effect.BoxBlur;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import sample.model.UserLogin;
+
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Stack;
 
 public class LoginController {
     @FXML
@@ -24,6 +36,12 @@ public class LoginController {
 
     @FXML
     private JFXButton LoginButton;
+
+    @FXML
+    private StackPane loginRootStack;
+
+    @FXML
+    private AnchorPane loginRootAnchorPane;
 
 
     @FXML
@@ -51,7 +69,8 @@ public class LoginController {
                             if (receptionistLogin.getUserValidation()) {
                                 loginUser(1);
                             } else {
-                                
+                                JFXButton button = new JFXButton("Close");
+                                loginUserException(loginRootStack, loginRootAnchorPane, Collections.singletonList(button));
                             }
                             break;
                         }
@@ -64,6 +83,9 @@ public class LoginController {
 
                             if (patientLogin.getUserValidation()) {
                                 loginUser(2);
+                            } else {
+                                JFXButton button = new JFXButton("Close");
+                                loginUserException(loginRootStack, loginRootAnchorPane, Collections.singletonList(button));
                             }
                             break;
                         }
@@ -76,8 +98,12 @@ public class LoginController {
 
                             if (MedicalOfficerLogin.getUserValidation()) {
                                 loginUser(3);
+                            } else {
+                                JFXButton button = new JFXButton("Close");
+                                loginUserException(loginRootStack, loginRootAnchorPane, Collections.singletonList(button));
                             }
                             break;
+
                         }
                         case "Admin": {
                             UserLogin AdminLogin = new UserLogin(LoginUsername.getText().trim(),
@@ -88,6 +114,9 @@ public class LoginController {
 
                             if (AdminLogin.getUserValidation()) {
                                 loginUser(0);
+                            } else {
+                                JFXButton button = new JFXButton("Close");
+                                loginUserException(loginRootStack, loginRootAnchorPane, Collections.singletonList(button));
                             }
                             break;
                         }
@@ -122,26 +151,38 @@ public class LoginController {
         }
     }
 
-    private void loginUserException() {
-        Stage userExceptionStage = new Stage();
-        JFXDialogLayout content= new JFXDialogLayout();
-        content.setHeading(new Text("Error, No selection"));
-        content.setBody(new Text("No student selected"));
-        StackPane stackpane = new StackPane();
-        JFXDialog dialog =new JFXDialog(stackpane, content, JFXDialog.DialogTransition.CENTER);
-        JFXButton button=new JFXButton("Okay");
-        button.setOnAction(new EventHandler<ActionEvent>(){
-            @Override
-            public void handle(ActionEvent event){
-                dialog.close();
-            }
-        });
-        content.setActions(button);
+    private void loginUserException(StackPane userStackPane, Node nodeToBeBlurred, List<JFXButton> controls) {
+        BoxBlur blur = new BoxBlur(3,3,3);
 
-        Scene userExceptionScene = new Scene(stackpane, 300, 250);
-        userExceptionStage.setScene(userExceptionScene);
-        userExceptionStage.setResizable(false);
+        JFXDialogLayout dialogLayout = new JFXDialogLayout();
+
+
+        JFXDialog dialog = new JFXDialog(userStackPane, dialogLayout, JFXDialog.DialogTransition.TOP);
+
+        for (JFXButton controlButton : controls) {
+            controlButton.getStyleClass().add("button-raised");
+            controlButton.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent mouseEvent) -> dialog.close());
+        }
+
+        // label for dialog box heading and it's styles
+        Label dialogBoxHeading = new Label("Access Denied");
+        dialogBoxHeading.setStyle("-fx-font-size: 14px");
+        dialogLayout.setHeading(dialogBoxHeading);
+
+        // Text for dialog box body and it's styles
+        Text dialogBoxBody = new Text("""
+                Sorry, we couldn't find an account with that user credentials.\s
+                Please contact administrator.""");
+        dialogBoxBody.setStyle("-fx-font-size: 14px");
+        dialogLayout.setBody(dialogBoxBody);
+
+        dialogLayout.setActions(controls);
         dialog.show();
-        userExceptionStage.show();
+
+        // blur outer background
+        dialog.setOnDialogClosed((JFXDialogEvent event) -> {
+            nodeToBeBlurred.setEffect(null);
+        });
+        nodeToBeBlurred.setEffect(blur);
     }
 }
