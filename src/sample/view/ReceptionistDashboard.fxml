@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="576.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptionistDashboardController">
    <children>
-      <BorderPane fx:id="ReceptDashBoarderPane" prefHeight="576.0" prefWidth="1059.0">
+      <BorderPane fx:id="ReceptDashBoarderPane" prefHeight="578.0" prefWidth="1051.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
             <VBox prefHeight="576.0" prefWidth="260.0" style="-fx-background-color: #0277bd;" BorderPane.alignment="CENTER">
                <children>
@@ -29,7 +29,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="RecepDashComplaintBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Complaint" textAlignment="RIGHT" textFill="WHITE">
+                  <JFXButton fx:id="RecepDashComplaintBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_complaint" prefHeight="35.0" prefWidth="260.0" text="Complaint" textAlignment="RIGHT" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -41,7 +41,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="RecepDashPostalBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="261.0" text="Postal Mail Records" textFill="WHITE">
+                  <JFXButton fx:id="RecepDashPostalBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_postalMail" prefHeight="42.0" prefWidth="261.0" text="Postal Mail Records" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -53,7 +53,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="RecepDashVisitorBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Visitor Records" textAlignment="RIGHT" textFill="WHITE">
+                  <JFXButton fx:id="RecepDashVisitorBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_visitorRecords" prefHeight="35.0" prefWidth="260.0" text="Visitor Records" textAlignment="RIGHT" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -65,7 +65,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="RecepDashPatientBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Patient Records" textAlignment="RIGHT" textFill="WHITE">
+                  <JFXButton fx:id="RecepDashPatientBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_patientRecords" prefHeight="35.0" prefWidth="260.0" text="Patient Records" textAlignment="RIGHT" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -95,7 +95,7 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <ScrollPane prefHeight="576.0" prefWidth="1090.0">
+                  <ScrollPane prefHeight="576.0" prefWidth="791.0">
                     <content>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
                     </content>

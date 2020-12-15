@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptDashPostalMailController">
+   <children>
+      <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #0277bd;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="8.0" prefHeight="30.0" prefWidth="209.0" text="Postal Mail Records" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <JFXTabPane layoutX="6.0" layoutY="55.0" prefHeight="529.0" prefWidth="964.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+         <tabs>
+            <Tab text="Add Postal Mail">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                           <children>
+                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Information For Postal Mail">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <JFXTextField fx:id="AddPostalMailRefereneceNum" focusColor="#424242" layoutX="14.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="AddPostalMailFromAddress" focusColor="#424242" layoutX="295.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" promptText="From Address" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="AddPostalMailName" focusColor="#424242" layoutX="14.0" layoutY="105.0" prefHeight="25.0" prefWidth="200.0" promptText="Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="AddPostalMailToName" focusColor="#424242" layoutX="295.0" layoutY="105.0" prefHeight="25.0" prefWidth="200.0" promptText="To Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXDatePicker fx:id="AddPostalMailDate" defaultColor="#424242" layoutX="14.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" promptText="Date" />
+                        <JFXTextField fx:id="AddPostalMailNote" focusColor="#424242" layoutX="295.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" promptText="Note" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Label layoutX="13.0" layoutY="221.0" prefHeight="30.0" prefWidth="202.0" text="Attach Document (If Any)">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="AddPostalMailAttachBtn" layoutX="295.0" layoutY="224.0" prefHeight="25.0" prefWidth="148.0" style="-fx-background-color: #9be7ff;" text="Choose File" />
+                        <JFXTextField fx:id="ComplaintActionTaken" focusColor="#424242" layoutX="14.0" layoutY="264.0" prefHeight="50.0" prefWidth="200.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="AddPostalMailBtn" layoutX="590.0" layoutY="386.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Postal Mail" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="576.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                           <image>
+                              <Image url="@../assets/images/hims-base-img/disruption-section-5.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+              </content>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/dash%20-%20Recept/Add%20mail.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab text="Edit Postal Mail">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                           <children>
+                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Reference Number For Edit Postal Mail">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <JFXTextField fx:id="EditPostalMailRefereneceNum" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="EditPostalMailBtn" layoutX="14.0" layoutY="130.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit Postal Mail" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="569.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                           <image>
+                              <Image url="@../assets/images/hims-base-img/disruption-section-5.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="ViewPostalMailReferenceNum" text="View Postal Mail">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                           <children>
+                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Reference Number For View Postal Mail">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <JFXTextField fx:id="ViewPostalMailReferenceNum" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="200.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="ViewPostalMailBtn" layoutX="14.0" layoutY="130.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Postal Mail" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="607.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                           <image>
+                              <Image url="@../assets/images/hims-base-img/disruption-section-5.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Delete Postal Mail">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                           <children>
+                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Reference Number For View Postal Mail">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <JFXButton fx:id="DeletePostalMailBtn" layoutX="14.0" layoutY="130.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: Red;" text="DeletePostal Mail" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextField fx:id="DeletePostalMailReferenceNum" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="200.0" promptText="Reference Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="576.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                           <image>
+                              <Image url="@../assets/images/hims-base-img/disruption-section-5.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>
