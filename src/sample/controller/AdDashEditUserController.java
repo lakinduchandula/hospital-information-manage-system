@@ -3,6 +3,7 @@ package sample.controller;
 import com.jfoenix.controls.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collections;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -150,8 +151,16 @@ public class AdDashEditUserController {
     void createAReceptionist(MouseEvent event) {
         try{
             ValidationController validate = new ValidationController(EditUserStackPane, EditUserAnchor);
-            if(validate.validateNIC(EditUserIDCardNumber) && validate.validatePhone(EditUserPhoneNumber)) {
+            if(validate.validateNIC(EditUserIDCardNumber)
+                    && validate.validatePhone(EditUserPhoneNumber)
+                    && validate.validateSameCredentials(
+                            EditUserUsername,
+                            EditUserIDCardNumber,
+                            EditUserPhoneNumber,
+                            EditUserRecepStaffID)) {
+
                 Receptionist newReceptionist = new Receptionist();
+
                 newReceptionist.setFirstName(EditUserFirstName.getText().trim());
                 newReceptionist.setLastName(EditUserLastName.getText().trim());
                 newReceptionist.setUserName(EditUserUsername.getText().trim());
@@ -170,7 +179,8 @@ public class AdDashEditUserController {
                 newReceptionist.setDateOfJoin(EditUserDateofJoin.getValue());
 
                 UserAdd.writeToFile(newReceptionist, 1);
-                System.out.println("Receptionist User Created");
+                validate.successfulUserCreation("Receptionist Account Successfully Created");
+
             }
         } catch (Exception e) {
             e.printStackTrace();
