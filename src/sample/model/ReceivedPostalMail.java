@@ -1,6 +1,6 @@
 package sample.model;
 
-public class ReceivedPostalMail extends PostalMail{
+public class  ReceivedPostalMail extends PostalMail{
     private String fromName;
     private String fromAddress;
     private String toName;

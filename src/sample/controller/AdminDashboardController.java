@@ -1,15 +1,19 @@
 package sample.controller;
 
 import com.jfoenix.controls.JFXButton;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 public class AdminDashboardController {
 
@@ -38,6 +42,12 @@ public class AdminDashboardController {
     private JFXButton AdminDashUserBtn;
 
     @FXML
+    private JFXButton AdminDashLogOutBtn;
+
+    @FXML
+    private StackPane AdminDashStackPane;
+
+    @FXML
     void show_appointments(MouseEvent event) throws IOException {
         Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/AdDashAppointment.fxml"));
         AdminDashBorderpane.setCenter(appointmentPane);
@@ -57,7 +67,25 @@ public class AdminDashboardController {
 
     @FXML
     void initialize() {
-
+        AdminDashLogOutBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                AdminDashLogOutBtn.getScene().getWindow().hide();
+                try {
+                    Stage LoginInterfaceBackStage = new Stage();
+                    Parent root = FXMLLoader.load(getClass().getResource("/sample/view/Login.fxml"));
+                    Scene scene = new Scene(root);
+                    LoginInterfaceBackStage.setScene(scene);
+                    LoginInterfaceBackStage.setTitle("Login");
+                    LoginInterfaceBackStage.show();
+                    LoginInterfaceBackStage.setResizable(false);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
 
     }
+
+
 }

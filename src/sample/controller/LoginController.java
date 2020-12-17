@@ -145,7 +145,7 @@ public class LoginController {
             DashboardStage.setScene(scene);
             DashboardStage.setTitle(dashboardTitle[LocationIndex]);
             DashboardStage.show();
-            DashboardStage.setResizable(true);
+            DashboardStage.setResizable(false);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -155,7 +155,6 @@ public class LoginController {
         BoxBlur blur = new BoxBlur(3,3,3);
 
         JFXDialogLayout dialogLayout = new JFXDialogLayout();
-
 
         JFXDialog dialog = new JFXDialog(userStackPane, dialogLayout, JFXDialog.DialogTransition.TOP);
 
@@ -184,5 +183,9 @@ public class LoginController {
             nodeToBeBlurred.setEffect(null);
         });
         nodeToBeBlurred.setEffect(blur);
+    }
+
+    public  void userLogOut() {
+
     }
 }

@@ -1,41 +1,44 @@
 package sample.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
-public class User {
+public class User extends SystemUser {
 
     private String userName;
-    private String name;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String idNo;
+    private String phoneNumber;
     private String gender;
-    private int phoneNumber;
-    private int idNo;
-    private Date dOB;
-    private String address;
+    private LocalDate dOB;
     private String maritalStatus;
-    private int password;
+    private String addressLine1;
+    private String addressLine2;
+    private String city;
+    private String country;
 
-    public User (String userName, String name, String gender, int phoneNumber, int idNo, Date dOB, String address, String maritalStatus, int password){
+
+
+    public User() {
+
+    }
+
+    public User (String userName, String firstName, String lastName, String gender, String phoneNumber, String idNo,
+                 LocalDate dOB, String addressLine1, String addressLine2, String city, String country, String maritalStatus, String password){
         this.setUserName(userName);
-        this.setName(name);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
         this.setGender(gender);
         this.setPhoneNumber(phoneNumber);
         this.setIdNo(idNo);
         this.setDOB(dOB);
-        this.setAddress(address);
+        this.setAddressLine1(addressLine1);
+        this.setAddressLine2(addressLine2);
+        this.setCity(city);
         this.setMaritalStatus(maritalStatus);
         this.setPassword(password);
-    }
-
-    public User(){
-        this.setUserName("");
-        this.setName("");
-        this.setGender("");
-        this.setPhoneNumber(0);
-        this.setIdNo(0);
-        this.setDOB(null);
-        this.setAddress("");
-        this.setMaritalStatus("");
-        this.setPassword(0);
     }
 
     //Getters and Setters
@@ -43,29 +46,51 @@ public class User {
         return this.userName;
     }
 
-    public String getName(){
-        return this.name;
+    public String getPassword() {
+        return this.password;
+    }
+
+    public String getFirstName(){
+        return this.firstName;
+    }
+
+    public String getLastName(){
+        return this.lastName;
     }
 
     public String getGender(){
         return this.gender;
     }
 
-    public int getPhoneNumber(){
+    public String getPhoneNumber(){
         return this.phoneNumber;
     }
 
-    public int getIdNo(){
+    public String getIdNo(){
         return this.idNo;
     }
 
-    public Date getDOB() {
+    public LocalDate getDOB() {
         return dOB;
     }
 
-    public String getAddress(){
-        return this.address;
+    public String getAddressLine1(){
+        return this.addressLine1;
     }
+
+    public String getAddressLine2(){
+        return this.addressLine2;
+    }
+
+    public String getCity(){
+        return this.city;
+    }
+
+    public String getCountry(){
+        return this.country;
+    }
+
+
 
     public String getMaritalStatus(){
         return this.maritalStatus;
@@ -75,11 +100,15 @@ public class User {
         this.userName = userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String name) {
+        this.firstName = name;
     }
 
-    public void setIdNo(int idNo) {
+    public void setLastName(String name) {
+        this.lastName = name;
+    }
+
+    public void setIdNo(String idNo) {
         this.idNo = idNo;
     }
 
@@ -87,28 +116,46 @@ public class User {
         this.gender = gender;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setDOB(Date dOB) {
+    public void setDOB(LocalDate dOB) {
         this.dOB = dOB;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddressLine1(String addressLine1) {
+        this.addressLine1 = addressLine1;
+    }
+
+    public void setAddressLine2(String addressLine2) {
+        this.addressLine2 = addressLine2;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public void setMaritalStatus(String maritalStatus){
         this.maritalStatus = maritalStatus;
     }
 
-    public void setPassword(int password){
+    public void setPassword(String password){
         this.password = password;
     }
 
-    public int UpdatePassword(){
+    public String UpdatePassword(){
         return this.password;
+    }
+
+    public String toString() {
+        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s", getUserName(), getPassword(), getFirstName(),
+                getLastName(), getIdNo(), getPhoneNumber(), getGender(), getDOB(), getMaritalStatus(),
+                getAddressLine1(), getAddressLine2(), getCity(), getCountry());
     }
 
 }
