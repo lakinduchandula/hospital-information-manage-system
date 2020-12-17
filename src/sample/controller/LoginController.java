@@ -184,8 +184,4 @@ public class LoginController {
         });
         nodeToBeBlurred.setEffect(blur);
     }
-
-    public  void userLogOut() {
-
-    }
 }
