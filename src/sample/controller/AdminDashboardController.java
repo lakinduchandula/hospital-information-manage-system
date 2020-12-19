@@ -66,6 +66,14 @@ public class AdminDashboardController {
     }
 
     @FXML
+    void show_referenceRec(MouseEvent event) throws IOException {
+        Parent userComplaintPane = FXMLLoader.load(getClass().getResource("/sample/view/AdDashReferenceRecords.fxml"));
+        AdminDashBorderpane.setCenter(userComplaintPane);
+    }
+
+
+
+    @FXML
     void initialize() {
         AdminDashLogOutBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -86,6 +94,7 @@ public class AdminDashboardController {
         });
 
     }
+
 
 
 }

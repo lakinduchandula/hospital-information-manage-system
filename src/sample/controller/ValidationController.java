@@ -22,15 +22,16 @@ import java.util.List;
 public class ValidationController {
     private StackPane stackPane;
     private Node node;
+    private int styleIndex;
 
-    public ValidationController(){
 
-    }
-
-    public ValidationController(StackPane stackPane, Node node){
+    public ValidationController(StackPane stackPane, Node node, int styleIndex){
         this.stackPane = stackPane;
         this.node = node;
+        this.styleIndex = styleIndex;
     }
+
+    public int getStyleIndex(){ return styleIndex; }
 
     public StackPane getStackPane(){
         return stackPane;
@@ -47,12 +48,26 @@ public class ValidationController {
         return true;
     }
 
+    public boolean validEmail(TextField txt) {
+        if(txt.getText().matches("^(.+)@(.+)$")
+                || (txt.getText().isEmpty())) {
+            return true;
+        } else {
+            JFXButton button = new JFXButton("OK");
+            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                    "Invalid Input Data",
+                    "Email that you've entered is not valid please try again." );
+            return false;
+        }
+    }
+
     public boolean validateNIC(TextField txt) {
         if (txt.getText().matches("^(\\d{9}|\\d{12})[VvXx]$")|| (txt.getText().isEmpty())) {
             return true;
         } else {
             JFXButton button = new JFXButton("OK");
-            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), 1, "Invalid Input Data",
+            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                    "Invalid Input Data",
                     "NIC that you've entered is not valid please try again." );
             return false;
         }
@@ -73,7 +88,8 @@ public class ValidationController {
             return true;
         } else {
             JFXButton button = new JFXButton("OK");
-            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), 1, "Invalid Input Data",
+            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                    "Invalid Input Data",
                     "Phone Number that you've entered is not valid please try again." );
             return false;
         }
@@ -88,12 +104,72 @@ public class ValidationController {
         }
     }
 
-    public boolean validateSameCredentials(TextField username, TextField idNo, TextField tel, TextField staffID){
-        final String[] fileLocation = {"src/sample/data/UserAdmin.txt", "src/sample/data/UserReceptionist.txt",
-                "src/sample/data/UserPatient.txt", "src/sample/data/UserMedicalOfficer.txt"
+    public boolean sameIDNo(TextField txt) {
+        if(validateSameCredentials(txt, 4, 3)){
+            return true;
+        } else {
+            JFXButton button = new JFXButton("OK");
+            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                    "Invalid Input Data",
+                    "That NIC is taken by another user." );
+            return false;
+        }
+    }
+
+    public boolean samePhoneNumber(TextField txt) {
+        if(validateSameCredentials(txt, 5, 3)){
+            return true;
+        } else {
+            JFXButton button = new JFXButton("OK");
+            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                    "Invalid Input Data",
+                    "That Phone Number is taken by another user." );
+            return false;
+        }
+    }
+
+    public boolean sameStaffID(TextField txt) {
+        if(validateSameCredentials(txt, 13, 2)){
+            return true;
+        } else {
+            JFXButton button = new JFXButton("OK");
+            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                    "Invalid Input Data",
+                    "That Staff ID is taken by another user." );
+            return false;
+        }
+    }
+
+    public boolean sameStaffEmail(TextField txt) {
+        if(validateSameCredentials(txt, 14, 2)){
+            return true;
+        } else {
+            JFXButton button = new JFXButton("OK");
+            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                    "Invalid Input Data",
+                    "That Staff Email Address is taken by another user." );
+            return false;
+        }
+    }
+
+    public boolean validateUsername(TextField txt){
+        if(validateSameCredentials(txt, 0, 3)){
+            return true;
+        } else {
+            JFXButton button = new JFXButton("OK");
+            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                    "Invalid Input Data",
+                    "That username is taken. Try another" );
+            return false;
+        }
+    }
+
+    public boolean validateSameCredentials(TextField credential1, int credentialIndex, int credentialBoundary ){
+        final String[] fileLocation = {"src/sample/data/UserReceptionist.txt", "src/sample/data/UserMedicalOfficer.txt",
+                "src/sample/data/UserPatient.txt"
         };
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < credentialBoundary; i++) {
             File file = new File(fileLocation[i]);
             try (FileReader fileReader = new FileReader(file)) {
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -103,32 +179,7 @@ public class ValidationController {
                 while ((line = bufferedReader.readLine()) != null) {
                     String[] userCredentials = line.split("~");
 
-                    if (sameCredentialValidation(userCredentials[0], username)) {
-                        JFXButton button = new JFXButton("OK");
-                        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), 1,
-                                "Invalid Input Data",
-                                "That username is taken. Try another" );
-                        return false;
-                    }
-                    if (sameCredentialValidation(userCredentials[4], idNo)) {
-                        JFXButton button = new JFXButton("OK");
-                        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), 1,
-                                "Invalid Input Data",
-                                "That NIC is taken by another user." );
-                        return false;
-                    }
-                    if (sameCredentialValidation(userCredentials[5], tel)) {
-                        JFXButton button = new JFXButton("OK");
-                        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), 1,
-                                "Invalid Input Data",
-                                "That Phone Number is taken by another user." );
-                        return false;
-                    }
-                    if (sameCredentialValidation(userCredentials[13], staffID)) {
-                        JFXButton button = new JFXButton("OK");
-                        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), 1,
-                                "Invalid Input Data",
-                                "That Staff ID is taken by another user." );
+                    if(sameCredentialValidation(userCredentials[credentialIndex], credential1)){
                         return false;
                     }
                 }
@@ -150,8 +201,10 @@ public class ValidationController {
                 userAccountType);
     }
 
-
-
+    public void detailedMsg(String MsgHeader, String MsgBody){
+        JFXButton button = new JFXButton("OK");
+        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), 1, MsgHeader, MsgBody);
+    }
 
     private void loginUserException(StackPane userStackPane, Node nodeToBeBlurred, List<JFXButton> controls,
                                     int StyleIndex, String dialogHeading, String dialogBody) {
