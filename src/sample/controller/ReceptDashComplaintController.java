@@ -1,27 +1,30 @@
 package sample.controller;
 
-import com.jfoenix.controls.*;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
-import javafx.scene.control.Tab;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class ReceptDashComplaintController {
-    @FXML
-    private JFXTabPane mainComplaintTabPane;
 
     @FXML
-    private Tab ViewComplaintUsername;
+    private ResourceBundle resources;
 
     @FXML
-    private JFXTextField ComplaintBy;
-
-    @FXML
-    private JFXButton AddComplaintBtn;
+    private URL location;
 
     @FXML
     private JFXComboBox<?> ComplaintType;
 
     @FXML
-    private JFXTextField ComplaintPersonPhoneNumber;
+    private JFXTextField ComplaintBy;
+
+    @FXML
+    private JFXTextField ComplaintPersonPhoneNum;
 
     @FXML
     private JFXDatePicker ComplaintDate;
@@ -30,16 +33,19 @@ public class ReceptDashComplaintController {
     private JFXTextField Complaint;
 
     @FXML
-    private JFXTextField AddComplaintNote;
+    private JFXTextField ComplaintNote;
 
     @FXML
-    private JFXButton ComplaintAttachDoc;
+    private JFXTextField ComplaintAttachDoc;
+
+    @FXML
+    private JFXButton AddComplaintAttachBtn;
+
+    @FXML
+    private JFXButton AddComplaintBtn;
 
     @FXML
     private JFXTextField ComplaintActionTaken;
-
-    @FXML
-    private Tab EditComplaintUsername;
 
     @FXML
     private JFXTextField ViewComplaintUserName;
