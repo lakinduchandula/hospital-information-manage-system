@@ -8,119 +8,161 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="576.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdminDashboardController">
+<StackPane fx:id="AdminDashStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdminDashboardController">
    <children>
-      <BorderPane fx:id="AdminDashBorderpane" prefHeight="578.0" prefWidth="1051.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <left>
-            <VBox prefHeight="576.0" prefWidth="260.0" style="-fx-background-color: #00838f;" BorderPane.alignment="CENTER">
-               <children>
-                  <Pane prefHeight="128.0" prefWidth="260.0" />
-                  <JFXButton fx:id="AdminDashAppointmentBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_appointments" prefHeight="42.0" prefWidth="260.0" text="Appointments" textAlignment="RIGHT" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../assets/images/dash-admin/dash-admin-appoinment.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets left="5.0" right="5.0" top="2.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="5.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="AdminDashComplaintBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_complaint" prefHeight="42.0" prefWidth="260.0" text="Complaint" textAlignment="RIGHT" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
-                           <image>
-                              <Image url="@../assets/images/dash-admin/dash-admin-complaint.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets left="5.0" right="5.0" top="2.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="5.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="AdminDashEditUserBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_editUser" prefHeight="42.0" prefWidth="261.0" text="Edit User" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
-                           <image>
-                              <Image url="@../assets/images/dash-admin/dash-admin-edit_user.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets left="5.0" right="5.0" top="2.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="5.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="AdminDashReportsBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="260.0" text="Reports" textAlignment="RIGHT" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
-                           <image>
-                              <Image url="@../assets/images/dash-admin/dash-admin-reports.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets left="5.0" right="5.0" top="2.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="5.0" />
-                     </padding>
-                  </JFXButton>
-                  <JFXButton fx:id="AdminDashUserBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="260.0" text="Account Settings" textAlignment="RIGHT" textFill="WHITE">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
-                           <image>
-                              <Image url="@../assets/images/dash-admin/dash-admin-user-settings.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <VBox.margin>
-                        <Insets left="5.0" right="5.0" top="2.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="5.0" />
-                     </padding>
-                  </JFXButton>
-               </children>
-            </VBox>
-         </left>
-         <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ScrollPane layoutX="-1.0" layoutY="-1.0" prefHeight="576.0" prefWidth="791.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-                    </content>
-                  </ScrollPane>
-               </children>
-            </AnchorPane>
-         </center></BorderPane>
+      <AnchorPane prefHeight="576.0" prefWidth="1050.0">
+         <children>
+            <BorderPane fx:id="AdminDashBorderpane" prefHeight="578.0" prefWidth="1051.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <left>
+                  <VBox prefHeight="576.0" prefWidth="260.0" style="-fx-background-color: #00838f;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Pane prefHeight="128.0" prefWidth="260.0" />
+                        <JFXButton fx:id="AdminDashAppointmentBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_appointments" prefHeight="42.0" prefWidth="260.0" text="Appointments" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/dash-admin/dash-admin-appoinment.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="2.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="AdminDashComplaintBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_complaint" prefHeight="42.0" prefWidth="260.0" text="Complaint" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
+                                 <image>
+                                    <Image url="@../assets/images/dash-admin/dash-admin-complaint.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="2.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="AdminDashEditUserBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_editUser" prefHeight="42.0" prefWidth="261.0" text="Edit User" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
+                                 <image>
+                                    <Image url="@../assets/images/dash-admin/dash-admin-edit_user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="2.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="AdminDashReportsBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="260.0" text="Reports" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
+                                 <image>
+                                    <Image url="@../assets/images/dash-admin/dash-admin-reports.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="2.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="AdminDashUserBtn1" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_referenceRec" prefHeight="42.0" prefWidth="260.0" text="Reference Records" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
+                                 <image>
+                                    <Image url="@../assets/images/dash-admin/dash-admin-custom-field.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="2.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="AdminDashUserBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="260.0" text="Account Settings" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
+                                 <image>
+                                    <Image url="@../assets/images/dash-admin/dash-admin-user-settings.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="2.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </JFXButton>
+                        <JFXButton fx:id="AdminDashLogOutBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="260.0" style="-fx-background-color: #64b5f6;" text="Sign Out" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
+                                 <image>
+                                    <Image url="@../assets/images/dash-admin/dash-admin-log-out.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="2.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ScrollPane layoutX="-1.0" layoutY="-1.0" prefHeight="576.0" prefWidth="791.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>

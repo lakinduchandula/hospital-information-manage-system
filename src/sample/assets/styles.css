@@ -73,3 +73,11 @@
     -fx-text-fill: White;
 }
 
+.button-raised-admin-dash {
+    -fx-font-size: 14px;
+    -fx-background-color: #00838f;
+    -fx-pref-width: 85;
+    -fx-pref-height: 30;
+    -fx-text-fill: White;
+}
+
