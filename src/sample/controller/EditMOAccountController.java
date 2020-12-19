@@ -6,8 +6,9 @@ import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.input.MouseEvent;
 
-public class EditReceptionistAccountController {
+public class EditMOAccountController {
 
     @FXML
     private ResourceBundle resources;
@@ -52,7 +53,15 @@ public class EditReceptionistAccountController {
     private JFXTextField EditUserEditRecepEmail;
 
     @FXML
-    private JFXButton EditUserSaveChange;
+    private JFXButton EditUserMOSaveChange;
+
+    @FXML
+    private JFXComboBox<?> EditUserMOSpecificArea;
+
+    @FXML
+    void edit_user_account(MouseEvent event) {
+
+    }
 
     @FXML
     void initialize() {

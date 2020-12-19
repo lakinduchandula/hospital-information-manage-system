@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
@@ -10,11 +11,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="425.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="425.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.EditReceptionistAccountController">
    <children>
       <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
          <children>
-            <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="485.0" text="Edit Receptionist Common Information">
+            <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="485.0" text="Edit User Common Information">
                <font>
                   <Font size="14.0" />
                </font>
@@ -62,12 +63,12 @@
             <String fx:value="choice-box-admin-dash" />
          </styleClass>
       </JFXComboBox>
-      <JFXTextField fx:id="EditUserEditAddCity" focusColor="#424242" layoutX="33.0" layoutY="225.0" prefHeight="25.0" prefWidth="200.0" promptText="City" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+      <JFXTextField fx:id="EditUserEditAddCity" focusColor="#424242" layoutX="33.0" layoutY="221.0" prefHeight="25.0" prefWidth="200.0" promptText="City" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
          <font>
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="EditUserEditAddCountry" focusColor="#424242" layoutX="263.0" layoutY="225.0" prefHeight="25.0" prefWidth="200.0" promptText="Country" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+      <JFXTextField fx:id="EditUserEditAddCountry" focusColor="#424242" layoutX="263.0" layoutY="221.0" prefHeight="25.0" prefWidth="200.0" promptText="Country" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
          <font>
             <Font size="14.0" />
          </font>
@@ -96,5 +97,10 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
+      <JFXButton fx:id="EditUserSaveChange" layoutX="516.0" layoutY="371.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Save Changes" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

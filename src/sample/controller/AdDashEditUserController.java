@@ -153,8 +153,50 @@ public class AdDashEditUserController {
 
     @FXML
     void edit_user_account(MouseEvent event) throws IOException {
-        Parent editUserAccount = FXMLLoader.load(getClass().getResource("/sample/view/EditReceptionistAccount.fxml"));
-        EditUserEditBoarderPane.setCenter(editUserAccount);
+        // get the validity of the username according to the usermode
+        ValidationController validateUserAccount = new ValidationController(EditUserStackPane, EditUserAnchor, 1);
+        if (validateUserAccount.validateEmpty(EditUserEditUsername) && !(EditUserEditUsermode.getSelectionModel().isEmpty()) ) {
+            switch (EditUserEditUsermode.getValue()) {
+                case "Receptionist": {
+                    if (validateUserAccount.validateEditUsername(EditUserEditUsername)) {
+                        Parent editUserAccount = FXMLLoader.load(getClass()
+                                .getResource("/sample/view/EditReceptionistAccount.fxml"));
+                        EditUserEditBoarderPane.setCenter(editUserAccount);
+                    } else {
+                        validateUserAccount.detailedMsg("User Not Found",
+                                "Username that you've entered is not in Receptionist Database");
+                    }
+                    break;
+                }
+                case "Patient": {
+                    if (validateUserAccount.validateEditUsername(EditUserEditUsername)) {
+                        Parent editUserAccount = FXMLLoader.load(getClass()
+                                .getResource("/sample/view/EditPatientAccount.fxml"));
+                        EditUserEditBoarderPane.setCenter(editUserAccount);
+                    } else {
+                        validateUserAccount.detailedMsg("User Not Found",
+                                "Username that you've entered is not in Patient Database");
+                    }
+                    break;
+                }
+                case "Medical Officer": {
+                    if (validateUserAccount.validateEditUsername(EditUserEditUsername)) {
+                        Parent editUserAccount = FXMLLoader.load(getClass()
+                                .getResource("/sample/view/EditMOAccount.fxml"));
+                        EditUserEditBoarderPane.setCenter(editUserAccount);
+                    } else {
+                        validateUserAccount.detailedMsg("User Not Found",
+                                "Username that you've entered is not in Medical Officer Database");
+                    }
+                    break;
+                }
+            }
+        } else {
+            validateUserAccount.detailedMsg("Input Data",
+                    "Please Enter valid username and it's usermode\n" +
+                            "to Edit User Account.");
+        }
+
     }
 
     public AdDashEditUserController() {
@@ -307,6 +349,11 @@ public class AdDashEditUserController {
         EditUserPatientBlood.getItems().add("O-");
         EditUserPatientBlood.getItems().add("AB+");
         EditUserPatientBlood.getItems().add("AB-");
+
+        // combo-box items for usermode
+        EditUserEditUsermode.getItems().add("Receptionist");
+        EditUserEditUsermode.getItems().add("Patient");
+        EditUserEditUsermode.getItems().add("Medical Officer");
 
         // add items to the medical officer specialist areas
         AdReference.readItem(EditUserMOSpecificArea);

@@ -23,23 +23,28 @@
                 </Pane>
                 <Pane layoutX="14.0" layoutY="58.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
                     <children>
-                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Add Item to the Medical Officer Specialized area">
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="479.0" text="Enter Medical Officer Specialized area to Add or Delete ">
                             <font>
                                 <Font size="14.0" />
                             </font>
                         </Label>
                     </children>
                 </Pane>
-                <JFXTextField fx:id="ReferenceAddMOItem" focusColor="#424242" layoutX="14.0" layoutY="101.0" prefHeight="30.0" prefWidth="304.0" promptText="Enter Item" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                <JFXTextField fx:id="ReferenceAddMOItem" focusColor="#424242" layoutX="14.0" layoutY="101.0" prefHeight="30.0" prefWidth="394.0" promptText="Enter Item" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </JFXTextField>
-                <JFXButton fx:id="ReferenceMOItemAdd" layoutX="350.0" layoutY="101.0" onMouseClicked="#add_item_MOSpecial" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #00c853;" text="Add" textFill="WHITE">
+                <JFXButton fx:id="ReferenceMOItemAdd" layoutX="428.0" layoutY="101.0" onMouseClicked="#add_item_MOSpecial" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #00c853;" text="Add" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </JFXButton>
+            <JFXButton fx:id="ReferenceMOItemAdd1" layoutX="518.0" layoutY="101.0" onMouseClicked="#add_item_MOSpecial" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #d32f2f;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
             </children>
         </AnchorPane>
     </children>
