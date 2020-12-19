@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,12 +13,12 @@
 
 <AnchorPane prefHeight="576.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptionistDashboardController">
    <children>
-      <BorderPane fx:id="ReceptDashBoarderPane" prefHeight="576.0" prefWidth="790.0">
+      <BorderPane fx:id="ReceptDashBoarderPane" prefHeight="576.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
             <VBox prefHeight="576.0" prefWidth="260.0" style="-fx-background-color: #0277bd;" BorderPane.alignment="CENTER">
                <children>
                   <Pane prefHeight="128.0" prefWidth="260.0" />
-                  <JFXButton fx:id="RecepDashAppoinmentBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_appointment" prefHeight="35.0" prefWidth="260.0" text="Appoinments" textAlignment="RIGHT" textFill="WHITE">
+                  <JFXButton fx:id="RecepDashAppoinmentBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_appointment" prefHeight="40.0" prefWidth="260.0" text="Appoinments" textAlignment="RIGHT" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -28,6 +29,12 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="2.0" />
+                     </VBox.margin>
                   </JFXButton>
                   <JFXButton fx:id="RecepDashComplaintBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_complaint" prefHeight="35.0" prefWidth="260.0" text="Complaint" textAlignment="RIGHT" textFill="WHITE">
                      <font>
@@ -40,8 +47,14 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="2.0" />
+                     </VBox.margin>
                   </JFXButton>
-                  <JFXButton fx:id="RecepDashPostalBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_postalMail" prefHeight="42.0" prefWidth="261.0" text="Postal Mail Records" textFill="WHITE">
+                  <JFXButton fx:id="RecepDashPostalBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_postalMail" prefHeight="42.0" prefWidth="262.0" text="Postal Mail Records" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -52,6 +65,12 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="2.0" />
+                     </VBox.margin>
                   </JFXButton>
                   <JFXButton fx:id="RecepDashVisitorBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_visitorRecords" prefHeight="35.0" prefWidth="260.0" text="Visitor Records" textAlignment="RIGHT" textFill="WHITE">
                      <font>
@@ -64,6 +83,12 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="2.0" />
+                     </VBox.margin>
                   </JFXButton>
                   <JFXButton fx:id="RecepDashPatientBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_patientRecords" prefHeight="35.0" prefWidth="260.0" text="Patient Records" textAlignment="RIGHT" textFill="WHITE">
                      <font>
@@ -76,6 +101,12 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="2.0" />
+                     </VBox.margin>
                   </JFXButton>
                   <JFXButton fx:id="RecepDashUserBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="35.0" prefWidth="260.0" text="Account Settings" textAlignment="RIGHT" textFill="WHITE">
                      <font>
@@ -88,6 +119,12 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="2.0" />
+                     </VBox.margin>
                   </JFXButton>
                </children>
             </VBox>
