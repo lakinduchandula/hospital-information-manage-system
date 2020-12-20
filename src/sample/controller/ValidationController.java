@@ -164,6 +164,14 @@ public class ValidationController {
         }
     }
 
+    public boolean validateEditUsername(TextField txt) {
+        if(validateSameCredentials(txt, 0, 3)){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public boolean validateSameCredentials(TextField credential1, int credentialIndex, int credentialBoundary ){
         final String[] fileLocation = {"src/sample/data/UserReceptionist.txt", "src/sample/data/UserMedicalOfficer.txt",
                 "src/sample/data/UserPatient.txt"

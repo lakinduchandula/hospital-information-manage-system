@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="425.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.WhiteBlankController">
+   <children>
+      <ImageView fitHeight="300.0" fitWidth="450.0" layoutX="14.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/images/hims-base-img/IoT-hero.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="482.0" layoutY="61.0" prefHeight="117.0" prefWidth="213.0" text="Many Functions, &#10;One Application&#10;">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="168.0" prefHeight="59.0" prefWidth="228.0" text="Any Time&#10;24/7 consultations. &#10;Define after-hour consultation.">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="236.0" prefHeight="84.0" prefWidth="228.0" text="Anywhere&#10;Self/home care in the urban area&#10;or set up a satellite clinic in rural&#10;areas.">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
