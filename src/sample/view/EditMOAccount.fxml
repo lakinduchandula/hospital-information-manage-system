@@ -54,12 +54,12 @@
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="EditUserEditAddLine2" focusColor="#424242" layoutX="263.0" layoutY="174.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 2" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                  <JFXTextField fx:id="EditUserEditAddLine1" focusColor="#424242" layoutX="263.0" layoutY="174.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 1" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <JFXTextField fx:id="EditUserEditAddLine1" focusColor="#424242" layoutX="33.0" layoutY="214.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 1" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                  <JFXTextField fx:id="EditUserEditAddLine2" focusColor="#424242" layoutX="33.0" layoutY="214.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 2" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                      <font>
                         <Font size="14.0" />
                      </font>

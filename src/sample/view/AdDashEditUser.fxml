@@ -302,7 +302,7 @@
                                     </ImageView>
                                  </graphic>
                               </Tab>
-                              <Tab fx:id="DeleteUserAccount" text="Delete User Account">
+                              <Tab fx:id="DeleteUserAccount" text="View User Account">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -312,7 +312,7 @@
                                              </font>
                                           </JFXTextField>
                                           <JFXComboBox fx:id="EditUserDeleteUsermode" focusColor="#424242" layoutX="280.0" layoutY="66.0" prefHeight="25.0" prefWidth="230.0" promptText="Usermode" styleClass="choice-box-admin-dash" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242" />
-                                          <JFXButton fx:id="ViewComplaintBtn1" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Account before Delete" textFill="WHITE">
+                                          <JFXButton fx:id="ViewAccount" layoutX="14.0" layoutY="127.0" onMouseClicked="#ViewAccount" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Account " textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
@@ -324,18 +324,18 @@
                                           </ImageView>
                                           <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
                                              <children>
-                                                <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="485.0" text="Enter valid Username and Usermode to delete user account">
+                                                <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="485.0" text="Enter valid Username and Usermode to view or delete user account">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </Label>
                                              </children>
                                           </Pane>
-                                          <JFXButton fx:id="ViewComplaintBtn11" layoutX="273.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #d32f2f;" text="Delete Account" textFill="WHITE">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </JFXButton>
+                                          <BorderPane fx:id="EditUserDeleteBoarderPane" layoutX="3.0" layoutY="190.0" prefHeight="425.0" prefWidth="768.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0">
+                                             <center>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                             </center>
+                                          </BorderPane>
                                        </children>
                                     </AnchorPane>
                                  </content>

@@ -109,6 +109,7 @@ public class EditPatientAccountController {
                 editPatient.setAddressLine2(EditUserEditAddLine2.getText().trim());
                 editPatient.setCity(EditUserEditAddCity.getText().trim());
                 editPatient.setCountry(EditUserEditAddCountry.getText().trim());
+                editPatient.setBloodGroup(getUserDetailArray()[13]);
                 editPatient.setAllergiesLine1(EditUserAddAllergiesLine1.getText().trim());
                 editPatient.setAllergiesLine2(EditUserAddAllergiesLine2.getText().trim());
 
