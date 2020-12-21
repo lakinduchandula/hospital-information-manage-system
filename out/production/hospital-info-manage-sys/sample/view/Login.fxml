@@ -53,10 +53,10 @@
                         <Image url="@../assets/images/login/help-support.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="149.0" layoutY="422.0" text="Help and Support" textFill="WHITE" />
+                  <Label fx:id="HelpAndSupport" layoutX="149.0" layoutY="422.0" onMouseClicked="#HelpAndSupport" text="Help and Support" textFill="WHITE" />
                   <JFXTextField fx:id="LoginUsername" focusColor="WHITE" layoutX="100.0" layoutY="189.0" prefHeight="25.0" prefWidth="190.0" promptText="Username" styleClass="text-input" stylesheets="@../assets/styles.css" unFocusColor="WHITE" />
                   <JFXPasswordField fx:id="LoginPassword" focusColor="WHITE" layoutX="100.0" layoutY="230.0" prefHeight="25.0" prefWidth="190.0" promptText="Password" styleClass="text-input" stylesheets="@../assets/styles.css" unFocusColor="WHITE" />
-                  <JFXComboBox fx:id="LoginUsermod" focusColor="WHITE" layoutX="100.0" layoutY="267.0" prefHeight="25.0" prefWidth="190.0" promptText="Usermode" stylesheets="@../assets/styles.css" unFocusColor="WHITE" />
+                  <JFXComboBox fx:id="LoginUsermod" focusColor="WHITE" layoutX="100.0" layoutY="271.0" prefHeight="25.0" prefWidth="190.0" promptText="Usermode" stylesheets="@../assets/styles.css" unFocusColor="WHITE" />
                </children>
             </AnchorPane>
             <ImageView fitHeight="450.0" fitWidth="450.0" layoutX="110.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">

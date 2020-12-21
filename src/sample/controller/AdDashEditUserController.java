@@ -395,6 +395,9 @@ public class AdDashEditUserController {
         EditUserMOStaffEmail.clear();
         EditUserEditUsername.clear();
         EditUserEditUsermode.getSelectionModel().clearSelection();
+        EditUserPatientBlood.getSelectionModel().clearSelection();
+        EditUserAddAllergiesLine1.clear();
+        EditUserAddAllergiesLine2.clear();
     }
 
 }
