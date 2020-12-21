@@ -23,8 +23,7 @@ public class AdReference {
         String[] fileLocationList = {"src/sample/data/MOSpecialArea.txt"};
         ArrayList<String> ItemList = new ArrayList<>();
         File file = new File(fileLocationList[0]);
-        try (
-                FileReader fileReader = new FileReader(file)) {
+        try (FileReader fileReader = new FileReader(file)) {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
             String itemContent = null;
