@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -52,4 +53,15 @@ public class ReceptDashComplaintController {
 
     @FXML
     private JFXButton ViewComplaintBtn;
+
+
+    @FXML
+    void Add_Complaint(MouseEvent event) {
+
+    }
+
+    @FXML
+    void View_Complaint(MouseEvent event) {
+
+    }
 }

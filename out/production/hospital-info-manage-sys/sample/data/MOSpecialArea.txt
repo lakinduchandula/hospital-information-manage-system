@@ -14,5 +14,4 @@ Neuroradiology
 Nuclear radiology
 Pediatric radiology
 Radiation oncology
-Vascular and interventional radiology
 
