@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="EditRecepAccStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.EditReceptionistAccountController">
+   <children>
+      <BorderPane fx:id="EditUserBoarderPane" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <AnchorPane fx:id="RecepMainAnchor" prefHeight="425.0" prefWidth="760.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="10.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="485.0" text="Edit User Common Information">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <JFXTextField fx:id="EditUserEditFirstName" focusColor="#424242" layoutX="33.0" layoutY="57.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditUserEditLastName" focusColor="#424242" layoutX="263.0" layoutY="57.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditUserEditUsername" focusColor="#424242" layoutX="33.0" layoutY="98.0" prefHeight="25.0" prefWidth="200.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditUserEditPhoneNumber" focusColor="#424242" layoutX="33.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditUserEditIDCardNumber" focusColor="#424242" layoutX="263.0" layoutY="98.0" prefHeight="25.0" prefWidth="200.0" promptText="ID Card Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditUserEditAddLine2" focusColor="#424242" layoutX="33.0" layoutY="221.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 2" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditUserEditAddLine1" focusColor="#424242" layoutX="263.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 1" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXComboBox fx:id="EditUserEditMaritalStatus" focusColor="#424242" layoutX="262.0" layoutY="139.0" prefHeight="25.0" prefWidth="202.0" promptText="Marital Status" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
+                     <styleClass>
+                        <String fx:value="combo-box-admin-dash" />
+                        <String fx:value="choice-box-admin-dash" />
+                     </styleClass>
+                  </JFXComboBox>
+                  <JFXTextField fx:id="EditUserEditAddCity" focusColor="#424242" layoutX="263.0" layoutY="221.0" prefHeight="25.0" prefWidth="200.0" promptText="City" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditUserEditAddCountry" focusColor="#424242" layoutX="33.0" layoutY="262.0" prefHeight="25.0" prefWidth="200.0" promptText="Country" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="527.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="48.0">
+                     <image>
+                        <Image url="@../assets/images/hims-base-img/EMR-hero.png" />
+                     </image>
+                  </ImageView>
+                  <Pane layoutX="10.0" layoutY="305.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Information for a specific Receptionist">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <JFXButton fx:id="EditUserSaveChange" layoutX="516.0" layoutY="371.0" onMouseClicked="#SaveChanges" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Save Changes" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="EditUserEditStaffEmail" focusColor="#424242" layoutX="33.0" layoutY="348.0" prefHeight="25.0" prefWidth="200.0" promptText="Staff E-mail" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditUserEditPassword" focusColor="#424242" layoutX="33.0" layoutY="139.0" prefHeight="25.0" prefWidth="200.0" promptText="Edit Password" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

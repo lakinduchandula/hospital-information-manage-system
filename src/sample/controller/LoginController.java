@@ -25,6 +25,10 @@ import java.util.List;
 import java.util.Stack;
 
 public class LoginController {
+
+    @FXML
+    private Label HelpAndSupport;
+
     @FXML
     private JFXTextField LoginUsername;
 
@@ -42,6 +46,12 @@ public class LoginController {
 
     @FXML
     private AnchorPane loginRootAnchorPane;
+
+    @FXML
+    void HelpAndSupport(MouseEvent event) {
+        ValidationController validate = new ValidationController(loginRootStack, loginRootAnchorPane, 0);
+        validate.detailedMsg("Help and Support", "Need assistance ? Please contact your admin");
+    }
 
 
     @FXML
