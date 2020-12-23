@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.StackPane;
 
 public class ViewComplaintController {
 
@@ -14,41 +16,43 @@ public class ViewComplaintController {
     private URL location;
 
     @FXML
-    private Label ViewAppointmentID;
+    private StackPane ViewComplaintStackPane;
 
     @FXML
-    private Label ViewAppointmentDate;
+    private ScrollPane ViewComplaintBorderPane;
 
     @FXML
-    private Label ViewAppointmentTime;
+    private Label ViewComplaintID;
 
     @FXML
-    private Label ViewAppointmentStatus;
+    private Label ViewComplaintDate;
 
     @FXML
-    private Label ViewAppointmentLastName;
+    private Label ViewComplaintType;
 
     @FXML
-    private Label ViewAppointmentFirstName;
+    private Label ViewComplaintActionTaken;
 
     @FXML
-    private Label ViewAppointmentUsername;
+    private Label ViewComplaintFirstName;
 
     @FXML
-    private Label ViewAppointmentUserID;
+    private Label ViewComplaintLastName;
 
     @FXML
-    private Label ViewAppointmentPhone;
+    private Label ViewComplaintUsername;
 
     @FXML
-    private Label ViewAppointmentMO;
+    private Label ViewComplaintNIC;
 
     @FXML
-    private Label ViewAppointmentSymptoms;
+    private Label ViewComplaintPhone1;
+
+    @FXML
+    private Label ViewComplaintPhone2;
 
     @FXML
     void initialize() {
-
 
     }
 }
