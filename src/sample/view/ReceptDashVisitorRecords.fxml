@@ -11,181 +11,223 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptDashVisitorRecordsController">
+<StackPane fx:id="VisitorRecordsStackPane" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptDashVisitorRecordsController">
    <children>
-      <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #0277bd;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="VisitorRecordsAnchorPane" prefHeight="576.0" prefWidth="790.0">
          <children>
-            <Label layoutX="14.0" layoutY="8.0" prefHeight="30.0" prefWidth="209.0" text="Visitor Records" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
+            <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #0277bd;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="8.0" prefHeight="30.0" prefWidth="209.0" text="Visitor Records" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXTabPane layoutY="61.0" prefHeight="529.0" prefWidth="790.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+               <tabs>
+                  <Tab text="Add Visitor">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                 <children>
+                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Information of the Visitor ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <JFXTextField fx:id="AddVisitorFirstName" focusColor="#424242" layoutX="25.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="AddVisitorPurpose" focusColor="#424242" layoutX="25.0" layoutY="145.0" prefHeight="25.0" prefWidth="200.0" promptText="Purpose" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXDatePicker fx:id="AddVisitorDate" defaultColor="#424242" layoutX="25.0" layoutY="190.0" prefHeight="25.0" prefWidth="200.0" promptText="Date" />
+                              <JFXTextField fx:id="AddVisitorNote" focusColor="#424242" layoutX="25.0" layoutY="235.0" prefHeight="25.0" prefWidth="200.0" promptText="Note" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="AddVisitorIDNum" focusColor="#424242" layoutX="300.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" promptText="ID Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="AddVisitorPhoneNum" focusColor="#424242" layoutX="300.0" layoutY="145.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTimePicker fx:id="AddVisitorTimeIn" defaultColor="#424242" layoutX="299.0" layoutY="190.0" promptText="Time In" />
+                              <JFXTimePicker fx:id="AddVisitorTimeOut" defaultColor="#424242" layoutX="300.0" layoutY="235.0" promptText="Time Out" />
+                              <Label layoutX="24.0" layoutY="290.0" prefHeight="30.0" prefWidth="202.0" text="Attach Document (If Any)">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton fx:id="AddVisitorDocAttachBtn" layoutX="273.0" layoutY="355.0" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #9be7ff;" text="Choose File" />
+                              <JFXTextField fx:id="ComplaintActionTaken" focusColor="#424242" layoutX="26.0" layoutY="330.0" prefHeight="50.0" prefWidth="200.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXButton fx:id="AddVisitorBtn" layoutX="535.0" layoutY="397.0" onMouseClicked="#Add_Visitor" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Visitor" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="526.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                                 <image>
+                                    <Image url="@../assets/images/hims-base-img/banner-1.jpg" />
+                                 </image>
+                              </ImageView>
+                              <JFXTextField fx:id="AddVisitorLastName" focusColor="#424242" layoutX="24.0" layoutY="100.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="AddVisitorAddress" focusColor="#424242" layoutX="302.0" layoutY="100.0" prefHeight="25.0" prefWidth="200.0" promptText="Address" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/dash%20-%20Recept/add%20visitor.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Tab>
+                  <Tab text="Edit Visitor">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                 <children>
+                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter ID Number to Edit Visitor  ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <JFXTextField fx:id="EditVisitorIDNum" focusColor="#424242" layoutX="25.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="ID Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXButton fx:id="EditVisitorBtn" layoutX="25.0" layoutY="144.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit Visitor" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="569.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                                 <image>
+                                    <Image url="@../assets/images/hims-base-img/banner-1.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="30.0" onMouseClicked="#Edit_Visitor" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/dash%20-%20Recept/edit%20visitor.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Tab>
+                  <Tab text="View Visitor">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                 <children>
+                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter ID Number to View Visitor  ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <JFXButton fx:id="ViewVisitorBtn" layoutX="25.0" layoutY="144.0" onMouseClicked="#View_Visitor" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Visitor" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXTextField fx:id="ViewVisitorIDNum" focusColor="#424242" layoutX="25.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="ID Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="501.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                                 <image>
+                                    <Image url="@../assets/images/hims-base-img/banner-1.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Tab>
+                  <Tab text="Delete Visitor ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                 <children>
+                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter ID Number to Delete Visitor  ">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <JFXTextField fx:id="DeleteVisitorIDNum" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="ID Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXButton fx:id="DeleteVisitorBtn" layoutX="14.0" layoutY="144.0" onMouseClicked="#Delete_Visitor" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: red;" text="View Visitor" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="552.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                                 <image>
+                                    <Image url="@../assets/images/hims-base-img/banner-1.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/dash%20-%20Recept/delete%20visitor.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
          </children>
-      </Pane>
-      <JFXTabPane layoutY="61.0" prefHeight="529.0" prefWidth="790.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
-         <tabs>
-            <Tab text="Add Visitor">
-               <content>
-                  <AnchorPane fx:id="AddVisitorIDNum1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
-                           <children>
-                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Information of the Visitor ">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <JFXTextField fx:id="AddVisitorName" focusColor="#424242" layoutX="25.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" promptText="Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="AddVisitorPurpose" focusColor="#424242" layoutX="25.0" layoutY="100.0" prefHeight="25.0" prefWidth="200.0" promptText="Purpose" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXDatePicker fx:id="AddVisitorDate" defaultColor="#424242" layoutX="25.0" layoutY="145.0" prefHeight="25.0" prefWidth="200.0" promptText="Date" />
-                        <JFXTextField fx:id="AddVisitorNote" focusColor="#424242" layoutX="25.0" layoutY="190.0" prefHeight="25.0" prefWidth="200.0" promptText="Note" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="AddVisitorIDNum" focusColor="#424242" layoutX="300.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" promptText="ID Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="AddVisitorPhoneNum" focusColor="#424242" layoutX="300.0" layoutY="100.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTimePicker fx:id="AddVisitorTimeIn" defaultColor="#424242" layoutX="300.0" layoutY="145.0" promptText="Time In" />
-                        <JFXTimePicker fx:id="AddVisitorTimeOut" defaultColor="#424242" layoutX="300.0" layoutY="190.0" promptText="Time Out" />
-                        <Label layoutX="25.0" layoutY="255.0" prefHeight="30.0" prefWidth="202.0" text="Attach Document (If Any)">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <JFXButton fx:id="AddVisitorDocAttachBtn" layoutX="275.0" layoutY="326.0" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #9be7ff;" text="Choose File" />
-                        <JFXTextField fx:id="ComplaintActionTaken" focusColor="#424242" layoutX="25.0" layoutY="301.0" prefHeight="50.0" prefWidth="200.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXButton fx:id="AddVisitorBtn" layoutX="606.0" layoutY="390.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Visitor" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </JFXButton>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="526.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
-                           <image>
-                              <Image url="@../assets/images/hims-base-img/banner-1.jpg" />
-                           </image>
-                        </ImageView>
-                     </children></AnchorPane>
-               </content>
-            </Tab>
-            <Tab text="Edit Visitor">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
-                           <children>
-                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter ID Number to Edit Visitor  ">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <JFXTextField fx:id="EditVisitorIDNum" focusColor="#424242" layoutX="25.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="ID Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXButton fx:id="EditVisitorBtn" layoutX="25.0" layoutY="144.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit Visitor" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </JFXButton>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="569.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
-                           <image>
-                              <Image url="@../assets/images/hims-base-img/banner-1.jpg" />
-                           </image>
-                        </ImageView>
-                     </children></AnchorPane>
-               </content>
-            </Tab>
-            <Tab text="View Visitor">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
-                           <children>
-                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter ID Number to View Visitor  ">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <JFXButton fx:id="ViewVisitorBtn" layoutX="25.0" layoutY="144.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Visitor" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXTextField fx:id="ViewVisitorIDNum" focusColor="#424242" layoutX="25.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="ID Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="501.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
-                           <image>
-                              <Image url="@../assets/images/hims-base-img/banner-1.jpg" />
-                           </image>
-                        </ImageView>
-                     </children></AnchorPane>
-               </content>
-            </Tab>
-            <Tab text="Delete Visitor ">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
-                           <children>
-                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter ID Number to Delete Visitor  ">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <JFXTextField fx:id="DeleteVisitorIDNum" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="ID Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXButton fx:id="DeleteVisitorBtn" layoutX="14.0" layoutY="144.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: red;" text="View Visitor" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </JFXButton>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="552.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
-                           <image>
-                              <Image url="@../assets/images/hims-base-img/banner-1.jpg" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </AnchorPane>
-              </content>
-            </Tab>
-         </tabs>
-      </JFXTabPane>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>

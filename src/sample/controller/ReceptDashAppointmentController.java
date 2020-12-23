@@ -78,10 +78,26 @@ public class ReceptDashAppointmentController {
     @FXML
     private BorderPane DeleteAppointmentBorderPane;
 
+
+    @FXML
+    void Add_Appointment(MouseEvent event) {
+
+    }
+
+    @FXML
+    void Delete_Appointment(MouseEvent event) {
+
+    }
+
+    @FXML
+    void Edit_Appointment(MouseEvent event) {
+
+    }
     @FXML
     void View_Appointment(MouseEvent event) throws IOException {
         Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/ViewAppointment.fxml"));
         ViewAppointmentBorderPane.setCenter(appointmentPane);
     }
+
 
 }

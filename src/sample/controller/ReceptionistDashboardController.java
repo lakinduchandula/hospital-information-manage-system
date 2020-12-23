@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 
@@ -58,4 +59,5 @@ public class ReceptionistDashboardController {
         Parent visitorRecords = FXMLLoader.load(getClass().getResource("/sample/view/ReceptDashVisitorRecords.fxml"));
         ReceptDashBoarderPane.setCenter(visitorRecords);
     }
+
 }
