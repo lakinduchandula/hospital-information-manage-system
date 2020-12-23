@@ -1,17 +1,63 @@
 package sample.controller;
 
 import com.jfoenix.controls.JFXButton;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 
 public class PatientDashboardController {
 
     @FXML
-    private JFXButton PatientDashAppoinmentBtn;
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private StackPane PatientDashStackPane;
+
+    @FXML
+    private BorderPane PatientDashBorderPane;
+
+    @FXML
+    private BorderPane ViewAppointmentBorder;
+
+
+    @FXML
+    private JFXButton PatientDashAppointmentBtn;
 
     @FXML
     private JFXButton PatientDashComplaintBtn;
 
     @FXML
-    private JFXButton PatientDashUserBtn;
+    private JFXButton PatientDashAccSetting;
 
+    @FXML
+    void show_acc_setting(MouseEvent event) throws IOException {
+
+    }
+
+    @FXML
+    void show_appointment(MouseEvent event) throws IOException {
+        Parent appointment = FXMLLoader.load(getClass().getResource("/sample/view/PatientDashAppointment.fxml"));
+        PatientDashBorderPane.setCenter(appointment);
+    }
+
+    @FXML
+    void show_complaint(MouseEvent event) throws IOException {
+        Parent complaint = FXMLLoader.load(getClass().getResource("/sample/view/PatientDashComplaint.fxml"));
+        PatientDashBorderPane.setCenter(complaint);
+    }
+
+    @FXML
+    void initialize() {
+
+    }
 }

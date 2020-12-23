@@ -39,7 +39,7 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #58a5f0;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Patient Information">
                                                    <font>
@@ -69,7 +69,7 @@
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <Pane layoutX="14.0" layoutY="207.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                          <Pane layoutX="14.0" layoutY="207.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #58a5f0;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Symptoms Information">
                                                    <font>
@@ -84,7 +84,7 @@
                                              </font>
                                           </JFXTextField>
                                           <JFXDatePicker fx:id="AddAppointmentFromDate" defaultColor="#424242" layoutX="25.0" layoutY="298.0" prefHeight="28.0" prefWidth="200.0" promptText="From Date" />
-                                          <Pane layoutX="14.0" layoutY="362.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                          <Pane layoutX="14.0" layoutY="362.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #58a5f0;">
                                              <children>
                                                 <Label fx:id="AddAppointmentDate" layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Apponitement Information">
                                                    <font>
@@ -119,9 +119,9 @@
                                        </children></AnchorPane>
                                 </content>
                                  <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/images/dash%20-%20Recept/dash%20add%20appointment.png" />
+                                          <Image url="@../assets/images/dash-patient/add-appointment.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -130,7 +130,7 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #58a5f0;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter valid Username to Edit the Appoinment">
                                                    <font>
@@ -157,9 +157,9 @@
                                        </children></AnchorPane>
                                 </content>
                                  <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/images/dash%20-%20Recept/dash%20edit%20appointment.png" />
+                                          <Image url="@../assets/images/dash-patient/edit-appointment.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -168,7 +168,7 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #58a5f0;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter valid Username to View the Appoinment">
                                                    <font>
@@ -200,9 +200,9 @@
                                        </children></AnchorPane>
                                 </content>
                                  <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/images/dash-admin/dash-admin-view-appoinment.png" />
+                                          <Image url="@../assets/images/dash-patient/dash-patient-appointment.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -211,7 +211,7 @@
                                 <content>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #58a5f0;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter valid Username to Delete the Appoinment">
                                                    <font>
@@ -243,9 +243,9 @@
                                        </children></AnchorPane>
                                 </content>
                                  <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../assets/images/dash-admin/dash-admin-delete-appoinment.png" />
+                                          <Image url="@../assets/images/dash-patient/dash-patient-delete-appointment.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>

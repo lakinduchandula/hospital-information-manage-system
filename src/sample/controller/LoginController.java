@@ -26,6 +26,8 @@ import java.util.Stack;
 
 public class LoginController {
 
+    public static String currentUser;
+
     @FXML
     private Label HelpAndSupport;
 
@@ -77,6 +79,7 @@ public class LoginController {
 
                             // if login credentials are validate
                             if (receptionistLogin.getUserValidation()) {
+                                currentUser = LoginUsername.getText().trim();
                                 loginUser(1);
                             } else {
                                 JFXButton button = new JFXButton("Close");
@@ -92,6 +95,7 @@ public class LoginController {
                             patientLogin.checkLoginValidation();
 
                             if (patientLogin.getUserValidation()) {
+                                currentUser = LoginUsername.getText().trim();
                                 loginUser(2);
                             } else {
                                 JFXButton button = new JFXButton("Close");
@@ -107,6 +111,7 @@ public class LoginController {
                             MedicalOfficerLogin.checkLoginValidation();
 
                             if (MedicalOfficerLogin.getUserValidation()) {
+                                currentUser = LoginUsername.getText().trim();
                                 loginUser(3);
                             } else {
                                 JFXButton button = new JFXButton("Close");
@@ -123,6 +128,7 @@ public class LoginController {
                             AdminLogin.checkLoginValidation();
 
                             if (AdminLogin.getUserValidation()) {
+                                currentUser = LoginUsername.getText().trim();
                                 loginUser(0);
                             } else {
                                 JFXButton button = new JFXButton("Close");

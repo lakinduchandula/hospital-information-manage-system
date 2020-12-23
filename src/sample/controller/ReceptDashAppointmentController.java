@@ -84,4 +84,9 @@ public class ReceptDashAppointmentController {
         ViewAppointmentBorderPane.setCenter(appointmentPane);
     }
 
+    @FXML
+    void initialize() {
+
+    }
+
 }

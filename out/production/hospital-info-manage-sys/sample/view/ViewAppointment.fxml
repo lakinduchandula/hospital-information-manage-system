@@ -4,92 +4,169 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="286.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ViewAppointmentController">
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ViewComplaintController">
    <children>
-      <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
-         <children>
-            <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Appointment">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Label layoutX="14.0" layoutY="60.0" text="Patient">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="14.0" layoutY="82.0" text="Appointment Number">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="14.0" layoutY="104.0" text="Appointment Status">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="14.0" layoutY="126.0" text="Appointment Date">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="14.0" layoutY="148.0" text="Appointment Time">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="14.0" layoutY="170.0" text="Symptoms">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="14.0" layoutY="240.0" prefHeight="20.0" prefWidth="88.0" text="Medical Officer">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="ViewAppointmentPatientName" layoutX="185.0" layoutY="60.0" prefHeight="17.0" prefWidth="405.0" style="-fx-background-color: white;" text="John Doe">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="ViewAppointmentNumber" layoutX="185.0" layoutY="82.0" prefHeight="17.0" prefWidth="405.0" style="-fx-background-color: white;" text="752184684">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="ViewAppointmentStatus" layoutX="185.0" layoutY="104.0" prefHeight="17.0" prefWidth="405.0" style="-fx-background-color: white;" text="Approved">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="ViewAppointmentDate" layoutX="185.0" layoutY="126.0" prefHeight="17.0" prefWidth="405.0" style="-fx-background-color: white;" text="07/04/2020">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="ViewAppointmentTime" layoutX="185.0" layoutY="148.0" prefHeight="17.0" prefWidth="405.0" style="-fx-background-color: white;" text="10:00">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <Label fx:id="ViewAppointmentMO" layoutX="185.0" layoutY="240.0" prefHeight="17.0" prefWidth="405.0" style="-fx-background-color: white;" text="Dr. Harsha Perera">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Label>
-      <ScrollPane layoutX="184.0" layoutY="173.0" prefHeight="63.0" prefWidth="405.0">
-         <content>
-            <Label fx:id="ViewAppointmentSymptoms" prefHeight="173.0" prefWidth="388.0" style="-fx-background-color: white;" text="tiredness&#10;dry cough&#10;fever&#10;hedeche&#10;medicine&#10;Hello&#10;Lakindu&#10;Chanudla&#10;Samarasinghe&#10;&#10;&#10;">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-         </content>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="775.0">
+               <children>
+                  <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="398.0" text="Appointment" textFill="#000000fe">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="20.0" layoutY="58.0" text="Appointment ID">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewAppointmentID" layoutX="120.0" layoutY="58.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="88.0" text="Date">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewAppointmentDate" layoutX="120.0" layoutY="88.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="88.0" text="Time">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewAppointmentTime" layoutX="410.0" layoutY="88.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="58.0" text="Status">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewAppointmentStatus" layoutX="410.0" layoutY="58.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="14.0" layoutY="122.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="398.0" text="Appointment By (user details)" textFill="#000000fe">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="20.0" layoutY="168.0" text="First Name">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewAppointmentLastName" layoutX="410.0" layoutY="168.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="168.0" text="Last Name">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewAppointmentFirstName" layoutX="120.0" layoutY="168.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="198.0" text="Username">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewAppointmentUsername" layoutX="120.0" layoutY="198.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="198.0" text="ID Card Number">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewAppointmentUserID" layoutX="410.0" layoutY="198.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="228.0" text="Phone Number">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewAppointmentPhone" layoutX="120.0" layoutY="228.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="14.0" layoutY="263.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Medical Officer Selection" textFill="#000000fe">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="20.0" layoutY="307.0" text="Medical Officer">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewAppointmentMO" layoutX="120.0" layoutY="307.0" prefHeight="19.0" prefWidth="440.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="14.0" layoutY="339.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Symptoms of disease" textFill="#000000fe">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <ScrollPane layoutX="122.0" layoutY="381.0" prefHeight="84.0" prefWidth="438.0">
+                     <content>
+                        <Label fx:id="ViewAppointmentSymptoms" prefHeight="173.0" prefWidth="422.0" style="-fx-background-color: white;" text="&#10;">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                     </content>
+                  </ScrollPane>
+                  <Label layoutX="20.0" layoutY="381.0" text="Symptoms ">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </content>
       </ScrollPane>
    </children>
-</AnchorPane>
+</StackPane>
