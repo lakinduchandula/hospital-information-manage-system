@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane  prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptDashComplaintController">
+<StackPane fx:id="AddComplaintStackPane" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptDashComplaintController">
    <children>
-      <AnchorPane prefHeight="576.0" prefWidth="790.0">
+      <AnchorPane fx:id="AddComplaintAnchorPane" prefHeight="576.0" prefWidth="790.0">
          <children>
             <Pane layoutX="7.0" prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #0277bd;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -28,7 +28,7 @@
                   </Label>
                </children>
             </Pane>
-            <JFXTabPane layoutY="48.0" prefHeight="529.0" prefWidth="936.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+            <JFXTabPane layoutY="48.0" prefHeight="576.0" prefWidth="936.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                <tabs>
                   <Tab text="Add Complaint">
                      <content>
@@ -36,58 +36,58 @@
                            <children>
                               <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
                                  <children>
-                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Complaint Form">
+                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Complaint By">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
                                  </children>
                               </Pane>
-                              <JFXComboBox fx:id="AddComplaintType" focusColor="#424242" layoutX="25.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" promptText="Complaint Type" unFocusColor="#424242">
+                              <JFXComboBox fx:id="AddComplaintType" focusColor="#424242" layoutX="25.0" layoutY="250.0" prefHeight="25.0" prefWidth="200.0" promptText="Complaint Type" unFocusColor="#424242">
                                  <styleClass>
                                     <String fx:value="combo-box-admin-dash" />
                                     <String fx:value="choice-box-admin-dash" />
                                  </styleClass>
                               </JFXComboBox>
-                              <JFXTextField fx:id="AddComplaintBy" focusColor="#424242" layoutX="25.0" layoutY="105.0" prefHeight="25.0" prefWidth="200.0" promptText="Complaint By (Your Name)" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                              <JFXTextField fx:id="AddComplaintFirstName" focusColor="#424242" layoutX="25.0" layoutY="50.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXTextField fx:id="AddComplaintPersonPhoneNum" focusColor="#424242" layoutX="300.0" layoutY="60.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                              <JFXTextField fx:id="AddComplaintPhoneNum" focusColor="#424242" layoutX="25.0" layoutY="130.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXDatePicker fx:id="AddComplaintDate" defaultColor="#424242" layoutX="300.0" layoutY="105.0" prefHeight="25.0" prefWidth="200.0" promptText="Date" />
-                              <Label layoutX="25.0" layoutY="150.0" prefHeight="30.0" prefWidth="132.0" text="Description : ">
+                              <JFXDatePicker fx:id="AddComplaintDate" defaultColor="#424242" layoutX="300.0" layoutY="210.0" prefHeight="25.0" prefWidth="200.0" promptText="Date" />
+                              <Label layoutX="25.0" layoutY="290.0" prefHeight="30.0" prefWidth="132.0" text="Description : ">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <JFXTextField fx:id="AddComplaintDescription" focusColor="#4d4d4d" layoutX="25.0" layoutY="184.0" prefHeight="50.0" prefWidth="200.0" />
-                              <Label layoutX="25.0" layoutY="252.0" prefHeight="30.0" prefWidth="202.0" text="Attach Document (If Any)">
+                              <JFXTextField fx:id="AddComplaintDescription" focusColor="#4d4d4d" layoutX="25.0" layoutY="320.0" prefHeight="50.0" prefWidth="200.0" />
+                              <Label layoutX="300.0" layoutY="290.0" prefHeight="30.0" prefWidth="202.0" text="Attach Document (If Any)">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <JFXTextField fx:id="AddComplaintAttachDoc" focusColor="#424242" layoutX="25.0" layoutY="282.0" prefHeight="50.0" prefWidth="200.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                              <JFXTextField fx:id="AddComplaintAttachDoc" focusColor="#424242" layoutX="300.0" layoutY="320.0" prefHeight="50.0" prefWidth="200.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXButton fx:id="AddComplaintAttachBtn" layoutX="263.0" layoutY="307.0" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #9be7ff;" text="Choose File" />
-                              <JFXButton fx:id="AddComplaintBtn" layoutX="527.0" layoutY="428.0" onMouseClicked="#Add_Complaint" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Complaint" textFill="WHITE">
+                              <JFXButton fx:id="AddComplaintAttachBtn" layoutX="521.0" layoutY="345.0" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #9be7ff;" text="Choose File" />
+                              <JFXButton fx:id="AddComplaintBtn" layoutX="521.0" layoutY="448.0" onMouseClicked="#Add_Complaint" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Complaint" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </JFXButton>
-                              <Label layoutX="25.0" layoutY="348.0" prefHeight="30.0" prefWidth="314.0" text="Action Taken ( For Office Use Only )">
+                              <Label layoutX="25.0" layoutY="380.0" prefHeight="30.0" prefWidth="314.0" text="Action Taken ( For Office Use Only )">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <JFXTextField fx:id="AddComplaintActionTaken" focusColor="#424242" layoutX="25.0" layoutY="378.0" prefHeight="50.0" prefWidth="200.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                              <JFXTextField fx:id="AddComplaintActionTaken" focusColor="#424242" layoutX="25.0" layoutY="410.0" prefHeight="50.0" prefWidth="200.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -97,6 +97,40 @@
                                     <Image url="@../assets/images/hims-base-img/package.png" />
                                  </image>
                               </ImageView>
+                              <JFXTextField fx:id="AddComplaintUsername" focusColor="#424242" layoutX="26.0" layoutY="90.0" prefHeight="25.0" prefWidth="200.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="AddComplaintLastName" focusColor="#424242" layoutX="300.0" layoutY="50.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="AddComplaintIDNum" focusColor="#424242" layoutX="300.0" layoutY="90.0" prefHeight="25.0" prefWidth="200.0" promptText="ID Card Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Pane layoutX="12.0" layoutY="174.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                 <children>
+                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Details of the Complaint">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <JFXTextField fx:id="AddComplaintID" focusColor="#424242" layoutX="25.0" layoutY="210.0" prefHeight="25.0" prefWidth="200.0" promptText="Complaint ID" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="AddComplaintAdditionalPhoneNum" focusColor="#424242" layoutX="300.0" layoutY="250.0" prefHeight="25.0" prefWidth="200.0" promptText="Additional Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
                            </children>
                         </AnchorPane>
                      </content>

@@ -130,14 +130,12 @@ public class ReceptDashAppointmentController {
                 newAppointment.setLastName(AddAppointmentPatientLastname.getText().trim());
                 newAppointment.setUserName(AddAppointmentPatientUserName.getText().trim());
                 newAppointment.setIdNo(AddAppointmentPatientIDNum.getText().trim());
-
                 newAppointment.setGender(AddAppointmentPatientGender.getValue());
                 newAppointment.setPhoneNumber(AddAppointmentPatientPhoneNumber.getText().trim());
                 newAppointment.setMaritalStatus(AddAppointmentPatientMaritalStatus.getValue());
                 newAppointment.setdOB(AddAppointmentPatientDOB.getValue());
                 newAppointment.setAddressLine1(AddAppointmentPatientAddressLine1.getText().trim());
                 newAppointment.setAddressLine2(AddAppointmentPatientAddressLine1.getText().trim());
-
                 newAppointment.setBloodGroup(AddAppointemntPatientBloodGroup.getValue());
                 newAppointment.setAllergies(AddAppointmentPatientAllergies.getText().trim());
                 newAppointment.setSymptoms(AddAppointmentSymptoms.getText().trim());
