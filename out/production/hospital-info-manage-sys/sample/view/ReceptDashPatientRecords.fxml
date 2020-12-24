@@ -86,8 +86,8 @@
                                     <Font size="14.0" />
                                  </font>
                               </JFXTextField>
-                              <JFXDatePicker fx:id="AddPatientDOB" defaultColor="#424242" layoutX="300.0" layoutY="190.0" prefHeight="28.0" prefWidth="200.0" promptText="Date of Birith" stylesheets="@../assets/styles.css" />
-                              <JFXTextField fx:id="AddPatientAddressLine2" focusColor="#424242" layoutX="300.0" layoutY="235.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 2" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                              <JFXDatePicker fx:id="AddPatientDOB" defaultColor="#424242" layoutX="300.0" layoutY="235.0" prefHeight="28.0" prefWidth="200.0" promptText="Date of Birith" stylesheets="@../assets/styles.css" />
+                              <JFXTextField fx:id="AddPatientAddressLine2" focusColor="#424242" layoutX="300.0" layoutY="190.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 2" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                                  <font>
                                     <Font size="14.0" />
                                  </font>

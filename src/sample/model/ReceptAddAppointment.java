@@ -5,13 +5,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class ReceptAddAppointment {
-    public static void writeToFile(SystemUser newUser, int userMode) {
-    final String[] fileLocation = {"src/sample/data/ReceptAddAppointmnet.txt"
-    };
+    public static void writeToFile(Appointment newAppointment) {
+
     try {
-        FileWriter writer = new FileWriter(fileLocation[userMode], true);
+        FileWriter writer = new FileWriter("src/sample/data/ReceptAddAppointmnet.txt", true);
         PrintWriter printWriter = new PrintWriter(writer);
-        printWriter.println(newUser.toString());
+        printWriter.println(newAppointment.toString());
         printWriter.close();
     } catch (IOException e) {
         e.printStackTrace();
