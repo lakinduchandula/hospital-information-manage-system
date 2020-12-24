@@ -231,13 +231,4 @@ public class ReceptDashAppointmentController {
         Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/ViewAppointment.fxml"));
         ViewAppointmentBorderPane.setCenter(appointmentPane);
     }
-
-<<<<<<< HEAD
-    @FXML
-    void initialize() {
-
-    }
-=======
->>>>>>> e0026a6df73b773c0e895a3471eab80010c853ee
-
 }

@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 
-public class Appointment {
+public class Appointment extends RecursiveTreeObject<Appointment> {
     private String userName;
     private String firstName;
     private String lastName;
