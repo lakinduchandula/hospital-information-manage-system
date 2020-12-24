@@ -1,10 +1,11 @@
 package sample.model;
 
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+
 import java.sql.Time;
 import java.util.Date;
 
-public class Appointment
-{
+public class Appointment extends RecursiveTreeObject<Appointment> {
     private String patient;
     private Date appointmentDate;
     private Time appointmentTime;
