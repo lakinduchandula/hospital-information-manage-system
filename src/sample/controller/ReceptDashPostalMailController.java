@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -54,4 +55,24 @@ public class ReceptDashPostalMailController {
 
     @FXML
     private JFXTextField DeletePostalMailReferenceNum;
+
+    @FXML
+    void Add_PostalMail(MouseEvent event) {
+
+    }
+
+    @FXML
+    void Delete_PostalMail(MouseEvent event) {
+
+    }
+
+    @FXML
+    void Edit_PostalMail(MouseEvent event) {
+
+    }
+
+    @FXML
+    void View_PostalMail(MouseEvent event) {
+
+    }
 }
