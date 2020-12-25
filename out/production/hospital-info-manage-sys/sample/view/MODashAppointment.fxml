@@ -3,10 +3,11 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -39,7 +40,27 @@
                                         </Label>
                                     </children>
                                 </Pane>
-                        <JFXTreeTableView fx:id="AppointmentList" layoutX="25.0" layoutY="56.0" prefHeight="411.0" prefWidth="740.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
+                        <TableView fx:id="TableAppointmentList" layoutX="29.0" layoutY="58.0" prefHeight="403.0" prefWidth="731.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                          <columns>
+                            <TableColumn fx:id="TableAppointmentID" prefWidth="96.0" text="Appointment ID" />
+                              <TableColumn prefWidth="75.0" text="Patient Name">
+                                 <columns>
+                                  <TableColumn fx:id="TableFirstName" prefWidth="75.0" text="First Name" />
+                                    <TableColumn fx:id="TableLastName" prefWidth="75.0" text="Last Name" />
+                                 </columns>
+                              </TableColumn>
+                              <TableColumn fx:id="TablePatientNIC" text="Patient NIC" />
+                              <TableColumn fx:id="TablePhoneNumber" prefWidth="90.0" text="Phone Number" />
+                              <TableColumn fx:id="TableGender" prefWidth="48.0" text="Gender" />
+                              <TableColumn prefWidth="144.0" text="Appointment">
+                                 <columns>
+                                    <TableColumn fx:id="TableDate" prefWidth="70.0" text="Date" />
+                                    <TableColumn fx:id="TableTime" prefWidth="70.0" text="Time" />
+                                 </columns>
+                              </TableColumn>
+                              <TableColumn fx:id="TableSymptoms" prefWidth="135.0" text="Symptoms" />
+                          </columns>
+                        </TableView>
                             </children>
                         </AnchorPane>
                     </content>
