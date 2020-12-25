@@ -8,7 +8,7 @@ public class ReceptAddAppointment {
     public static void writeToFile(Appointment newAppointment) {
 
     try {
-        FileWriter writer = new FileWriter("src/sample/data/ReceptAddAppointmnet.txt", true);
+        FileWriter writer = new FileWriter("src/sample/data/Appointment.txt", true);
         PrintWriter printWriter = new PrintWriter(writer);
         printWriter.println(newAppointment.toString());
         printWriter.close();

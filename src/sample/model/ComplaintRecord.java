@@ -1,52 +1,82 @@
 package sample.model;
 
 import java.io.File;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class ComplaintRecord {
     private String complaintType;
-    private String complaintBy;
-    private int phoneNO;
-    private Date currentDate;
+    private String firstName;
+    private String lastName;
+    private String username;
+    private String idNum;
+    private String phoneNum;
+    private String complaintID;
+    private LocalDate currentDate;
+    private String additionalPhoneNum;
     private String description;
     private String actionTaken;
     private File attachDocORNote;
 
     //Variable Constructor
-    public ComplaintRecord(String complaintType, String complaintBy, int phoneNO, Date currentDate, String description, String actionTaken, File attachDocORNote){
+
+    public ComplaintRecord(String complaintType, String firstName,String lastName, String username, String idNum
+                           ,String phoneNum , String complaintID, LocalDate currentDate ,  String additionalPhoneNum
+                           ,String description, String actionTaken, File attachDocORNote){
+
         this.setComplaintType(complaintType);
-        this.setComplaintBy(complaintBy);
-        this.setPhoneNO(phoneNO);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setUsername(username);
+        this.setIdNum(idNum);
+        this.setPhoneNum(phoneNum);
+        this.setComplaintID(complaintID);
         this.setCurrentDate(currentDate);
+        this.setAdditionalPhoneNum(additionalPhoneNum);
         this.setDescription(description);
         this.setActionTaken(actionTaken);
         this.setAttachDocORNote(attachDocORNote);
     }
+
     //Default Variables
+
     public ComplaintRecord(){
         this.setComplaintType("");
-        this.setComplaintBy("");
-        this.setPhoneNO(0);
+        this.setFirstName("");
+        this.setLastName("");
+        this.setUsername("");
+        this.setIdNum("");
+        this.setPhoneNum("");
+        this.setComplaintID("");
         this.setCurrentDate(null);
+        this.setAdditionalPhoneNum("");
         this.setDescription("");
         this.setActionTaken("");
         this.setAttachDocORNote(null);
     }
 
     //Getters and Setters
+
     public String getComplaintType(){
         return this.complaintType;
     }
 
-    public String getComplaintBy(){
-        return this.complaintBy;
-    }
+    public String getFirstName() { return this.firstName; }
 
-    public int getPhoneNO(){
-        return this.phoneNO;
-    }
+    public String getLastName() { return this.lastName; }
 
-    public Date getCurrentDate(){
+    public String getUsername() { return this.username; }
+
+    public String getIdNum() { return this.idNum; }
+
+    public String getPhoneNum() { return this.phoneNum; }
+
+    public String getComplaintID() { return this.complaintID; }
+
+    public String getAdditionalPhoneNum() { return this.additionalPhoneNum; }
+
+
+    public LocalDate getCurrentDate(){
         return this.currentDate;
     }
 
@@ -62,19 +92,28 @@ public class ComplaintRecord {
         return this.attachDocORNote;
     }
 
+
+
+
     public void setComplaintType(String complaintType){
         this.complaintType = complaintType;
     }
 
-    public void setComplaintBy(String complaintBy) {
-        this.complaintBy = complaintBy;
-    }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
 
-    public void setPhoneNO(int phoneNO) {
-        this.phoneNO = phoneNO;
-    }
+    public void setLastName(String lastName) { this.lastName = lastName; }
 
-    public void setCurrentDate(Date currentDate) {
+    public void setUsername(String username) { this.username = username; }
+
+    public void setIdNum(String idNum) { this.idNum = idNum; }
+
+    public void setPhoneNum(String phoneNum) { this.phoneNum = phoneNum; }
+
+    public void setComplaintID(String complaintID) { this.complaintID = complaintID; }
+
+    public void setAdditionalPhoneNum(String additionalPhoneNum) { this.additionalPhoneNum = additionalPhoneNum; }
+
+    public void setCurrentDate(LocalDate currentDate) {
         this.currentDate = currentDate;
     }
 
@@ -88,6 +127,12 @@ public class ComplaintRecord {
 
     public void setAttachDocORNote(File attachDocORNote) {
         this.attachDocORNote = attachDocORNote;
+    }
+
+    public String toString() {
+        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s", getUsername(),getFirstName(),
+                getLastName(), getIdNum(), getPhoneNum() , getComplaintID(),getCurrentDate() , getComplaintType(),
+                getAdditionalPhoneNum() , getDescription() , getAttachDocORNote() , getActionTaken());
     }
 
 }
