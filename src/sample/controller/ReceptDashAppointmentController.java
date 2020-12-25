@@ -44,10 +44,7 @@ public class ReceptDashAppointmentController {
     private JFXTextField AddAppointmentPatientPhoneNumber;
 
     @FXML
-    private JFXTextField AddAppointmentSymptoms;
-
-    @FXML
-    private JFXDatePicker AddAppointmentFromDate;
+    private JFXTextArea AddAppointmentSymptoms;
 
 
     @FXML
@@ -119,9 +116,7 @@ public class ReceptDashAppointmentController {
             ValidationController validate = new ValidationController(AddAppointmentStackPane, AddAppointmentAnchorPane, 1);
             if(        validate.validateNIC(AddAppointmentPatientIDNum)
                     && validate.validatePhone(AddAppointmentPatientPhoneNumber)
-                    && validate.validateUsername(AddAppointmentPatientUserName)
-                    && validate.sameIDNo(AddAppointmentPatientIDNum)
-                    && validate.samePhoneNumber(AddAppointmentPatientPhoneNumber)
+                    && validate.validateExitingPatientUsername(AddAppointmentPatientUserName)
                  ){
 
                 Appointment newAppointment = new Appointment();
@@ -133,13 +128,12 @@ public class ReceptDashAppointmentController {
                 newAppointment.setGender(AddAppointmentPatientGender.getValue());
                 newAppointment.setPhoneNumber(AddAppointmentPatientPhoneNumber.getText().trim());
                 newAppointment.setMaritalStatus(AddAppointmentPatientMaritalStatus.getValue());
-                newAppointment.setdOB(AddAppointmentPatientDOB.getValue());
+                newAppointment.setDOB(AddAppointmentPatientDOB.getValue());
                 newAppointment.setAddressLine1(AddAppointmentPatientAddressLine1.getText().trim());
                 newAppointment.setAddressLine2(AddAppointmentPatientAddressLine1.getText().trim());
                 newAppointment.setBloodGroup(AddAppointemntPatientBloodGroup.getValue());
                 newAppointment.setAllergies(AddAppointmentPatientAllergies.getText().trim());
                 newAppointment.setSymptoms(AddAppointmentSymptoms.getText().trim());
-                newAppointment.setSymptomsFromDate(AddAppointmentFromDate.getValue());
                 newAppointment.setAppointmentDate(AddAppointmentAppointmentDate.getValue());
                 newAppointment.setAppointmentNo(AddAppointmentAppointmentNumber.getText().trim());
                 newAppointment.setAppointmentTime(AddAppointmentAppointmentTime.getValue());
@@ -201,11 +195,9 @@ public class ReceptDashAppointmentController {
         AddAppointmentPatientDOB.getEditor().clear();
         AddAppointmentPatientAddressLine1.clear();
         AddAppointmentPatientAddressLine2.clear();
-
         AddAppointemntPatientBloodGroup.getSelectionModel().clearSelection();
         AddAppointmentPatientAllergies.clear();
         AddAppointmentSymptoms.clear();
-        AddAppointmentFromDate.getEditor().clear();
         AddAppointmentAppointmentDate.getEditor().clear();
         AddAppointmentAppointmentNumber.clear();
         AddAppointmentAppointmentTime.getEditor().clear();

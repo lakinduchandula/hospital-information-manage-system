@@ -26,7 +26,6 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
     private LocalDate appointmentDate;
     private LocalTime appointmentTime;
     private String symptoms;
-    private LocalDate symptomsFromDate;
     private MedicalOfficer medicalOfficer;
     private String appointmentRecordStatus;
 
@@ -39,8 +38,7 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
     public Appointment( String userName,String firstName,String lastName,String idNo,String phoneNumber,
                         String gender,LocalDate dOB,String maritalStatus,String addressLine1,String addressLine2,
                         String bloodGroup, String allergies ,LocalDate appointmentDate, LocalTime appointmentTime,
-                        String symptoms, LocalDate symptomsFromDate,MedicalOfficer medicalOfficer,
-                        String appointmentRecordStatus, String appointmentNo){
+                        String symptoms,MedicalOfficer medicalOfficer, String appointmentRecordStatus, String appointmentNo){
 
         this.setUserName(userName);
         this.setFirstName(firstName);
@@ -48,7 +46,7 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
         this.setIdNo(idNo);
         this.setPhoneNumber(phoneNumber);
         this.setGender(gender);
-        this.setdOB(dOB);
+        this.setDOB(dOB);
         this.setMaritalStatus(maritalStatus);
         this.setAddressLine1(addressLine1);
         this.setAddressLine2(addressLine2);
@@ -57,7 +55,6 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
         this.setAppointmentDate(appointmentDate);
         this.setAppointmentTime(appointmentTime);
         this.setSymptoms(symptoms);
-        this.setSymptomsFromDate(symptomsFromDate);
         this.setMedicalOfficer(medicalOfficer);
         this.setAppointmentRecordStatus(appointmentRecordStatus);
         this.setAppointmentNo(appointmentNo);
@@ -100,7 +97,6 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
 
     public String getAllergies() { return this.allergies; }
 
-    public LocalDate getSymptomsFromDate() { return this.symptomsFromDate; }
 
     public LocalDate getAppointmentDate(){
         return this.appointmentDate;
@@ -122,6 +118,8 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
         return this.appointmentNo;
     }
 
+    public String getAppointmentRecordStatus() { return this.appointmentRecordStatus; }
+
     public void setUserName(String userName) { this.userName = userName; }
 
     public void setFirstName(String firstName) { this.firstName = firstName; }
@@ -134,7 +132,7 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
 
     public void setGender(String gender) { this.gender = gender; }
 
-    public void setdOB(LocalDate dOB) { this.dOB = dOB; }
+    public void setDOB(LocalDate dOB) { this.dOB = dOB; }
 
     public void setMaritalStatus(String maritalStatus) { this.maritalStatus = maritalStatus; }
 
@@ -146,7 +144,6 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
 
     public void setAllergies(String allergies) { this.allergies = allergies; }
 
-    public void setSymptomsFromDate(LocalDate symptomsFromDate) { this.symptomsFromDate = symptomsFromDate; }
 
     public void setAppointmentDate(LocalDate appointmentDate) {
         this.appointmentDate = appointmentDate;
@@ -174,8 +171,8 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
     public String toString() {
         return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s", getUserName(),getFirstName(),
                 getLastName(), getIdNo(),getPhoneNumber(),getDOB(),getMaritalStatus() , getAddressLine1(),
-                getAddressLine2(),getBloodGroup() , getAllergies() , getSymptoms() , getSymptomsFromDate() ,
-                getAppointmentDate() ,getAppointmentTime(),getMedicalOfficer(), getAppointmentNo());
+                getAddressLine2(),getBloodGroup() , getAllergies() , getSymptoms() , getAppointmentDate() ,
+                getAppointmentTime(),getMedicalOfficer(), getAppointmentNo(),getAppointmentRecordStatus());
     }
 
     public ObservableList<Appointment> getApprovedAppointmentList(MedicalOfficer medicalOfficer){

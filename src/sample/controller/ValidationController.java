@@ -172,6 +172,18 @@ public class ValidationController {
         }
     }
 
+    public boolean validateExitingPatientUsername(TextField username){
+        if(validateSpecificUsername(username, 2)){
+            JFXButton button = new JFXButton("OK");
+            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                    "Invalid Input Data",
+                    "That username is not in Patient Database. Try with exiting one." );
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public boolean validateSpecificUsername(TextField credential1, int usermode){
         final String[] fileLocation = {"src/sample/data/UserReceptionist.txt", "src/sample/data/UserMedicalOfficer.txt",
                 "src/sample/data/UserPatient.txt"
