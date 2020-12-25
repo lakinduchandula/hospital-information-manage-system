@@ -1,6 +1,11 @@
 package sample.model;
 
 import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+import javafx.collections.ObservableList;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -173,5 +178,27 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
                 getAppointmentDate() ,getAppointmentTime(),getMedicalOfficer(), getAppointmentNo());
     }
 
+    public ObservableList<Appointment> getApprovedAppointmentList(MedicalOfficer medicalOfficer){
+        File file = new File("src/sample/data/Appointment.txt");
+        try(FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
 
+            String line = null ;
+
+            while((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+
+                if(credentialValidation(userCredentials[0], getUserName())){
+                    
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean credentialValidation(String userName, String username) {
+        return username.equals(userName);
+    }
 }
