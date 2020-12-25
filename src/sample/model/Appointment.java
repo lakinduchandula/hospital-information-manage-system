@@ -1,13 +1,12 @@
 package sample.model;
 
-import java.sql.Time;
+import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 
-public class Appointment
-{
+public class Appointment extends RecursiveTreeObject<Appointment> {
     private String userName;
+    private String appointmentNo;
     private String firstName;
     private String lastName;
     private String idNo;
@@ -25,12 +24,16 @@ public class Appointment
     private LocalDate symptomsFromDate;
     private MedicalOfficer medicalOfficer;
     private String appointmentRecordStatus;
-    private String appointmentNo;
+
+    //Default Constructor
+    public Appointment(){
+
+    }
 
     //Variable Constructor
     public Appointment( String userName,String firstName,String lastName,String idNo,String phoneNumber,
-                        String gender,LocalDate dOB,String maritalStatus,String addressLine1,String addressLine2
-                        ,String bloodGroup, String allergies ,LocalDate appointmentDate, LocalTime appointmentTime,
+                        String gender,LocalDate dOB,String maritalStatus,String addressLine1,String addressLine2,
+                        String bloodGroup, String allergies ,LocalDate appointmentDate, LocalTime appointmentTime,
                         String symptoms, LocalDate symptomsFromDate,MedicalOfficer medicalOfficer,
                         String appointmentRecordStatus, String appointmentNo){
 
@@ -55,32 +58,18 @@ public class Appointment
         this.setAppointmentNo(appointmentNo);
     }
 
-    //Default Constructor
-    public Appointment(){
-
-        this.setUserName("");
-        this.setFirstName("");
-        this.setLastName("");
-        this.setIdNo("");
-        this.setPhoneNumber("");
-        this.setGender("");
-        this.setdOB(null);
-        this.setMaritalStatus("");
-        this.setAddressLine1("");
-        this.setAddressLine2("");
-        this.setBloodGroup("");
-        this.setAllergies("");
-        this.setAppointmentDate(null);
-        this.setAppointmentTime(null);
-        this.setSymptoms("");
-        this.setSymptomsFromDate(null);
-        this.setMedicalOfficer(null);
-        this.setAppointmentRecordStatus("");
-        this.setAppointmentNo("");
+    public Appointment(String appointmentNo, String firstName, String lastName, String idNo, String phoneNumber,
+                       String gender, LocalDate date, LocalTime time, String symptoms) {
+        this.setAppointmentNo(appointmentNo);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setIdNo(idNo);
+        this.setPhoneNumber(phoneNumber);
+        this.setGender(gender);
+        this.setAppointmentDate(date);
+        this.setAppointmentTime(time);
+        this.setSymptoms(symptoms);
     }
-
-
-    //Getters and Setters
 
     public String getUserName() { return this.userName; }
 
@@ -94,7 +83,7 @@ public class Appointment
 
     public String getGender() { return this.gender; }
 
-    public LocalDate getdOB() { return this.dOB;  }
+    public LocalDate getDOB() { return this.dOB;  }
 
     public String getMaritalStatus() { return this.maritalStatus; }
 
@@ -124,14 +113,9 @@ public class Appointment
         return this.medicalOfficer;
     }
 
-    public String getAppointmentRecordStatus(){
-        return this.appointmentRecordStatus;
-    }
-
     public String getAppointmentNo(){
         return this.appointmentNo;
     }
-
 
     public void setUserName(String userName) { this.userName = userName; }
 
@@ -164,7 +148,7 @@ public class Appointment
     }
 
     public void setAppointmentTime(LocalTime appointmentTime) {
-        this.appointmentTime = appointmentTime;
+        this.appointmentTime =  appointmentTime;
     }
 
     public void setSymptoms(String symptoms) {
@@ -184,7 +168,7 @@ public class Appointment
 
     public String toString() {
         return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s", getUserName(),getFirstName(),
-                getLastName(), getIdNo(),getPhoneNumber(),getdOB(),getMaritalStatus() , getAddressLine1(),
+                getLastName(), getIdNo(),getPhoneNumber(),getDOB(),getMaritalStatus() , getAddressLine1(),
                 getAddressLine2(),getBloodGroup() , getAllergies() , getSymptoms() , getSymptomsFromDate() ,
                 getAppointmentDate() ,getAppointmentTime(),getMedicalOfficer(), getAppointmentNo());
     }

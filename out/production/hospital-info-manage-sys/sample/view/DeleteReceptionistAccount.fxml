@@ -1,14 +1,205 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.controller.DeleteReceptionistAccountController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<StackPane fx:id="DeleteRecepStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.DeleteReceptionistAccountController">
+   <children>
+      <BorderPane fx:id="DeleteRecepBorder" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <AnchorPane fx:id="DeleteRecepAnchor" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="485.0" text="Common User Account user Details">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="20.0" layoutY="58.0" text="First Name">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserFirstName" layoutX="120.0" layoutY="58.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="58.0" text="Last Name">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserLastName" layoutX="415.0" layoutY="58.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="88.0" text="Username">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserUsername" layoutX="120.0" layoutY="88.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="88.0" text="ID Card Number">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserIDNo" layoutX="415.0" layoutY="88.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="148.0" text="Gender">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserGender" layoutX="120.0" layoutY="148.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="118.0" text="Phone Number">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserPhoneNumber" layoutX="415.0" layoutY="118.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="178.0" text="Marital Status">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserMatrital" layoutX="120.0" layoutY="178.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="148.0" text="Date of Birth">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserDOB" layoutX="415.0" layoutY="148.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="178.0" text="Address No">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserAddStreet" layoutX="120.0" layoutY="208.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="208.0" text="Address Street">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserAddNo" layoutX="415.0" layoutY="178.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="310.0" layoutY="208.0" text="City">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserCountry" layoutX="120.0" layoutY="238.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="238.0" text="Country">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserCity" layoutX="415.0" layoutY="208.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="14.0" layoutY="277.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="485.0" text="Specific Details for Receptionist Account ">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="20.0" layoutY="321.0" text="Receptionist Staff ID">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserRecepID" layoutX="170.0" layoutY="321.0" prefHeight="19.0" prefWidth="260.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="351.0" text="Receptionist Staff Email">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserRecepEmail" layoutX="170.0" layoutY="351.0" prefHeight="19.0" prefWidth="260.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="381.0" text="Date of Join">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserDateOfJoin" layoutX="170.0" layoutY="381.0" prefHeight="19.0" prefWidth="260.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="118.0" text="Password">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewUserPassword" layoutX="120.0" layoutY="118.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="DeleteAccount" layoutX="516.0" layoutY="371.0" onMouseClicked="#DeleteRecepAccount" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #d32f2f;" text="Delete Account" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

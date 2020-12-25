@@ -229,6 +229,4 @@ public class ReceptDashAppointmentController {
         Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/ViewAppointment.fxml"));
         ViewAppointmentBorderPane.setCenter(appointmentPane);
     }
-
-
 }

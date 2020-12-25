@@ -164,12 +164,35 @@ public class ValidationController {
         }
     }
 
-    public boolean validateEditUsername(TextField txt) {
-        if(validateSameCredentials(txt, 0, 3)){
+    public boolean validateEditUsername(TextField txt, int usermode) {
+        if(validateSpecificUsername(txt, usermode)){
             return false;
         } else {
             return true;
         }
+    }
+
+    public boolean validateSpecificUsername(TextField credential1, int usermode){
+        final String[] fileLocation = {"src/sample/data/UserReceptionist.txt", "src/sample/data/UserMedicalOfficer.txt",
+                "src/sample/data/UserPatient.txt"
+        };
+            File file = new File(fileLocation[usermode]);
+            try (FileReader fileReader = new FileReader(file)) {
+                BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+                String line = null;
+
+                while ((line = bufferedReader.readLine()) != null) {
+                    String[] userCredentials = line.split("~");
+
+                    if(sameCredentialValidation(userCredentials[0], credential1)){
+                        return false;
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        return true;
     }
 
     public boolean validateSameCredentials(TextField credential1, int credentialIndex, int credentialBoundary ){

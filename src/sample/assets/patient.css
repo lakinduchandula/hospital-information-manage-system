@@ -30,10 +30,14 @@
     -fx-text-inner-color:  #424242;
 }
 
+.label-topic {
+    -fx-prompt-text-fill:  black;
+}
+
 
 .tab .tab-label
 {
-    -fx-background-color: #6a1b9a;
+    -fx-background-color: #38006b;
     -fx-font-family: 'Noto Sans JP', sans-serif;
     -fx-font-size: 14px;
     -fx-alignment: CENTER;
@@ -49,7 +53,7 @@
 
 }
 .tab-header-background {
-    -fx-background-color: #6a1b9a;
+    -fx-background-color: #38006b;
 }
 
 .jfx-date-picker .text-field{

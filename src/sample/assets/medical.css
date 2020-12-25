@@ -17,7 +17,7 @@
 }
 .combo-box .arrow,
 .choice-box .arrow {
-    -fx-background-color: #304ffe;
+    -fx-background-color: #283593;
 }
 .text-input {
     -fx-prompt-text-fill:  #fafafa;
@@ -32,7 +32,7 @@
 
 .tab .tab-label
 {
-    -fx-background-color:  #0277bd;
+    -fx-background-color: #283593;
     -fx-font-family: 'Noto Sans JP', sans-serif;
     -fx-font-size: 14px;
     -fx-alignment: CENTER;
@@ -48,7 +48,7 @@
 
 }
 .tab-header-background {
-    -fx-background-color:  #0277bd;
+    -fx-background-color:   #283593;
 }
 
 .jfx-date-picker .text-field{

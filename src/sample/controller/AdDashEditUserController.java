@@ -155,13 +155,16 @@ public class AdDashEditUserController {
     private JFXButton CreateAPatient;
 
     @FXML
+    private BorderPane EditUserDeleteBoarderPane;
+
+    @FXML
     void edit_user_account(MouseEvent event) throws IOException {
         // get the validity of the username according to the usermode
         ValidationController validateUserAccount = new ValidationController(EditUserStackPane, EditUserAnchor, 1);
         if (!(EditUserEditUsername.getText().isEmpty()) && !(EditUserEditUsermode.getSelectionModel().isEmpty()) ) {
             switch (EditUserEditUsermode.getValue()) {
                 case "Receptionist": {
-                    if (validateUserAccount.validateEditUsername(EditUserEditUsername)) {
+                    if (validateUserAccount.validateEditUsername(EditUserEditUsername, 0)) {
                         username = EditUserEditUsername.getText().trim();
                         Parent editUserAccount = FXMLLoader.load(getClass()
                                 .getResource("/sample/view/EditRecepAccount.fxml"));
@@ -175,7 +178,7 @@ public class AdDashEditUserController {
                     break;
                 }
                 case "Patient": {
-                    if (validateUserAccount.validateEditUsername(EditUserEditUsername)) {
+                    if (validateUserAccount.validateEditUsername(EditUserEditUsername, 2)) {
                         username = EditUserEditUsername.getText().trim();
                         Parent editUserAccount = FXMLLoader.load(getClass()
                                 .getResource("/sample/view/EditPatientAccount.fxml"));
@@ -189,7 +192,7 @@ public class AdDashEditUserController {
                 }
                 case "Medical Officer": {
                     username = EditUserEditUsername.getText().trim();
-                    if (validateUserAccount.validateEditUsername(EditUserEditUsername)) {
+                    if (validateUserAccount.validateEditUsername(EditUserEditUsername, 1)) {
                         Parent editUserAccount = FXMLLoader.load(getClass()
                                 .getResource("/sample/view/EditMOAccount.fxml"));
                         EditUserEditBoarderPane.setCenter(editUserAccount);
@@ -207,6 +210,60 @@ public class AdDashEditUserController {
                             "to Edit User Account.");
         }
 
+    }
+
+    @FXML
+    void ViewAccount(MouseEvent event) throws IOException {
+        // get the validity of the username according to the usermode
+        ValidationController validateUserDelete = new ValidationController(EditUserStackPane, EditUserAnchor, 1);
+        if (!(EditUserDeleteUsername.getText().isEmpty()) && !(EditUserDeleteUsermode.getSelectionModel().isEmpty()) ) {
+            switch (EditUserDeleteUsermode.getValue()) {
+                case "Receptionist": {
+                    if (validateUserDelete.validateEditUsername(EditUserDeleteUsername, 0)) {
+                        username = EditUserDeleteUsername.getText().trim();
+                        Parent deleteUserAcc = FXMLLoader.load(getClass()
+                                .getResource("/sample/view/DeleteReceptionistAccount.fxml"));
+                        //Parent editUserAccount = loader.load();
+                        EditUserDeleteBoarderPane.setCenter(deleteUserAcc);
+                        clearFields();
+                    } else {
+                        validateUserDelete.detailedMsg("User Not Found",
+                                "Username that you've entered is not in Receptionist Database");
+                    }
+                    break;
+                }
+                case "Patient": {
+                    if (validateUserDelete.validateEditUsername(EditUserDeleteUsername,2)) {
+                        username = EditUserDeleteUsername.getText().trim();
+                        Parent deleteUserAcc = FXMLLoader.load(getClass()
+                                .getResource("/sample/view/DeletePatientAccount.fxml"));
+                        EditUserDeleteBoarderPane.setCenter(deleteUserAcc);
+                        clearFields();
+                    } else {
+                        validateUserDelete.detailedMsg("User Not Found",
+                                "Username that you've entered is not in Patient Database");
+                    }
+                    break;
+                }
+                case "Medical Officer": {
+                    if (validateUserDelete.validateEditUsername(EditUserDeleteUsername,1)) {
+                        username = EditUserDeleteUsername.getText().trim();
+                        Parent deleteUserAcc = FXMLLoader.load(getClass()
+                                .getResource("/sample/view/DeleteMOAccount.fxml"));
+                        EditUserDeleteBoarderPane.setCenter(deleteUserAcc);
+                        clearFields();
+                    } else {
+                        validateUserDelete.detailedMsg("User Not Found",
+                                "Username that you've entered is not in Medical Officer Database");
+                    }
+                    break;
+                }
+            }
+        } else {
+            validateUserDelete.detailedMsg("Input Data",
+                    "Please Enter valid username and it's usermode\n" +
+                            "to Edit User Account.");
+        }
     }
 
     public AdDashEditUserController() {
@@ -360,10 +417,15 @@ public class AdDashEditUserController {
         EditUserPatientBlood.getItems().add("AB+");
         EditUserPatientBlood.getItems().add("AB-");
 
-        // combo-box items for usermode
+        // combo-box items for usermode-edit acc
         EditUserEditUsermode.getItems().add("Receptionist");
         EditUserEditUsermode.getItems().add("Patient");
         EditUserEditUsermode.getItems().add("Medical Officer");
+
+        // combo-box items for usermode-view and delete acc
+        EditUserDeleteUsermode.getItems().add("Receptionist");
+        EditUserDeleteUsermode.getItems().add("Patient");
+        EditUserDeleteUsermode.getItems().add("Medical Officer");
 
         // add items to the medical officer specialist areas
         AdReference.readItem(EditUserMOSpecificArea);
@@ -398,6 +460,8 @@ public class AdDashEditUserController {
         EditUserPatientBlood.getSelectionModel().clearSelection();
         EditUserAddAllergiesLine1.clear();
         EditUserAddAllergiesLine2.clear();
+        EditUserDeleteUsermode.getSelectionModel().clearSelection();
+        EditUserDeleteUsername.clear();
     }
 
 }
