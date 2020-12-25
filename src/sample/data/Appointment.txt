@@ -1,0 +1,3 @@
+patient~lakshan~costa~981880705V~0789042390~2020-12-13~Unmarried~abc~abc~B+~~~2020-12-01~23:37~null~1224~Approved
+liam123~liam~pyne~981660706V~0789051345~2020-12-07~Divorced~xyz~xyz~AB-~None~Coughing~2020-12-01~23:41~null~1220~Approved
+sandaru98~sandaru~rashmitha~981880706V~0789051390~2020-12-07~Unmarried~No 299/4 Arawwla~No 299/4 Arawwla~O+~None~Eye pain~2020-12-01~23:45~null~1222~Approved
