@@ -11,122 +11,130 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MODashAppointmentController">
-    <children>
-        <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #283593;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <children>
-                <Label layoutX="14.0" layoutY="8.0" text="Appointment" textFill="WHITE">
-                    <font>
+
+<StackPane fx:id="MODashAppStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MODashAppointmentController">
+   <children>
+      <AnchorPane fx:id="MODashAppAnchor" prefHeight="576.0" prefWidth="790.0">
+         <children>
+            <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #283593;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="8.0" text="Appointment" textFill="WHITE">
+                     <font>
                         <Font size="20.0" />
-                    </font>
-                </Label>
-            </children>
-        </Pane>
-        <JFXTabPane layoutX="-2.0" layoutY="49.0" prefHeight="528.0" prefWidth="790.0" stylesheets="@../assets/medical.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <tabs>
-                <Tab style="-fx-background-color: #65499c;" text="Appointments">
-                    <content>
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXTabPane layoutX="-2.0" layoutY="49.0" prefHeight="528.0" prefWidth="790.0" stylesheets="@../assets/medical.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <tabs>
+                  <Tab style="-fx-background-color: #65499c;" text="Appointments">
+                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#copyID" prefHeight="180.0" prefWidth="200.0">
-                            <children>
-                                <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
-                                    <children>
-                                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Appointment List">
-                                            <font>
-                                                <Font size="14.0" />
-                                            </font>
-                                        </Label>
-                              <JFXButton fx:id="CopyID" layoutX="476.0" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #757de8;" text="Copy ID">
-                                 <graphic>
-                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../assets/images/dash-medical/mo-dash-copy-id.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                                 <font>
-                                    <Font size="13.0" />
-                                 </font>
-                              </JFXButton>
-                                    </children>
-                                </Pane>
-                        <TableView fx:id="TableAppointmentList" layoutX="29.0" layoutY="58.0" prefHeight="403.0" prefWidth="731.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
-                          <columns>
-                            <TableColumn fx:id="TableAppointmentID" prefWidth="96.0" text="Appointment ID" />
-                              <TableColumn prefWidth="75.0" text="Patient Name">
-                                 <columns>
-                                  <TableColumn fx:id="TableFirstName" prefWidth="75.0" text="First Name" />
-                                    <TableColumn fx:id="TableLastName" prefWidth="75.0" text="Last Name" />
-                                 </columns>
-                              </TableColumn>
-                              <TableColumn fx:id="TablePatientNIC" text="Patient NIC" />
-                              <TableColumn fx:id="TablePhoneNumber" prefWidth="90.0" text="Phone Number" />
-                              <TableColumn fx:id="TableGender" prefWidth="48.0" text="Gender" />
-                              <TableColumn prefWidth="144.0" text="Appointment">
-                                 <columns>
-                                    <TableColumn fx:id="TableDate" prefWidth="70.0" text="Date" />
-                                    <TableColumn fx:id="TableTime" prefWidth="70.0" text="Time" />
-                                 </columns>
-                              </TableColumn>
-                              <TableColumn fx:id="TableSymptoms" prefWidth="135.0" text="Symptoms" />
-                          </columns>
-                        </TableView>
-                            </children>
-                        </AnchorPane>
-                    </content>
-                    <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/images/dash-medical/mo-dash-appoint-list.png" />
-                     </image>
-                        </ImageView>
-                    </graphic>
-                </Tab>
-                <Tab style="-fx-background-color: #00867d;" text="Appointment Status">
-                    <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                            <children>
-                                <JFXTextField fx:id="appointmentNoTextField" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Appointment No" styleClass="text-input-common-medicalO-dash" stylesheets="@../assets/medical.css" unFocusColor="#424242">
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </JFXTextField>
-                                <JFXButton fx:id="changeStatusButton" layoutX="14.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Change Status" textFill="WHITE">
-                                    <font>
-                                        <Font name="System Bold" size="14.0" />
-                                    </font>
-                                </JFXButton>
-                                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="581.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="52.0">
-                                    <image>
-                                        <Image url="@../assets/images/hims-base-img/platform.png" />
-                                    </image>
-                                </ImageView>
-                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
                            <children>
-                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Appointment List">
+                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
+                                 <children>
+                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Appointment List">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <JFXButton fx:id="CopyID" layoutX="476.0" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #757de8;" text="Copy ID">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/images/dash-medical/mo-dash-copy-id.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </Pane>
+                              <TableView fx:id="TableAppointmentList" layoutX="29.0" layoutY="58.0" prefHeight="403.0" prefWidth="731.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+                                 <columns>
+                                    <TableColumn fx:id="TableAppointmentID" prefWidth="96.0" text="Appointment ID" />
+                                    <TableColumn prefWidth="75.0" text="Patient Name">
+                                       <columns>
+                                          <TableColumn fx:id="TableFirstName" prefWidth="75.0" text="First Name" />
+                                          <TableColumn fx:id="TableLastName" prefWidth="75.0" text="Last Name" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="TablePatientNIC" text="Patient NIC" />
+                                    <TableColumn fx:id="TablePhoneNumber" prefWidth="90.0" text="Phone Number" />
+                                    <TableColumn fx:id="TableGender" prefWidth="48.0" text="Gender" />
+                                    <TableColumn prefWidth="144.0" text="Appointment">
+                                       <columns>
+                                          <TableColumn fx:id="TableDate" prefWidth="70.0" text="Date" />
+                                          <TableColumn fx:id="TableTime" prefWidth="70.0" text="Time" />
+                                       </columns>
+                                    </TableColumn>
+                                    <TableColumn fx:id="TableSymptoms" prefWidth="135.0" text="Symptoms" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/dash-medical/mo-dash-appoint-list.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Tab>
+                  <Tab style="-fx-background-color: #00867d;" text="Take Appointment ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <JFXTextField fx:id="MOTakeAppointment" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Appointment No" styleClass="text-input-common-medicalO-dash" stylesheets="@../assets/medical.css" unFocusColor="#424242">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
-                              </Label>
+                              </JFXTextField>
+                              <JFXButton fx:id="TakeAppointment" layoutX="14.0" layoutY="127.0" onMouseClicked="#take_appointment" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Take Appointment" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="599.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="21.0">
+                                 <image>
+                                    <Image url="@../assets/images/hims-base-img/platform.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
+                                 <children>
+                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Appointment ID from Appointments tab">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <BorderPane fx:id="MOTakeAppBorderPane" layoutX="6.0" layoutY="174.0" prefHeight="311.0" prefWidth="782.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                            </children>
-                        </Pane>
-                            </children>
                         </AnchorPane>
-                    </content>
-                    <graphic>
+                     </content>
+                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/images/dash-medical/mo-dash-appoint-status.png" />
-                     </image>
+                           <image>
+                              <Image url="@../assets/images/dash-medical/mo-dash-appoint-status.png" />
+                           </image>
                         </ImageView>
-                    </graphic>
-                </Tab>
-            </tabs>
-            <cursor>
-                <Cursor fx:constant="OPEN_HAND" />
-            </cursor>
-        </JFXTabPane>
-    </children>
-</AnchorPane>
+                     </graphic>
+                  </Tab>
+               </tabs>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </JFXTabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

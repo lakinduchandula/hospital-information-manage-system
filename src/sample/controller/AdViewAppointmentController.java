@@ -1,10 +1,10 @@
 package sample.controller;
 
+import com.jfoenix.controls.JFXButton;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,22 +17,22 @@ import javafx.scene.text.Text;
 import sample.model.Appointment;
 import sample.model.GetSetTextArea;
 
-public class RecepViewAppointmentController {
-
-    @FXML
-    private StackPane RecepViewStackPane;
-
-    @FXML
-    private AnchorPane RecepViewAnchorPane;
-
-    @FXML
-    private BorderPane RecepViewBorder;
+public class AdViewAppointmentController {
 
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private URL location;
+
+    @FXML
+    private StackPane AdViewStackPane;
+
+    @FXML
+    private BorderPane AdViewBorder;
+
+    @FXML
+    private AnchorPane AdViewAnchorPane;
 
     @FXML
     private Label ViewAppointmentID;
@@ -73,23 +73,23 @@ public class RecepViewAppointmentController {
     @FXML
     void DeleteAppointment(MouseEvent event) throws IOException {
         Appointment deleteAppointment = new Appointment();
-        ValidationController deleteValidate = new ValidationController(RecepViewStackPane, RecepViewAnchorPane, 1);
+        ValidationController deleteValidate = new ValidationController(AdViewStackPane, AdViewAnchorPane, 1);
         deleteValidate.detailedMsg("Appointment Delete", "Appointment was Successfully Deleted");
-        deleteAppointment.deleteAppointment(ReceptDashAppointmentController.AppointmentIDGlobal);
+        deleteAppointment.deleteAppointment(AdDashAppointmentController.appointmentID);
         afterCreation();
     }
 
     public void afterCreation() throws IOException {
         Parent white = FXMLLoader.load(getClass()
                 .getResource("/sample/view/WhiteBlank.fxml"));
-        RecepViewBorder.setCenter(white);
+        AdViewBorder.setCenter(white);
     }
 
 
     @FXML
     void initialize() {
         Appointment viewAppointment = new Appointment();
-        viewAppointment.getAppointmentDetailsArray(ReceptDashAppointmentController.AppointmentIDGlobal);
+        viewAppointment.getAppointmentDetailsArray(AdDashAppointmentController.appointmentID);
         String[] appointmentDetail = viewAppointment.getAppointmentDetails();
 
         ViewAppointmentID.setText(appointmentDetail[0]);
@@ -104,5 +104,4 @@ public class RecepViewAppointmentController {
         ViewAppointmentMO.setText(appointmentDetail[15]);
         ViewAppointmentSymptoms.setText(GetSetTextArea.setText(appointmentDetail[12]));
     }
-
 }

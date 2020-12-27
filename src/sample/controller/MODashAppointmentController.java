@@ -2,6 +2,8 @@ package sample.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -11,14 +13,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 import sample.model.Appointment;
 
 public class MODashAppointmentController {
+
+    public static String appointmentID;
 
     @FXML
     private ResourceBundle resources;
@@ -60,10 +69,19 @@ public class MODashAppointmentController {
     private TableColumn<Appointment, String> TableSymptoms;
 
     @FXML
-    private JFXTextField appointmentNoTextField;
+    private BorderPane MOTakeAppBorderPane;
 
     @FXML
-    private JFXButton changeStatusButton;
+    private JFXTextField MOTakeAppointment;
+
+    @FXML
+    private JFXButton TakeAppointment;
+
+    @FXML
+    private StackPane MODashAppStackPane;
+
+    @FXML
+    private AnchorPane MODashAppAnchor;
 
 
 //            new Appointment("ABS12584", "Lakindu", "Chandula", "991623361V",
@@ -92,6 +110,19 @@ public class MODashAppointmentController {
         ObservableList<Appointment> appointmentList = FXCollections.observableArrayList(tableAppointment.getApprovedAppointments());
         TableAppointmentList.setItems(appointmentList);
 
+    }
+
+    @FXML
+    void take_appointment(MouseEvent event) throws IOException {
+        ValidationController validate = new ValidationController(MODashAppStackPane, MODashAppAnchor, 1);
+        if(validate.validateAppointmentID(MOTakeAppointment) && validate.correctAppointment(LoginController.currentUser,
+                MOTakeAppointment)){
+            appointmentID = MOTakeAppointment.getText().trim();
+            Parent editUserAccount = FXMLLoader.load(getClass()
+                    .getResource("/sample/view/TakeAppointment.fxml"));
+            MOTakeAppBorderPane.setCenter(editUserAccount);
+            MOTakeAppointment.clear();
+        }
     }
 
     @FXML

@@ -11,9 +11,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
 
 public class AdDashAppointmentController {
+
+    public static String appointmentID;
 
     @FXML
     private ResourceBundle resources;
@@ -22,10 +26,13 @@ public class AdDashAppointmentController {
     private URL location;
 
     @FXML
+    private StackPane AdDashAppStackPane;
+
+    @FXML
     private JFXTabPane AppointmentTabpane;
 
     @FXML
-    private JFXTextField ViewAppointmentUsername;
+    private JFXTextField ViewAppointmentID;
 
     @FXML
     private JFXButton ViewAppointmentBtn;
@@ -42,19 +49,20 @@ public class AdDashAppointmentController {
     @FXML
     private BorderPane DeleteAppointmentBorderPane;
 
+    @FXML
+    private AnchorPane AdDashAppAnch;
+
     public AdDashAppointmentController() {
     }
 
     @FXML
     void view_appointment(MouseEvent event) throws IOException {
-        Parent viewAppointment = FXMLLoader.load(getClass().getResource("/sample/view/ViewAppointment.fxml"));
-        ViewAppointmentBorderPane.setCenter(viewAppointment);
-    }
-
-    @FXML
-    void view_before_delete(MouseEvent event) throws IOException {
-        Parent viewBeforeDelete = FXMLLoader.load(getClass().getResource("/sample/view/DeleteAppointment.fxml"));
-        DeleteAppointmentBorderPane.setCenter(viewBeforeDelete);
+        ValidationController validate = new ValidationController(AdDashAppStackPane, AdDashAppAnch, 1);
+        if(validate.validateAppointmentID(ViewAppointmentID)){
+            appointmentID = ViewAppointmentID.getText().trim();
+            Parent viewAppointment = FXMLLoader.load(getClass().getResource("/sample/view/AdViewAppointment.fxml"));
+            ViewAppointmentBorderPane.setCenter(viewAppointment);
+        }
     }
 
     @FXML

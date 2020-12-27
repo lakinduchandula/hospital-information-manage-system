@@ -1,1 +1,1 @@
-f3012b7445~liam123~Liam~Pyne~887745652V~0584625789~Male~1988-06-14~4005~Praesent St.~Torrance~B-~Fever or chillsUIOPCoughUIOPFatigueUIOP~2020-12-28~18:00~Dr. firstname lastname - MO78954~Approved~Chest radiology
+f3012b7445~liam123~Liam~Pyne~887745652V~0584625789~Male~1988-06-14~4005~Praesent St.~Torrance~B-~Fever or chillsUIOPCoughUIOPFatigueUIOP~2020-12-28~18:00~Dr. firstname lastname - MO78954~Completed~Chest radiology

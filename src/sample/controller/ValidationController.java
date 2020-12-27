@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 import sample.model.Appointment;
 import sample.model.GetSetTextArea;
 import sample.model.MakeAlert;
+import sample.model.UserEditDelete;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -192,6 +193,38 @@ public class ValidationController {
 //            e.printStackTrace();
 //        }
 //    }
+    public boolean correctAppointment(String username, TextField appointmentID){
+        UserEditDelete newUser = new UserEditDelete(2);
+        newUser.UserEdit(username);
+        String[] userDetails = newUser.getUserDetailArray();
+        String reqDoctorDetail = "Dr. "+userDetails[2]+ " " + userDetails[3]+" - "+userDetails[13] ;
+        File file = new File("src/sample/data/Appointment.txt");
+        try(FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null ;
+
+            while((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+                if(identicalCredentialValidation(userCredentials[15], reqDoctorDetail) && sameCredentialValidation(userCredentials[0],
+                        appointmentID)){
+                    return true;
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        JFXButton button = new JFXButton("OK");
+        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                "Invalid Input Data",
+                "That Appointment ID is not in belongs to you. Try another." );
+        return false;
+    }
+
+    public boolean identicalCredentialValidation(String userCredentials1, String userCredentials2){
+        return userCredentials1.equals(userCredentials2);
+    }
 
     public boolean validateAppointmentID(TextField ID) throws IOException {
         File file = new File("src/sample/data/Appointment.txt");

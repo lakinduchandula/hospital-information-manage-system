@@ -143,7 +143,6 @@ public class ReceptDashAppointmentController {
                 newAppointment.setBloodGroup(AddAppointemntPatientBloodGroup.getValue());
                 newAppointment.setSymptoms(GetSetTextArea.getText(AddAppointmentSymptoms.getText().trim()));
                 newAppointment.setAppointmentDate(AddAppointmentAppointmentDate.getValue());
-                newAppointment.setAppointmentNo(AddAppointmentAppointmentNumber.getText().trim());
                 newAppointment.setAppointmentTime(AddAppointmentAppointmentTime.getValue());
                 newAppointment.setAppointmentRecordStatus(AddAppointmentAppointmentRecordStatus.getValue());
 

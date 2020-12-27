@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<StackPane fx:id="TakeAppointmentStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="311.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.TakeAppointmentController">
+   <children>
+      <BorderPane fx:id="TakeAppointmentBorderPane" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <ScrollPane prefHeight="400.0" prefWidth="790.0" BorderPane.alignment="CENTER">
+               <content>
+                  <AnchorPane fx:id="TakeAppointmentAnchor" prefHeight="599.0" prefWidth="775.0">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
+                           <children>
+                              <Label layoutX="7.0" layoutY="5.0" prefHeight="20.0" prefWidth="304.0" text="Appointment Details">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Label layoutX="20.0" layoutY="58.0" text="Appointment ID">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TakeAppointmentFName" layoutX="120.0" layoutY="211.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="88.0" text="Date">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TakeAppointmentLName" layoutX="410.0" layoutY="211.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="310.0" layoutY="88.0" text="Time">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="14.0" layoutY="167.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
+                           <children>
+                              <Label layoutX="7.0" layoutY="5.0" prefHeight="20.0" prefWidth="304.0" text="Appointment By (patient details)">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Label layoutX="20.0" layoutY="211.0" text="First Name">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="310.0" layoutY="211.0" text="Last Name">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TakeAppointmentID" layoutX="120.0" layoutY="58.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TakeAppointmentDate" layoutX="120.0" layoutY="88.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TakeAppointmentTime" layoutX="410.0" layoutY="88.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="310.0" layoutY="58.0" text="Status">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TakeAppointmentStatus" layoutX="410.0" layoutY="58.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="TakeAppointmentMakeStatus" layoutX="14.0" layoutY="123.0" onMouseClicked="#change_status" prefHeight="30.0" prefWidth="183.0" style="-fx-background-color: #00c853;" text="Make Status Complete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <Label fx:id="TakeAppointmentUsername" layoutX="120.0" layoutY="241.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TakeAppointmentNIC" layoutX="410.0" layoutY="241.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="241.0" text="Username">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="310.0" layoutY="241.0" text="NIC Number">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TakeAppointmentPhone" layoutX="120.0" layoutY="271.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="271.0" text="Phone Number">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="14.0" layoutY="305.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
+                           <children>
+                              <Label layoutX="7.0" layoutY="5.0" prefHeight="20.0" prefWidth="304.0" text="Symptoms of disease">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <ScrollPane layoutX="120.0" layoutY="347.0" prefHeight="185.0" prefWidth="442.0">
+                           <content>
+                              <AnchorPane prefHeight="700.0" prefWidth="427.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Text fx:id="TakeAppointmentSymptoms" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text&#10;Text&#10;Text&#10;Text&#10;Text&#10;Text&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                        <Label layoutX="20.0" layoutY="350.0" text="Symptoms">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="TakeAppointmentEnd" layoutX="531.0" layoutY="545.0" onMouseClicked="#end_appointment" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="End Appointment" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
