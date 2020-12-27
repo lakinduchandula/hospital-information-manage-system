@@ -160,7 +160,11 @@ public class TakeAppointmentController {
         Appointment TakeAppointment = new Appointment();
         TakeAppointment.getAppointmentDetailsArray(getTakeAppointmentID());
         String[] appointmentDetail = TakeAppointment.getAppointmentDetails();
+
+        // set user detail array to future use
         setTakeAppointmentDetails(appointmentDetail);
+
+        // set values
         TakeAppointmentID.setText(appointmentDetail[0]);
         TakeAppointmentStatus.setText(appointmentDetail[16]);
         TakeAppointmentDate.setText(appointmentDetail[13]);
@@ -172,5 +176,13 @@ public class TakeAppointmentController {
         TakeAppointmentPhone.setText(appointmentDetail[5]);
         TakeAppointmentSymptoms.setText(GetSetTextArea.setText(appointmentDetail[12]));
 
+        // set button status
+        if(TakeAppointmentStatus.getText().equals("Approved")){
+            TakeAppointmentMakeStatus.setText("Make Status Complete");
+            TakeAppointmentMakeStatus.setStyle("-fx-background-color:  #00c853");
+        } else {
+            TakeAppointmentMakeStatus.setText("Make Status Approved");
+            TakeAppointmentMakeStatus.setStyle("-fx-background-color: #ff8f00");
+        }
     }
 }

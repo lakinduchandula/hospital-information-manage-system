@@ -155,6 +155,9 @@ public class AdDashEditUserController {
     private JFXButton CreateAPatient;
 
     @FXML
+    private JFXTextArea PatientAddAllergies;
+
+    @FXML
     private BorderPane EditUserDeleteBoarderPane;
 
     @FXML
@@ -340,8 +343,7 @@ public class AdDashEditUserController {
                 newPatient.setCity(EditUserAddCity.getText().trim());
                 newPatient.setCountry(EditUserAddCountry.getText().trim());
                 newPatient.setBloodGroup(EditUserPatientBlood.getValue());
-                newPatient.setAllergiesLine1(EditUserAddAllergiesLine1.getText().trim());
-                newPatient.setAllergiesLine2(EditUserAddAllergiesLine2.getText().trim());
+                newPatient.setAllergies(GetSetTextArea.getText(PatientAddAllergies.getText().trim()));
 
                 UserAdd.writeToFile(newPatient, 2);
                 validate.successfulUserCreation("Patient Account Successfully Created");

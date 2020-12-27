@@ -17,9 +17,9 @@
 <?import javafx.scene.text.Font?>
 
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MODashAppointmentController">
+<StackPane fx:id="MODashAppStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MODashAppointmentController">
    <children>
-      <AnchorPane prefHeight="576.0" prefWidth="790.0">
+      <AnchorPane fx:id="MODashAppAnchor" prefHeight="576.0" prefWidth="790.0">
          <children>
             <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #283593;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>

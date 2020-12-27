@@ -51,6 +51,17 @@ public class ValidationController {
         return true;
     }
 
+    public boolean ValidNotEmpty(TextField txt){
+        if (txt.getText().isEmpty()) {
+            JFXButton button = new JFXButton("OK");
+            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                    "Invalid Input Data",
+                    "The Field is empty. Enter valid data and try again." );
+            return false;
+        }
+        return true;
+    }
+
     public boolean validEmail(TextField txt) {
         if(txt.getText().matches("^(.+)@(.+)$")
                 || (txt.getText().isEmpty())) {
@@ -193,6 +204,32 @@ public class ValidationController {
 //            e.printStackTrace();
 //        }
 //    }
+
+    public boolean rightAppointmentPatient(String appointmentID, String username){
+        File file = new File("src/sample/data/Appointment.txt");
+        try(FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null ;
+
+            while((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+                if(identicalCredentialValidation(userCredentials[0], appointmentID)
+                        && identicalCredentialValidation(userCredentials[1], username)){
+                    return true;
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        JFXButton button = new JFXButton("OK");
+        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                "Invalid Input Data",
+                "That Appointment ID is not in belongs to you. Try another." );
+        return false;
+    }
+
     public boolean correctAppointment(String username, TextField appointmentID){
         UserEditDelete newUser = new UserEditDelete(2);
         newUser.UserEdit(username);

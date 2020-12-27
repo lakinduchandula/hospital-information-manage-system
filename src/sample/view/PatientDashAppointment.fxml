@@ -18,9 +18,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="PatientDashComplaint" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.PatientDashAppointmentController">
+<StackPane fx:id="PatientDashAppStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.PatientDashAppointmentController">
     <children>
-        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0">
+        <AnchorPane fx:id="PatientDashAppAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0">
             <children>
                 <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #38006b;">
                     <children>
@@ -121,17 +121,17 @@
                                                 <Font name="System Bold" size="14.0" />
                                             </font>
                                         </JFXButton>
-                              <JFXTimePicker fx:id="AppointmentAddTime" defaultColor="#38006b" layoutX="308.0" layoutY="207.0" promptText="Appointment Time" />
-                              <JFXComboBox fx:id="AppointmentAddSpecial" layoutX="14.0" layoutY="301.0" prefHeight="30.0" prefWidth="262.0" promptText="Speciality Area" stylesheets="@../assets/patient.css">
+                              <JFXTimePicker fx:id="AppointmentAddTime" defaultColor="#38006b" layoutX="310.0" layoutY="207.0" promptText="Appointment Time" />
+                              <JFXComboBox fx:id="AppointmentAddSpecial" layoutX="20.0" layoutY="301.0" onAction="#selectingMO" prefHeight="30.0" prefWidth="249.0" promptText="Speciality Area" stylesheets="@../assets/adminDashStyle.css">
                                  <styleClass>
-                                    <String fx:value="choice-box" />
-                                    <String fx:value="combo-box" />
+                                    <String fx:value="combo-box-admin-dash" />
+                                    <String fx:value="choice-box-admin-dash" />
                                  </styleClass>
                               </JFXComboBox>
-                              <JFXComboBox fx:id="AppointmentAddMO" layoutX="310.0" layoutY="301.0" prefHeight="30.0" prefWidth="262.0" promptText="Medicala Officer" stylesheets="@../assets/patient.css">
+                              <JFXComboBox fx:id="AppointmentAddMO" layoutX="310.0" layoutY="301.0" prefHeight="30.0" prefWidth="211.0" promptText="Medical Officer" stylesheets="@../assets/adminDashStyle.css">
                                  <styleClass>
-                                    <String fx:value="choice-box" />
-                                    <String fx:value="combo-box" />
+                                    <String fx:value="combo-box-admin-dash" />
+                                    <String fx:value="choice-box-admin-dash" />
                                  </styleClass>
                               </JFXComboBox>
                               <Pane layoutX="14.0" layoutY="350.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
@@ -168,7 +168,7 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <JFXTextField fx:id="EditUserEditUsername" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="25.0" prefWidth="230.0" promptText="Appointment ID" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                        <JFXTextField fx:id="ViewAppointmentID" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="25.0" prefWidth="230.0" promptText="Appointment ID" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                                             <font>
                                                 <Font size="14.0" />
                                             </font>
