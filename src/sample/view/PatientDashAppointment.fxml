@@ -46,7 +46,7 @@
                                                 </Label>
                                             </children>
                                         </Pane>
-                                        <Pane layoutX="14.0" layoutY="152.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
+                                        <Pane layoutX="14.0" layoutY="140.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
                                             <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Details of the Appointment" textFill="#000000fe">
                                                     <font>
@@ -55,58 +55,58 @@
                                                 </Label>
                                             </children>
                                         </Pane>
-                                        <Label layoutX="20.0" layoutY="58.0" text="First Name">
+                                        <Label layoutX="20.0" layoutY="54.0" text="First Name">
                                             <font>
                                                 <Font size="13.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="AppointmentAddUsername" layoutX="120.0" layoutY="88.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                        <Label fx:id="AppointmentAddUsername" layoutX="120.0" layoutY="82.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
                                             <font>
                                                 <Font size="13.0" />
                                             </font>
                                         </Label>
-                                        <Label layoutX="310.0" layoutY="58.0" text="Last Name">
+                                        <Label layoutX="310.0" layoutY="54.0" text="Last Name">
                                             <font>
                                                 <Font size="13.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="AppointmentAddFirstName" layoutX="120.0" layoutY="58.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                        <Label fx:id="AppointmentAddFirstName" layoutX="120.0" layoutY="54.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
                                             <font>
                                                 <Font size="13.0" />
                                             </font>
                                         </Label>
-                                        <Label layoutX="20.0" layoutY="88.0" text="Username">
+                                        <Label layoutX="20.0" layoutY="82.0" text="Username">
                                             <font>
                                                 <Font size="13.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="AppointmentAddUserID" layoutX="415.0" layoutY="88.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                        <Label fx:id="AppointmentAddUserID" layoutX="415.0" layoutY="82.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
                                             <font>
                                                 <Font size="13.0" />
                                             </font>
                                         </Label>
-                                        <Label layoutX="310.0" layoutY="88.0" text="ID Card Number">
+                                        <Label layoutX="310.0" layoutY="82.0" text="ID Card Number">
                                             <font>
                                                 <Font size="13.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="AppointmentAddLastName" layoutX="415.0" layoutY="58.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                        <Label fx:id="AppointmentAddLastName" layoutX="415.0" layoutY="54.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
                                             <font>
                                                 <Font size="13.0" />
                                             </font>
                                         </Label>
-                                        <Label layoutX="20.0" layoutY="118.0" text="Phone Number">
+                                        <Label layoutX="20.0" layoutY="110.0" text="Phone Number">
                                             <font>
                                                 <Font size="13.0" />
                                             </font>
                                         </Label>
-                                        <Label fx:id="AppointmentAddUserPhone" layoutX="120.0" layoutY="118.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                        <Label fx:id="AppointmentAddUserPhone" layoutX="120.0" layoutY="110.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
                                             <font>
                                                 <Font size="13.0" />
                                             </font>
                                         </Label>
-                                        <JFXDatePicker fx:id="AppointmentAddDate" defaultColor="#38006b" layoutX="20.0" layoutY="195.0" prefHeight="30.0" prefWidth="200.0" promptText="Appointment Date" />
-                                        <Pane layoutX="14.0" layoutY="245.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
+                                        <JFXDatePicker fx:id="AppointmentAddDate" defaultColor="#38006b" layoutX="20.0" layoutY="207.0" prefHeight="30.0" prefWidth="200.0" promptText="Appointment Date" />
+                                        <Pane layoutX="14.0" layoutY="255.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
                                             <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Medical Officer Selection" textFill="#000000fe">
                                                     <font>
@@ -121,20 +121,20 @@
                                                 <Font name="System Bold" size="14.0" />
                                             </font>
                                         </JFXButton>
-                              <JFXTimePicker fx:id="AppointmentAddTime" defaultColor="#38006b" layoutX="308.0" layoutY="195.0" promptText="Appointment Time" />
-                              <JFXComboBox fx:id="AppointmentAddSpecial" layoutX="14.0" layoutY="292.0" prefHeight="30.0" prefWidth="262.0" promptText="Speciality Area" stylesheets="@../assets/patient.css">
+                              <JFXTimePicker fx:id="AppointmentAddTime" defaultColor="#38006b" layoutX="308.0" layoutY="207.0" promptText="Appointment Time" />
+                              <JFXComboBox fx:id="AppointmentAddSpecial" layoutX="14.0" layoutY="301.0" prefHeight="30.0" prefWidth="262.0" promptText="Speciality Area" stylesheets="@../assets/patient.css">
                                  <styleClass>
                                     <String fx:value="choice-box" />
                                     <String fx:value="combo-box" />
                                  </styleClass>
                               </JFXComboBox>
-                              <JFXComboBox fx:id="AppointmentAddMO" layoutX="310.0" layoutY="292.0" prefHeight="30.0" prefWidth="262.0" promptText="Medicala Officer" stylesheets="@../assets/patient.css">
+                              <JFXComboBox fx:id="AppointmentAddMO" layoutX="310.0" layoutY="301.0" prefHeight="30.0" prefWidth="262.0" promptText="Medicala Officer" stylesheets="@../assets/patient.css">
                                  <styleClass>
                                     <String fx:value="choice-box" />
                                     <String fx:value="combo-box" />
                                  </styleClass>
                               </JFXComboBox>
-                              <Pane layoutX="14.0" layoutY="344.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
+                              <Pane layoutX="14.0" layoutY="350.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
                                  <children>
                                     <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Symptoms of disease" textFill="#000000fe">
                                        <font>
@@ -143,6 +143,16 @@
                                     </Label>
                                  </children>
                               </Pane>
+                              <Label layoutX="20.0" layoutY="180.0" text="Appointment ID">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="AppointmentAddID" layoutX="120.0" layoutY="180.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
                                     </children>
                                 </AnchorPane>
                             </content>

@@ -8,11 +8,14 @@ import java.time.LocalTime;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import sample.model.Appointment;
 
 public class MODashAppointmentController {
@@ -22,6 +25,9 @@ public class MODashAppointmentController {
 
     @FXML
     private URL location;
+
+    @FXML
+    private JFXButton CopyID;
 
     @FXML
     private TableView<Appointment> TableAppointmentList;
@@ -59,11 +65,11 @@ public class MODashAppointmentController {
     @FXML
     private JFXButton changeStatusButton;
 
-    ObservableList<Appointment> appointmentList = FXCollections.observableArrayList(
-            new Appointment("ABS12584", "Lakindu", "Chandula", "991623361V",
-                    "0752094801", "Male", LocalDate.parse("2020-12-25"), LocalTime.parse("10:17"),
-                    "null")
-    );
+
+//            new Appointment("ABS12584", "Lakindu", "Chandula", "991623361V",
+//                    "0752094801", "Male", LocalDate.parse("2020-12-25"), LocalTime.parse("10:17"),
+//                    "null")
+//    );
 
     @FXML
     void initialize() {
@@ -77,6 +83,29 @@ public class MODashAppointmentController {
         TableTime.setCellValueFactory(new PropertyValueFactory<>("appointmentTime"));
         TableSymptoms.setCellValueFactory(new PropertyValueFactory<>("symptoms"));
 
+        ObservableList<TablePosition> selectedCells = TableAppointmentList.getSelectionModel().getSelectedCells() ;
+
+
+        // add appointment to the table which are belongs to this login user medical officer
+        Appointment tableAppointment = new Appointment();
+        tableAppointment.getApprovedAppointmentList(LoginController.currentUser, "Approved");
+        ObservableList<Appointment> appointmentList = FXCollections.observableArrayList(tableAppointment.getApprovedAppointments());
         TableAppointmentList.setItems(appointmentList);
+
+    }
+
+    @FXML
+    void copyID(MouseEvent event) {
+        TablePosition pos = TableAppointmentList.getSelectionModel().getSelectedCells().get(0);
+        int row = pos.getRow();
+
+        // Item here is the table view type:
+        Appointment item = TableAppointmentList.getItems().get(row);
+
+        TableColumn col = pos.getTableColumn();
+
+        // this gives the value in the selected cell:
+        String data = (String) col.getCellObservableValue(item).getValue();
+        System.out.println(data);
     }
 }
