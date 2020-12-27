@@ -1,6 +1,7 @@
 package sample.controller;
 
 import com.jfoenix.controls.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,6 +17,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ReceptDashAppointmentController {
+
+    public static String AppointmentIDGlobal;
+
     @FXML
     private ResourceBundle resources;
 
@@ -75,25 +79,25 @@ public class ReceptDashAppointmentController {
     private JFXComboBox<String> AddAppointmentPatientGender;
 
     @FXML
-    private JFXComboBox<String> AddAppointmentPatientMaritalStatus;
+    private JFXTextField AddAppointmentPatientAddressLine2;
 
     @FXML
-    private JFXTextField AddAppointmentPatientAddressLine2;
+    private JFXTextField AddAppointmentCity;
+
+    @FXML
+    private JFXComboBox<String> AddAppointmentSpecialMO;
 
     @FXML
     private JFXComboBox<String> AddAppointemntPatientBloodGroup;
 
     @FXML
-    private JFXTextArea AddAppointmentPatientAllergies;
-
-    @FXML
-    private JFXTextField EditAppointmentUsername;
+    private JFXTextField EditAppointmentID;
 
     @FXML
     private JFXButton EditAppointmentBtn;
 
     @FXML
-    private JFXTextField ViewAppointmentUsername;
+    private JFXTextField ViewAppointmentID;
 
     @FXML
     private JFXButton ViewAppointmentBtn;
@@ -111,6 +115,9 @@ public class ReceptDashAppointmentController {
     private BorderPane DeleteAppointmentBorderPane;
 
     @FXML
+    private BorderPane EditAppointmentBorderPane;
+
+    @FXML
     void Add_Appointment(MouseEvent event) {
         try{
             ValidationController validate = new ValidationController(AddAppointmentStackPane, AddAppointmentAnchorPane, 1);
@@ -120,20 +127,21 @@ public class ReceptDashAppointmentController {
                  ){
 
                 Appointment newAppointment = new Appointment();
-
+                newAppointment.setAppointmentNo(AddAppointmentAppointmentNumber.getText().trim());
                 newAppointment.setFirstName(AddAppointmentPatientFirstname.getText().trim());
                 newAppointment.setLastName(AddAppointmentPatientLastname.getText().trim());
                 newAppointment.setUserName(AddAppointmentPatientUserName.getText().trim());
                 newAppointment.setIdNo(AddAppointmentPatientIDNum.getText().trim());
                 newAppointment.setGender(AddAppointmentPatientGender.getValue());
                 newAppointment.setPhoneNumber(AddAppointmentPatientPhoneNumber.getText().trim());
-                newAppointment.setMaritalStatus(AddAppointmentPatientMaritalStatus.getValue());
                 newAppointment.setDOB(AddAppointmentPatientDOB.getValue());
                 newAppointment.setAddressLine1(AddAppointmentPatientAddressLine1.getText().trim());
-                newAppointment.setAddressLine2(AddAppointmentPatientAddressLine1.getText().trim());
+                newAppointment.setAddressLine2(AddAppointmentPatientAddressLine2.getText().trim());
+                newAppointment.setCity(AddAppointmentCity.getText().trim());
+                newAppointment.setMedicalOfficer(AddAppointmentAppointmentPrefferedMO.getValue());
+                newAppointment.setMedicalSpecialArea(AddAppointmentSpecialMO.getValue());
                 newAppointment.setBloodGroup(AddAppointemntPatientBloodGroup.getValue());
-                newAppointment.setAllergies(AddAppointmentPatientAllergies.getText().trim());
-                newAppointment.setSymptoms(AddAppointmentSymptoms.getText().trim());
+                newAppointment.setSymptoms(GetSetTextArea.getText(AddAppointmentSymptoms.getText().trim()));
                 newAppointment.setAppointmentDate(AddAppointmentAppointmentDate.getValue());
                 newAppointment.setAppointmentNo(AddAppointmentAppointmentNumber.getText().trim());
                 newAppointment.setAppointmentTime(AddAppointmentAppointmentTime.getValue());
@@ -159,13 +167,6 @@ public class ReceptDashAppointmentController {
         AddAppointmentPatientGender.getItems().add("Male");
         AddAppointmentPatientGender.getItems().add("Female");
 
-        // combo-box items for marital status at add appointment
-        AddAppointmentPatientMaritalStatus.getItems().add("Unmarried");
-        AddAppointmentPatientMaritalStatus.getItems().add("Married");
-        AddAppointmentPatientMaritalStatus.getItems().add("Divorced");
-        AddAppointmentPatientMaritalStatus.getItems().add("Widowed");
-        AddAppointmentPatientMaritalStatus.getItems().add("Legally Separated");
-
         // combo-box items for blood-group status at add appointment
         AddAppointemntPatientBloodGroup.getItems().add("A+");
         AddAppointemntPatientBloodGroup.getItems().add("A-");
@@ -176,10 +177,19 @@ public class ReceptDashAppointmentController {
         AddAppointemntPatientBloodGroup.getItems().add("AB+");
         AddAppointemntPatientBloodGroup.getItems().add("AB-");
 
+        // add medial officer special area to combo-box
+        AdReference.readItem(AddAppointmentSpecialMO);
+
         // combo-box items for AppointmentRecordStatus
         AddAppointmentAppointmentRecordStatus.getItems().add("Pending");
         AddAppointmentAppointmentRecordStatus.getItems().add("Approved");
 
+        // initial value of appointment ID is disable
+        AddAppointmentAppointmentNumber.setDisable(true);
+
+        // Selecting medical Officer is disable until selecting speciality area
+        boolean disable = !AddAppointmentAppointmentPrefferedMO.isDisabled();
+        AddAppointmentAppointmentPrefferedMO.setDisable(disable);
 
 
     }
@@ -191,21 +201,20 @@ public class ReceptDashAppointmentController {
         AddAppointmentPatientIDNum.clear();
         AddAppointmentPatientGender.getSelectionModel().clearSelection();
         AddAppointmentPatientPhoneNumber.clear();
-        AddAppointmentPatientMaritalStatus.getSelectionModel().clearSelection();
         AddAppointmentPatientDOB.getEditor().clear();
         AddAppointmentPatientAddressLine1.clear();
         AddAppointmentPatientAddressLine2.clear();
         AddAppointemntPatientBloodGroup.getSelectionModel().clearSelection();
-        AddAppointmentPatientAllergies.clear();
         AddAppointmentSymptoms.clear();
         AddAppointmentAppointmentDate.getEditor().clear();
         AddAppointmentAppointmentNumber.clear();
         AddAppointmentAppointmentTime.getEditor().clear();
         AddAppointmentAppointmentPrefferedMO.getSelectionModel().clearSelection();
         AddAppointmentAppointmentRecordStatus.getSelectionModel().clearSelection();
-
-
-
+        AddAppointmentCity.clear();
+        AddAppointmentSpecialMO.getSelectionModel().clearSelection();
+        ViewAppointmentID.clear();
+        EditAppointmentID.clear();
     }
     @FXML
     void Delete_Appointment(MouseEvent event) {
@@ -213,12 +222,47 @@ public class ReceptDashAppointmentController {
     }
 
     @FXML
-    void Edit_Appointment(MouseEvent event) {
-
+    void Edit_Appointment(MouseEvent event) throws IOException {
+        ValidationController appointmentValidation = new ValidationController(AddAppointmentStackPane,
+                AddAppointmentAnchorPane, 1);
+        if(appointmentValidation.validateAppointmentID(EditAppointmentID)) {
+            AppointmentIDGlobal = EditAppointmentID.getText().trim();
+            Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepEditAppointment.fxml"));
+            EditAppointmentBorderPane.setCenter(appointmentPane);
+            clearFields();
+        }
     }
     @FXML
     void View_Appointment(MouseEvent event) throws IOException {
-        Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/ViewAppointment.fxml"));
-        ViewAppointmentBorderPane.setCenter(appointmentPane);
+        ValidationController appointmentValidation = new ValidationController(AddAppointmentStackPane,
+                AddAppointmentAnchorPane, 1);
+
+        if(appointmentValidation.validateAppointmentID(ViewAppointmentID)){
+            AppointmentIDGlobal = ViewAppointmentID.getText().trim();
+            Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepViewAppointment.fxml"));
+            ViewAppointmentBorderPane.setCenter(appointmentPane);
+            clearFields();
+        }
+    }
+
+    @FXML
+    void selectingMO(ActionEvent event) {
+        if(AddAppointmentAppointmentPrefferedMO.isDisabled()){
+            AddAppointmentAppointmentPrefferedMO.setDisable(false);
+        }
+        AddAppointmentAppointmentPrefferedMO.getSelectionModel().clearSelection();
+        AddAppointmentAppointmentPrefferedMO.getItems().clear();
+        PrefMedicalOfficer.MOList(AddAppointmentSpecialMO.getValue(), AddAppointmentAppointmentPrefferedMO);
+    }
+
+    @FXML
+    void app_status(ActionEvent event) {
+        if(AddAppointmentAppointmentRecordStatus.getValue() == "Approved"){
+            AddAppointmentAppointmentNumber.setDisable(false);
+            AddAppointmentAppointmentNumber.setText(RandomID.getUniqueId());
+        } else {
+            AddAppointmentAppointmentNumber.clear();
+            AddAppointmentAppointmentNumber.setDisable(true);
+        }
     }
 }

@@ -1,2 +1,1 @@
-patient~lakshan~costa~981880705V~0789042390~2020-12-13~Unmarried~abc~abc~B+~~~2020-12-01~23:37~null~1224~Approved
-liam123~liam~pyne~981660706V~0789051345~2020-12-07~Divorced~xyz~xyz~AB-~None~Coughing~2020-12-01~23:41~null~1220~Approved
+f3012b7445~liam123~Liam~Pyne~887745652V~0584625789~Male~1988-06-14~4005~Praesent St.~Torrance~B-~Fever or chillsUIOPCoughUIOPFatigueUIOP~2020-12-28~18:00~Dr. firstname lastname - MO78954~Approved~Chest radiology

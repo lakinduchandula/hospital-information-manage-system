@@ -11,11 +11,13 @@ import javafx.scene.effect.BoxBlur;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import sample.model.Appointment;
+import sample.model.GetSetTextArea;
 import sample.model.MakeAlert;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Collections;
 import java.util.List;
 
@@ -170,6 +172,49 @@ public class ValidationController {
         } else {
             return true;
         }
+    }
+
+//    public boolean validateAppointmentID(TextField appointmentID){
+//        File file = new File("src/sample/data/Appointment.txt");
+//        try (FileReader fileReader = new FileReader(file)) {
+//            BufferedReader bufferedReader = new BufferedReader(fileReader);
+//
+//            String line = null;
+//
+//            while ((line = bufferedReader.readLine()) != null) {
+//                String[] userCredentials = line.split("~");
+//
+//                if(sameCredentialValidation(userCredentials[credentialIndex], appointmentID)){
+//                    return false;
+//                }
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+    public boolean validateAppointmentID(TextField ID) throws IOException {
+        File file = new File("src/sample/data/Appointment.txt");
+        try (FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+
+                if(sameCredentialValidation(userCredentials[0], ID)){
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        JFXButton button = new JFXButton("OK");
+        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                "Invalid Input Data",
+                "That Appointment ID is not in Appointment Database. Try with exiting one." );
+        return false;
     }
 
     public boolean validateExitingPatientUsername(TextField username){

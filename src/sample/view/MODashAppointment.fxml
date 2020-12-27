@@ -29,7 +29,7 @@
             <tabs>
                 <Tab style="-fx-background-color: #65499c;" text="Appointments">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#copyID" prefHeight="180.0" prefWidth="200.0">
                             <children>
                                 <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
                                     <children>
@@ -38,6 +38,18 @@
                                                 <Font size="14.0" />
                                             </font>
                                         </Label>
+                              <JFXButton fx:id="CopyID" layoutX="476.0" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #757de8;" text="Copy ID">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/dash-medical/mo-dash-copy-id.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXButton>
                                     </children>
                                 </Pane>
                         <TableView fx:id="TableAppointmentList" layoutX="29.0" layoutY="58.0" prefHeight="403.0" prefWidth="731.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">

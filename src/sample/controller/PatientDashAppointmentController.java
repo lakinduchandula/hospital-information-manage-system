@@ -17,6 +17,8 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import sample.model.AdReference;
+import sample.model.RandomID;
 
 public class PatientDashAppointmentController {
 
@@ -57,16 +59,19 @@ public class PatientDashAppointmentController {
     private JFXTimePicker AppointmentAddTime;
 
     @FXML
-    private JFXComboBox<?> AppointmentAddSpecial;
+    private JFXComboBox<String> AppointmentAddSpecial;
 
     @FXML
-    private JFXComboBox<?> AppointmentAddMO;
+    private JFXComboBox<String> AppointmentAddMO;
 
     @FXML
     private JFXTextField EditUserEditUsername;
 
     @FXML
     private JFXButton AppointmentView;
+
+    @FXML
+    private Label AppointmentAddID;
 
     @FXML
     private BorderPane ViewAppointmentBorder;
@@ -89,7 +94,11 @@ public class PatientDashAppointmentController {
 
     @FXML
     void initialize() {
+        // add items to Medical Officer Speciality area combo-box
+        AdReference.readItem(AppointmentAddSpecial);
 
+        // add unique id for appointment
+        AppointmentAddID.setText(RandomID.getUniqueId());
 
     }
 }

@@ -1,1 +1,3 @@
-medical~8898
+username~771623364V~firstname~lastname~771623364V~0875468952~Male~2020-12-14~Unmarried~Add1~Add2~City~Country~MO78954~fname@hmis.lk~2020-12-30~Chest radiology~
+sarosh123~8898~Sarosh~Perera~884626351V~0795864861~Male~1988-07-19~Unmarried~129/W/7~ABC Rd~Pallewela~Sri Lanka~MO89574~sarosh@hos.oi~2020-08-03~Breast imaging~
+wendi~8898~Wendi~Blake~881635241V~0785426584~Male~1988-09-13~Married~686 7014~Amet Street~Corona~Oklahoma~MO00054~Wendi.Blake@xyz.com~2018-06-03~Abdominal radiology
