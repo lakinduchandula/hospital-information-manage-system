@@ -14,5 +14,3 @@ Neuroradiology
 Nuclear radiology
 Pediatric radiology
 Radiation oncology
-
-new area

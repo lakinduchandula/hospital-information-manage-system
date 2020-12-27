@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="RecepEdirAppoStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.RecepEditAppointmentController">
+   <children>
+      <BorderPane fx:id="RecepEditBordere" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <AnchorPane fx:id="AnchPaneRecepEditApp" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Edit Appointment Common Information">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <JFXTextField fx:id="EditAppointmentNumber" focusColor="#424242" layoutX="33.0" layoutY="52.0" prefHeight="25.0" prefWidth="200.0" promptText="Appointment Number" styleClass="text-input-common-admin-dash" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXComboBox fx:id="EditAppointmentStatus" focusColor="#424242" layoutX="263.0" layoutY="52.0" onAction="#app_edit_status" prefHeight="25.0" prefWidth="200.0" promptText="Status" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
+                     <styleClass>
+                        <String fx:value="combo-box-admin-dash" />
+                        <String fx:value="choice-box-admin-dash" />
+                     </styleClass>
+                  </JFXComboBox>
+                  <JFXDatePicker fx:id="EditAppointmentDate" defaultColor="#424242" layoutX="263.0" layoutY="89.0" prefHeight="30.0" prefWidth="206.0" promptText="Date" stylesheets="@../assets/styles.css" />
+                  <JFXTimePicker fx:id="EditAppointmentTime" defaultColor="#424242" layoutX="33.0" layoutY="90.0" prefWidth="205.0" promptText="Time" stylesheets="@../assets/styles.css" />
+                  <JFXComboBox fx:id="EditAppointmentMO" focusColor="#424242" layoutX="263.0" layoutY="128.0" prefHeight="25.0" prefWidth="200.0" promptText="Medical Officer" styleClass="combo-box-admin-dash" stylesheets="@../assets/DashStyle.css" unFocusColor="#424242" />
+                  <JFXComboBox fx:id="EditAppointmentSpecial" focusColor="#424242" layoutX="33.0" layoutY="128.0" onAction="#selecting_edit_MO" prefHeight="25.0" prefWidth="200.0" promptText="Speciality Area" styleClass="combo-box-admin-dash" stylesheets="@../assets/DashStyle.css" unFocusColor="#424242" />
+                  <Pane layoutX="14.0" layoutY="177.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Appointment Message">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <JFXTextArea fx:id="EditAppointmentSymptoms" focusColor="#424242" layoutX="33.0" layoutY="220.0" prefHeight="175.0" prefWidth="435.0" promptText="Symptoms" styleClass="text-area" stylesheets="@../assets/styles.css" />
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="581.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/images/hims-base-img/EMR-hero.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="EditAppointmentSaveChange" layoutX="531.0" layoutY="355.0" onMouseClicked="#SaveChanges" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Save Changes" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
