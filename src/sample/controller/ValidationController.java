@@ -11,14 +11,9 @@ import javafx.scene.effect.BoxBlur;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import sample.model.Appointment;
-import sample.model.GetSetTextArea;
-import sample.model.MakeAlert;
 import sample.model.UserEditDelete;
 
 import java.io.*;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Collections;
 import java.util.List;
 
@@ -49,6 +44,51 @@ public class ValidationController {
             return false;
         }
         return true;
+    }
+
+    public boolean ValidateRefAlready(TextField txt, int LocationIndex){
+        if(ValidateReference(txt, LocationIndex)){
+            JFXButton button = new JFXButton("OK");
+            loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                    "Invalid Input Data",
+                    "That Reference is already in Reference database. Try another." );
+            return false;
+        }
+        return true;
+    }
+
+    public boolean ValidateRefIsNot(TextField txt, int LocationIndex){
+        if(ValidateReference(txt, LocationIndex)){
+            return true;
+        }
+        JFXButton button = new JFXButton("OK");
+        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                "Invalid Input Data",
+                "That Reference is not in Reference database. Try with exiting one." );
+        return false;
+    }
+
+
+
+    public boolean ValidateReference(TextField txt, int LocationIndex){
+        String[] fileLocation = {"src/sample/data/MOSpecialArea.txt"};
+        File file = new File(fileLocation[LocationIndex]);
+        try(FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null ;
+
+            while((line = bufferedReader.readLine()) != null) {
+                String[] item = line.split("~");
+                if(sameCredentialValidation(item[0], txt)){
+                    return true;
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public boolean ValidNotEmpty(TextField txt){

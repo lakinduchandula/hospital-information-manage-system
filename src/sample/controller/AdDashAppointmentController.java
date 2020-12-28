@@ -62,6 +62,7 @@ public class AdDashAppointmentController {
             appointmentID = ViewAppointmentID.getText().trim();
             Parent viewAppointment = FXMLLoader.load(getClass().getResource("/sample/view/AdViewAppointment.fxml"));
             ViewAppointmentBorderPane.setCenter(viewAppointment);
+            ViewAppointmentID.clear();
         }
     }
 

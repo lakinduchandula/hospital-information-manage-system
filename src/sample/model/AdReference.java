@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 public class AdReference {
 
+    private static JFXTextField txt;
+
     public static void addItem(JFXTextField ItemAdd){
         String[] fileLocationList = {"src/sample/data/MOSpecialArea.txt"};
         try {
@@ -37,5 +39,37 @@ public class AdReference {
         for (String item : ItemList) {
             readItems.getItems().addAll(item);
         }
+    }
+
+    public static void removeItem(JFXTextField ItemRemove){
+        String[] fileLocationList = {"src/sample/data/MOSpecialArea.txt"};
+        ArrayList<String> ItemList = new ArrayList<>();
+        File file = new File(fileLocationList[0]);
+        try (FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String itemRemove = null;
+
+            while ((itemRemove = bufferedReader.readLine()) != null) {
+                ItemList.add(itemRemove);
+                if(itemRemove.equals(ItemRemove.getText().trim())){
+                    ItemList.remove(itemRemove);
+                }
+            }
+
+            try {
+                FileWriter writer = new FileWriter("src/sample/data/MOSpecialArea.txt");
+                PrintWriter printWriter = new PrintWriter(writer);
+                for(String element : ItemList){
+                    printWriter.println(element);
+                }
+                printWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }
