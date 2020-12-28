@@ -88,3 +88,29 @@
     -fx-text-fill: White;
 }
 
+.button-raised-mo-dash {
+    -fx-font-size: 14px;
+    -fx-background-color: #283593;
+    -fx-pref-width: 85;
+    -fx-pref-height: 30;
+    -fx-text-fill: White;
+}
+
+.button-raised-patient-dash {
+    -fx-font-size: 14px;
+    -fx-background-color: #38006b;
+    -fx-pref-width: 85;
+    -fx-pref-height: 30;
+    -fx-text-fill: White;
+}
+
+.button-raised-recep-dash {
+    -fx-font-size: 14px;
+    -fx-background-color: #0277bd;
+    -fx-pref-width: 85;
+    -fx-pref-height: 30;
+    -fx-text-fill: White;
+}
+
+
+

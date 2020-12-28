@@ -70,7 +70,8 @@ public class RecepEditAppointmentController {
 
     @FXML
     void SaveChanges(MouseEvent event) throws IOException {
-        ValidationController validate = new ValidationController(RecepEdirAppoStackPane, AnchPaneRecepEditApp, 1 );
+        ValidationController validate = new ValidationController(RecepEdirAppoStackPane, AnchPaneRecepEditApp,
+                4 );
         Appointment editAppointment = new Appointment();
         editAppointment.deleteAppointment(ReceptDashAppointmentController.AppointmentIDGlobal);
 

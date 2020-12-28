@@ -102,7 +102,7 @@ public class PatientDashAppointmentController {
     @FXML
     void ViewAppointment(MouseEvent event) throws IOException {
         ValidationController appointmentValidation = new ValidationController(PatientDashAppStackPane,
-                PatientDashAppAnchor, 1);
+                PatientDashAppAnchor, 3);
         if(appointmentValidation.ValidNotEmpty(ViewAppointmentID) && appointmentValidation
                 .rightAppointmentPatient(ViewAppointmentID.getText().trim(),
                 LoginController.currentUser)) {
@@ -116,8 +116,8 @@ public class PatientDashAppointmentController {
 
     @FXML
     void makeAnAppointment(MouseEvent event) {
-        ValidationController validate = new ValidationController(PatientDashAppStackPane,
-                PatientDashAppAnchor, 1);
+        ValidationController MakeAppValidate = new ValidationController(PatientDashAppStackPane,
+                PatientDashAppAnchor, 3);
 
         if(        !AppointmentAddMO.getSelectionModel().isEmpty()
                 && !(AppointmentAddDate.getValue() == null)
@@ -145,10 +145,10 @@ public class PatientDashAppointmentController {
             newAppointment.setAppointmentRecordStatus("Pending");
 
             ReceptAddAppointment.writeToFile(newAppointment);
-            validate.detailedMsg("Appointment Creation", "Appointment made Successfully");
+            MakeAppValidate.detailedMsg("Appointment Creation", "Appointment made Successfully");
             clearFields();
         } else {
-            validate.detailedMsg("Invalid Input Data", "Some fields are empty." +
+            MakeAppValidate.detailedMsg("Invalid Input Data", "Some fields are empty." +
                     " Enter data and try again");
         }
     }

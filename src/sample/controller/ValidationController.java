@@ -406,7 +406,8 @@ public class ValidationController {
 
     private void loginUserException(StackPane userStackPane, Node nodeToBeBlurred, List<JFXButton> controls,
                                     int StyleIndex, String dialogHeading, String dialogBody) {
-        String[] styleClassDashboard = {"button-raised", "button-raised-admin-dash"};
+        String[] styleClassDashboard = {"button-raised", "button-raised-admin-dash", "button-raised-mo-dash",
+                "button-raised-patient-dash", "button-raised-recep-dash"};
         BoxBlur blurWindow = new BoxBlur(3,3,3);
 
         JFXDialogLayout dialogLayout = new JFXDialogLayout();

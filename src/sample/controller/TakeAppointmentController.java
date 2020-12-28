@@ -111,7 +111,7 @@ public class TakeAppointmentController {
     void end_appointment(MouseEvent event) throws IOException {
         Appointment endAppointment = new Appointment();
         ValidationController validation = new ValidationController(TakeAppointmentStackPane, TakeAppointmentAnchor,
-                1);
+                2);
         if(TakeAppointmentStatus.getText().equals("Completed")){
             validation.detailedMsg("Appointment Completed", "This Appointment will remove from appointment list" +
                     ",\nnow Patient can view this appointment");

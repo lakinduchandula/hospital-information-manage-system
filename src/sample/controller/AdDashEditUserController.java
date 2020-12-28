@@ -451,8 +451,6 @@ public class AdDashEditUserController {
         EditUserRecepEmail.clear();
         EditUserDateofJoin.getEditor().clear();
         EditUserPatientBlood.getEditor().clear();
-        EditUserAddAllergiesLine1.clear();
-        EditUserAddAllergiesLine2.clear();
         EditUserMOSpecificArea.getSelectionModel().clearSelection();
         EditUserMOStaffID.clear();
         EditUserMODateofJoin.getEditor().clear();
@@ -460,10 +458,9 @@ public class AdDashEditUserController {
         EditUserEditUsername.clear();
         EditUserEditUsermode.getSelectionModel().clearSelection();
         EditUserPatientBlood.getSelectionModel().clearSelection();
-        EditUserAddAllergiesLine1.clear();
-        EditUserAddAllergiesLine2.clear();
         EditUserDeleteUsermode.getSelectionModel().clearSelection();
         EditUserDeleteUsername.clear();
+        PatientAddAllergies.clear();
     }
 
 }

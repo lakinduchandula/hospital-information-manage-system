@@ -37,4 +37,3 @@ Family Medicine
 Pediatric Hematology/ Oncology
 Pediatrics
 Pediatric Endocrinology
-Pediatric Infectious Disease

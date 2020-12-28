@@ -114,7 +114,7 @@ public class MODashAppointmentController {
 
     @FXML
     void take_appointment(MouseEvent event) throws IOException {
-        ValidationController validate = new ValidationController(MODashAppStackPane, MODashAppAnchor, 1);
+        ValidationController validate = new ValidationController(MODashAppStackPane, MODashAppAnchor, 2);
         if(validate.validateAppointmentID(MOTakeAppointment) && validate.correctAppointment(LoginController.currentUser,
                 MOTakeAppointment)){
             appointmentID = MOTakeAppointment.getText().trim();
