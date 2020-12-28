@@ -143,7 +143,7 @@ public class EditMOAccountController {
         EditUserEditMaritalStatus.getItems().add("Legally Separated");
 
         // add items to the medical officer specialist areas
-        AdReference.readItem(EditUserMOSpecificArea);
+        AdReference.readItem(EditUserMOSpecificArea, 0);
 
         UserEditDelete newEditProfile = new UserEditDelete(2);
         newEditProfile.UserEdit(AdDashEditUserController.username);

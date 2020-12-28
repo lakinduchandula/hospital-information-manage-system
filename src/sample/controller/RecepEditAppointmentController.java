@@ -108,7 +108,7 @@ public class RecepEditAppointmentController {
     @FXML
     void initialize() {
         // add medial officer special area to combo-box
-        AdReference.readItem(EditAppointmentSpecial);
+        AdReference.readItem(EditAppointmentSpecial, 0);
 
         // add items to the medical officer
         PrefMedicalOfficer.MOList(EditAppointmentSpecial.getValue(), EditAppointmentMO);

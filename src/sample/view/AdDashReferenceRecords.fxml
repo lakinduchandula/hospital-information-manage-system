@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -41,6 +42,50 @@
                     </font>
                 </JFXButton>
             <JFXButton fx:id="ReferenceMOItemDelete" layoutX="518.0" layoutY="101.0" onMouseClicked="#rm_item_MOSpecial" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #d32f2f;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Pane layoutX="14.0" layoutY="151.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+               <children>
+                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="479.0" text="View Current Medical Officer Specialized Areas">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXComboBox fx:id="ReferenceMOSpecial" focusColor="#424242" layoutX="14.0" layoutY="194.0" prefHeight="30.0" prefWidth="394.0" promptText="Speciality Area" styleClass="choice-box-admin-dash" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242" />
+            <Pane layoutX="14.0" layoutY="244.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+               <children>
+                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="479.0" text="Enter Complaint Department to Add or Delete">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXTextField fx:id="ReferenceEnterItem" focusColor="#424242" layoutX="14.0" layoutY="287.0" prefHeight="30.0" prefWidth="394.0" promptText="Enter Complaint Department" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="ReferenceAddCD" layoutX="428.0" layoutY="287.0" onMouseClicked="#add_comp_dep" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #00c853;" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
+            <Pane layoutX="14.0" layoutY="337.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+               <children>
+                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="479.0" text="View Current Complaint Departments">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXComboBox fx:id="ReferenceCompleteDep" focusColor="#424242" layoutX="14.0" layoutY="380.0" prefHeight="30.0" prefWidth="394.0" promptText="Compaint Department" styleClass="choice-box-admin-dash" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242" />
+            <JFXButton fx:id="CompDelete" layoutX="518.0" layoutY="287.0" onMouseClicked="#remove_com_dep" prefHeight="30.0" prefWidth="72.0" style="-fx-background-color: #d32f2f;" text="Delete" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

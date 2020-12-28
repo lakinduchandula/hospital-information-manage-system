@@ -191,7 +191,7 @@ public class ReceptDashAppointmentController {
         AddAppointemntPatientBloodGroup.getItems().add("AB-");
 
         // add medial officer special area to combo-box
-        AdReference.readItem(AddAppointmentSpecialMO);
+        AdReference.readItem(AddAppointmentSpecialMO, 0);
 
         // combo-box items for AppointmentRecordStatus
         AddAppointmentAppointmentRecordStatus.getItems().add("Pending");

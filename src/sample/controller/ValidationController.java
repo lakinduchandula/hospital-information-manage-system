@@ -71,7 +71,7 @@ public class ValidationController {
 
 
     public boolean ValidateReference(TextField txt, int LocationIndex){
-        String[] fileLocation = {"src/sample/data/MOSpecialArea.txt"};
+        String[] fileLocation = {"src/sample/data/MOSpecialArea.txt", "src/sample/data/ComplaintDepartment.txt"};
         File file = new File(fileLocation[LocationIndex]);
         try(FileReader fileReader = new FileReader(file)) {
             BufferedReader bufferedReader = new BufferedReader(fileReader);

@@ -9,10 +9,10 @@ public class AdReference {
 
     private static JFXTextField txt;
 
-    public static void addItem(JFXTextField ItemAdd){
-        String[] fileLocationList = {"src/sample/data/MOSpecialArea.txt"};
+    public static void addItem(JFXTextField ItemAdd, int LocationIndex){
+        String[] fileLocationList = {"src/sample/data/MOSpecialArea.txt", "src/sample/data/ComplaintDepartment.txt"};
         try {
-            FileWriter writer = new FileWriter(fileLocationList[0], true);
+            FileWriter writer = new FileWriter(fileLocationList[LocationIndex], true);
             PrintWriter printWriter = new PrintWriter(writer);
             printWriter.println(ItemAdd.getText().trim());
             printWriter.close();
@@ -21,10 +21,10 @@ public class AdReference {
         }
     }
 
-    public static void readItem(ComboBox<String> readItems) {
-        String[] fileLocationList = {"src/sample/data/MOSpecialArea.txt"};
+    public static void readItem(ComboBox<String> readItems, int LocationIndex) {
+        String[] fileLocationList = {"src/sample/data/MOSpecialArea.txt", "src/sample/data/ComplaintDepartment.txt"};
         ArrayList<String> ItemList = new ArrayList<>();
-        File file = new File(fileLocationList[0]);
+        File file = new File(fileLocationList[LocationIndex]);
         try (FileReader fileReader = new FileReader(file)) {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
@@ -41,10 +41,10 @@ public class AdReference {
         }
     }
 
-    public static void removeItem(JFXTextField ItemRemove){
-        String[] fileLocationList = {"src/sample/data/MOSpecialArea.txt"};
+    public static void removeItem(JFXTextField ItemRemove, int LocationIndex){
+        String[] fileLocationList = {"src/sample/data/MOSpecialArea.txt", "src/sample/data/ComplaintDepartment.txt"};
         ArrayList<String> ItemList = new ArrayList<>();
-        File file = new File(fileLocationList[0]);
+        File file = new File(fileLocationList[LocationIndex]);
         try (FileReader fileReader = new FileReader(file)) {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
@@ -58,7 +58,7 @@ public class AdReference {
             }
 
             try {
-                FileWriter writer = new FileWriter("src/sample/data/MOSpecialArea.txt");
+                FileWriter writer = new FileWriter(fileLocationList[LocationIndex]);
                 PrintWriter printWriter = new PrintWriter(writer);
                 for(String element : ItemList){
                     printWriter.println(element);

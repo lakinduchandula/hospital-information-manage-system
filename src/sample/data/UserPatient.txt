@@ -1,3 +1,0 @@
-patient~8898~name1~name2~991623364V~0872094801~Male~2020-12-06~Unmarried~addline1~addline2~addcity~addCountry~O+~null~null~
-liam123~8898~Liam~Pyne~876233681V~0782094801~Male~2020-06-16~Unmarried~121/A~abc steet~Kadawatha~Sri Lanka~AB-~null~null
-sandaru98~981880705V~Sandaru~Rashmitha~981880705V~0789051398~Male~2020-12-01~Unmarried~No 299/4 Arawwala~Pannipitiya~Colombo~Sri Lanka~O+~~

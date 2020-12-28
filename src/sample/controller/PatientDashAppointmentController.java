@@ -156,7 +156,7 @@ public class PatientDashAppointmentController {
     @FXML
     void initialize() {
         // add items to Medical Officer Speciality area combo-box
-        AdReference.readItem(AppointmentAddSpecial);
+        AdReference.readItem(AppointmentAddSpecial, 0);
 
         // add unique id for appointment
         AppointmentAddID.setText(RandomID.getUniqueId());

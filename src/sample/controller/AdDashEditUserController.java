@@ -430,7 +430,7 @@ public class AdDashEditUserController {
         EditUserDeleteUsermode.getItems().add("Medical Officer");
 
         // add items to the medical officer specialist areas
-        AdReference.readItem(EditUserMOSpecificArea);
+        AdReference.readItem(EditUserMOSpecificArea, 0);
     }
 
 
