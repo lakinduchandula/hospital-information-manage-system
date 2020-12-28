@@ -70,7 +70,8 @@ public class RecepEditAppointmentController {
 
     @FXML
     void SaveChanges(MouseEvent event) throws IOException {
-        ValidationController validate = new ValidationController(RecepEdirAppoStackPane, AnchPaneRecepEditApp, 1 );
+        ValidationController validate = new ValidationController(RecepEdirAppoStackPane, AnchPaneRecepEditApp,
+                4 );
         Appointment editAppointment = new Appointment();
         editAppointment.deleteAppointment(ReceptDashAppointmentController.AppointmentIDGlobal);
 
@@ -108,7 +109,7 @@ public class RecepEditAppointmentController {
     @FXML
     void initialize() {
         // add medial officer special area to combo-box
-        AdReference.readItem(EditAppointmentSpecial);
+        AdReference.readItem(EditAppointmentSpecial, 0);
 
         // add items to the medical officer
         PrefMedicalOfficer.MOList(EditAppointmentSpecial.getValue(), EditAppointmentMO);

@@ -121,44 +121,57 @@ public class ReceptDashAppointmentController {
     void Add_Appointment(MouseEvent event) {
         try{
             ValidationController validate = new ValidationController(AddAppointmentStackPane, AddAppointmentAnchorPane, 1);
-            if(        validate.validateNIC(AddAppointmentPatientIDNum)
-                    && validate.validatePhone(AddAppointmentPatientPhoneNumber)
-                    && validate.validateExitingPatientUsername(AddAppointmentPatientUserName)
-                 ){
+            if(        !(AddAppointmentAppointmentTime.getValue() == null)
+                    && !(AddAppointmentAppointmentDate.getValue() == null)
+                    && !(AddAppointmentPatientDOB.getValue() == null)
+                    && !(AddAppointmentAppointmentPrefferedMO.getSelectionModel().isEmpty())
+                    && !(AddAppointemntPatientBloodGroup.getSelectionModel().isEmpty())
+                    && validate.ValidNotEmpty(AddAppointmentPatientUserName)
+                    && validate.ValidNotEmpty(AddAppointmentPatientIDNum)
+                    && validate.ValidNotEmpty(AddAppointmentPatientFirstname)
+                    && validate.ValidNotEmpty(AddAppointmentPatientLastname)
+                    && validate.ValidNotEmpty(AddAppointmentPatientPhoneNumber)
+                    && validate.ValidNotEmpty(AddAppointmentPatientAddressLine1)
+                    && validate.ValidNotEmpty(AddAppointmentPatientAddressLine2)
+                    && validate.ValidNotEmpty(AddAppointmentCity)
+            )
+            {
+                if (validate.validateNIC(AddAppointmentPatientIDNum)
+                        && validate.validatePhone(AddAppointmentPatientPhoneNumber)
+                        && validate.validateExitingPatientUsername(AddAppointmentPatientUserName)
+                ) {
 
-                Appointment newAppointment = new Appointment();
-                newAppointment.setAppointmentNo(AddAppointmentAppointmentNumber.getText().trim());
-                newAppointment.setFirstName(AddAppointmentPatientFirstname.getText().trim());
-                newAppointment.setLastName(AddAppointmentPatientLastname.getText().trim());
-                newAppointment.setUserName(AddAppointmentPatientUserName.getText().trim());
-                newAppointment.setIdNo(AddAppointmentPatientIDNum.getText().trim());
-                newAppointment.setGender(AddAppointmentPatientGender.getValue());
-                newAppointment.setPhoneNumber(AddAppointmentPatientPhoneNumber.getText().trim());
-                newAppointment.setDOB(AddAppointmentPatientDOB.getValue());
-                newAppointment.setAddressLine1(AddAppointmentPatientAddressLine1.getText().trim());
-                newAppointment.setAddressLine2(AddAppointmentPatientAddressLine2.getText().trim());
-                newAppointment.setCity(AddAppointmentCity.getText().trim());
-                newAppointment.setMedicalOfficer(AddAppointmentAppointmentPrefferedMO.getValue());
-                newAppointment.setMedicalSpecialArea(AddAppointmentSpecialMO.getValue());
-                newAppointment.setBloodGroup(AddAppointemntPatientBloodGroup.getValue());
-                newAppointment.setSymptoms(GetSetTextArea.getText(AddAppointmentSymptoms.getText().trim()));
-                newAppointment.setAppointmentDate(AddAppointmentAppointmentDate.getValue());
-                newAppointment.setAppointmentNo(AddAppointmentAppointmentNumber.getText().trim());
-                newAppointment.setAppointmentTime(AddAppointmentAppointmentTime.getValue());
-                newAppointment.setAppointmentRecordStatus(AddAppointmentAppointmentRecordStatus.getValue());
+                    Appointment newAppointment = new Appointment();
+                    newAppointment.setAppointmentNo(AddAppointmentAppointmentNumber.getText().trim());
+                    newAppointment.setFirstName(AddAppointmentPatientFirstname.getText().trim());
+                    newAppointment.setLastName(AddAppointmentPatientLastname.getText().trim());
+                    newAppointment.setUserName(AddAppointmentPatientUserName.getText().trim());
+                    newAppointment.setIdNo(AddAppointmentPatientIDNum.getText().trim());
+                    newAppointment.setGender(AddAppointmentPatientGender.getValue());
+                    newAppointment.setPhoneNumber(AddAppointmentPatientPhoneNumber.getText().trim());
+                    newAppointment.setDOB(AddAppointmentPatientDOB.getValue());
+                    newAppointment.setAddressLine1(AddAppointmentPatientAddressLine1.getText().trim());
+                    newAppointment.setAddressLine2(AddAppointmentPatientAddressLine2.getText().trim());
+                    newAppointment.setCity(AddAppointmentCity.getText().trim());
+                    newAppointment.setMedicalOfficer(AddAppointmentAppointmentPrefferedMO.getValue());
+                    newAppointment.setMedicalSpecialArea(AddAppointmentSpecialMO.getValue());
+                    newAppointment.setBloodGroup(AddAppointemntPatientBloodGroup.getValue());
+                    newAppointment.setSymptoms(GetSetTextArea.getText(AddAppointmentSymptoms.getText().trim()));
+                    newAppointment.setAppointmentDate(AddAppointmentAppointmentDate.getValue());
+                    newAppointment.setAppointmentTime(AddAppointmentAppointmentTime.getValue());
+                    newAppointment.setAppointmentRecordStatus(AddAppointmentAppointmentRecordStatus.getValue());
 
-
-                ReceptAddAppointment.writeToFile(newAppointment);
-                validate.successfulUserCreation("Appointment Successfully Created");
-                clearFields();
-
+                    ReceptAddAppointment.writeToFile(newAppointment);
+                    validate.successfulUserCreation("Appointment Successfully Created");
+                    clearFields();
+                }
+            } else {
+                validate.detailedMsg("Invalid Input Data", "Some fields are empty." +
+                        " Enter data and try again");
             }
-        } catch (Exception e) {
+        } catch(Exception e) {
             e.printStackTrace();
         }
-
-
-
     }
 
     @FXML
@@ -178,7 +191,7 @@ public class ReceptDashAppointmentController {
         AddAppointemntPatientBloodGroup.getItems().add("AB-");
 
         // add medial officer special area to combo-box
-        AdReference.readItem(AddAppointmentSpecialMO);
+        AdReference.readItem(AddAppointmentSpecialMO, 0);
 
         // combo-box items for AppointmentRecordStatus
         AddAppointmentAppointmentRecordStatus.getItems().add("Pending");
@@ -190,7 +203,6 @@ public class ReceptDashAppointmentController {
         // Selecting medical Officer is disable until selecting speciality area
         boolean disable = !AddAppointmentAppointmentPrefferedMO.isDisabled();
         AddAppointmentAppointmentPrefferedMO.setDisable(disable);
-
 
     }
 
@@ -216,32 +228,32 @@ public class ReceptDashAppointmentController {
         ViewAppointmentID.clear();
         EditAppointmentID.clear();
     }
-    @FXML
-    void Delete_Appointment(MouseEvent event) {
-
-    }
 
     @FXML
     void Edit_Appointment(MouseEvent event) throws IOException {
         ValidationController appointmentValidation = new ValidationController(AddAppointmentStackPane,
                 AddAppointmentAnchorPane, 1);
-        if(appointmentValidation.validateAppointmentID(EditAppointmentID)) {
-            AppointmentIDGlobal = EditAppointmentID.getText().trim();
-            Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepEditAppointment.fxml"));
-            EditAppointmentBorderPane.setCenter(appointmentPane);
-            clearFields();
+        if(appointmentValidation.ValidNotEmpty(EditAppointmentID)){
+            if (appointmentValidation.validateAppointmentID(EditAppointmentID)) {
+                AppointmentIDGlobal = EditAppointmentID.getText().trim();
+                Parent appointmentPane = FXMLLoader.load(getClass()
+                        .getResource("/sample/view/RecepEditAppointment.fxml"));
+                EditAppointmentBorderPane.setCenter(appointmentPane);
+                clearFields();
+            }
         }
     }
     @FXML
     void View_Appointment(MouseEvent event) throws IOException {
         ValidationController appointmentValidation = new ValidationController(AddAppointmentStackPane,
                 AddAppointmentAnchorPane, 1);
-
-        if(appointmentValidation.validateAppointmentID(ViewAppointmentID)){
-            AppointmentIDGlobal = ViewAppointmentID.getText().trim();
-            Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepViewAppointment.fxml"));
-            ViewAppointmentBorderPane.setCenter(appointmentPane);
-            clearFields();
+        if(appointmentValidation.ValidNotEmpty(ViewAppointmentID)){
+            if (appointmentValidation.validateAppointmentID(ViewAppointmentID)) {
+                AppointmentIDGlobal = ViewAppointmentID.getText().trim();
+                Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepViewAppointment.fxml"));
+                ViewAppointmentBorderPane.setCenter(appointmentPane);
+                clearFields();
+            }
         }
     }
 

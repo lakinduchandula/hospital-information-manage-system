@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ViewAppointmentController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.PatientViewAppointmentController">
    <children>
       <ScrollPane prefHeight="200.0" prefWidth="200.0">
         <content>
@@ -152,11 +152,11 @@
                   </Pane>
                   <ScrollPane layoutX="122.0" layoutY="381.0" prefHeight="84.0" prefWidth="438.0">
                      <content>
-                        <Label fx:id="ViewAppointmentSymptoms" prefHeight="173.0" prefWidth="422.0" style="-fx-background-color: white;" text="&#10;">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
+                        <AnchorPane prefHeight="1050.0" prefWidth="423.0" style="-fx-background-color: white;">
+                           <children>
+                              <Text fx:id="ViewAppointmentSymptoms" layoutX="3.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text&#10;Text&#10;Text&#10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
                      </content>
                   </ScrollPane>
                   <Label layoutX="20.0" layoutY="381.0" text="Symptoms ">

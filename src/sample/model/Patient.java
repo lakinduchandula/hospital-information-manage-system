@@ -4,8 +4,7 @@ import java.time.LocalDate;
 
 public class Patient extends User {
     private String bloodGroup;
-    private String allergiesLine1;
-    private String allergiesLine2;
+    private String allergies;
     private ComplaintRecord complaint;
     private Appointment appointment;
 
@@ -15,11 +14,11 @@ public class Patient extends User {
     }
     public Patient(String userName, String firstName, String lastName, String gender, String phoneNumber, String idNo,
                    LocalDate dOB, String addressLine1, String addressLine2, String city, String country,
-                   String maritalStatus, String password,String bloodGroup, String allergiesLine1, String allergiesLine2){
+                   String maritalStatus, String password,String bloodGroup, String allergies){
         super(userName, firstName, lastName, gender, phoneNumber, idNo, dOB, addressLine1, addressLine2, city, country,
                 maritalStatus, password);
         this.setBloodGroup(bloodGroup);
-        this.setAllergiesLine1(allergiesLine1);
+        this.setAllergies(allergies);
     }
 
 
@@ -28,12 +27,8 @@ public class Patient extends User {
         return bloodGroup;
     }
 
-    public String getAllergiesLine1(){
-        return allergiesLine1;
-    }
-
-    public String getAllergiesLine2(){
-        return allergiesLine2;
+    public String getAllergies(){
+        return allergies;
     }
 
     public ComplaintRecord getComplaint() {
@@ -48,12 +43,8 @@ public class Patient extends User {
         this.bloodGroup = bloodGroup;
     }
 
-    public void setAllergiesLine1(String allergiesLine1) {
-        this.allergiesLine1 = allergiesLine1;
-    }
-
-    public void setAllergiesLine2(String allergiesLine2) {
-        this.allergiesLine2 = allergiesLine2;
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
     }
 
     public void setComplaint(ComplaintRecord complaint) {
@@ -80,7 +71,7 @@ public class Patient extends User {
 
     @Override
     public String toString() {
-        return super.toString() + String.format("~%s~%s~%s", getBloodGroup(), getAllergiesLine1(), getAllergiesLine2());
+        return super.toString() + String.format("~%s~%s", getBloodGroup(), getAllergies());
     }
 }
 

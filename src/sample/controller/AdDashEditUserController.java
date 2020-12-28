@@ -155,6 +155,9 @@ public class AdDashEditUserController {
     private JFXButton CreateAPatient;
 
     @FXML
+    private JFXTextArea PatientAddAllergies;
+
+    @FXML
     private BorderPane EditUserDeleteBoarderPane;
 
     @FXML
@@ -340,8 +343,7 @@ public class AdDashEditUserController {
                 newPatient.setCity(EditUserAddCity.getText().trim());
                 newPatient.setCountry(EditUserAddCountry.getText().trim());
                 newPatient.setBloodGroup(EditUserPatientBlood.getValue());
-                newPatient.setAllergiesLine1(EditUserAddAllergiesLine1.getText().trim());
-                newPatient.setAllergiesLine2(EditUserAddAllergiesLine2.getText().trim());
+                newPatient.setAllergies(GetSetTextArea.getText(PatientAddAllergies.getText().trim()));
 
                 UserAdd.writeToFile(newPatient, 2);
                 validate.successfulUserCreation("Patient Account Successfully Created");
@@ -428,7 +430,7 @@ public class AdDashEditUserController {
         EditUserDeleteUsermode.getItems().add("Medical Officer");
 
         // add items to the medical officer specialist areas
-        AdReference.readItem(EditUserMOSpecificArea);
+        AdReference.readItem(EditUserMOSpecificArea, 0);
     }
 
 
@@ -449,8 +451,6 @@ public class AdDashEditUserController {
         EditUserRecepEmail.clear();
         EditUserDateofJoin.getEditor().clear();
         EditUserPatientBlood.getEditor().clear();
-        EditUserAddAllergiesLine1.clear();
-        EditUserAddAllergiesLine2.clear();
         EditUserMOSpecificArea.getSelectionModel().clearSelection();
         EditUserMOStaffID.clear();
         EditUserMODateofJoin.getEditor().clear();
@@ -458,10 +458,9 @@ public class AdDashEditUserController {
         EditUserEditUsername.clear();
         EditUserEditUsermode.getSelectionModel().clearSelection();
         EditUserPatientBlood.getSelectionModel().clearSelection();
-        EditUserAddAllergiesLine1.clear();
-        EditUserAddAllergiesLine2.clear();
         EditUserDeleteUsermode.getSelectionModel().clearSelection();
         EditUserDeleteUsername.clear();
+        PatientAddAllergies.clear();
     }
 
 }

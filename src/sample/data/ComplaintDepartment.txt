@@ -1,0 +1,15 @@
+Outpatient Department (OPD)
+Inpatient Service (IP)
+Medical Department
+Nursing Department
+Paramedical Departments
+Physical Medicine and Rehabilitation Department
+Operation Theatre Complex (OT)
+Pharmacy Department
+Radiology Department (X-ray Department)
+Dietary Department
+Non-Professional Services (Business Management)
+Purchasing Department
+Central Sterile Supply Department (CSSD)
+Medical Record Department (MRD)
+Personnel Department

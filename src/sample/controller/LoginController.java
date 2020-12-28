@@ -68,7 +68,10 @@ public class LoginController {
         LoginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                if (!LoginUsername.getText().toString().trim().equals("") && !LoginPassword.getText().toString().trim().equals("")) {
+                if (       !LoginUsername.getText().toString().trim().equals("")
+                        && !LoginPassword.getText().toString().trim().equals("")
+                        && !LoginUsermod.getSelectionModel().isEmpty()) {
+
                     switch (LoginUsermod.getValue()) {
                         case "Receptionist": {
                             UserLogin receptionistLogin = new UserLogin(LoginUsername.getText().trim(),
@@ -138,7 +141,10 @@ public class LoginController {
                         }
                     }
                 } else {
-                    System.out.println("Please Enter Login Credentials");
+                    ValidationController newValidate = new ValidationController(loginRootStack, loginRootAnchorPane,
+                            1);
+                    newValidate.detailedMsg("Access Denied",
+                            "Please Enter Login Credentials and Select Usermode");
                 }
 
             }

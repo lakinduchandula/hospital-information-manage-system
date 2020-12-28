@@ -68,7 +68,7 @@ public class RecepViewAppointmentController {
     private Text ViewAppointmentSymptoms;
 
     @FXML
-    private JFXButton DeleteAccount;
+    private JFXButton DeleteAppointment;
 
     @FXML
     void DeleteAppointment(MouseEvent event) throws IOException {
