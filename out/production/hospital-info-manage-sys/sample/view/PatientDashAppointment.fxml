@@ -20,7 +20,7 @@
 
 <StackPane fx:id="PatientDashAppStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.PatientDashAppointmentController">
     <children>
-        <AnchorPane fx:id="PatientDashAppAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0">
+        <AnchorPane fx:id="PatientDashAppAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/styles.css">
             <children>
                 <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #38006b;">
                     <children>

@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
@@ -17,9 +18,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="AddComplaintStackPane" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptDashComplaintController">
+<StackPane fx:id="AddComplaintStackPane" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptDashComplaintController">
    <children>
-      <AnchorPane fx:id="AddComplaintAnchorPane" prefHeight="576.0" prefWidth="790.0">
+      <AnchorPane fx:id="AddComplaintAnchorPane" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/styles.css">
          <children>
             <Pane layoutX="7.0" prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #0277bd;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -32,9 +33,9 @@
             </Pane>
             <ScrollPane layoutY="48.0" prefHeight="625.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="625.0" prefWidth="790.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="570.0" prefWidth="775.0">
                      <children>
-                        <JFXTabPane prefHeight="576.0" prefWidth="936.0" stylesheets="@../assets/DashStyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <JFXTabPane prefHeight="576.0" prefWidth="936.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <tabs>
                               <Tab text="Add Complaint">
                                  <content>
@@ -49,10 +50,10 @@
                                                 </Label>
                                              </children>
                                           </Pane>
-                                          <JFXComboBox fx:id="AddComplaintType" focusColor="#424242" layoutX="25.0" layoutY="85.0" prefHeight="30.0" prefWidth="234.0" promptText="Complaint Type" unFocusColor="#424242">
+                                          <JFXComboBox fx:id="AddComplaintType" focusColor="#424242" layoutX="25.0" layoutY="85.0" prefHeight="30.0" prefWidth="234.0" promptText="Complaint Type" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
                                              <styleClass>
-                                                <String fx:value="combo-box-admin-dash" />
                                                 <String fx:value="choice-box-admin-dash" />
+                                                <String fx:value="combo-box-admin-dash" />
                                              </styleClass>
                                           </JFXComboBox>
                                           <JFXTextField fx:id="AddComplaintFirstName" focusColor="#424242" layoutX="25.0" layoutY="240.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
@@ -66,12 +67,6 @@
                                              </font>
                                           </JFXTextField>
                                           <JFXDatePicker fx:id="AddComplaintDate" defaultColor="#424242" layoutX="315.0" layoutY="50.0" prefHeight="30.0" prefWidth="200.0" promptText="Date" />
-                                          <Label layoutX="25.0" layoutY="393.0" prefHeight="30.0" prefWidth="132.0" text="Description : ">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <JFXTextField fx:id="AddComplaintDescription" focusColor="#4d4d4d" layoutX="25.0" layoutY="423.0" prefHeight="50.0" prefWidth="233.0" />
                                           <Label layoutX="26.0" layoutY="125.0" prefHeight="30.0" prefWidth="202.0" text="Attach Document (If Any)">
                                              <font>
                                                 <Font size="14.0" />
@@ -83,7 +78,7 @@
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </JFXButton>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="590.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="590.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="47.59358215332031" AnchorPane.topAnchor="40.0">
                                              <image>
                                                 <Image url="@../assets/images/hims-base-img/package.png" />
                                              </image>
@@ -136,6 +131,7 @@
                                                 </Label>
                                              </children>
                                           </Pane>
+                                          <JFXTextArea fx:id="AddComplaintDescription" focusColor="#424242" layoutX="23.0" layoutY="402.0" prefHeight="118.0" prefWidth="496.0" promptText="Description" unFocusColor="#424242" />
                                        </children>
                                     </AnchorPane>
                                  </content>
@@ -170,14 +166,14 @@
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </JFXButton>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="532.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="556.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="44.0">
                                              <image>
                                                 <Image url="@../assets/images/hims-base-img/package.png" />
                                              </image>
                                           </ImageView>
-                                          <BorderPane fx:id="ViewComplaintBorderPane" layoutX="8.0" layoutY="230.0" prefHeight="450.0" prefWidth="790.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                          <BorderPane fx:id="ViewComplaintBorderPane" layoutX="6.0" layoutY="194.0" prefHeight="330.0" prefWidth="775.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                              <center>
-                                                <AnchorPane fx:id="ViewComplaintAnchorPane" prefHeight="450.0" prefWidth="790.0" BorderPane.alignment="CENTER" />
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
                                              </center>
                                           </BorderPane>
                                        </children>
