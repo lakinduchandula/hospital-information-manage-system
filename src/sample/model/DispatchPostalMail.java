@@ -19,9 +19,7 @@ public class DispatchPostalMail extends ReceivedPostalMail{
         }
 
         //Getters and Setters
-        public String getToName(){
-            return this.toName;
-        }
+        public String getToName(){ return this.toName; }
 
         public String getToAddress(){
             return this.toAddress;
@@ -42,6 +40,11 @@ public class DispatchPostalMail extends ReceivedPostalMail{
         public void setToName(String fromName){
             this.fromName = fromName;
         }
+
+    public String toString() {
+        return String.format("%s~%s~%s~%s~%s~%s~%s", getReferenceNo(), getCurrentDate(),
+                getNote(), getAttachDoc(),getToName(), getToAddress(), getFromName());
+    }
 
     }
 

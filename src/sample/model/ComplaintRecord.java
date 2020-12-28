@@ -1,10 +1,13 @@
 package sample.model;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class ComplaintRecord {
+
+    private String[] complaintDetails;
     private String complaintType;
     private String firstName;
     private String lastName;
@@ -13,7 +16,6 @@ public class ComplaintRecord {
     private String phoneNum;
     private String complaintID;
     private LocalDate currentDate;
-    private String additionalPhoneNum;
     private String description;
     private String actionTaken;
     private File attachDocORNote;
@@ -21,7 +23,7 @@ public class ComplaintRecord {
     //Variable Constructor
 
     public ComplaintRecord(String complaintType, String firstName,String lastName, String username, String idNum
-                           ,String phoneNum , String complaintID, LocalDate currentDate ,  String additionalPhoneNum
+                           ,String phoneNum , String complaintID, LocalDate currentDate
                            ,String description, String actionTaken, File attachDocORNote){
 
         this.setComplaintType(complaintType);
@@ -32,7 +34,6 @@ public class ComplaintRecord {
         this.setPhoneNum(phoneNum);
         this.setComplaintID(complaintID);
         this.setCurrentDate(currentDate);
-        this.setAdditionalPhoneNum(additionalPhoneNum);
         this.setDescription(description);
         this.setActionTaken(actionTaken);
         this.setAttachDocORNote(attachDocORNote);
@@ -49,7 +50,6 @@ public class ComplaintRecord {
         this.setPhoneNum("");
         this.setComplaintID("");
         this.setCurrentDate(null);
-        this.setAdditionalPhoneNum("");
         this.setDescription("");
         this.setActionTaken("");
         this.setAttachDocORNote(null);
@@ -73,8 +73,7 @@ public class ComplaintRecord {
 
     public String getComplaintID() { return this.complaintID; }
 
-    public String getAdditionalPhoneNum() { return this.additionalPhoneNum; }
-
+    public String[] getComplaintDetails() { return this.complaintDetails; }
 
     public LocalDate getCurrentDate(){
         return this.currentDate;
@@ -111,7 +110,6 @@ public class ComplaintRecord {
 
     public void setComplaintID(String complaintID) { this.complaintID = complaintID; }
 
-    public void setAdditionalPhoneNum(String additionalPhoneNum) { this.additionalPhoneNum = additionalPhoneNum; }
 
     public void setCurrentDate(LocalDate currentDate) {
         this.currentDate = currentDate;
@@ -125,14 +123,43 @@ public class ComplaintRecord {
         this.actionTaken = actionTaken;
     }
 
+    public void setComplaintDetails(String[] complaintDetails) { this.complaintDetails = complaintDetails; }
+
     public void setAttachDocORNote(File attachDocORNote) {
         this.attachDocORNote = attachDocORNote;
     }
 
     public String toString() {
-        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s", getUsername(),getFirstName(),
-                getLastName(), getIdNum(), getPhoneNum() , getComplaintID(),getCurrentDate() , getComplaintType(),
-                getAdditionalPhoneNum() , getDescription() , getAttachDocORNote() , getActionTaken());
+        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s",getComplaintID(),getUsername(),getFirstName(),
+                getLastName(), getIdNum(), getPhoneNum() , getCurrentDate() , getComplaintType(),
+                getDescription() , getAttachDocORNote() , getActionTaken());
     }
 
+    public void getComplaintDetailsArray(String complaintID) {
+        File file = new File("src/sample/data/Complaint.txt");
+        try (FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+
+                if(sameCredentials(userCredentials[0], complaintID)){
+                    System.out.println(userCredentials[0]);
+                    setComplaintDetails(userCredentials);
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean sameCredentials(String line1, String line2){
+        return line1.equals(line2);
+    }
+
+
 }
+

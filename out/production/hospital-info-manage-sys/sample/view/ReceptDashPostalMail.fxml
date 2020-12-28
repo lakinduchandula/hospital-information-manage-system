@@ -58,7 +58,7 @@
                                  </font>
                               </Label>
                               <JFXButton fx:id="AddPostalMailAttachBtn" layoutX="263.0" layoutY="211.0" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #9be7ff;" text="Choose File" />
-                              <JFXTextField fx:id="ComplaintActionTaken" focusColor="#424242" layoutX="25.0" layoutY="186.0" prefHeight="50.0" prefWidth="200.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                              <JFXTextField focusColor="#424242" layoutX="25.0" layoutY="186.0" prefHeight="50.0" prefWidth="200.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -74,22 +74,22 @@
                                       <content>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="182.0" prefWidth="766.0">
                                              <children>
-                                                <JFXTextField focusColor="#4d4d4d" layoutX="25.0" layoutY="25.0" prefHeight="25.0" prefWidth="200.0" promptText="From Name">
+                                                <JFXTextField fx:id="ReceivedPMFromName" focusColor="#4d4d4d" layoutX="25.0" layoutY="25.0" prefHeight="25.0" prefWidth="200.0" promptText="From Name">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </JFXTextField>
-                                                <JFXTextField focusColor="#4d4d4d" layoutX="300.0" layoutY="25.0" prefHeight="25.0" prefWidth="200.0" promptText="To Name">
+                                                <JFXTextField fx:id="ReceivedPMToName" focusColor="#4d4d4d" layoutX="300.0" layoutY="25.0" prefHeight="25.0" prefWidth="200.0" promptText="To Name">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </JFXTextField>
-                                                <JFXTextField focusColor="#4d4d4d" layoutX="25.0" layoutY="67.0" prefHeight="25.0" prefWidth="200.0" promptText="From Address">
+                                                <JFXTextField fx:id="ReceivedPMFromAddress" focusColor="#4d4d4d" layoutX="25.0" layoutY="67.0" prefHeight="25.0" prefWidth="200.0" promptText="From Address">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </JFXTextField>
-                                                <JFXButton fx:id="EditPostalMailBtn1" layoutX="500.0" layoutY="111.0" onMouseClicked="#Edit_PostalMail" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Received Postal Mail" textFill="WHITE">
+                                                <JFXButton fx:id="ReceivedPMAddBtn" layoutX="500.0" layoutY="111.0" onMouseClicked="#Edit_PostalMail" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Received Postal Mail" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -102,22 +102,22 @@
                                       <content>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
-                                                <JFXTextField focusColor="#4d4d4d" layoutX="25.0" layoutY="25.0" prefHeight="25.0" prefWidth="200.0" promptText="To Name">
+                                                <JFXTextField fx:id="DispatchPMToName" focusColor="#4d4d4d" layoutX="25.0" layoutY="25.0" prefHeight="25.0" prefWidth="200.0" promptText="To Name">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </JFXTextField>
-                                                <JFXTextField focusColor="#4d4d4d" layoutX="300.0" layoutY="25.0" prefHeight="25.0" prefWidth="200.0" promptText="From Name">
+                                                <JFXTextField fx:id="DispatchPMFromName" focusColor="#4d4d4d" layoutX="300.0" layoutY="25.0" prefHeight="25.0" prefWidth="200.0" promptText="From Name">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </JFXTextField>
-                                                <JFXTextField focusColor="#4d4d4d" layoutX="25.0" layoutY="67.0" prefHeight="25.0" prefWidth="200.0" promptText="To Address">
+                                                <JFXTextField fx:id="DispatchPMToAddress" focusColor="#4d4d4d" layoutX="25.0" layoutY="67.0" prefHeight="25.0" prefWidth="200.0" promptText="To Address">
                                                    <font>
                                                       <Font size="14.0" />
                                                    </font>
                                                 </JFXTextField>
-                                                <JFXButton fx:id="EditPostalMailBtn11" layoutX="500.0" layoutY="111.0" onMouseClicked="#Edit_PostalMail" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Dispatch Postal Mail" textFill="WHITE">
+                                                <JFXButton fx:id="DispatchPMAddBtn" layoutX="500.0" layoutY="111.0" onMouseClicked="#Edit_PostalMail" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Dispatch Postal Mail" textFill="WHITE">
                                                    <font>
                                                       <Font name="System Bold" size="14.0" />
                                                    </font>
@@ -178,7 +178,7 @@
                         </ImageView>
                      </graphic>
                   </Tab>
-                  <Tab fx:id="ViewPostalMailReferenceNum1" text="View Postal Mail">
+                  <Tab text="View Postal Mail">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>

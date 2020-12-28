@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="ViewComplaintStackPane" prefHeight="300.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.RecepViewComplaintController">
+   <children>
+      <ScrollPane fx:id="ViewComplaintScrollPane" prefHeight="200.0" prefWidth="200.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="778.0">
+               <children>
+                  <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Details of the Complaint" textFill="#000000fe">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="14.0" layoutY="122.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Complaint By (user details)" textFill="#000000fe">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="14.0" layoutY="254.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Complaint Body" textFill="#000000fe">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="20.0" layoutY="58.0" prefHeight="19.0" prefWidth="100.0" text="Complaint ID     :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="85.0" prefHeight="19.0" prefWidth="97.0" text="Complaint Type :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="315.0" layoutY="57.0" prefHeight="19.0" prefWidth="87.0" text="Date              :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="315.0" layoutY="85.0" text="Action Taken :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="164.0" prefHeight="19.0" prefWidth="95.0" text="First Name        :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="191.0" prefHeight="19.0" prefWidth="99.0" text="Username         :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="218.0" text="Phone Number :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="315.0" layoutY="164.0" prefHeight="19.0" prefWidth="93.0" text="Last Name     :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="315.0" layoutY="191.0" prefHeight="19.0" prefWidth="88.0" text="NIC                :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="290.0" text="Description :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane layoutX="21.0" layoutY="321.0" prefHeight="124.0" prefWidth="446.0">
+                     <content>
+                        <Label fx:id="ViewComplaintDescription" prefHeight="150.0" prefWidth="431.0" />
+                     </content>
+                  </ScrollPane>
+                  <Label fx:id="ViewComplaintID" layoutX="120.0" layoutY="58.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewComplaintType" layoutX="120.0" layoutY="85.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewComplaintDate" layoutX="415.0" layoutY="57.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewComplaintActionTaken" layoutX="415.0" layoutY="85.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewComplaintFirstName" layoutX="120.0" layoutY="164.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewComplaintUsername" layoutX="120.0" layoutY="191.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewComplaintPhoneNum" layoutX="120.0" layoutY="218.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewComplaintLastName" layoutX="415.0" layoutY="164.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewComplaintNIC" layoutX="415.0" layoutY="191.0" prefHeight="19.0" prefWidth="150.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</StackPane>

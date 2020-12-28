@@ -1,12 +1,18 @@
 package sample.model;
 
-import java.io.File;
+import java.io.*;
 import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
 
+import static sample.model.PrefMedicalOfficer.credentialValidation;
+
 public class Visitor {
+
+    private String[] visitorDetails;
+    private String[] deleteVisitorDetailsArray;
     private String purpose;
     private String firstName;
     private String lastName;
@@ -53,11 +59,11 @@ public class Visitor {
         return this.purpose;
     }
 
-    public String getFirstNameName(){
+    public String getFirstName(){
         return this.firstName;
     }
 
-    public String getLastNameName(){
+    public String getLastName(){
         return this.lastName;
     }
 
@@ -92,6 +98,10 @@ public class Visitor {
     public String getPhoneNumber(){
         return this.phoneNumber;
     }
+
+    public String[] getVisitorDetails() { return this.visitorDetails; }
+
+    public String[] getDeleteVisitorDetailsArray(String visitorIDGlobal) { return this.deleteVisitorDetailsArray; }
 
     public void setPurpose(String purpose) {
         this.purpose = purpose;
@@ -137,11 +147,75 @@ public class Visitor {
         this.phoneNumber = phoneNumber;
     }
 
+    public void setVisitorDetails(String[] visitorDetails) { this.visitorDetails = visitorDetails; }
+
+    public void setDeleteVisitorDetailsArray(String[] deleteVisitorDetailsArray) {
+        this.deleteVisitorDetailsArray = deleteVisitorDetailsArray; }
+
     public String toString() {
-        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s", getFirstNameName(), getLastNameName(),
-                getIdCardNo(), getPurpose(),getAddress(), getPhoneNumber(), getDate(), getPhoneNumber(),
+        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s", getIdCardNo(), getFirstName(), getLastName(),
+                 getPurpose(),getAddress(), getPhoneNumber(), getDate(),
                 getInTime(), getOutTime(), getNote());
     }
 
+
+
+    public void deleteVisitor(String idCardNo) {
+        File file = new File("src/sample/data/Visitor.txt");
+        try (FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null;
+            ArrayList<String[]> visitors = new ArrayList<>();
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+                visitors.add(userCredentials);
+                if (credentialValidation(userCredentials[0], idCardNo)) {
+                    setDeleteVisitorDetailsArray(userCredentials);
+                    visitors.remove(userCredentials);
+                }
+            }
+
+            // add other appointments to the file
+            try {
+                FileWriter writer = new FileWriter("src/sample/data/Visitor.txt");
+                PrintWriter printWriter = new PrintWriter(writer);
+                for(String[] elementArray : visitors){
+                    for(String element: elementArray){
+                        printWriter.print(element + "~");
+                    }
+                    printWriter.println();
+                }
+                printWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void getVisitorDetailsArray(String idCardNo) {
+        File file = new File("src/sample/data/Visitor.txt");
+        try (FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            System.out.println(idCardNo+"203");
+            String line = null;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+
+                if(sameCredentials(userCredentials[0], idCardNo)){
+                    System.out.println(userCredentials[0]);
+                    setVisitorDetails(userCredentials);
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public boolean sameCredentials(String line1, String line2){ return line1.equals(line2); }
 }
 

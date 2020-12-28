@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="RecepViewVisitorStackPane" prefHeight="420.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.RecepViewVisitorController">
+   <children>
+      <BorderPane fx:id="RecepViewVisitorBorderPane" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <AnchorPane fx:id="RecepViewVisitorAnchorPane" prefHeight="420.0" prefWidth="790.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="View Visitor Information">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="30.0" layoutY="65.0" prefHeight="25.0" prefWidth="98.0" text="First Name   :">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Label layoutX="30.0" layoutY="100.0" prefHeight="25.0" prefWidth="98.0" text="Last Name   :">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Label layoutX="30.0" layoutY="135.0" prefHeight="25.0" prefWidth="87.0" text="Purpose       :">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Label layoutX="30.0" layoutY="170.0" prefHeight="25.0" prefWidth="89.0" text="Date            :">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Label fx:id="ViewVisitorFirstName" layoutX="130.0" layoutY="65.0" prefHeight="25.0" prefWidth="117.0" />
+                  <Label layoutX="30.0" layoutY="205.0" prefHeight="25.0" prefWidth="82.0" text="Note            :">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Label>
+                  <Label fx:id="ViewVisitorLastName" layoutX="130.0" layoutY="100.0" prefHeight="25.0" prefWidth="117.0" />
+                  <Label fx:id="ViewVisitorPurpose" layoutX="130.0" layoutY="135.0" prefHeight="25.0" prefWidth="117.0" />
+                  <Label layoutX="115.0" layoutY="152.0" prefHeight="25.0" prefWidth="117.0" />
+                  <Label fx:id="ViewVisitorNote" layoutX="130.0" layoutY="205.0" prefHeight="25.0" prefWidth="117.0" />
+                  <Label layoutX="300.0" layoutY="65.0" prefHeight="25.0" prefWidth="98.0" text="ID Number        :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="300.0" layoutY="100.0" prefHeight="25.0" prefWidth="98.0" text="Address             :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="300.0" layoutY="135.0" prefHeight="25.0" prefWidth="98.0" text="Phone Number  :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="300.0" layoutY="170.0" prefHeight="25.0" prefWidth="103.0" text="In Time               :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="300.0" layoutY="205.0" prefHeight="25.0" prefWidth="104.0" text="Out Time            :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewVisitorNIC" layoutX="410.0" layoutY="65.0" prefHeight="25.0" prefWidth="174.0" />
+                  <Label fx:id="ViewVisitorAdress" layoutX="410.0" layoutY="100.0" prefHeight="25.0" prefWidth="165.0" />
+                  <Label fx:id="ViewVisitorPhoneNumber" layoutX="410.0" layoutY="135.0" prefHeight="25.0" prefWidth="157.0" />
+                  <Label fx:id="ViewVisitorInTime" layoutX="410.0" layoutY="170.0" prefHeight="25.0" prefWidth="159.0" />
+                  <Label fx:id="ViewVisitorOutTime" layoutX="410.0" layoutY="205.0" prefHeight="25.0" prefWidth="159.0" />
+                  <Label fx:id="ViewVisitorDate" layoutX="130.0" layoutY="170.0" prefHeight="25.0" prefWidth="117.0" />
+                  <JFXButton fx:id="DeleteVisitor" layoutX="475.0" layoutY="244.0" onMouseClicked="#DeleteVisitor" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #d32f2f;" text="Delete Visitor" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
