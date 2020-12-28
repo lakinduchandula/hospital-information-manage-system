@@ -2,6 +2,7 @@ package sample.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 
 import java.io.IOException;
@@ -15,10 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
-import sample.model.Patient;
-import sample.model.Receptionist;
-import sample.model.UserAdd;
-import sample.model.UserEditDelete;
+import sample.model.*;
 
 public class EditPatientAccountController {
 
@@ -75,10 +73,7 @@ public class EditPatientAccountController {
     private JFXButton EditUserSaveChange;
 
     @FXML
-    private JFXTextField EditUserAddAllergiesLine2;
-
-    @FXML
-    private JFXTextField EditUserAddAllergiesLine1;
+    private JFXTextArea EditPatientAllergies;
 
     @FXML
     private JFXTextField EditUserEditPassword;
@@ -110,8 +105,7 @@ public class EditPatientAccountController {
                 editPatient.setCity(EditUserEditAddCity.getText().trim());
                 editPatient.setCountry(EditUserEditAddCountry.getText().trim());
                 editPatient.setBloodGroup(getUserDetailArray()[13]);
-                editPatient.setAllergiesLine1(EditUserAddAllergiesLine1.getText().trim());
-                editPatient.setAllergiesLine2(EditUserAddAllergiesLine2.getText().trim());
+                editPatient.setAllergies(GetSetTextArea.getText(EditPatientAllergies.getText().trim()));
 
                 UserAdd.writeToFile(editPatient, 2);
                 validate.successfulUserCreation("Patient Account Successfully Updated");
@@ -152,7 +146,6 @@ public class EditPatientAccountController {
         EditUserEditAddLine2.setText(PatientDetails[10]);
         EditUserEditAddCity.setText(PatientDetails[11]);
         EditUserEditAddCountry.setText(PatientDetails[12]);
-        EditUserAddAllergiesLine1.setText(PatientDetails[14]);
-        EditUserAddAllergiesLine2.setText(PatientDetails[15]);
+        EditPatientAllergies.setText(GetSetTextArea.setText(PatientDetails[14]));
     }
 }

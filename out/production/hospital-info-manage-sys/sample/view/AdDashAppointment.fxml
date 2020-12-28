@@ -10,113 +10,72 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdDashAppointmentController">
+
+<StackPane fx:id="AdDashAppStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdDashAppointmentController">
    <children>
-      <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #00838f;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane fx:id="AdDashAppAnch" prefHeight="576.0" prefWidth="790.0">
          <children>
-            <Label layoutX="14.0" layoutY="8.0" text="Appoinment" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
+            <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #00838f;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="8.0" text="Appoinment" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXTabPane fx:id="AppointmentTabpane" layoutX="-2.0" layoutY="49.0" prefHeight="528.0" prefWidth="790.0" stylesheets="@../assets/styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <tabs>
+                  <Tab text="View Appointment">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+                                 <children>
+                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="450.0" text="Enter valid Username to view or delete the Appoinment">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <JFXTextField fx:id="ViewAppointmentID" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Appointment ID" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXButton fx:id="ViewAppointmentBtn" layoutX="14.0" layoutY="127.0" onMouseClicked="#view_appointment" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Appointment" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="571.7747192382812" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="23.68603515625" AnchorPane.topAnchor="44.0">
+                                 <image>
+                                    <Image url="@../assets/images/hims-base-img/disruption-section-3.png" />
+                                 </image>
+                              </ImageView>
+                              <BorderPane fx:id="ViewAppointmentBorderPane" layoutX="14.0" layoutY="197.0" prefHeight="291.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="197.0">
+                                 <center>
+                                    <AnchorPane prefHeight="219.0" prefWidth="716.0" BorderPane.alignment="CENTER" />
+                                 </center>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/dash-admin/dash-admin-view-appoinment.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
          </children>
-      </Pane>
-      <JFXTabPane fx:id="AppointmentTabpane" layoutX="-2.0" layoutY="49.0" prefHeight="528.0" prefWidth="790.0" stylesheets="@../assets/styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <tabs>
-            <Tab text="View Appointment">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
-                           <children>
-                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter valid Username to view the Appoinment">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <JFXTextField fx:id="ViewAppointmentUsername" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXButton fx:id="ViewAppointmentBtn" layoutX="14.0" layoutY="127.0" onMouseClicked="#view_appointment" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Appointment" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </JFXButton>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="571.7747192382812" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="23.68603515625" AnchorPane.topAnchor="44.0">
-                           <image>
-                              <Image url="@../assets/images/hims-base-img/disruption-section-3.png" />
-                           </image>
-                        </ImageView>
-                        <BorderPane fx:id="ViewAppointmentBorderPane" layoutX="14.0" layoutY="197.0" prefHeight="286.0" prefWidth="780.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="197.0">
-                           <center>
-                              <AnchorPane prefHeight="219.0" prefWidth="716.0" BorderPane.alignment="CENTER" />
-                           </center>
-                        </BorderPane>
-                     </children></AnchorPane>
-              </content>
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/images/dash-admin/dash-admin-view-appoinment.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Tab>
-            <Tab text="Delete Appointment">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="200.0">
-                     <children>
-                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
-                           <children>
-                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter valid Username to delete the Appoinment">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </Pane>
-                        <JFXButton fx:id="DeleteAppointmentBtn" layoutX="14.0" layoutY="127.0" onMouseClicked="#view_before_delete" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View before Delete" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXTextField fx:id="DeleteAppointmentUsername" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </JFXTextField>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="581.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="52.0">
-                           <image>
-                              <Image url="@../assets/images/hims-base-img/disruption-section-3.png" />
-                           </image>
-                        </ImageView>
-                        <JFXButton fx:id="DeleteAppointmentBtn1" layoutX="258.0" layoutY="127.0" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #d32f2f;" text="Delete Appointment" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </JFXButton>
-                        <BorderPane fx:id="DeleteAppointmentBorderPane" layoutX="5.0" layoutY="207.0" prefHeight="273.0" prefWidth="775.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
-                           <center>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-                           </center>
-                        </BorderPane>
-                     </children></AnchorPane>
-              </content>
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/images/dash-admin/dash-admin-delete-appoinment.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Tab>
-         </tabs>
-      </JFXTabPane>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>

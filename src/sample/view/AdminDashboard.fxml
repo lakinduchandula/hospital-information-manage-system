@@ -129,7 +129,7 @@
                               <Insets left="5.0" />
                            </padding>
                         </JFXButton>
-                        <JFXButton fx:id="AdminDashLogOutBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="260.0" style="-fx-background-color: #64b5f6;" text="Sign Out" textAlignment="RIGHT" textFill="WHITE">
+                        <JFXButton fx:id="AdminDashLogOutBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="260.0" text="Sign Out" textAlignment="RIGHT" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
