@@ -43,4 +43,8 @@ public class  ReceivedPostalMail extends PostalMail{
         this.toName = toName;
     }
 
+    public String toString() {
+        return String.format("%s~%s~%s~%s~%s~%s~%s", getReferenceNo(), getCurrentDate(),
+                getNote(), getAttachDoc(),getFromName(), getFromAddress(), getToName());
+    }
 }

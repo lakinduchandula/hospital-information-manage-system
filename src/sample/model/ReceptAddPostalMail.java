@@ -4,14 +4,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class ReceptAddVisitor  {
-    public static void writeToFile(Visitor newVisitor) {
+public class ReceptAddPostalMail {
+    public static void writeToFile(ComplaintRecord newComplaintRecord) {
 
 
         try {
-            FileWriter writer = new FileWriter("src/sample/data/Visitor.txt", true);
+            FileWriter writer = new FileWriter("src/sample/data/Complaint.txt", true);
             PrintWriter printWriter = new PrintWriter(writer);
-            printWriter.println(newVisitor.toString());
+            printWriter.println(newComplaintRecord.toString());
             printWriter.close();
         } catch (IOException e) {
             e.printStackTrace();

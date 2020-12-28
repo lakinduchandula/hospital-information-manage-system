@@ -4,16 +4,22 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTimePicker;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
-import sample.model.MedicalOfficer;
-import sample.model.ReceptAddVisitor;
-import sample.model.UserAdd;
-import sample.model.Visitor;
+
+import sample.model.*;
+import java.io.IOException;
 
 public class ReceptDashVisitorRecordsController {
+
+    public static String VisitorIDGlobal;
+
     @FXML
     private StackPane VisitorRecordsStackPane;
 
@@ -60,10 +66,17 @@ public class ReceptDashVisitorRecordsController {
     private JFXButton AddVisitorBtn;
 
     @FXML
+    private BorderPane EditVisitorBorderPane;
+
+    @FXML
     private JFXTextField EditVisitorIDNum;
 
     @FXML
     private JFXButton EditVisitorBtn;
+
+    @FXML
+    private BorderPane ViewVisitorBorderPane;
+
 
     @FXML
     private JFXButton ViewVisitorBtn;
@@ -83,8 +96,7 @@ public class ReceptDashVisitorRecordsController {
             ValidationController validate = new ValidationController(VisitorRecordsStackPane, VisitorRecordsAnchorPane, 1);
             if (               validate.validateNIC(AddVisitorIDNum)
                     && validate.validatePhone(AddVisitorPhoneNum)
-                    && validate.sameIDNo(AddVisitorIDNum)
-                    && validate.samePhoneNumber(AddVisitorPhoneNum)
+
 
 
             ) {
@@ -127,6 +139,7 @@ public class ReceptDashVisitorRecordsController {
         AddVisitorNote.clear();
         AddVisitorTimeIn.getEditor().clear();
         AddVisitorTimeOut.getEditor().clear();
+        ViewVisitorIDNum.clear();
 
 
     }
@@ -138,12 +151,29 @@ public class ReceptDashVisitorRecordsController {
     }
 
     @FXML
-    void Edit_Visitor(MouseEvent event) {
+    void Edit_Visitor(MouseEvent event)  throws IOException {
+        ValidationController visitorValidation = new ValidationController(VisitorRecordsStackPane,
+                VisitorRecordsAnchorPane, 1);
+        if(visitorValidation.validateVisitorID(EditVisitorIDNum)) {
+            VisitorIDGlobal = EditVisitorIDNum.getText().trim();
+            Parent visitorPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepEditVisitor.fxml"));
+            EditVisitorBorderPane.setCenter(visitorPane);
+            clearFields();
+        }
 
     }
 
     @FXML
-    void View_Visitor(MouseEvent event) {
+    void View_Visitor(MouseEvent event) throws IOException {
+        ValidationController visitorValidation = new ValidationController(VisitorRecordsStackPane,
+                VisitorRecordsAnchorPane, 1);
 
+        if(visitorValidation.validateVisitorID(EditVisitorIDNum)){
+            VisitorIDGlobal = ViewVisitorIDNum.getText().trim();
+            Parent visitorPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepViewVisitor.fxml"));
+            ViewVisitorBorderPane.setCenter(visitorPane);
+            clearFields();
+        }
     }
+
 }

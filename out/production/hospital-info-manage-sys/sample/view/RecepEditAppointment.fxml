@@ -8,8 +8,6 @@
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -18,7 +16,7 @@
 
 <StackPane fx:id="RecepEdirAppoStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="790.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.RecepEditAppointmentController">
    <children>
-      <BorderPane fx:id="RecepEditBordere" prefHeight="200.0" prefWidth="200.0">
+      <BorderPane fx:id="RecepEditBorderPane" prefHeight="200.0" prefWidth="200.0">
          <center>
             <AnchorPane fx:id="AnchPaneRecepEditApp" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
@@ -56,11 +54,6 @@
                      </children>
                   </Pane>
                   <JFXTextArea fx:id="EditAppointmentSymptoms" focusColor="#424242" layoutX="33.0" layoutY="220.0" prefHeight="175.0" prefWidth="435.0" promptText="Symptoms" styleClass="text-area" stylesheets="@../assets/styles.css" />
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="581.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/images/hims-base-img/EMR-hero.png" />
-                     </image>
-                  </ImageView>
                   <JFXButton fx:id="EditAppointmentSaveChange" layoutX="531.0" layoutY="355.0" onMouseClicked="#SaveChanges" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Save Changes" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />

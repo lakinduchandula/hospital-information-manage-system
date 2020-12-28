@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="RecepEditVisitorAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.RecepEditVisitorController">
+   <children>
+      <BorderPane fx:id="RecepEditVisitorBorderPane" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Edit Visitor Information">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <JFXTextField fx:id="EditVisitorFirstName" focusColor="#424242" layoutX="30.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditVisitorLastName" focusColor="#424242" layoutX="30.0" layoutY="95.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditVisitorPurpose" focusColor="#424242" layoutX="30.0" layoutY="135.0" prefHeight="25.0" prefWidth="200.0" promptText="Purpose" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXDatePicker fx:id="EditVisitorDate" defaultColor="#424242" layoutX="30.0" layoutY="175.0" prefHeight="25.0" prefWidth="210.0" promptText="Date" stylesheets="@../assets/DashStyle.css" />
+                  <JFXTextField fx:id="EditVisitorNote" focusColor="#424242" layoutX="30.0" layoutY="215.0" prefHeight="25.0" prefWidth="200.0" promptText="Note" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditVisitorIDNum" focusColor="#424242" layoutX="300.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" promptText="ID Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditVisitorAddress" focusColor="#424242" layoutX="300.0" layoutY="95.0" prefHeight="25.0" prefWidth="200.0" promptText="Address" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="EditVisitorPhoneNum" focusColor="#424242" layoutX="300.0" layoutY="135.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTimePicker fx:id="EditVisitorTimeIn" defaultColor="#424242" layoutX="300.0" layoutY="175.0" prefHeight="25.0" prefWidth="210.0" promptText="In Time" stylesheets="@../assets/DashStyle.css" />
+                  <JFXTimePicker fx:id="EditVisitorTimeOut" defaultColor="#424242" layoutX="300.0" layoutY="215.0" prefHeight="25.0" prefWidth="210.0" promptText="Out Time" stylesheets="@../assets/DashStyle.css" />
+                  <JFXButton fx:id="EditVisitorSaveChangeBtn" layoutX="500.0" layoutY="267.0" onMouseClicked="#SaveChanges" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Save Changes" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

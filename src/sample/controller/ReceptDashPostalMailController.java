@@ -15,15 +15,6 @@ public class ReceptDashPostalMailController {
     private JFXTextField AddPostalMailRefereneceNum;
 
     @FXML
-    private JFXTextField AddPostalMailFromAddress;
-
-    @FXML
-    private JFXTextField AddPostalMailName;
-
-    @FXML
-    private JFXTextField AddPostalMailToName;
-
-    @FXML
     private JFXDatePicker AddPostalMailDate;
 
     @FXML
@@ -33,10 +24,28 @@ public class ReceptDashPostalMailController {
     private JFXButton AddPostalMailAttachBtn;
 
     @FXML
-    private JFXTextField ComplaintActionTaken;
+    private JFXTextField ReceivedPMFromName;
 
     @FXML
-    private JFXButton AddPostalMailBtn;
+    private JFXTextField ReceivedPMToName;
+
+    @FXML
+    private JFXTextField ReceivedPMFromAddress;
+
+    @FXML
+    private JFXButton ReceivedPMAddBtn;
+
+    @FXML
+    private JFXTextField DispatchPMToName;
+
+    @FXML
+    private JFXTextField DispatchPMFromName;
+
+    @FXML
+    private JFXTextField DispatchPMToAddress;
+
+    @FXML
+    private JFXButton DispatchPMAddBtn;
 
     @FXML
     private JFXTextField EditPostalMailRefereneceNum;

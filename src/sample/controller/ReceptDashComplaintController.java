@@ -5,14 +5,16 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
-import sample.model.Appointment;
-import sample.model.ComplaintRecord;
-import sample.model.ReceptAddAppointment;
-import sample.model.ReceptAddComplaint;
+import sample.model.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -23,6 +25,8 @@ public class ReceptDashComplaintController {
 
     @FXML
     private URL location;
+
+    public static String ComplaintIDGlobal;
 
     @FXML
     private StackPane AddComplaintStackPane;
@@ -46,6 +50,9 @@ public class ReceptDashComplaintController {
     private JFXTextField AddComplaintDescription;
 
     @FXML
+    private JFXTextField AddComplaintActionTaken;
+
+    @FXML
     private JFXTextField AddComplaintAttachDoc;
 
     @FXML
@@ -55,7 +62,12 @@ public class ReceptDashComplaintController {
     private JFXButton AddComplaintBtn;
 
     @FXML
-    private JFXTextField AddComplaintActionTaken;
+    private BorderPane ViewComplaintBorderPane;
+
+    @FXML
+    private AnchorPane ViewComplaintAnchorPane;
+
+
 
     @FXML
     private JFXTextField AddComplaintUsername;
@@ -67,13 +79,13 @@ public class ReceptDashComplaintController {
     private JFXTextField AddComplaintIDNum;
 
     @FXML
-    private JFXTextField AddComplaintID;
+    private Label AddComplaintID;
 
     @FXML
     private JFXTextField AddComplaintAdditionalPhoneNum;
 
     @FXML
-    private JFXTextField ViewComplaintUserName;
+    private JFXTextField ViewComplaintID;
 
     @FXML
     private JFXButton ViewComplaintBtn;
@@ -86,8 +98,7 @@ public class ReceptDashComplaintController {
             if(        validate.validateNIC(AddComplaintIDNum)
                     && validate.validatePhone(AddComplaintPhoneNum)
                     && validate.validateUsername(AddComplaintUsername)
-                    && validate.sameIDNo(AddComplaintIDNum)
-                    && validate.samePhoneNumber(AddComplaintPhoneNum)
+
             ){
 
                 ComplaintRecord newComplaintRecord = new ComplaintRecord();
@@ -100,7 +111,6 @@ public class ReceptDashComplaintController {
                 newComplaintRecord.setComplaintID(AddComplaintID.getText().trim());
                 newComplaintRecord.setCurrentDate(AddComplaintDate.getValue());
                 newComplaintRecord.setComplaintType(AddComplaintType.getValue());
-                newComplaintRecord.setAdditionalPhoneNum(AddComplaintAdditionalPhoneNum.getText().trim());
                 newComplaintRecord.setDescription(AddComplaintDescription.getText().trim());
                 newComplaintRecord.setActionTaken(AddComplaintActionTaken.getText().trim());
 
@@ -125,18 +135,35 @@ public class ReceptDashComplaintController {
         AddComplaintUsername.clear();
         AddComplaintIDNum.clear();
         AddComplaintPhoneNum.clear();
-        AddComplaintID.clear();
+       // AddComplaintID.clear():
         AddComplaintDate.getEditor().clear();
         AddComplaintType.getSelectionModel().clearSelection();
-        AddComplaintAdditionalPhoneNum.clear();
         AddComplaintDescription.clear();
         AddComplaintActionTaken.clear();
+        ViewComplaintID.clear();
 
+
+    }
+    @FXML
+    void initialize() {
+
+        AddComplaintDate.setValue(java.time.LocalDate.now());
+        AddComplaintID.setText(RandomID.getUniqueId());
 
     }
 
     @FXML
-    void View_Complaint(MouseEvent event) {
+    void View_Complaint(MouseEvent event) throws IOException {
+        ValidationController complaintValidationID = new ValidationController(AddComplaintStackPane,
+                AddComplaintAnchorPane, 1);
+
+        if(complaintValidationID.complaintValidationID(ViewComplaintID)){
+            ComplaintIDGlobal = ViewComplaintID.getText().trim();
+            Parent complaintPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepViewComplaint.fxml"));
+            ViewComplaintBorderPane.setCenter(complaintPane);
+            clearFields();
+        }
+
 
     }
 }

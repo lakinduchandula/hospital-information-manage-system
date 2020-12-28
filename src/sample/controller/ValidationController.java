@@ -326,6 +326,52 @@ public class ValidationController {
                 "That Appointment ID is not in Appointment Database. Try with exiting one." );
         return false;
     }
+    public boolean validateVisitorID(TextField txt) throws IOException {
+        File file = new File("src/sample/data/Visitor.txt");
+        try (FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+
+                if(sameCredentialValidation(userCredentials[0], txt)){
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        JFXButton button = new JFXButton("OK");
+        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                "Invalid Input Data",
+                "That ID is not in Visitor Database. Try with exiting one." );
+        return false;
+    }
+    public boolean complaintValidationID(TextField txt) throws IOException {
+        File file = new File("src/sample/data/Complaint.txt");
+        try (FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+
+                if(sameCredentialValidation(userCredentials[0], txt)){
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        JFXButton button = new JFXButton("OK");
+        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                "Invalid Input Data",
+                "That ID is not in Complaint Database. Try with exiting one." );
+        return false;
+    }
 
     public boolean validateExitingPatientUsername(TextField username){
         if(validateSpecificUsername(username, 2)){
