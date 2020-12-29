@@ -5,6 +5,8 @@ public class  ReceivedPostalMail extends PostalMail{
     private String fromAddress;
     private String toName;
 
+
+
     //Variable Constructor
     public ReceivedPostalMail(String fromName, String fromAddress, String toName){
         this.setFromName(fromName);
@@ -43,8 +45,8 @@ public class  ReceivedPostalMail extends PostalMail{
         this.toName = toName;
     }
 
+
+    @Override
     public String toString() {
-        return String.format("%s~%s~%s~%s~%s~%s~%s", getReferenceNo(), getCurrentDate(),
-                getNote(), getAttachDoc(),getFromName(), getFromAddress(), getToName());
-    }
+        return super.toString() + String.format("~%s~%s~%s", getFromName(),getFromAddress(),getToName()); }
 }

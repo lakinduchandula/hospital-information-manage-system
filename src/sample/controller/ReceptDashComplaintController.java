@@ -94,7 +94,7 @@ public class ReceptDashComplaintController {
     @FXML
     void Add_Complaint(MouseEvent event) {
         try{
-            ValidationController validate = new ValidationController(AddComplaintStackPane, AddComplaintAnchorPane, 1);
+            ValidationController validate = new ValidationController(AddComplaintStackPane, AddComplaintAnchorPane, 4);
             if(        validate.validateNIC(AddComplaintIDNum)
                     && validate.validatePhone(AddComplaintPhoneNum)
                     && validate.validateUsername(AddComplaintUsername)
@@ -155,7 +155,7 @@ public class ReceptDashComplaintController {
     @FXML
     void View_Complaint(MouseEvent event) throws IOException {
         ValidationController complaintValidationID = new ValidationController(AddComplaintStackPane,
-                AddComplaintAnchorPane, 1);
+                AddComplaintAnchorPane, 4);
 
         if(complaintValidationID.complaintValidationID(ViewComplaintID)){
             ComplaintIDGlobal = ViewComplaintID.getText().trim();

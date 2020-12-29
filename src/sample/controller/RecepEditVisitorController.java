@@ -18,11 +18,13 @@ import java.time.LocalTime;
 
 public class RecepEditVisitorController {
 
-    private String[] visitorDetails ;
+    private String[] visitorDetails;
 
-    public void setVisitorDetails(String[] visitorDetails){ this.visitorDetails = visitorDetails; }
+    public void setVisitorDetails(String[] visitorDetails) {
+        this.visitorDetails = visitorDetails;
+    }
 
-    public String[] getVisitorDetails(){
+    public String[] getVisitorDetails() {
         return visitorDetails;
     }
 
@@ -67,40 +69,41 @@ public class RecepEditVisitorController {
 
     @FXML
     void SaveChanges(MouseEvent event) throws IOException {
-        ValidationController validate = new ValidationController(RecepEditVisitorAnchorPane, RecepEditVisitorBorderPane, 1 );
-         Visitor editVisitor = new Visitor();
-         editVisitor.getVisitorDetailsArray(ReceptDashVisitorRecordsController.VisitorIDGlobal);
+
+        try{
+        ValidationController validate = new ValidationController(RecepEditVisitorAnchorPane, RecepEditVisitorBorderPane,
+                4);
+            if(        validate.validatePhone(EditVisitorPhoneNum)
+                    && validate.validateNIC(EditVisitorIDNum))
+            {
+
+            Visitor editVisitor = new Visitor();
+            editVisitor.getVisitorDetailsArray(ReceptDashVisitorRecordsController.VisitorIDGlobal);
 
 
-        editVisitor.setFirstName(getVisitorDetails()[1]);
-        editVisitor.setLastName(getVisitorDetails()[2]);
-        editVisitor.setIdCardNo(getVisitorDetails()[0]);
-        editVisitor.setAddress(getVisitorDetails()[4]);
-        editVisitor.setPurpose(getVisitorDetails()[3]);
-        editVisitor.setPhoneNumber(getVisitorDetails()[5]);
-        editVisitor.setDate(LocalDate.parse(getVisitorDetails()[6]));
-        editVisitor.setNote(getVisitorDetails()[9]);
-        editVisitor.setInTime(LocalTime.parse(getVisitorDetails()[7]));
-        editVisitor.setOutTime(LocalTime.parse(getVisitorDetails()[8]));
-
-        editVisitor.setFirstName(getVisitorDetails()[1]);
-        editVisitor.setLastName(getVisitorDetails()[2]);
-        editVisitor.setIdCardNo(getVisitorDetails()[0]);
-        editVisitor.setAddress(getVisitorDetails()[4]);
-        editVisitor.setPurpose(getVisitorDetails()[3]);
-        editVisitor.setPhoneNumber(getVisitorDetails()[5]);
-        editVisitor.setDate(LocalDate.parse(getVisitorDetails()[6]));
-        editVisitor.setNote(getVisitorDetails()[9]);
-        editVisitor.setInTime(LocalTime.parse(getVisitorDetails()[7]));
-        editVisitor.setOutTime(LocalTime.parse(getVisitorDetails()[8]));
+            editVisitor.setFirstName(EditVisitorFirstName.getText().trim());
+            editVisitor.setLastName(EditVisitorLastName.getText().trim());
+            editVisitor.setIdCardNo(EditVisitorIDNum.getText().trim());
+            editVisitor.setAddress(EditVisitorAddress.getText().trim());
+            editVisitor.setPurpose(EditVisitorPurpose.getText().trim());
+            editVisitor.setPhoneNumber(EditVisitorPhoneNum.getText().trim());
+            editVisitor.setNote(EditVisitorNote.getText().trim());
+            editVisitor.setDate(LocalDate.parse(getVisitorDetails()[6]));
+            editVisitor.setInTime(LocalTime.parse(getVisitorDetails()[7]));
+            editVisitor.setOutTime(LocalTime.parse(getVisitorDetails()[8]));
 
 
-
-        ReceptAddVisitor.writeToFile(editVisitor);
-        validate.successfulUserCreation("Visitor Record Successfully Updated");
-        clearFields();
-        afterCreation();
+            ReceptAddVisitor.writeToFile(editVisitor);
+            validate.successfulUserCreation("Visitor Record Successfully Updated");
+            clearFields();
+            afterCreation();
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+
     public void afterCreation() throws IOException {
         Parent white = FXMLLoader.load(getClass()
                 .getResource("/sample/view/WhiteBlank.fxml"));
@@ -139,6 +142,7 @@ public class RecepEditVisitorController {
         EditVisitorTimeIn.getEditor().clear();
         EditVisitorTimeOut.getEditor().clear();
         EditVisitorDate.getEditor().clear();
+        EditVisitorIDNum.clear();
     }
     }
 

@@ -225,25 +225,14 @@ public class ValidationController {
             return true;
         }
     }
+    public boolean validatePostalID(TextField txt, int postalMailType) {
+        if(validateSpecificPostalID(txt, postalMailType)){
+            return false;
+        } else {
+            return true;
+        }
+    }
 
-//    public boolean validateAppointmentID(TextField appointmentID){
-//        File file = new File("src/sample/data/Appointment.txt");
-//        try (FileReader fileReader = new FileReader(file)) {
-//            BufferedReader bufferedReader = new BufferedReader(fileReader);
-//
-//            String line = null;
-//
-//            while ((line = bufferedReader.readLine()) != null) {
-//                String[] userCredentials = line.split("~");
-//
-//                if(sameCredentialValidation(userCredentials[credentialIndex], appointmentID)){
-//                    return false;
-//                }
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     public boolean rightAppointmentPatient(String appointmentID, String username){
         File file = new File("src/sample/data/Appointment.txt");
@@ -349,6 +338,31 @@ public class ValidationController {
                 "That ID is not in Visitor Database. Try with exiting one." );
         return false;
     }
+
+    public boolean validatePatientID(TextField txt) throws IOException {
+        File file = new File("src/sample/data/Patient.txt");
+        try (FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+
+                if(sameCredentialValidation(userCredentials[0], txt)){
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        JFXButton button = new JFXButton("OK");
+        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                "Invalid Input Data",
+                "That ID is not in Patient Database. Try with exiting one." );
+        return false;
+    }
+
     public boolean complaintValidationID(TextField txt) throws IOException {
         File file = new File("src/sample/data/Complaint.txt");
         try (FileReader fileReader = new FileReader(file)) {
@@ -405,6 +419,27 @@ public class ValidationController {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        return true;
+    }
+    public boolean validateSpecificPostalID(TextField credential1, int postalMailType){
+        final String[] fileLocation = {"src/sample/data/ReceivedPostalMail.txt", "src/sample/data/DispatchPostalMail.txt"
+        };
+        File file = new File(fileLocation[postalMailType]);
+        try (FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+
+                if(sameCredentialValidation(userCredentials[0], credential1)){
+                    return false;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return true;
     }
 

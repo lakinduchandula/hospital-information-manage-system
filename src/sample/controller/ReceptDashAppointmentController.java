@@ -120,7 +120,7 @@ public class ReceptDashAppointmentController {
     @FXML
     void Add_Appointment(MouseEvent event) {
         try{
-            ValidationController validate = new ValidationController(AddAppointmentStackPane, AddAppointmentAnchorPane, 1);
+            ValidationController validate = new ValidationController(AddAppointmentStackPane, AddAppointmentAnchorPane, 4);
             if(        !(AddAppointmentAppointmentTime.getValue() == null)
                     && !(AddAppointmentAppointmentDate.getValue() == null)
                     && !(AddAppointmentPatientDOB.getValue() == null)
@@ -232,7 +232,7 @@ public class ReceptDashAppointmentController {
     @FXML
     void Edit_Appointment(MouseEvent event) throws IOException {
         ValidationController appointmentValidation = new ValidationController(AddAppointmentStackPane,
-                AddAppointmentAnchorPane, 1);
+                AddAppointmentAnchorPane, 4);
         if(appointmentValidation.ValidNotEmpty(EditAppointmentID)){
             if (appointmentValidation.validateAppointmentID(EditAppointmentID)) {
                 AppointmentIDGlobal = EditAppointmentID.getText().trim();
@@ -246,7 +246,7 @@ public class ReceptDashAppointmentController {
     @FXML
     void View_Appointment(MouseEvent event) throws IOException {
         ValidationController appointmentValidation = new ValidationController(AddAppointmentStackPane,
-                AddAppointmentAnchorPane, 1);
+                AddAppointmentAnchorPane, 4);
         if(appointmentValidation.ValidNotEmpty(ViewAppointmentID)){
             if (appointmentValidation.validateAppointmentID(ViewAppointmentID)) {
                 AppointmentIDGlobal = ViewAppointmentID.getText().trim();

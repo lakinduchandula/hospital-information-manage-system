@@ -1,6 +1,6 @@
 package sample.model;
 
-public class DispatchPostalMail extends ReceivedPostalMail{
+public class DispatchPostalMail extends PostalMail{
         private String toName;
         private String toAddress;
         private String fromName;
@@ -41,10 +41,9 @@ public class DispatchPostalMail extends ReceivedPostalMail{
             this.fromName = fromName;
         }
 
+    @Override
     public String toString() {
-        return String.format("%s~%s~%s~%s~%s~%s~%s", getReferenceNo(), getCurrentDate(),
-                getNote(), getAttachDoc(),getToName(), getToAddress(), getFromName());
-    }
+        return super.toString() + String.format("~%s~%s~%s", getToName(), getToAddress(),getFromName()); }
 
     }
 

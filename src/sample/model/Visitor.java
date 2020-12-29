@@ -176,7 +176,7 @@ public class Visitor {
                 }
             }
 
-            // add other appointments to the file
+            // add other Visitor Records to the file
             try {
                 FileWriter writer = new FileWriter("src/sample/data/Visitor.txt");
                 PrintWriter printWriter = new PrintWriter(writer);
