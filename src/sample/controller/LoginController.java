@@ -16,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import sample.model.LogFile;
 import sample.model.UserLogin;
 
 
@@ -72,6 +73,12 @@ public class LoginController {
                         && !LoginPassword.getText().toString().trim().equals("")
                         && !LoginUsermod.getSelectionModel().isEmpty()) {
 
+                    LogFile newLogin = new LogFile(
+                            LoginUsermod.getValue(),
+                            LoginUsername.getText().trim(),
+                            java.time.LocalDate.now(),
+                            java.time.LocalTime.now());
+
                     switch (LoginUsermod.getValue()) {
                         case "Receptionist": {
                             UserLogin receptionistLogin = new UserLogin(LoginUsername.getText().trim(),
@@ -83,6 +90,7 @@ public class LoginController {
                             // if login credentials are validate
                             if (receptionistLogin.getUserValidation()) {
                                 currentUser = LoginUsername.getText().trim();
+                                newLogin.addLog();
                                 loginUser(1);
                             } else {
                                 JFXButton button = new JFXButton("Close");
@@ -99,6 +107,7 @@ public class LoginController {
 
                             if (patientLogin.getUserValidation()) {
                                 currentUser = LoginUsername.getText().trim();
+                                newLogin.addLog();
                                 loginUser(2);
                             } else {
                                 JFXButton button = new JFXButton("Close");
@@ -115,6 +124,7 @@ public class LoginController {
 
                             if (MedicalOfficerLogin.getUserValidation()) {
                                 currentUser = LoginUsername.getText().trim();
+                                newLogin.addLog();
                                 loginUser(3);
                             } else {
                                 JFXButton button = new JFXButton("Close");
@@ -132,6 +142,7 @@ public class LoginController {
 
                             if (AdminLogin.getUserValidation()) {
                                 currentUser = LoginUsername.getText().trim();
+                                newLogin.addLog();
                                 loginUser(0);
                             } else {
                                 JFXButton button = new JFXButton("Close");

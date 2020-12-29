@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane fx:id="ReportsStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdReportsModuleController">
+   <children>
+      <AnchorPane fx:id="ReportAnchorPane" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #00838f;">
+               <children>
+                  <Label layoutX="14.0" layoutY="8.0" text="Reports " textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="58.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+               <children>
+                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="User Log">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXDatePicker fx:id="UserLogFrom" defaultColor="#00838f" layoutX="26.0" layoutY="100.0" prefHeight="25.0" prefWidth="150.0" promptText="From" stylesheets="@../assets/styles.css" />
+            <JFXDatePicker fx:id="UserLogTo" defaultColor="#00838f" layoutX="217.0" layoutY="100.0" prefHeight="25.0" prefWidth="150.0" promptText="To" stylesheets="@../assets/styles.css" />
+            <JFXComboBox fx:id="UserLogUsermode" focusColor="#424242" layoutX="395.0" layoutY="100.0" prefHeight="25.0" prefWidth="150.0" promptText="Usermode" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
+               <styleClass>
+                  <String fx:value="combo-box-admin-dash" />
+                  <String fx:value="choice-box-admin-dash" />
+               </styleClass>
+            </JFXComboBox>
+            <JFXButton fx:id="UserLogPDF" layoutX="26.0" layoutY="150.0" onMouseClicked="#user_log_pdf" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #00bfa5;" text="Export PDF" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="UserLogCSV" layoutX="143.0" layoutY="150.0" onMouseClicked="#user_log_csv" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #ff6e40;" text="Export CSV" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Pane layoutX="14.0" layoutY="200.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+               <children>
+                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Appointment Report">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXDatePicker fx:id="AppointmentFrom" defaultColor="#00838f" layoutX="26.0" layoutY="248.0" prefHeight="25.0" prefWidth="150.0" promptText="From" stylesheets="@../assets/styles.css" />
+            <JFXDatePicker fx:id="AppointmentTo" defaultColor="#00838f" layoutX="217.0" layoutY="248.0" prefHeight="25.0" prefWidth="150.0" promptText="To" stylesheets="@../assets/styles.css" />
+            <JFXComboBox fx:id="AppointmentMO" focusColor="#424242" layoutX="395.0" layoutY="248.0" prefHeight="25.0" prefWidth="150.0" promptText="Medical Offier" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
+               <styleClass>
+                  <String fx:value="combo-box-admin-dash" />
+                  <String fx:value="choice-box-admin-dash" />
+               </styleClass>
+            </JFXComboBox>
+            <JFXButton fx:id="AppointmentPDF" layoutX="26.0" layoutY="298.0" onMouseClicked="#appointment_pdf" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #00bfa5;" text="Export PDF" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="AppointementCSV" layoutX="143.0" layoutY="298.0" onMouseClicked="#appointment_csv" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #ff6e40;" text="Export CSV" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Pane layoutX="14.0" layoutY="350.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
+               <children>
+                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Patient Login Credentials">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXButton fx:id="PatientPDF" layoutX="26.0" layoutY="395.0" onMouseClicked="#patient_pdf" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #00bfa5;" text="Export PDF" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="PatientCSV" layoutX="143.0" layoutY="395.0" onMouseClicked="#patient_csv" prefHeight="30.0" prefWidth="104.0" style="-fx-background-color: #ff6e40;" text="Export CSV" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="576.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/hims-base-img/disruption-section-4.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

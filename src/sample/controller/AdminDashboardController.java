@@ -71,10 +71,20 @@ public class AdminDashboardController {
         AdminDashBorderpane.setCenter(userComplaintPane);
     }
 
+    @FXML
+    void show_reports(MouseEvent event) throws IOException {
+        Parent userComplaintPane = FXMLLoader.load(getClass().getResource("/sample/view/AdReportsModule.fxml"));
+        AdminDashBorderpane.setCenter(userComplaintPane);
+    }
+
 
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException {
+
+        Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/AdDashAppointment.fxml"));
+        AdminDashBorderpane.setCenter(appointmentPane);
+
         AdminDashLogOutBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
