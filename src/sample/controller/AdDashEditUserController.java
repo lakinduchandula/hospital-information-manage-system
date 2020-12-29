@@ -24,7 +24,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import sample.model.*;
 
-public class AdDashEditUserController {
+public class
+AdDashEditUserController {
 
     public static String username;
 

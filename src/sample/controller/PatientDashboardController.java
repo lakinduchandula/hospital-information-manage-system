@@ -49,7 +49,8 @@ public class PatientDashboardController {
 
     @FXML
     void show_acc_setting(MouseEvent event) throws IOException {
-
+        Parent userSettings = FXMLLoader.load(getClass().getResource("/sample/view/PatientUserSettings.fxml"));
+        PatientDashBorderPane.setCenter(userSettings);
     }
 
     @FXML
@@ -63,6 +64,7 @@ public class PatientDashboardController {
         Parent complaint = FXMLLoader.load(getClass().getResource("/sample/view/PatientDashComplaint.fxml"));
         PatientDashBorderPane.setCenter(complaint);
     }
+
 
     @FXML
     void initialize() {
