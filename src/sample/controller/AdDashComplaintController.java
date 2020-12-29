@@ -51,7 +51,7 @@ public class AdDashComplaintController {
     private Tab EditComplaintUsername;
 
     @FXML
-    private JFXTextField EditUserUsername1;
+    private JFXTextField EditUserCompID;
 
     @FXML
     private JFXButton EditComplaintBtn;
@@ -60,15 +60,25 @@ public class AdDashComplaintController {
     private BorderPane CompEditBorderPane;
 
     @FXML
-    void Edit_Complaint(MouseEvent event) {
-
+    void Edit_Complaint(MouseEvent event) throws IOException {
+        ValidationController complaintValidationID = new ValidationController(AdDashCompStackPane,
+                AdDashCompAnchor, 1);
+        if(!EditUserCompID.getText().isEmpty()){
+            if (complaintValidationID.complaintValidationID(EditUserCompID)) {
+                complaintID = EditUserCompID.getText().trim();
+                Parent complaintPane = FXMLLoader.load(getClass().getResource("/sample/view/AdEditComplaint.fxml"));
+                CompEditBorderPane.setCenter(complaintPane);
+            }
+            EditUserCompID.clear();
+        } else {
+            complaintValidationID.detailedMsg("Invalid Input Data", "Complaint ID is empty");
+        }
     }
 
     @FXML
     void View_Complaint(MouseEvent event) throws IOException {
         ValidationController complaintValidationID = new ValidationController(AdDashCompStackPane,
                 AdDashCompAnchor, 1);
-
         if(!ViewUserComplaintID.getText().isEmpty()){
             if (complaintValidationID.complaintValidationID(ViewUserComplaintID)) {
                 complaintID = ViewUserComplaintID.getText().trim();

@@ -14,7 +14,6 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane fx:id="AdDashCompStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdDashComplaintController">
    <children>
       <AnchorPane fx:id="AdDashCompAnchor" prefHeight="576.0" prefWidth="790.0">
@@ -89,7 +88,7 @@
                                           </Label>
                                        </children>
                                     </Pane>
-                                    <JFXTextField fx:id="EditUserUsername1" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Complaint ID" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                    <JFXTextField fx:id="EditUserCompID" focusColor="#424242" layoutX="14.0" layoutY="66.0" prefHeight="30.0" prefWidth="230.0" promptText="Complaint ID" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                                        <font>
                                           <Font size="14.0" />
                                        </font>

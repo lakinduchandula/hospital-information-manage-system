@@ -103,6 +103,6 @@ public class AdViewComplaintController {
         ViewComplaintDate.setText(complaintDetails[6]);
         ViewComplaintType.setText(complaintDetails[7]);
         ViewComplaintDescription.setText(GetSetTextArea.setText(complaintDetails[8]));
-        ViewComplaintActionTaken.setText(complaintDetails[10]);
+        ViewComplaintActionTaken.setText(GetSetTextArea.setText(complaintDetails[10]));
     }
 }
