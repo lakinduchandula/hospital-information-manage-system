@@ -45,7 +45,11 @@ public class MODashboardController {
     }
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException {
+
+        Parent complaint = FXMLLoader.load(getClass().getResource("/sample/view/MODashAppointment.fxml"));
+        MODashBorderPane.setCenter(complaint);
+
         Logout.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

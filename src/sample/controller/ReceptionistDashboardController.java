@@ -74,7 +74,11 @@ public class ReceptionistDashboardController {
     }
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException {
+
+        Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/ReceptDashAppointment.fxml"));
+        ReceptDashBoarderPane.setCenter(appointmentPane);
+
         Logout.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

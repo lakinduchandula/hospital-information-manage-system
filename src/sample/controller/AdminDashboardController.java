@@ -80,7 +80,11 @@ public class AdminDashboardController {
 
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException {
+
+        Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/AdDashAppointment.fxml"));
+        AdminDashBorderpane.setCenter(appointmentPane);
+
         AdminDashLogOutBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {

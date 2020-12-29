@@ -67,7 +67,11 @@ public class PatientDashboardController {
 
 
     @FXML
-    void initialize() {
+    void initialize() throws IOException {
+
+        Parent appointment = FXMLLoader.load(getClass().getResource("/sample/view/PatientDashAppointment.fxml"));
+        PatientDashBorderPane.setCenter(appointment);
+
         Logout.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
