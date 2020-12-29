@@ -39,15 +39,14 @@
                      <font>
                         <Font size="13.0" />
                      </font></Label>
-                  <Label fx:id="ViewVisitorFirstName" layoutX="130.0" layoutY="65.0" prefHeight="25.0" prefWidth="117.0" />
+                  <Label fx:id="ViewVisitorFirstName" layoutX="130.0" layoutY="65.0" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: white;" />
                   <Label layoutX="30.0" layoutY="205.0" prefHeight="25.0" prefWidth="82.0" text="Note            :">
                      <font>
                         <Font size="13.0" />
                      </font></Label>
-                  <Label fx:id="ViewVisitorLastName" layoutX="130.0" layoutY="100.0" prefHeight="25.0" prefWidth="117.0" />
-                  <Label fx:id="ViewVisitorPurpose" layoutX="130.0" layoutY="135.0" prefHeight="25.0" prefWidth="117.0" />
-                  <Label layoutX="115.0" layoutY="152.0" prefHeight="25.0" prefWidth="117.0" />
-                  <Label fx:id="ViewVisitorNote" layoutX="130.0" layoutY="205.0" prefHeight="25.0" prefWidth="117.0" />
+                  <Label fx:id="ViewVisitorLastName" layoutX="130.0" layoutY="100.0" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewVisitorPurpose" layoutX="130.0" layoutY="135.0" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewVisitorNote" layoutX="130.0" layoutY="205.0" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: white;" />
                   <Label layoutX="300.0" layoutY="65.0" prefHeight="25.0" prefWidth="98.0" text="ID Number        :">
                      <font>
                         <Font size="13.0" />
@@ -73,12 +72,12 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="ViewVisitorNIC" layoutX="410.0" layoutY="65.0" prefHeight="25.0" prefWidth="174.0" />
-                  <Label fx:id="ViewVisitorAdress" layoutX="410.0" layoutY="100.0" prefHeight="25.0" prefWidth="165.0" />
-                  <Label fx:id="ViewVisitorPhoneNumber" layoutX="410.0" layoutY="135.0" prefHeight="25.0" prefWidth="157.0" />
-                  <Label fx:id="ViewVisitorInTime" layoutX="410.0" layoutY="170.0" prefHeight="25.0" prefWidth="159.0" />
-                  <Label fx:id="ViewVisitorOutTime" layoutX="410.0" layoutY="205.0" prefHeight="25.0" prefWidth="159.0" />
-                  <Label fx:id="ViewVisitorDate" layoutX="130.0" layoutY="170.0" prefHeight="25.0" prefWidth="117.0" />
+                  <Label fx:id="ViewVisitorNIC" layoutX="410.0" layoutY="65.0" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewVisitorAdress" layoutX="410.0" layoutY="100.0" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewVisitorPhoneNumber" layoutX="410.0" layoutY="135.0" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewVisitorInTime" layoutX="410.0" layoutY="170.0" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewVisitorOutTime" layoutX="410.0" layoutY="205.0" prefHeight="25.0" prefWidth="180.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewVisitorDate" layoutX="130.0" layoutY="170.0" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: white;" />
                   <JFXButton fx:id="DeleteVisitor" layoutX="475.0" layoutY="244.0" onMouseClicked="#DeleteVisitor" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #d32f2f;" text="Delete Visitor" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />

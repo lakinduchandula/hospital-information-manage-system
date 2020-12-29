@@ -2,12 +2,27 @@ package sample.controller;
 
 import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
-import sample.model.AdReference;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
+import sample.model.*;
 
 import javax.print.DocFlavor;
+import java.io.IOException;
 
 public class ReceptDashPatientRecordsController {
+
+    public static String PatientIDGlobal;
+
+    @FXML
+    private StackPane RecepAddPatientStackPane;
+
+    @FXML
+    private AnchorPane RecepAddPatientAnchorPane;
+
     @FXML
     private JFXTextField AddPatientFirstName;
 
@@ -48,7 +63,16 @@ public class ReceptDashPatientRecordsController {
     private JFXComboBox<String> AddPatientBloodGroup;
 
     @FXML
-    private JFXTextArea AddPatientAllergies;
+    private JFXTextField ViewPatientRecordIDNum;
+
+    @FXML
+    private JFXTextField EditPatientRecordIDNum;
+
+    @FXML
+    private BorderPane EditPatientBorderPane;
+
+    @FXML
+    private JFXTextField AddPatientAllergies;
 
     @FXML
     private JFXButton AddPatientBtn;
@@ -63,24 +87,107 @@ public class ReceptDashPatientRecordsController {
     private JFXButton DeletePatientUserName;
 
     @FXML
+    private BorderPane ViewPatientBorderPane;
+
+
+     @FXML
+     void View_Patient(MouseEvent event) throws IOException
+    {
+        ValidationController validatePatientID = new ValidationController(RecepAddPatientStackPane,
+                RecepAddPatientAnchorPane, 4);
+        if(validatePatientID.ValidNotEmpty(ViewPatientRecordIDNum)) {
+            if (validatePatientID.validatePatientID(ViewPatientRecordIDNum)) {
+                PatientIDGlobal = ViewPatientRecordIDNum.getText().trim();
+                Parent patientPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepViewPatient.fxml"));
+                ViewPatientBorderPane.setCenter(patientPane);
+                clearFields();
+            }
+        }
+    }
+
+
+    @FXML
+    void Edit_Patient(MouseEvent event) throws IOException {
+        ValidationController validatePatientID = new ValidationController(RecepAddPatientStackPane,
+                RecepAddPatientAnchorPane, 1);
+        if(validatePatientID.ValidNotEmpty(EditPatientRecordIDNum)){
+            if (validatePatientID.validateNIC(EditPatientRecordIDNum)) {
+                PatientIDGlobal = EditPatientRecordIDNum.getText().trim();
+                Parent appointmentPane = FXMLLoader.load(getClass()
+                        .getResource("/sample/view/RecepEditPatient.fxml"));
+                EditPatientBorderPane.setCenter(appointmentPane);
+                clearFields();
+            }
+        }
+    }
+
+    @FXML
     void Add_Patient(MouseEvent event) {
+        try{
+            ValidationController validate = new ValidationController(RecepAddPatientStackPane, RecepAddPatientAnchorPane, 4);
+            if(        !(AddPatientDOB.getValue() == null)
+                    && !(AddPatientGender.getSelectionModel().isEmpty())
+                    && !(AddPatientMaritalStatus.getSelectionModel().isEmpty())
+                    && !(AddPatientBloodGroup.getSelectionModel().isEmpty())
+                    && validate.ValidNotEmpty(AddPatientFirstName)
+                    && validate.ValidNotEmpty(AddPatientLastName)
+                    && validate.ValidNotEmpty(AddPatientIDCardNumber)
+                    && validate.ValidNotEmpty(AddPatientPhoneNumber)
+                    && validate.ValidNotEmpty(AddPatientAddressLine1)
+                    && validate.ValidNotEmpty(AddPatientAddressLine2)
+                    && validate.ValidNotEmpty(AddPatientCity)
+                    && validate.ValidNotEmpty(AddPatientAllergies)
+            ) {
+                if (validate.validateNIC(AddPatientIDCardNumber)
+                        && validate.validatePhone(AddPatientPhoneNumber)
+
+                ) {
+
+                    RecepPatient newRecepPatient = new RecepPatient();
+
+                    newRecepPatient.setFirstName(AddPatientFirstName.getText().trim());
+                    newRecepPatient.setLastName(AddPatientLastName.getText().trim());
+                    newRecepPatient.setIdCardNo(AddPatientIDCardNumber.getText().trim());
+                    newRecepPatient.setGender(AddPatientGender.getValue());
+                    newRecepPatient.setPhoneNumber(AddPatientPhoneNumber.getText().trim());
+                    newRecepPatient.setdOB(AddPatientDOB.getValue());
+                    newRecepPatient.setAddressLine1(AddPatientAddressLine1.getText().trim());
+                    newRecepPatient.setAddressLine2(AddPatientAddressLine2.getText().trim());
+                    newRecepPatient.setCity(AddPatientCity.getText().trim());
+                    newRecepPatient.setMaritalStatus(AddPatientMaritalStatus.getValue());
+                    newRecepPatient.setBloodGroup(AddPatientBloodGroup.getValue());
+                    newRecepPatient.setAllergies(AddPatientAllergies.getText().trim());
+
+                    RecepAddPatient.writeToFile(newRecepPatient);
+                    validate.successfulUserCreation("Patient Record Successfully Created");
+                    clearFields();
+
+            }
+            } else {
+                validate.detailedMsg("Invalid Input Data", "Some fields are empty." +
+                        " Enter data and try again");
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clearFields() {
+        AddPatientFirstName.clear();
+        AddPatientLastName.clear();
+        AddPatientIDCardNumber.clear();
+        AddPatientGender.getSelectionModel().clearSelection();
+        AddPatientPhoneNumber.clear();
+        AddPatientDOB.getEditor().clear();
+        AddPatientAddressLine1.clear();
+        AddPatientAddressLine2.clear();
+        AddPatientCity.clear();
+        AddPatientAllergies.clear();
+        EditPatientRecordIDNum.clear();
+        ViewPatientRecordIDNum.clear();
 
     }
 
-    @FXML
-    void Delete_Patient(MouseEvent event) {
-
-    }
-
-    @FXML
-    void Edit_Patient(MouseEvent event) {
-
-    }
-
-    @FXML
-    void View_Patient(MouseEvent event) {
-
-    }
 
     @FXML
     void initialize() {

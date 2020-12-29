@@ -93,7 +93,17 @@ public class ReceptDashVisitorRecordsController {
      @FXML
     void Add_Visitor(MouseEvent event) {
         try{
-            ValidationController validate = new ValidationController(VisitorRecordsStackPane, VisitorRecordsAnchorPane, 1);
+            ValidationController validate = new ValidationController(VisitorRecordsStackPane, VisitorRecordsAnchorPane, 4);
+            if(        !(AddVisitorDate.getValue() == null)
+
+                    && validate.ValidNotEmpty(AddVisitorFirstName)
+                    && validate.ValidNotEmpty(AddVisitorLastName)
+                    && validate.ValidNotEmpty(AddVisitorIDNum)
+                    && validate.ValidNotEmpty(AddVisitorNote)
+                    && validate.ValidNotEmpty(AddVisitorAddress)
+
+            )
+            {
             if (               validate.validateNIC(AddVisitorIDNum)
                     && validate.validatePhone(AddVisitorPhoneNum)
 
@@ -117,11 +127,14 @@ public class ReceptDashVisitorRecordsController {
                 validate.successfulUserCreation("Visitor Account Successfully Created");
                 clearFields();
 
+                 }
+            }          else {
+                                      validate.detailedMsg("Invalid Input Data", "Some fields are empty." +
+                                    " Enter data and try again");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        }        catch (Exception e) {
+                       e.printStackTrace();
         }
-
 
 
     }
@@ -140,6 +153,7 @@ public class ReceptDashVisitorRecordsController {
         AddVisitorTimeIn.getEditor().clear();
         AddVisitorTimeOut.getEditor().clear();
         ViewVisitorIDNum.clear();
+        EditVisitorIDNum.clear();
 
 
     }
@@ -153,12 +167,14 @@ public class ReceptDashVisitorRecordsController {
     @FXML
     void Edit_Visitor(MouseEvent event)  throws IOException {
         ValidationController visitorValidation = new ValidationController(VisitorRecordsStackPane,
-                VisitorRecordsAnchorPane, 1);
-        if(visitorValidation.validateVisitorID(EditVisitorIDNum)) {
-            VisitorIDGlobal = EditVisitorIDNum.getText().trim();
-            Parent visitorPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepEditVisitor.fxml"));
-            EditVisitorBorderPane.setCenter(visitorPane);
-            clearFields();
+                VisitorRecordsAnchorPane, 4);
+        if(visitorValidation .ValidNotEmpty(EditVisitorIDNum)) {
+            if (visitorValidation.validateVisitorID(EditVisitorIDNum)) {
+                VisitorIDGlobal = EditVisitorIDNum.getText().trim();
+                Parent visitorPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepEditVisitor.fxml"));
+                EditVisitorBorderPane.setCenter(visitorPane);
+                clearFields();
+            }
         }
 
     }
@@ -166,13 +182,14 @@ public class ReceptDashVisitorRecordsController {
     @FXML
     void View_Visitor(MouseEvent event) throws IOException {
         ValidationController visitorValidation = new ValidationController(VisitorRecordsStackPane,
-                VisitorRecordsAnchorPane, 1);
-
-        if(visitorValidation.validateVisitorID(EditVisitorIDNum)){
-            VisitorIDGlobal = ViewVisitorIDNum.getText().trim();
-            Parent visitorPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepViewVisitor.fxml"));
-            ViewVisitorBorderPane.setCenter(visitorPane);
-            clearFields();
+                VisitorRecordsAnchorPane, 4);
+        if(visitorValidation .ValidNotEmpty(ViewVisitorIDNum)) {
+            if (visitorValidation.validateVisitorID(ViewVisitorIDNum)) {
+                VisitorIDGlobal = ViewVisitorIDNum.getText().trim();
+                Parent visitorPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepViewVisitor.fxml"));
+                ViewVisitorBorderPane.setCenter(visitorPane);
+                clearFields();
+            }
         }
     }
 

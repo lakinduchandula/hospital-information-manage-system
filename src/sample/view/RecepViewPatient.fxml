@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="ViewPatientStackPane" prefHeight="420.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.RecepViewPatientController">
+   <children>
+      <BorderPane fx:id="ViewPatientBorderPane" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <AnchorPane prefHeight="420.0" prefWidth="790.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="View common Patient Information">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="25.0" layoutY="55.0" prefHeight="25.0" prefWidth="98.0" text="First Name       :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="315.0" layoutY="55.0" prefHeight="25.0" prefWidth="98.0" text="Last Name        :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="85.0" prefHeight="25.0" prefWidth="98.0" text="Gender            :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="315.0" layoutY="85.0" prefHeight="25.0" prefWidth="98.0" text="ID Number        :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="115.0" prefHeight="25.0" prefWidth="98.0" text="Marital Status  :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="315.0" layoutY="115.0" prefHeight="25.0" prefWidth="112.0" text="Phone Number  :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="145.0" prefHeight="25.0" prefWidth="98.0" text="Address Line 1 :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="315.0" layoutY="145.0" prefHeight="25.0" prefWidth="98.0" text="Address Line 2   :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="175.0" prefHeight="25.0" prefWidth="98.0" text="City                  :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="315.0" layoutY="175.0" prefHeight="25.0" prefWidth="98.0" text="Date Of Birth     :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewPatientFirstName" layoutX="130.0" layoutY="55.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewPatientGender" layoutX="130.0" layoutY="85.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewPatientMaritalStatus" layoutX="130.0" layoutY="115.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewPatientAddressLine1" layoutX="130.0" layoutY="145.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewPatientCity" layoutX="130.0" layoutY="175.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewPatientLastName" layoutX="425.0" layoutY="55.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewPatientIDNum" layoutX="425.0" layoutY="85.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewPatientPhoneNum" layoutX="425.0" layoutY="115.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewPatientAddressLine2" layoutX="425.0" layoutY="145.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewPatientDOB" layoutX="425.0" layoutY="175.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                  <Pane layoutX="14.0" layoutY="210.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="View Specific Patient Information">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="25.0" layoutY="256.0" prefHeight="25.0" prefWidth="98.0" text="Blood Group  :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="292.0" prefHeight="25.0" prefWidth="98.0" text="Allergies         :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ViewPatientBloodgroup" layoutX="130.0" layoutY="256.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+                  <Label fx:id="ViewPatientAllergies" layoutX="123.0" layoutY="292.0" prefHeight="25.0" prefWidth="144.0" style="-fx-background-color: white;" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

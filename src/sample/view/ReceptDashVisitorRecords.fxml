@@ -94,7 +94,7 @@
                                           </JFXButton>
                                           <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="526.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="60.0">
                                              <image>
-                                                <Image url="@../assets/images/hims-base-img/banner-1.jpg" />
+                                                <Image url="@../assets/images/hims-base-img/disruption-section-4.png" />
                                              </image>
                                           </ImageView>
                                           <JFXTextField fx:id="AddVisitorLastName" focusColor="#424242" layoutX="24.0" layoutY="100.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
@@ -122,7 +122,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter ID Number to Edit Visitor  ">
                                                    <font>
@@ -141,14 +141,14 @@
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </JFXButton>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="533.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0">
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="533.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="50.0">
                                              <image>
-                                                <Image url="@../assets/images/hims-base-img/banner-1.jpg" />
+                                                <Image url="@../assets/images/hims-base-img/disruption-section-4.png" />
                                              </image>
                                           </ImageView>
-                                          <BorderPane fx:id="EditVisitorBorderPane" layoutY="163.0" prefHeight="499.0" prefWidth="790.0">
+                                          <BorderPane fx:id="EditVisitorBorderPane" layoutY="180.0" prefHeight="470.0" prefWidth="779.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                              <center>
-                                                <AnchorPane prefHeight="485.0" prefWidth="790.0" BorderPane.alignment="CENTER" />
+                                                <AnchorPane prefHeight="420.0" prefWidth="790.0" BorderPane.alignment="CENTER" />
                                              </center>
                                           </BorderPane>
                                        </children>
@@ -166,7 +166,7 @@
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #9be7ff;">
+                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
                                              <children>
                                                 <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter ID Number to View Visitor  ">
                                                    <font>
@@ -185,9 +185,9 @@
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="501.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="501.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="60.0">
                                              <image>
-                                                <Image url="@../assets/images/hims-base-img/banner-1.jpg" />
+                                                <Image url="@../assets/images/hims-base-img/disruption-section-4.png" />
                                              </image>
                                           </ImageView>
                                           <BorderPane fx:id="ViewVisitorBorderPane" layoutY="171.0" prefHeight="514.0" prefWidth="845.0">
@@ -199,7 +199,10 @@
                                     </AnchorPane>
                                  </content>
                                  <graphic>
-                                    <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/dash-admin/dash-admin-delete-user.png" />
+                                       </image></ImageView>
                                  </graphic>
                               </Tab>
                            </tabs>
