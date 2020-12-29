@@ -34,6 +34,12 @@ public class MODashboardController {
     }
 
     @FXML
+    void show_user_settings(MouseEvent event) throws IOException {
+        Parent userSettings = FXMLLoader.load(getClass().getResource("/sample/view/MOUserSettings.fxml"));
+        MODashBorderPane.setCenter(userSettings);
+    }
+
+    @FXML
     void logout(MouseEvent event) {
 
     }
