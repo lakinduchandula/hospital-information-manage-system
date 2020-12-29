@@ -41,52 +41,52 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Label layoutX="20.0" layoutY="58.0" prefHeight="19.0" prefWidth="100.0" text="Complaint ID     :">
+                  <Label layoutX="20.0" layoutY="58.0" prefHeight="19.0" prefWidth="100.0" text="Complaint ID     ">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="20.0" layoutY="85.0" prefHeight="19.0" prefWidth="97.0" text="Complaint Type :">
+                  <Label layoutX="20.0" layoutY="85.0" prefHeight="19.0" prefWidth="97.0" text="Complaint Type ">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="315.0" layoutY="57.0" prefHeight="19.0" prefWidth="87.0" text="Date              :">
+                  <Label layoutX="315.0" layoutY="57.0" prefHeight="19.0" prefWidth="87.0" text="Date              ">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="315.0" layoutY="85.0" text="Action Taken :">
+                  <Label layoutX="315.0" layoutY="85.0" text="Action Taken ">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="20.0" layoutY="164.0" prefHeight="19.0" prefWidth="95.0" text="First Name        :">
+                  <Label layoutX="20.0" layoutY="164.0" prefHeight="19.0" prefWidth="95.0" text="First Name        ">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="20.0" layoutY="191.0" prefHeight="19.0" prefWidth="99.0" text="Username         :">
+                  <Label layoutX="20.0" layoutY="191.0" prefHeight="19.0" prefWidth="99.0" text="Username         ">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="20.0" layoutY="218.0" text="Phone Number :">
+                  <Label layoutX="20.0" layoutY="218.0" text="Phone Number ">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="315.0" layoutY="164.0" prefHeight="19.0" prefWidth="93.0" text="Last Name     :">
+                  <Label layoutX="315.0" layoutY="164.0" prefHeight="19.0" prefWidth="93.0" text="Last Name     ">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="315.0" layoutY="191.0" prefHeight="19.0" prefWidth="88.0" text="NIC                :">
+                  <Label layoutX="315.0" layoutY="191.0" prefHeight="19.0" prefWidth="88.0" text="NIC                ">
                      <font>
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="20.0" layoutY="290.0" text="Description :">
+                  <Label layoutX="20.0" layoutY="290.0" text="Description ">
                      <font>
                         <Font size="13.0" />
                      </font>

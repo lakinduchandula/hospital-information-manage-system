@@ -270,6 +270,32 @@ public class ValidationController {
         return false;
     }
 
+    public boolean correctComplaint(String username, TextField complaintID){
+        File file = new File("src/sample/data/Complaint.txt");
+        try(FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null ;
+
+            while((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+                if(identicalCredentialValidation(userCredentials[1], username)
+                        && sameCredentialValidation(userCredentials[0],
+                        complaintID)){
+                    return true;
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        JFXButton button = new JFXButton("OK");
+        loginUserException(getStackPane(), getNode(), Collections.singletonList(button), getStyleIndex(),
+                "Invalid Input Data",
+                "That Complaint ID is not in belongs to you. Try another." );
+        return false;
+    }
+
     public boolean correctAppointment(String username, TextField appointmentID){
         UserEditDelete newUser = new UserEditDelete(2);
         newUser.UserEdit(username);
