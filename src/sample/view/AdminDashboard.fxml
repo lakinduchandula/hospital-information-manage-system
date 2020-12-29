@@ -75,7 +75,7 @@
                               <Insets left="5.0" />
                            </padding>
                         </JFXButton>
-                        <JFXButton fx:id="AdminDashReportsBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="260.0" text="Reports" textAlignment="RIGHT" textFill="WHITE">
+                        <JFXButton fx:id="AdminDashReportsBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_reports" prefHeight="42.0" prefWidth="260.0" text="Reports" textAlignment="RIGHT" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>

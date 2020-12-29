@@ -71,6 +71,12 @@ public class AdminDashboardController {
         AdminDashBorderpane.setCenter(userComplaintPane);
     }
 
+    @FXML
+    void show_reports(MouseEvent event) throws IOException {
+        Parent userComplaintPane = FXMLLoader.load(getClass().getResource("/sample/view/AdReportsModule.fxml"));
+        AdminDashBorderpane.setCenter(userComplaintPane);
+    }
+
 
 
     @FXML
