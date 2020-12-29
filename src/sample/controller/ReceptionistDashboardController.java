@@ -68,6 +68,12 @@ public class ReceptionistDashboardController {
     }
 
     @FXML
+    void show_acc_settings(MouseEvent event) throws IOException {
+        Parent visitorRecords = FXMLLoader.load(getClass().getResource("/sample/view/RecepUserSettings.fxml"));
+        ReceptDashBoarderPane.setCenter(visitorRecords);
+    }
+
+    @FXML
     void initialize() {
         Logout.setOnAction(new EventHandler<ActionEvent>() {
             @Override

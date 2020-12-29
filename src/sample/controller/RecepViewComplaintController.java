@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import sample.model.ComplaintRecord;
 import sample.model.GetSetTextArea;
 
@@ -16,7 +17,7 @@ public class RecepViewComplaintController {
     private ScrollPane ViewComplaintScrollPane;
 
     @FXML
-    private Label ViewComplaintDescription;
+    private Text ViewComplaintDescription;
 
     @FXML
     private Label ViewComplaintID;
@@ -59,7 +60,7 @@ public class RecepViewComplaintController {
         ViewComplaintPhoneNum.setText(complaintDetails[5]);
         ViewComplaintDate.setText(complaintDetails[6]);
         ViewComplaintType.setText(complaintDetails[7]);
-        ViewComplaintDescription.setText(complaintDetails[8]);
+        ViewComplaintDescription.setText(GetSetTextArea.setText(complaintDetails[8]));
         ViewComplaintActionTaken.setText(complaintDetails[10]);
 
     }
