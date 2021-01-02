@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-pat~8898~Lakindu~Chandula~886845235V~0785476258~Male~1974-12-10~Unmarried~Add1~Add2~City~Country~A+~No IssuesUIOP
 
-=======
+pat~8898~Lakindu~Chandula~886845235V~0785476258~Male~1974-12-10~Unmarried~Add1~Add2~City~Country~A+~No IssuesUIOP
 pat~8898~Lakindu~Chandula~886845235V~0785476258~Male~1974-12-10~Unmarried~Add1~Add2~City~Country~null~No IssuesUIOPOkayUIOPnew issueUIOP
->>>>>>> 3b0bde6764cc6e1229abaa2a8693c2383e548775

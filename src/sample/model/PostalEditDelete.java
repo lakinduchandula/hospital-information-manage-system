@@ -3,7 +3,7 @@ package sample.model;
 import java.io.*;
 import java.util.ArrayList;
 
-import static sample.model.PrefMedicalOfficer.credentialValidation;
+
 
 public class PostalEditDelete {
     private String[] postalDetailsArray;
@@ -40,9 +40,8 @@ public class PostalEditDelete {
         this.deletePostalDetailsArray = deletePostalDetailsArray;
     }
 
-    public void PostalMailEdit(String referenceNo) {
-        final String[] fileLocation = {"src/sample/data/ReceivedPostalMail.txt",
-                "src/sample/data/DispatchPostalMail.txt"
+    public void PostalMailEdit(String refNo) {
+        final String[] fileLocation = {"src/sample/data/ReceivedPostalMail.txt","src/sample/data/DispatchPostalMail.txt"
         };
         File file = new File(fileLocation[getPostalMailType()]);
         try(FileReader fileReader = new FileReader(file)) {
@@ -53,7 +52,7 @@ public class PostalEditDelete {
             while((line = bufferedReader.readLine()) != null) {
                 String[] userCredentials = line.split("~");
 
-                if(credentialValidation(userCredentials[0], referenceNo)){
+                if (credentialValidation(userCredentials[0], refNo)) {
                     setPostalDetailsArray(userCredentials);
                 }
             }
@@ -63,8 +62,12 @@ public class PostalEditDelete {
         }
     }
 
+    public boolean credentialValidation(String referenceNo, String refNo) {
+        return refNo.equals(referenceNo);
+    }
 
-    public void PostalMailDelete(String referenceNo){
+
+    public void PostalMailDelete(String refNo){
         final String[] fileLocation = {"src/sample/data/ReceivedPostalMail.txt",
                 "src/sample/data/DispatchPostalMail.txt"};
         File file = new File(fileLocation[getPostalMailType()]);
@@ -77,7 +80,7 @@ public class PostalEditDelete {
             while((line = bufferedReader.readLine()) != null) {
                 String[] userCredentials = line.split("~");
                 postalMails.add(userCredentials);
-                if(credentialValidation(userCredentials[0], referenceNo)){
+                if(credentialValidation(userCredentials[0], refNo)){
                     setDeletePostalDetailsArray(userCredentials);
                     postalMails.remove(userCredentials);
                 }

@@ -82,54 +82,25 @@ public class ReceptDashComplaintController {
     @FXML
     private JFXButton ViewComplaintBtn;
 
-
     @FXML
     void Add_Complaint(MouseEvent event) {
-<<<<<<< HEAD
-        try{
+
+        try {
             ValidationController validate = new ValidationController(AddComplaintStackPane, AddComplaintAnchorPane, 4);
-            if(        validate.validateNIC(AddComplaintIDNum)
-                    && validate.validatePhone(AddComplaintPhoneNum)
-                    && validate.validateUsername(AddComplaintUsername)
+            if (!(AddComplaintType.getSelectionModel().isEmpty()) &&
+                    !(AddComplaintDate.getValue() == null)
+                    && validate.ValidNotEmpty(AddComplaintFirstName)
+                    && validate.ValidNotEmpty(AddComplaintLastName)
+                    && validate.ValidNotEmpty(AddComplaintUsername)
+                    && validate.ValidNotEmpty(AddComplaintIDNum)
+                    && validate.ValidNotEmpty(AddComplaintPhoneNum)
+                    && validate.ValidNotEmpty(AddComplaintActionTaken)
 
-            ){
-
-                ComplaintRecord newComplaintRecord = new ComplaintRecord();
-
-                newComplaintRecord.setFirstName(AddComplaintFirstName.getText().trim());
-                newComplaintRecord.setLastName(AddComplaintLastName.getText().trim());
-                newComplaintRecord.setUsername(AddComplaintUsername.getText().trim());
-                newComplaintRecord.setIdNum(AddComplaintIDNum.getText().trim());
-                newComplaintRecord.setPhoneNum(AddComplaintPhoneNum.getText().trim());
-                newComplaintRecord.setComplaintID(AddComplaintID.getText().trim());
-                newComplaintRecord.setCurrentDate(AddComplaintDate.getValue());
-                newComplaintRecord.setComplaintType(AddComplaintType.getValue());
-                newComplaintRecord.setDescription(AddComplaintDescription.getText().trim());
-                newComplaintRecord.setActionTaken(AddComplaintActionTaken.getText().trim());
-
-
-
-
-                ReceptAddComplaint.writeToFile(newComplaintRecord);
-                validate.successfulUserCreation("Complaint Record Successfully Created");
-                clearFields();
-
-=======
-        ValidationController validate = new ValidationController(AddComplaintStackPane, AddComplaintAnchorPane,
-                4);
-        if(        !(AddComplaintType.getValue() == null)
-                && !(AddComplaintActionTaken.getText().isEmpty())
-                && !(AddComplaintDate.getValue() == null)
-                && !(AddComplaintUsername.getText() == null)
-                && !(AddComplaintFirstName.getText() == null)
-                && !(AddComplaintLastName.getText() == null)
-                && !(AddComplaintIDNum.getText() == null)
-                && !(AddComplaintPhoneNum.getText() == null)
-                && !(AddComplaintDescription.getText() == null)){
-            try {
+            ) {
                 if (validate.validateNIC(AddComplaintIDNum)
                         && validate.validatePhone(AddComplaintPhoneNum)
-                        && validate.validateExitingPatientUsername(AddComplaintUsername)
+                        && validate.validateUsername(AddComplaintUsername)
+
                 ) {
 
                     ComplaintRecord newComplaintRecord = new ComplaintRecord();
@@ -142,20 +113,22 @@ public class ReceptDashComplaintController {
                     newComplaintRecord.setComplaintID(AddComplaintID.getText().trim());
                     newComplaintRecord.setCurrentDate(AddComplaintDate.getValue());
                     newComplaintRecord.setComplaintType(AddComplaintType.getValue());
-                    newComplaintRecord.setDescription(GetSetTextArea.getText(AddComplaintDescription.getText().trim()));
+                    newComplaintRecord.setDescription(AddComplaintDescription.getText().trim());
                     newComplaintRecord.setActionTaken(AddComplaintActionTaken.getText().trim());
+
 
                     ReceptAddComplaint.writeToFile(newComplaintRecord);
                     validate.successfulUserCreation("Complaint Record Successfully Created");
                     clearFields();
-
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
->>>>>>> 3b0bde6764cc6e1229abaa2a8693c2383e548775
+            } else {
+                validate.detailedMsg("Missing Data", "Some fields are empty fill " +
+                        "those and try again.");
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+
         }
-        validate.detailedMsg("Missing Data", "Some fields are empty fill those and try again.");
     }
 
     public void clearFields() {
@@ -165,13 +138,14 @@ public class ReceptDashComplaintController {
         AddComplaintIDNum.clear();
         AddComplaintPhoneNum.clear();
         AddComplaintID.setText(RandomID.getUniqueId());
-       // AddComplaintID.clear():
+        // AddComplaintID.clear():
         AddComplaintDate.getEditor().clear();
         AddComplaintType.getSelectionModel().clearSelection();
         AddComplaintDescription.clear();
         AddComplaintActionTaken.clear();
         ViewComplaintID.clear();
     }
+
     @FXML
     void initialize() {
 
@@ -186,17 +160,15 @@ public class ReceptDashComplaintController {
     @FXML
     void View_Complaint(MouseEvent event) throws IOException {
         ValidationController complaintValidationID = new ValidationController(AddComplaintStackPane,
-<<<<<<< HEAD
                 AddComplaintAnchorPane, 4);
 
-=======
-                AddComplaintAnchorPane, 1);
->>>>>>> 3b0bde6764cc6e1229abaa2a8693c2383e548775
-        if(complaintValidationID.complaintValidationID(ViewComplaintID)){
-            ComplaintIDGlobal = ViewComplaintID.getText().trim();
-            Parent complaintPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepViewComplaint.fxml"));
-            ViewComplaintBorderPane.setCenter(complaintPane);
-            clearFields();
+        if (complaintValidationID.ValidNotEmpty(ViewComplaintID)) {
+            if (complaintValidationID.complaintValidationID(ViewComplaintID)) {
+                ComplaintIDGlobal = ViewComplaintID.getText().trim();
+                Parent complaintPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepViewComplaint.fxml"));
+                ViewComplaintBorderPane.setCenter(complaintPane);
+                clearFields();
+            }
         }
     }
 }

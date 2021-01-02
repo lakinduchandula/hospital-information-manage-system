@@ -48,6 +48,7 @@ public class ViewDispatchPostalMailController {
     @FXML
     void DeleteDispatchPostalMail(MouseEvent event) throws IOException {
         PostalEditDelete newDeletePostalMail = new PostalEditDelete(1);
+
         ValidationController deleteValidate = new ValidationController(DispatchPMStackPane,DispatchPMAnchorPane, 1);
         deleteValidate.detailedMsg("Account Delete", "Dispatch PostalMail was Successfully Deleted");
         newDeletePostalMail.PostalMailDelete(ReceptDashPostalMailController.postalMailIDGlobal);
@@ -63,7 +64,6 @@ public class ViewDispatchPostalMailController {
     void initialize() {
         PostalEditDelete newViewPostalMail = new PostalEditDelete(1);
         newViewPostalMail.PostalMailEdit(ReceptDashPostalMailController.postalMailIDGlobal);
-        System.out.println(ReceptDashPostalMailController.postalMailIDGlobal);
         String[] PostalMailDetails = newViewPostalMail.getPostalDetailsArray();
         DispatchPMRefNo.setText(PostalMailDetails[0]);
         DispatchPMDate.setText(PostalMailDetails[1]);
