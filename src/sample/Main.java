@@ -5,12 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.model.Analytics;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("view/ReceptionistDashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/Login.fxml"));
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 1050, 576));
         primaryStage.show();

@@ -85,36 +85,6 @@ public class ReceptDashComplaintController {
 
     @FXML
     void Add_Complaint(MouseEvent event) {
-<<<<<<< HEAD
-        try{
-            ValidationController validate = new ValidationController(AddComplaintStackPane, AddComplaintAnchorPane, 4);
-            if(        validate.validateNIC(AddComplaintIDNum)
-                    && validate.validatePhone(AddComplaintPhoneNum)
-                    && validate.validateUsername(AddComplaintUsername)
-
-            ){
-
-                ComplaintRecord newComplaintRecord = new ComplaintRecord();
-
-                newComplaintRecord.setFirstName(AddComplaintFirstName.getText().trim());
-                newComplaintRecord.setLastName(AddComplaintLastName.getText().trim());
-                newComplaintRecord.setUsername(AddComplaintUsername.getText().trim());
-                newComplaintRecord.setIdNum(AddComplaintIDNum.getText().trim());
-                newComplaintRecord.setPhoneNum(AddComplaintPhoneNum.getText().trim());
-                newComplaintRecord.setComplaintID(AddComplaintID.getText().trim());
-                newComplaintRecord.setCurrentDate(AddComplaintDate.getValue());
-                newComplaintRecord.setComplaintType(AddComplaintType.getValue());
-                newComplaintRecord.setDescription(AddComplaintDescription.getText().trim());
-                newComplaintRecord.setActionTaken(AddComplaintActionTaken.getText().trim());
-
-
-
-
-                ReceptAddComplaint.writeToFile(newComplaintRecord);
-                validate.successfulUserCreation("Complaint Record Successfully Created");
-                clearFields();
-
-=======
         ValidationController validate = new ValidationController(AddComplaintStackPane, AddComplaintAnchorPane,
                 4);
         if(        !(AddComplaintType.getValue() == null)
@@ -152,7 +122,6 @@ public class ReceptDashComplaintController {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
->>>>>>> 3b0bde6764cc6e1229abaa2a8693c2383e548775
             }
         }
         validate.detailedMsg("Missing Data", "Some fields are empty fill those and try again.");
@@ -186,12 +155,7 @@ public class ReceptDashComplaintController {
     @FXML
     void View_Complaint(MouseEvent event) throws IOException {
         ValidationController complaintValidationID = new ValidationController(AddComplaintStackPane,
-<<<<<<< HEAD
                 AddComplaintAnchorPane, 4);
-
-=======
-                AddComplaintAnchorPane, 1);
->>>>>>> 3b0bde6764cc6e1229abaa2a8693c2383e548775
         if(complaintValidationID.complaintValidationID(ViewComplaintID)){
             ComplaintIDGlobal = ViewComplaintID.getText().trim();
             Parent complaintPane = FXMLLoader.load(getClass().getResource("/sample/view/RecepViewComplaint.fxml"));

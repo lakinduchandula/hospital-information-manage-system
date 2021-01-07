@@ -86,6 +86,7 @@ public class MOUserSettingsController {
             ValidationController validate = new ValidationController(AccSettingsStackPane, AccSettingsAnchorPane,
                     2);
             if(        validate.validatePhone(AccSettingsPhoneNumber)
+                    && validate.validateNIC(AccSettingsUserID)
                     && validate.validateUsername(AccSettingsUsername)
                     && validate.sameIDNo(AccSettingsUserID)
                     && validate.samePhoneNumber(AccSettingsPhoneNumber)){

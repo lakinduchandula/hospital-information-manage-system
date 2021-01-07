@@ -1,0 +1,93 @@
+.jfx-button-admin-vbox-dash{
+    -jfx-button-type: FLAT;
+    -fx-background-color: #00838f;
+    -fx-text-fill: rgba(255,255,255,0.87);
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: normal;
+}
+
+.jfx-button-admin-vbox-dash-selected{
+    -jfx-button-type: FLAT;
+    -fx-background-color: #00251a;
+    -fx-text-fill: rgba(255,255,255,0.87);
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.vbox-admin-home-element-medical {
+    -fx-border-color: #00838f;
+    -fx-background-color: #eeeeee;
+    -fx-border-width: 2px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.vbox-admin-home-element-patient {
+    -fx-border-color: #ff5722;
+    -fx-background-color: #eeeeee;
+    -fx-border-width: 2px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.vbox-admin-home-element-recep {
+    -fx-border-color: #65499c;
+    -fx-background-color: #eeeeee;
+    -fx-border-width: 2px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.vbox-admin-home-element-last-login {
+    -fx-border-color: #424242;
+    -fx-background-color: #eeeeee;
+    -fx-border-width: 2px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.hbox-admin-home-details {
+    -fx-border-color: #bdbdbd;
+    -fx-background-color: #bdbdbd;
+    -fx-border-width: 2px;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.vbox-admin-home-last-login-list {
+    -fx-border-color: #75a478;
+    -fx-background-color: #eeeeee;
+    -fx-border-width: 1px;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+.vbox-admin-home-element-complaint {
+    -fx-border-color: #ff6f00;
+    -fx-background-color: #eeeeee;
+    -fx-border-width: 2px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.vbox-admin-home-element-appointment {
+    -fx-border-color: #0069c0;
+    -fx-background-color: #eeeeee;
+    -fx-border-width: 2px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.label-admin-dash-home-date-time{
+    -fx-font-family: 'Source Sans Pro', sans-serif;;
+    -fx-font-size: 16px;
+    -fx-font-color: white;
+    -fx-font-weight: bold;
+}
+
+.label-admin-dash-heading {
+    -fx-font-family: 'Source Sans Pro', sans-serif;;
+    -fx-font-size: 21px;
+}
