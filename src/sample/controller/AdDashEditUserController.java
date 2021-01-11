@@ -304,6 +304,7 @@ AdDashEditUserController {
                 newReceptionist.setStaffID(EditUserRecepStaffID.getText().trim());
                 newReceptionist.setStaffEmail(EditUserRecepEmail.getText().trim());
                 newReceptionist.setDateOfJoin(EditUserDateofJoin.getValue());
+                newReceptionist.setProfilePicPath("src/sample/app/profile/default-profile-picture.png");
 
                 UserAdd.writeToFile(newReceptionist, 1);
                 validate.successfulUserCreation("Receptionist Account Successfully Created");
@@ -320,13 +321,10 @@ AdDashEditUserController {
         try{
             ValidationController validate = new ValidationController(EditUserStackPane, EditUserAnchor, 1);
             if(        validate.validateNIC(EditUserIDCardNumber)
-                    && validate.validEmail(EditUserRecepEmail)
                     && validate.validatePhone(EditUserPhoneNumber)
                     && validate.validateUsername(EditUserUsername)
                     && validate.sameIDNo(EditUserIDCardNumber)
-                    && validate.samePhoneNumber(EditUserPhoneNumber)
-                    && validate.sameStaffID(EditUserRecepStaffID)
-                    && validate.sameStaffEmail(EditUserRecepEmail)){
+                    && validate.samePhoneNumber(EditUserPhoneNumber)){
 
                 Patient newPatient = new Patient();
 
@@ -345,6 +343,7 @@ AdDashEditUserController {
                 newPatient.setCountry(EditUserAddCountry.getText().trim());
                 newPatient.setBloodGroup(EditUserPatientBlood.getValue());
                 newPatient.setAllergies(GetSetTextArea.getText(PatientAddAllergies.getText().trim()));
+                newPatient.setProfilePicPath("src/sample/app/profile/default-profile-picture.png");
 
                 UserAdd.writeToFile(newPatient, 2);
                 validate.successfulUserCreation("Patient Account Successfully Created");
@@ -387,6 +386,7 @@ AdDashEditUserController {
                 newMedicalOfficer.setStaffEmail(EditUserMOStaffEmail.getText().trim());
                 newMedicalOfficer.setDateOfJoin(EditUserMODateofJoin.getValue());
                 newMedicalOfficer.setSpecialtyArea(EditUserMOSpecificArea.getValue());
+                newMedicalOfficer.setProfilePicPath("src/sample/app/profile/default-profile-picture.png");
 
                 UserAdd.writeToFile(newMedicalOfficer, 3);
                 validate.successfulUserCreation("Medical Officer Account Successfully Created");

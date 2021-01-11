@@ -10,6 +10,7 @@ import java.time.LocalTime;
 public class Analytics {
     private int[] AppointmentByMonth = new int[12];
     private int[] ComplaintsByMonth = new int[12];
+    private int[] AppointmentTypePlusComplaint = new int[4];
 
     public void setAppointmentByMonth(int[] AppointmentByMonth){
         this.AppointmentByMonth = AppointmentByMonth;
@@ -19,12 +20,48 @@ public class Analytics {
         this.ComplaintsByMonth = ComplaintByMonth;
     }
 
+    public void setAppointmentTypePlusComplaint(int[] AppointmentTypePlusComplaint){
+        this.AppointmentTypePlusComplaint = AppointmentTypePlusComplaint;
+    }
+
     public int[] getAppointmentByMonth(){
         return AppointmentByMonth;
     }
 
+    public int[] getAppointmentTypePlusComplaint(){
+        return AppointmentTypePlusComplaint;
+    }
+
     public int[] getComplaintsByMonth(){
         return ComplaintsByMonth;
+    }
+
+    public void CombineAppointmentComplaint(){
+        File file = new File("src/sample/data/Appointment.txt");
+        try(FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = null ;
+
+            while((line = bufferedReader.readLine()) != null) {
+                String[] appointmentDetail = line.split("~");
+
+                switch (appointmentDetail[16]) {
+                    case "Pending" -> {
+                        this.AppointmentTypePlusComplaint[0]++;
+                    }
+                    case "Approved" -> {
+                        this.AppointmentTypePlusComplaint[1]++;
+                    }
+                    case "Completed" -> {
+                        this.AppointmentTypePlusComplaint[2]++;
+                    }
+
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void AppointmentCalculations(){
@@ -128,6 +165,9 @@ public class Analytics {
                     case "12" -> {
                         this.ComplaintsByMonth[11]++;
                     }
+                }
+                if((complaintDetail[10] == null) || (complaintDetail[10].equals("No Action"))){
+                    this.AppointmentTypePlusComplaint[3]++;
                 }
             }
         }

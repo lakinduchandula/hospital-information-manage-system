@@ -25,12 +25,17 @@
          <children>
             <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #00838f;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label layoutX="14.0" layoutY="8.0" text="Edit User Account" textFill="WHITE">
+                  <Label layoutX="52.0" layoutY="6.0" styleClass="label-admin-dash-heading" stylesheets="@../assets/darkCss/dark-admin.css" text="Edit User Account" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
                   <Separator layoutX="2.0" layoutY="44.0" prefWidth="787.0" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="9.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" x="5.0">
+                     <image>
+                        <Image url="@../assets/images/dash-admin/dash-admin-edit_user.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
             <ScrollPane hbarPolicy="NEVER" layoutY="45.0" prefHeight="531.0" prefWidth="790.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">

@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.NewHomeController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdDashNewHomeController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeeee;" styleClass="chart-bar" stylesheets="@../assets/darkCss/ComplaintChart.css">
          <children>
@@ -45,6 +45,7 @@
                      </font>
                   </Label>
                   <Label fx:id="AdDashHomeTime" alignment="CENTER" layoutX="349.0" layoutY="3.0" prefHeight="25.0" prefWidth="92.0" styleClass="label-admin-dash-home-date-time" stylesheets="@../assets/adminDashStyle.css" text="Time" textFill="WHITE" />
+                  <Label alignment="CENTER" layoutY="3.0" prefHeight="25.0" prefWidth="119.0" styleClass="label-admin-dash-home-date-time" stylesheets="@../assets/adminDashStyle.css" text="Administrator" textFill="WHITE" />
                </children>
             </Pane>
             <HBox layoutX="9.0" layoutY="86.0" prefHeight="64.0" prefWidth="769.0">

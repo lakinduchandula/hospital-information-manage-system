@@ -4,13 +4,20 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import sample.model.*;
 
 public class PatientUserSettingsController {
@@ -104,6 +111,7 @@ public class PatientUserSettingsController {
                 editPatientUser.setAddressLine2(AccSettingsAddress2.getText().trim());
                 editPatientUser.setCity(AccSettingsCity.getText().trim());
                 editPatientUser.setCountry(AccSettingsCountry.getText().trim());
+                editPatientUser.setProfilePicPath(getUserDetailArray()[13]);
                 editPatientUser.setAllergies(GetSetTextArea.getText(AccSettingAllergies.getText().trim()));
 
                 UserAdd.writeToFile(editPatientUser, 2);
@@ -115,7 +123,7 @@ public class PatientUserSettingsController {
     }
 
     @FXML
-    void initialize() {
+    void initialize() throws FileNotFoundException {
         // combo-box items for marital status at create user account
         AccSettingMarital.getItems().add("Unmarried");
         AccSettingMarital.getItems().add("Married");
@@ -140,6 +148,6 @@ public class PatientUserSettingsController {
         AccSettingsAddress2.setText(PatientDetails[10]);
         AccSettingsCity.setText(PatientDetails[11]);
         AccSettingsCountry.setText(PatientDetails[12]);
-        AccSettingAllergies.setText(GetSetTextArea.setText(PatientDetails[14]));
+        AccSettingAllergies.setText(GetSetTextArea.setText(PatientDetails[15]));
     }
 }

@@ -119,9 +119,9 @@ public class DeleteMOAccountController {
         ViewUserAddStreet.setText(MODetails[10]);
         ViewUserCity.setText(MODetails[11]);
         ViewUserCountry.setText(MODetails[12]);
-        ViewUserStaffID.setText(MODetails[13]);
-        ViewUserStaffEmail.setText(MODetails[14]);
-        ViewUserDOF.setText(MODetails[15]);
-        ViewUserSpecialArea.setText(MODetails[16]);
+        ViewUserStaffID.setText(MODetails[14]);
+        ViewUserStaffEmail.setText(MODetails[15]);
+        ViewUserDOF.setText(MODetails[16]);
+        ViewUserSpecialArea.setText(MODetails[17]);
     }
 }

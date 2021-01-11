@@ -4,10 +4,10 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="RecepAddPatientStackPane" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptDashPatientRecordsController">
+<StackPane fx:id="RecepAddPatientStackPane" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.RecepDashPatientController">
    <children>
       <AnchorPane fx:id="RecepAddPatientAnchorPane" prefHeight="576.0" prefWidth="790.0">
          <children>
@@ -30,202 +30,205 @@
                   </Label>
                </children>
             </Pane>
-            <ScrollPane layoutY="48.0" prefHeight="625.0" prefWidth="779.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="625.0" prefWidth="779.0">
-                     <children>
-                        <JFXTabPane prefHeight="527.0" prefWidth="790.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="98.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <tabs>
-                              <Tab text="Add Patient">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane layoutX="-6.0" layoutY="48.0" minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="775.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <JFXTabPane layoutY="1.0" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                     <tabs>
+                        <Tab text="Add Patient Account">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="486.0" prefWidth="790.0">
+                                 <children>
+                                    <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
-                                             <children>
-                                                <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter common Information of the patient">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </Pane>
-                                          <JFXTextField fx:id="AddPatientFirstName" focusColor="#424242" layoutX="25.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                          <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter common Information of the patient">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
-                                          </JFXTextField>
-                                          <JFXComboBox fx:id="AddPatientGender" focusColor="#424242" layoutX="25.0" layoutY="95.0" prefHeight="25.0" prefWidth="200.0" promptText="Gender" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
-                                             <styleClass>
-                                                <String fx:value="combo-box-admin-dash" />
-                                                <String fx:value="choice-box-admin-dash" />
-                                             </styleClass>
-                                          </JFXComboBox>
-                                          <JFXComboBox fx:id="AddPatientMaritalStatus" focusColor="#424242" layoutX="25.0" layoutY="135.0" prefHeight="25.0" prefWidth="200.0" promptText="Marital Status" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
-                                             <styleClass>
-                                                <String fx:value="combo-box-admin-dash" />
-                                                <String fx:value="choice-box-admin-dash" />
-                                             </styleClass>
-                                          </JFXComboBox>
-                                          <JFXTextField fx:id="AddPatientAddressLine1" focusColor="#424242" layoutX="25.0" layoutY="175.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 1" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </JFXTextField>
-                                          <JFXTextField fx:id="AddPatientCity" focusColor="#424242" layoutX="25.0" layoutY="215.0" prefHeight="25.0" prefWidth="200.0" promptText="City" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </JFXTextField>
-                                          <JFXTextField fx:id="AddPatientLastName" focusColor="#424242" layoutX="300.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </JFXTextField>
-                                          <JFXTextField fx:id="AddPatientIDCardNumber" focusColor="#424242" layoutX="300.0" layoutY="95.0" prefHeight="25.0" prefWidth="200.0" promptText="ID Card Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </JFXTextField>
-                                          <JFXTextField fx:id="AddPatientPhoneNumber" focusColor="#424242" layoutX="300.0" layoutY="135.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </JFXTextField>
-                                          <JFXDatePicker fx:id="AddPatientDOB" defaultColor="#424242" layoutX="300.0" layoutY="215.0" prefHeight="25.0" prefWidth="210.0" promptText="Date of Birith" stylesheets="@../assets/styles.css" />
-                                          <JFXTextField fx:id="AddPatientAddressLine2" focusColor="#424242" layoutX="300.0" layoutY="175.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 2" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </JFXTextField>
-                                          <JFXComboBox fx:id="AddPatientBloodGroup" focusColor="#424242" layoutX="25.0" layoutY="315.0" prefHeight="25.0" prefWidth="300.0" promptText="Blood Group" styleClass="choice-box-admin-dash" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242" />
-                                          <JFXButton fx:id="AddPatientBtn" layoutX="530.0" layoutY="405.0" onMouseClicked="#Add_Patient" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Patient" textFill="WHITE">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="552.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="80.0">
-                                             <image>
-                                                <Image url="@../assets/images/hims-base-img/ambulance-hero.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Pane layoutX="14.0" layoutY="268.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
-                                             <children>
-                                                <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter specific Information  of thePatient">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </Pane>
-                                          <JFXTextField fx:id="AddPatientAllergies" focusColor="#424242" layoutX="23.0" layoutY="355.0" prefHeight="56.0" prefWidth="304.0" promptText="Allergies" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </JFXTextField>
+                                          </Label>
                                        </children>
-                                    </AnchorPane>
-                                 </content>
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    </Pane>
+                                    <JFXTextField fx:id="AddPatientFirstName" focusColor="#424242" layoutX="33.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXComboBox fx:id="AddPatientGender" focusColor="#424242" layoutX="33.0" layoutY="139.0" prefHeight="25.0" prefWidth="200.0" promptText="Gender" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
+                                       <styleClass>
+                                          <String fx:value="combo-box-admin-dash" />
+                                          <String fx:value="choice-box-admin-dash" />
+                                       </styleClass>
+                                    </JFXComboBox>
+                                    <JFXComboBox fx:id="AddPatientMaritalStatus" focusColor="#424242" layoutX="33.0" layoutY="181.0" prefHeight="25.0" prefWidth="200.0" promptText="Marital Status" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
+                                       <styleClass>
+                                          <String fx:value="combo-box-admin-dash" />
+                                          <String fx:value="choice-box-admin-dash" />
+                                       </styleClass>
+                                    </JFXComboBox>
+                                    <JFXTextField fx:id="AddPatientAddressLine1" focusColor="#424242" layoutX="33.0" layoutY="223.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 1" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="AddPatientCity" focusColor="#424242" layoutX="33.0" layoutY="265.0" prefHeight="25.0" prefWidth="200.0" promptText="City" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="AddPatientLastName" focusColor="#424242" layoutX="263.0" layoutY="55.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="AddPatientIDCardNumber" focusColor="#424242" layoutX="263.0" layoutY="97.0" prefHeight="25.0" prefWidth="200.0" promptText="ID Card Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="AddPatientPhoneNumber" focusColor="#424242" layoutX="263.0" layoutY="139.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXDatePicker fx:id="AddPatientDOB" defaultColor="#424242" layoutX="263.0" layoutY="181.0" prefHeight="25.0" prefWidth="210.0" promptText="Date of Birith" stylesheets="@../assets/styles.css" />
+                                    <JFXTextField fx:id="AddPatientAddressLine2" focusColor="#424242" layoutX="263.0" layoutY="223.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 2" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXComboBox fx:id="AddPatientBloodGroup" focusColor="#424242" layoutX="33.0" layoutY="358.0" prefHeight="25.0" prefWidth="200.0" promptText="Blood Group" styleClass="choice-box-admin-dash" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242" />
+                                    <JFXButton fx:id="CreateAPatient" layoutX="549.0" layoutY="438.0" onMouseClicked="#Add_Patient" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Create a Patient" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="531.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="52.0">
                                        <image>
-                                          <Image url="@../assets/images/dash-admin/dash-admin-add-user.png" />
+                                          <Image url="@../assets/images/hims-base-img/ambulance-hero.png" />
                                        </image>
                                     </ImageView>
-                                 </graphic>
-                              </Tab>
-                              <Tab text="Edit Patient">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <Pane layoutX="14.0" layoutY="316.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
-                                             <children>
-                                                <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="330.0" text="Enter valid ID Card Number to Edit Patient Record">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </Pane>
-                                          <JFXTextField fx:id="EditPatientRecordIDNum" focusColor="#424242" layoutX="25.0" layoutY="64.0" prefHeight="25.0" prefWidth="230.0" promptText="ID Card Number " styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                          <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter specific Information  of thePatient">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
-                                          </JFXTextField>
-                                          <JFXButton fx:id="EditPatientIDNum" layoutX="25.0" layoutY="117.0" onMouseClicked="#Edit_Patient" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit Patient" textFill="WHITE">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="523.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="50.0">
-                                             <image>
-                                                <Image url="@../assets/images/hims-base-img/ambulance-hero.png" />
-                                             </image>
-                                          </ImageView>
-                                          <BorderPane fx:id="EditPatientBorderPane" layoutY="174.0" prefHeight="470.0" prefWidth="779.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                                             <center>
-                                                <AnchorPane prefHeight="420.0" prefWidth="790.0" BorderPane.alignment="CENTER" />
-                                             </center>
-                                          </BorderPane>
+                                          </Label>
                                        </children>
-                                    </AnchorPane>
-                                 </content>
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    </Pane>
+                                    <JFXTextField fx:id="AddPatientUsername" focusColor="#424242" layoutX="33.0" layoutY="97.0" prefHeight="25.0" prefWidth="200.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextArea fx:id="PatientAddAllergies" focusColor="#424242" layoutX="33.0" layoutY="403.0" prefHeight="75.0" prefWidth="435.0" promptText="Allergies (if any)" unFocusColor="#424242" />
+                                    <JFXTextField fx:id="AddPatientCountry" focusColor="#424242" layoutX="263.0" layoutY="265.0" prefHeight="25.0" prefWidth="200.0" promptText="Country" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/dash-admin/dash-admin-add-user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                        <Tab text="Edit Patient Account">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                                       <children>
+                                          <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="330.0" text="Enter valid ID Card Number to Edit Patient Record">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <JFXTextField fx:id="EditPatientUsername" focusColor="#424242" layoutX="20.0" layoutY="60.0" prefHeight="25.0" prefWidth="230.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXButton fx:id="EditPatientAccount" layoutX="20.0" layoutY="110.0" onMouseClicked="#Edit_Patient" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Edit Patient Account" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="523.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="52.0">
                                        <image>
-                                          <Image url="@../assets/images/dash-admin/dash-admin-edit_user.png" />
+                                          <Image url="@../assets/images/hims-base-img/ambulance-hero.png" />
                                        </image>
                                     </ImageView>
-                                 </graphic>
-                              </Tab>
-                              <Tab text="View Patient">
-                                 <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <BorderPane fx:id="EditPatientBorderPane" layoutY="174.0" prefHeight="315.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <center>
+                                          <AnchorPane prefHeight="339.0" prefWidth="790.0" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/dash-admin/dash-admin-edit_user.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                        <Tab text="View Patient Account">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
                                        <children>
-                                          <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
-                                             <children>
-                                                <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="352.0" text="Enter valid ID Card Number to View Patient Record">
-                                                   <font>
-                                                      <Font size="14.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </Pane>
-                                          <JFXTextField fx:id="ViewPatientRecordIDNum" focusColor="#424242" layoutX="25.0" layoutY="64.0" prefHeight="25.0" prefWidth="230.0" promptText="ID Card Number " styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                          <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="352.0" text="Enter valid ID Card Number to View Patient Record">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
-                                          </JFXTextField>
-                                          <JFXButton fx:id="ViewPatientUserName" layoutX="25.0" layoutY="130.0" onMouseClicked="#View_Patient" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Patient" textFill="WHITE">
-                                             <font>
-                                                <Font name="System Bold" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="511.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="60.0">
-                                             <image>
-                                                <Image url="@../assets/images/hims-base-img/ambulance-hero.png" />
-                                             </image>
-                                          </ImageView>
-                                          <BorderPane fx:id="ViewPatientBorderPane" layoutY="175.0" prefHeight="460.0" prefWidth="779.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                                             <center>
-                                                <AnchorPane prefHeight="453.0" prefWidth="779.0" BorderPane.alignment="CENTER" />
-                                             </center>
-                                          </BorderPane>
+                                          </Label>
                                        </children>
-                                    </AnchorPane>
-                                 </content>
-                                 <graphic>
-                                    <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    </Pane>
+                                    <JFXTextField fx:id="ViewPatientUsername" focusColor="#424242" layoutX="20.0" layoutY="60.0" prefHeight="25.0" prefWidth="230.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXButton fx:id="ViewPatientAccount" layoutX="20.0" layoutY="110.0" onMouseClicked="#View_Patient" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="View Patient Account" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="511.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="52.0">
                                        <image>
-                                          <Image url="@../assets/images/dash-admin/dash-admin-delete-user.png" />
-                                       </image></ImageView>
-                                 </graphic>
-                              </Tab>
-                           </tabs>
-                        </JFXTabPane>
-                     </children>
-                  </AnchorPane>
-              </content>
-            </ScrollPane>
+                                          <Image url="@../assets/images/hims-base-img/ambulance-hero.png" />
+                                       </image>
+                                    </ImageView>
+                                    <BorderPane fx:id="ViewPatientBorderPane" layoutY="175.0" prefHeight="315.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <center>
+                                          <AnchorPane prefHeight="300.0" prefWidth="779.0" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/dash-receptionist/dash-view-patient-acc.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>

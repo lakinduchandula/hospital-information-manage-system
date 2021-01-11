@@ -1,77 +1,102 @@
 package sample.controller;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
-import sample.model.Appointment;
-import sample.model.GetSetTextArea;
-import sample.model.RecepPatient;
+import javafx.scene.text.Text;
+import sample.model.UserEditDelete;
 
 public class RecepViewPatientController {
-    @FXML
-    private StackPane ViewPatientStackPane;
 
     @FXML
-    private BorderPane ViewPatientBorderPane;
+    private ResourceBundle resources;
 
     @FXML
-    private Label ViewPatientFirstName;
+    private URL location;
 
     @FXML
-    private Label ViewPatientGender;
+    private StackPane DeletePatientStackPane;
 
     @FXML
-    private Label ViewPatientMaritalStatus;
+    private BorderPane DeletePatientBorder;
 
     @FXML
-    private Label ViewPatientAddressLine1;
+    private AnchorPane DeletePatientAnchor;
 
     @FXML
-    private Label ViewPatientCity;
+    private Label ViewUserFirstName;
 
     @FXML
-    private Label ViewPatientLastName;
+    private Label ViewUserLastName;
 
     @FXML
-    private Label ViewPatientIDNum;
+    private Label ViewUserUsername;
 
     @FXML
-    private Label ViewPatientPhoneNum;
+    private Label ViewUserIDNo;
 
     @FXML
-    private Label ViewPatientAddressLine2;
+    private Label ViewUserGender;
 
     @FXML
-    private Label ViewPatientDOB;
+    private Label ViewUserPhoneNumber;
 
     @FXML
-    private Label ViewPatientBloodgroup;
+    private Label ViewUserMatrital;
 
     @FXML
-    private Label ViewPatientAllergies;
+    private Label ViewUserDOB;
 
+    @FXML
+    private Label ViewUserAddStreet;
+
+    @FXML
+    private Label ViewUserAddNo;
+
+    @FXML
+    private Label ViewUserCountry;
+
+    @FXML
+    private Label ViewUserCity;
+
+    @FXML
+    private Label ViewUserBloodGroup;
+
+    @FXML
+    private Label ViewUserPassword;
+
+    @FXML
+    private ScrollPane ViewUserAllergiesScroll;
+
+    @FXML
+    private Text ViewUserAllergies;
 
     @FXML
     void initialize() {
-        RecepPatient viewRecepPatient = new RecepPatient();
-        viewRecepPatient.getRecepPatientDetailsArray(ReceptDashPatientRecordsController.PatientIDGlobal);
-        String[] patientDetail = viewRecepPatient.getRecepPatientDetails();
+        UserEditDelete newViewProfile = new UserEditDelete(1);
+        newViewProfile.UserEdit(AdDashEditUserController.username);
+        String[] PatientDetails = newViewProfile.getUserDetailArray();
 
-        ViewPatientIDNum.setText(patientDetail[0]);
-        ViewPatientFirstName.setText(patientDetail[1]);
-        ViewPatientLastName.setText(patientDetail[2]);
-        ViewPatientGender.setText(patientDetail[3]);
-        ViewPatientDOB.setText(patientDetail[4]);
-        ViewPatientMaritalStatus.setText(patientDetail[5]);
-        ViewPatientPhoneNum.setText(patientDetail[6]);
-        ViewPatientCity.setText(patientDetail[7]);
-        ViewPatientAddressLine1.setText(patientDetail[8]);
-        ViewPatientAddressLine2.setText(patientDetail[9]);
-        ViewPatientBloodgroup.setText(patientDetail[10]);
-        ViewPatientAllergies.setText(patientDetail[11]);
+        ViewUserUsername.setText(PatientDetails[0]);
+        ViewUserPassword.setText(PatientDetails[1]);
+        ViewUserFirstName.setText(PatientDetails[2]);
+        ViewUserLastName.setText(PatientDetails[3]);
+        ViewUserIDNo.setText(PatientDetails[4]);
+        ViewUserPhoneNumber.setText(PatientDetails[5]);
+        ViewUserGender.setText(PatientDetails[6]);
+        ViewUserDOB.setText(PatientDetails[7]);
+        ViewUserMatrital.setText(PatientDetails[8]);
+        ViewUserAddNo.setText(PatientDetails[9]);
+        ViewUserAddStreet.setText(PatientDetails[10]);
+        ViewUserCity.setText(PatientDetails[11]);
+        ViewUserCountry.setText(PatientDetails[12]);
+        ViewUserBloodGroup.setText(PatientDetails[14]);
+        ViewUserAllergies.setText(PatientDetails[15]);
 
-
-}
-
+    }
 }

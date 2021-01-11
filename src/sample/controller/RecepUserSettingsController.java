@@ -3,14 +3,24 @@ package sample.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import sample.model.Receptionist;
+import sample.model.UploadProfileImg;
 import sample.model.UserAdd;
 import sample.model.UserEditDelete;
 
@@ -76,9 +86,42 @@ public class RecepUserSettingsController {
     private JFXComboBox<String> AccSettingMarital;
 
     @FXML
+    private Circle UserSettingsProfile;
+
+    private String profileImgPath;
+
+    @FXML
+    private ImageView AddImage;
+
+    @FXML
+    private Label userFullName;
+
+    @FXML
+    private Label userUsername;
+
+    @FXML
+    private Label userStaffID;
+
+    @FXML
+    private Label userEmailAddress;
+
+    public void add_profile_pic(MouseEvent mouseEvent) throws IOException {
+
+        UploadProfileImg receptionistImg = new UploadProfileImg();
+        profileImgPath = receptionistImg.uploadProfilePicture(getUserDetailArray()[13]);
+
+        FileInputStream profileStream = new FileInputStream(profileImgPath);
+        Image proImg = new Image(profileStream);
+        UserSettingsProfile.setFill(new ImagePattern(proImg));
+    }
+
+    @FXML
     void update_Account(MouseEvent event) {
         try{
+            UploadProfileImg receptionistImgEdit = new UploadProfileImg();
             UserEditDelete newEditProfile = new UserEditDelete(0);
+            System.out.println(getUserDetailArray()[13]);
+            receptionistImgEdit.deleteOldProfileImg(getUserDetailArray()[13]);
             newEditProfile.UserDelete(LoginController.currentUser);
             ValidationController validate = new ValidationController(AccSettingsStackPane, AccSettingsAnchorPane,
                     4);
@@ -103,12 +146,15 @@ public class RecepUserSettingsController {
                 editReceptionistUser.setAddressLine2(AccSettingsAddress2.getText().trim());
                 editReceptionistUser.setCity(AccSettingsCity.getText().trim());
                 editReceptionistUser.setCountry(AccSettingsCountry.getText().trim());
-                editReceptionistUser.setStaffID(getUserDetailArray()[13]);
-                editReceptionistUser.setStaffEmail(getUserDetailArray()[14]);
-                editReceptionistUser.setDateOfJoin(LocalDate.parse(getUserDetailArray()[15]));
+                editReceptionistUser.setProfilePicPath(profileImgPath);
+                editReceptionistUser.setStaffID(getUserDetailArray()[14]);
+                editReceptionistUser.setStaffEmail(getUserDetailArray()[15]);
+                editReceptionistUser.setDateOfJoin(LocalDate.parse(getUserDetailArray()[16]));
+                UserDetailsTop();
 
                 UserAdd.writeToFile(editReceptionistUser, 1);
                 validate.successfulUserCreation("Receptionist Account Successfully Updated");
+
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -116,7 +162,19 @@ public class RecepUserSettingsController {
     }
 
     @FXML
-    void initialize() {
+    void initialize() throws FileNotFoundException {
+        // instantiation
+        UserEditDelete newEditProfile = new UserEditDelete(0);
+        newEditProfile.UserEdit(LoginController.currentUser);
+        String[] RecepDetails = newEditProfile.getUserDetailArray();
+        setUserDetailArray(RecepDetails);
+
+        // set up the profile picture
+        profileImgPath = RecepDetails[13];
+        FileInputStream profileStream = new FileInputStream(profileImgPath);
+        Image proImg = new Image(profileStream);
+        UserSettingsProfile.setFill(new ImagePattern(proImg));
+
         // combo-box items for marital status at create user account
         AccSettingMarital.getItems().add("Unmarried");
         AccSettingMarital.getItems().add("Married");
@@ -124,10 +182,12 @@ public class RecepUserSettingsController {
         AccSettingMarital.getItems().add("Widowed");
         AccSettingMarital.getItems().add("Legally Separated");
 
-        UserEditDelete newEditProfile = new UserEditDelete(0);
-        newEditProfile.UserEdit(LoginController.currentUser);
-        String[] RecepDetails = newEditProfile.getUserDetailArray();
-        setUserDetailArray(RecepDetails);
+        // set text to label under change own profile image tab
+        userFullName.setText(RecepDetails[2]+" "+RecepDetails[3]);
+        userUsername.setText("#"+RecepDetails[0]);
+        userStaffID.setText(RecepDetails[14]);
+        userEmailAddress.setText(RecepDetails[15]);
+
         AccSettingsUsername.setText(RecepDetails[0]);
         AccSettingsPassword.setText(RecepDetails[1]);
         AccSettingsFirstName.setText(RecepDetails[2]);
@@ -139,5 +199,13 @@ public class RecepUserSettingsController {
         AccSettingsAddress2.setText(RecepDetails[10]);
         AccSettingsCity.setText(RecepDetails[11]);
         AccSettingsCountry.setText(RecepDetails[12]);
+
+        UserDetailsTop();
+    }
+
+    public void UserDetailsTop(){
+        // set text to label under change own profile image tab
+        userFullName.setText(AccSettingsFirstName.getText().trim()+" "+AccSettingsLastName.getText().trim());
+        userUsername.setText("#"+AccSettingsUsername.getText().trim());
     }
 }

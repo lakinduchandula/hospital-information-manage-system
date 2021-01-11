@@ -113,9 +113,10 @@ public class EditMOAccountController {
                 editMO.setAddressLine2(EditUserEditAddLine2.getText().trim());
                 editMO.setCity(EditUserEditAddCity.getText().trim());
                 editMO.setCountry(EditUserEditAddCountry.getText().trim());
-                editMO.setStaffID(getUserDetailArray()[13]);
+                editMO.setProfilePicPath(getUserDetailArray()[13]);
+                editMO.setStaffID(getUserDetailArray()[14]);
                 editMO.setStaffEmail(EditUserEditMOEmail.getText().trim());
-                editMO.setDateOfJoin(LocalDate.parse(getUserDetailArray()[15]));
+                editMO.setDateOfJoin(LocalDate.parse(getUserDetailArray()[16]));
                 editMO.setSpecialtyArea(EditUserMOSpecificArea.getValue());
 
                 UserAdd.writeToFile(editMO, 3);
@@ -160,8 +161,8 @@ public class EditMOAccountController {
         EditUserEditAddLine2.setText(MODetails[10]);
         EditUserEditAddCity.setText(MODetails[11]);
         EditUserEditAddCountry.setText(MODetails[12]);
-        EditUserEditMOEmail.setText(MODetails[14]);
-        EditUserMOSpecificArea.setValue(MODetails[16]);
+        EditUserEditMOEmail.setText(MODetails[15]);
+        EditUserMOSpecificArea.setValue(MODetails[17]);
 
     }
 }

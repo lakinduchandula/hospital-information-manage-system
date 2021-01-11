@@ -19,11 +19,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="AddAppointmentStackPane" prefHeight="576.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptDashAppointmentController">
+<StackPane fx:id="AddAppointmentStackPane" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptDashAppointmentController">
     <children>
         <AnchorPane fx:id="AddAppointmentAnchorPane" prefHeight="576.0" prefWidth="790.0">
             <children>
-                <AnchorPane layoutX="-6.0" prefHeight="576.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <AnchorPane layoutX="-6.0" prefHeight="576.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <children>
                         <Pane layoutX="6.0" prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #0277bd;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                             <children>
@@ -36,7 +36,7 @@
                         </Pane>
                         <ScrollPane layoutX="6.0" layoutY="48.0" prefHeight="700.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
                             <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="777.0">
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="781.0">
                                     <children>
                                         <JFXTabPane layoutX="-1.0" prefHeight="750.0" prefWidth="790.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <tabs>

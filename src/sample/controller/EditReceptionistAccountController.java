@@ -113,9 +113,10 @@ public class EditReceptionistAccountController {
                 editReceptionist.setAddressLine2(EditUserEditAddLine2.getText().trim());
                 editReceptionist.setCity(EditUserEditAddCity.getText().trim());
                 editReceptionist.setCountry(EditUserEditAddCountry.getText().trim());
-                editReceptionist.setStaffID(getUserDetailArray()[13]);
+                editReceptionist.setProfilePicPath(getUserDetailArray()[13]);
+                editReceptionist.setStaffID(getUserDetailArray()[14]);
                 editReceptionist.setStaffEmail(EditUserEditStaffEmail.getText().trim());
-                editReceptionist.setDateOfJoin(LocalDate.parse(getUserDetailArray()[15]));
+                editReceptionist.setDateOfJoin(LocalDate.parse(getUserDetailArray()[16]));
 
                 UserAdd.writeToFile(editReceptionist, 1);
                 validate.successfulUserCreation("Receptionist Account Successfully Updated");
@@ -157,7 +158,7 @@ public class EditReceptionistAccountController {
         EditUserEditAddLine2.setText(RecepDetails[10]);
         EditUserEditAddCity.setText(RecepDetails[11]);
         EditUserEditAddCountry.setText(RecepDetails[12]);
-        EditUserEditStaffEmail.setText(RecepDetails[14]);
+        EditUserEditStaffEmail.setText(RecepDetails[15]);
 
 
     }

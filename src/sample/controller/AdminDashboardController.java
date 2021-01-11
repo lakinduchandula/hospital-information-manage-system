@@ -63,12 +63,13 @@ public class AdminDashboardController {
     @FXML
     private JFXButton AdDashHomeBtn;
 
+
     @FXML
     void show_home(MouseEvent event) throws IOException {
         removeStyle();
         AdDashHomeBtn.getStyleClass().add("jfx-button-admin-vbox-dash-selected");
 
-        Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/NewHome.fxml"));
+        Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/AdDashNewHome.fxml"));
         AdminDashBorderpane.setCenter(appointmentPane);
     }
 
@@ -130,15 +131,15 @@ public class AdminDashboardController {
 
     @FXML
     void initialize() throws IOException {
-
-        profile = "data/profile/img.png";
+        // set up the profile picture
+        profile = "src/sample/app/profile/img.png";
         FileInputStream profileStream = new FileInputStream(profile);
         Image proImg = new Image(profileStream);
         profileImg.setFill(new ImagePattern(proImg));
 
         AdDashHomeBtn.getStyleClass().add("jfx-button-admin-vbox-dash-selected");
 
-        Parent homePage = FXMLLoader.load(getClass().getResource("/sample/view/NewHome.fxml"));
+        Parent homePage = FXMLLoader.load(getClass().getResource("/sample/view/AdDashNewHome.fxml"));
         AdminDashBorderpane.setCenter(homePage);
 
         AdminDashLogOutBtn.setOnAction(new EventHandler<ActionEvent>() {
