@@ -106,9 +106,10 @@ public class MOUserSettingsController {
                 editMOUserSettings.setAddressLine2(AccSettingsAddress2.getText().trim());
                 editMOUserSettings.setCity(AccSettingsCity.getText().trim());
                 editMOUserSettings.setCountry(AccSettingsCountry.getText().trim());
-                editMOUserSettings.setStaffID(getUserDetailArray()[13]);
-                editMOUserSettings.setStaffEmail(getUserDetailArray()[14]);
-                editMOUserSettings.setDateOfJoin(LocalDate.parse(getUserDetailArray()[15]));
+                editMOUserSettings.setProfilePicPath(getUserDetailArray()[13]);
+                editMOUserSettings.setStaffID(getUserDetailArray()[14]);
+                editMOUserSettings.setStaffEmail(getUserDetailArray()[15]);
+                editMOUserSettings.setDateOfJoin(LocalDate.parse(getUserDetailArray()[16]));
                 editMOUserSettings.setSpecialtyArea(AccSettingsSpeciality.getValue());
 
                 UserAdd.writeToFile(editMOUserSettings, 3);
@@ -147,6 +148,6 @@ public class MOUserSettingsController {
         AccSettingsAddress2.setText(MODetails[10]);
         AccSettingsCity.setText(MODetails[11]);
         AccSettingsCountry.setText(MODetails[12]);
-        AccSettingsSpeciality.setValue(MODetails[16]);
+        AccSettingsSpeciality.setValue(MODetails[17]);
     }
 }

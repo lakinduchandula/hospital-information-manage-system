@@ -2,7 +2,9 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,18 +12,70 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <StackPane prefHeight="576.0" prefWidth="1050.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ReceptionistDashboardController">
    <children>
       <AnchorPane prefHeight="576.0" prefWidth="1050.0">
          <children>
-            <BorderPane fx:id="ReceptDashBoarderPane" prefHeight="576.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <BorderPane fx:id="RecepDashBoarderPane" prefHeight="576.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <left>
                   <VBox prefHeight="576.0" prefWidth="260.0" style="-fx-background-color: #0277bd;" BorderPane.alignment="CENTER">
                      <children>
-                        <Pane prefHeight="128.0" prefWidth="260.0" />
-                        <JFXButton fx:id="RecepDashAppoinmentBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_appointment" prefHeight="42.0" prefWidth="260.0" text="Appoinments" textAlignment="RIGHT" textFill="WHITE">
+                        <Pane prefHeight="49.0" prefWidth="260.0">
+                           <children>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="22.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/hims-base-img/icons8-hospital-35.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="67.0" layoutY="13.0" text="Master Helth Care" textFill="#f8f8f8">
+                                 <font>
+                                    <Font name="Roboto Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutY="47.0" prefWidth="260.0" />
+                           </children>
+                        </Pane>
+                        <Pane onMouseClicked="#shortcut_to_AccountSettings" prefHeight="72.0" prefWidth="260.0">
+                           <children>
+                              <Circle fx:id="profileImg" fill="WHITE" layoutX="33.0" layoutY="36.0" radius="27.0" stroke="#00838f" strokeType="INSIDE" />
+                              <Label fx:id="UserFullName" layoutX="66.0" layoutY="19.0" prefHeight="17.0" prefWidth="179.0" text="Mr. Lakindu Chandula" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="UserUsername" layoutX="66.0" layoutY="34.0" prefHeight="17.0" prefWidth="179.0" text="#lakinduchandula" textFill="#e4dfdf">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Separator prefWidth="200.0" />
+                        <JFXButton fx:id="AdDashHomeBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" onMouseClicked="#show_home" prefHeight="42.0" prefWidth="260.0" styleClass="jfx-button-recep-vbox-dash" stylesheets="@../assets/darkCss/dark-recep.css" text="Home" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/dash-admin/dash-admin-home.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" top="2.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="RecepDashAppointmentBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" onMouseClicked="#show_appointment" prefHeight="42.0" prefWidth="260.0" styleClass="jfx-button-recep-vbox-dash" stylesheets="@../assets/darkCss/dark-recep.css" text="Appoinments" textAlignment="RIGHT" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -39,7 +93,7 @@
                               <Insets left="5.0" right="5.0" top="2.0" />
                            </VBox.margin>
                         </JFXButton>
-                        <JFXButton fx:id="RecepDashComplaintBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_complaint" prefHeight="42.0" prefWidth="260.0" text="Complaint" textAlignment="RIGHT" textFill="WHITE">
+                        <JFXButton fx:id="RecepDashComplaintBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" onMouseClicked="#show_complaint" prefHeight="42.0" prefWidth="260.0" styleClass="jfx-button-recep-vbox-dash" stylesheets="@../assets/darkCss/dark-recep.css" text="Complaint" textAlignment="RIGHT" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -57,7 +111,7 @@
                               <Insets left="5.0" right="5.0" top="2.0" />
                            </VBox.margin>
                         </JFXButton>
-                        <JFXButton fx:id="RecepDashPostalBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_postalMail" prefHeight="42.0" prefWidth="262.0" text="Postal Mail Records" textFill="WHITE">
+                        <JFXButton fx:id="RecepDashPostalBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" onMouseClicked="#show_postalMail" prefHeight="42.0" prefWidth="262.0" styleClass="jfx-button-recep-vbox-dash" stylesheets="@../assets/darkCss/dark-recep.css" text="Postal Mail Records" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -75,7 +129,7 @@
                               <Insets left="5.0" right="5.0" top="2.0" />
                            </VBox.margin>
                         </JFXButton>
-                        <JFXButton fx:id="RecepDashVisitorBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_visitorRecords" prefHeight="42.0" prefWidth="260.0" text="Visitor Records" textAlignment="RIGHT" textFill="WHITE">
+                        <JFXButton fx:id="RecepDashVisitorBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" onMouseClicked="#show_visitorRecords" prefHeight="42.0" prefWidth="260.0" styleClass="jfx-button-recep-vbox-dash" stylesheets="@../assets/darkCss/dark-recep.css" text="Visitor Records" textAlignment="RIGHT" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -93,14 +147,14 @@
                               <Insets left="5.0" right="5.0" top="2.0" />
                            </VBox.margin>
                         </JFXButton>
-                        <JFXButton fx:id="RecepDashPatientBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_patientRecords" prefHeight="42.0" prefWidth="260.0" text="Patient Records" textAlignment="RIGHT" textFill="WHITE">
+                        <JFXButton fx:id="RecepDashPatientBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" onMouseClicked="#show_patientRecords" prefHeight="42.0" prefWidth="260.0" styleClass="jfx-button-recep-vbox-dash" stylesheets="@../assets/darkCss/dark-recep.css" text="Patient Accounts" textAlignment="RIGHT" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../assets/images/dash-receptionist/dash-recep-patient-rec.png" />
+                                    <Image url="@../assets/images/dash%20-%20Recept/patient%20accounts.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -111,7 +165,7 @@
                               <Insets left="5.0" right="5.0" top="2.0" />
                            </VBox.margin>
                         </JFXButton>
-                        <JFXButton fx:id="RecepDashUserBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_acc_settings" prefHeight="42.0" prefWidth="260.0" text="Account Settings" textAlignment="RIGHT" textFill="WHITE">
+                        <JFXButton fx:id="RecepDashUserBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" onMouseClicked="#show_acc_settings" prefHeight="42.0" prefWidth="260.0" styleClass="jfx-button-recep-vbox-dash" stylesheets="@../assets/darkCss/dark-recep.css" text="Account Settings" textAlignment="RIGHT" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -129,7 +183,7 @@
                               <Insets left="5.0" right="5.0" top="2.0" />
                            </VBox.margin>
                         </JFXButton>
-                        <JFXButton fx:id="Logout" alignment="BASELINE_LEFT" graphicTextGap="20.0" prefHeight="42.0" prefWidth="260.0" text="Sign Out" textAlignment="RIGHT" textFill="WHITE">
+                        <JFXButton fx:id="Logout" alignment="BASELINE_LEFT" graphicTextGap="10.0" prefHeight="42.0" prefWidth="260.0" styleClass="jfx-button-recep-vbox-dash" stylesheets="@../assets/darkCss/dark-recep.css" text="Sign Out" textAlignment="RIGHT" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -151,15 +205,7 @@
                   </VBox>
                </left>
                <center>
-                  <AnchorPane prefHeight="576.0" prefWidth="790.0" BorderPane.alignment="CENTER">
-                     <children>
-                        <ScrollPane prefHeight="576.0" prefWidth="790.0">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-                           </content>
-                        </ScrollPane>
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane prefHeight="576.0" prefWidth="790.0" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
          </children>

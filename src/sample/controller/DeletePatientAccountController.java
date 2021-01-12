@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import sample.model.UserEditDelete;
 
 public class DeletePatientAccountController {
@@ -76,10 +77,7 @@ public class DeletePatientAccountController {
     private Label ViewUserBloodGroup;
 
     @FXML
-    private Label ViewUserAllergies;
-
-    @FXML
-    private Label ViewUserAdditionalAlli;
+    private Text ViewUserAllergies;
 
     @FXML
     private Label ViewUserPassword;
@@ -107,6 +105,7 @@ public class DeletePatientAccountController {
         UserEditDelete newViewProfile = new UserEditDelete(1);
         newViewProfile.UserEdit(AdDashEditUserController.username);
         String[] PatientDetails = newViewProfile.getUserDetailArray();
+
         ViewUserUsername.setText(PatientDetails[0]);
         ViewUserPassword.setText(PatientDetails[1]);
         ViewUserFirstName.setText(PatientDetails[2]);
@@ -120,8 +119,7 @@ public class DeletePatientAccountController {
         ViewUserAddStreet.setText(PatientDetails[10]);
         ViewUserCity.setText(PatientDetails[11]);
         ViewUserCountry.setText(PatientDetails[12]);
-        ViewUserBloodGroup.setText(PatientDetails[13]);
-        ViewUserAllergies.setText(PatientDetails[14]);
-        ViewUserAdditionalAlli.setText(PatientDetails[15]);
+        ViewUserBloodGroup.setText(PatientDetails[14]);
+        ViewUserAllergies.setText(PatientDetails[15]);
     }
 }

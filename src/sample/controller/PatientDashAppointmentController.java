@@ -138,7 +138,7 @@ public class PatientDashAppointmentController {
             newAppointment.setCity(getPatientDetailArray()[11]);
             newAppointment.setMedicalOfficer(AppointmentAddMO.getValue());
             newAppointment.setMedicalSpecialArea(AppointmentAddSpecial.getValue());
-            newAppointment.setBloodGroup(getPatientDetailArray()[13]);
+            newAppointment.setBloodGroup(getPatientDetailArray()[14]);
             newAppointment.setSymptoms(GetSetTextArea.getText(AppointmentAddSymptoms.getText().trim()));
             newAppointment.setAppointmentDate(AppointmentAddDate.getValue());
             newAppointment.setAppointmentTime(AppointmentAddTime.getValue());

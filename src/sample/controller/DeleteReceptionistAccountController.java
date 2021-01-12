@@ -117,8 +117,8 @@ public class DeleteReceptionistAccountController {
         ViewUserAddStreet.setText(RecepDetails[10]);
         ViewUserCity.setText(RecepDetails[11]);
         ViewUserCountry.setText(RecepDetails[12]);
-        ViewUserRecepID.setText(RecepDetails[13]);
-        ViewUserRecepEmail.setText(RecepDetails[14]);
-        ViewUserDateOfJoin.setText(RecepDetails[15]);
+        ViewUserRecepID.setText(RecepDetails[14]);
+        ViewUserRecepEmail.setText(RecepDetails[15]);
+        ViewUserDateOfJoin.setText(RecepDetails[16]);
     }
 }

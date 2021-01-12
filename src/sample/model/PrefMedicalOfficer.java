@@ -20,8 +20,8 @@ public class PrefMedicalOfficer {
             while((line = bufferedReader.readLine()) != null) {
                 String[] userCredentials = line.split("~");
 
-                if(credentialValidation(userCredentials[16], specialArea)){
-                        MOList.add("Dr. "+userCredentials[2]+ " " + userCredentials[3]+" - "+userCredentials[13]);
+                if(credentialValidation(userCredentials[17], specialArea)){
+                        MOList.add("Dr. "+userCredentials[2]+ " " + userCredentials[3]+" - "+userCredentials[14]);
                 }
             }
         }
@@ -42,7 +42,7 @@ public class PrefMedicalOfficer {
 
             while((line = bufferedReader.readLine()) != null) {
                 String[] userCredentials = line.split("~");
-                MOList.add("Dr. "+userCredentials[2]+ " " + userCredentials[3]+" - "+userCredentials[13]);
+                MOList.add("Dr. "+userCredentials[2]+ " " + userCredentials[3]+" - "+userCredentials[14]);
             }
         }
         catch (Exception e) {

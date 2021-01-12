@@ -18,6 +18,7 @@ public class User extends SystemUser {
     private String addressLine2;
     private String city;
     private String country;
+    private String profilePicPath;
 
 
 
@@ -42,6 +43,8 @@ public class User extends SystemUser {
     }
 
     //Getters and Setters
+    public String getProfilePicPath() { return profilePicPath; }
+
     public String getUserName(){
         return this.userName;
     }
@@ -90,8 +93,6 @@ public class User extends SystemUser {
         return this.country;
     }
 
-
-
     public String getMaritalStatus(){
         return this.maritalStatus;
     }
@@ -99,6 +100,8 @@ public class User extends SystemUser {
     public void setUserName(String userName){
         this.userName = userName;
     }
+
+    public void setProfilePicPath(String profilePicPath) { this.profilePicPath = profilePicPath; }
 
     public void setFirstName(String name) {
         this.firstName = name;
@@ -153,9 +156,9 @@ public class User extends SystemUser {
     }
 
     public String toString() {
-        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s", getUserName(), getPassword(), getFirstName(),
+        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s", getUserName(), getPassword(), getFirstName(),
                 getLastName(), getIdNo(), getPhoneNumber(), getGender(), getDOB(), getMaritalStatus(),
-                getAddressLine1(), getAddressLine2(), getCity(), getCountry());
+                getAddressLine1(), getAddressLine2(), getCity(), getCountry(), getProfilePicPath());
     }
 
 }

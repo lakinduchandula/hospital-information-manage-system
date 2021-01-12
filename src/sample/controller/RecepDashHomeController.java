@@ -1,12 +1,9 @@
 package sample.controller;
 
-import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -19,19 +16,8 @@ import javafx.scene.control.Label;
 import javafx.util.Duration;
 import sample.model.Analytics;
 import sample.model.HomeDetails;
-import sample.model.LastLogin;
 
-public class NewHomeController {
-
-    private ArrayList<String> lastLogin;
-
-    public void setLastLogin(ArrayList<String> lastLogin) {
-        this.lastLogin = lastLogin;
-    }
-
-    public ArrayList<String> getLastLogin() {
-        return lastLogin;
-    }
+public class RecepDashHomeController {
 
     @FXML
     private ResourceBundle resources;
@@ -46,22 +32,16 @@ public class NewHomeController {
     private Label AdDashHomeTime;
 
     @FXML
-    private Label AdDashHomeRecep;
+    private Label RecepDashHomeRecep;
 
     @FXML
-    private Label AdDashHomeMO;
+    private Label RecepDashHomeMO;
 
     @FXML
-    private Label AdDashHomePatient;
+    private Label RecepDashHomePatient;
 
     @FXML
-    private Label AdDashHomeComplaint;
-
-    @FXML
-    private Label AdDashHomeAppointment;
-
-    @FXML
-    private LineChart<String, Integer> AppointmentChart;
+    private LineChart<?, ?> AppointmentChart;
 
     @FXML
     private CategoryAxis AppX;
@@ -70,7 +50,7 @@ public class NewHomeController {
     private NumberAxis AppY;
 
     @FXML
-    private BarChart<String, Integer> ComplaintChart;
+    private BarChart<?, ?> ComplaintChart;
 
     @FXML
     private CategoryAxis CompX;
@@ -79,55 +59,25 @@ public class NewHomeController {
     private NumberAxis CompY;
 
     @FXML
-    private Label AdDashHomeLastUsername1;
+    private Label RecepDashHomeAppointment;
 
     @FXML
-    private Label AdDashHomeLastUsermode1;
+    private Label RecepDashHomeComplaints;
 
     @FXML
-    private Label AdDashHomeLastDate1;
+    private Label RecepDashHomePendingApp;
 
     @FXML
-    private Label AdDashHomeLastTime1;
+    private Label RecepDashHomeApproveApp;
 
     @FXML
-    private Label AdDashHomeLastUsername2;
+    private Label RecepDashHomeCompApp;
 
     @FXML
-    private Label AdDashHomeLastUsermode2;
+    private Label RecepDashHomeUndoneComp;
 
     @FXML
-    private Label AdDashHomeLastDate2;
-
-    @FXML
-    private Label AdDashHomeLastTime2;
-
-    @FXML
-    private Label AdDashHomeLastUsername3;
-
-    @FXML
-    private Label AdDashHomeLastUsermode3;
-
-    @FXML
-    private Label AdDashHomeLastDate3;
-
-    @FXML
-    private Label AdDashHomeLastTime3;
-
-    @FXML
-    private Label AdDashHomeLastUsername4;
-
-    @FXML
-    private Label AdDashHomeLastUsermode4;
-
-    @FXML
-    private Label AdDashHomeLastDate4;
-
-    @FXML
-    private Label AdDashHomeLastTime4;
-
-    @FXML
-    void initialize() throws IOException {
+    void initialize() {
         // time and day
         realTimeGenerate();
         realDateGenerate();
@@ -136,11 +86,11 @@ public class NewHomeController {
         adminHomeDetails.textReader();
         int[] detailCount = adminHomeDetails.getHomeDetailCount();
 
-        AdDashHomeMO.setText(String.format("%d",detailCount[2]));
-        AdDashHomeComplaint.setText(String.format("%d",detailCount[4]));
-        AdDashHomeAppointment.setText(String.format("%d",detailCount[3]));
-        AdDashHomePatient.setText(String.format("%d",detailCount[1]));
-        AdDashHomeRecep.setText(String.format("%d",detailCount[0]));
+        RecepDashHomeMO.setText(String.format("%d",detailCount[2]));
+        RecepDashHomeComplaints.setText(String.format("%d",detailCount[4]));
+        RecepDashHomeAppointment.setText(String.format("%d",detailCount[3]));
+        RecepDashHomePatient.setText(String.format("%d",detailCount[1]));
+        RecepDashHomeRecep.setText(String.format("%d",detailCount[0]));
 
         // instantiation of Analytics class
         Analytics adminHome = new Analytics();
@@ -148,6 +98,7 @@ public class NewHomeController {
         // appointment chart start
         XYChart.Series appointment = new XYChart.Series();
         adminHome.AppointmentCalculations(); // call method to calculate appointment analytics
+        adminHome.CombineAppointmentComplaint();
 
         // fill the graph with details
         appointment.getData().add(new XYChart.Data("January", adminHome.getAppointmentByMonth()[0]));
@@ -188,30 +139,10 @@ public class NewHomeController {
         // plot graph with above details
         ComplaintChart.getData().addAll(complaint);
 
-        // add user last login details
-        setLastLogin(LastLogin.getLastLogin());
-
-        // Last user 1
-        AdDashHomeLastUsermode1.setText(getLastLogin().get(0));
-        AdDashHomeLastUsername1.setText(getLastLogin().get(1));
-        AdDashHomeLastDate1.setText(getLastLogin().get(2));
-        AdDashHomeLastTime1.setText(getLastLogin().get(3));
-        // Last user 2
-        AdDashHomeLastUsermode2.setText(getLastLogin().get(4));
-        AdDashHomeLastUsername2.setText(getLastLogin().get(5));
-        AdDashHomeLastDate2.setText(getLastLogin().get(6));
-        AdDashHomeLastTime2.setText(getLastLogin().get(7));
-        // Last user 3
-        AdDashHomeLastUsermode3.setText(getLastLogin().get(8));
-        AdDashHomeLastUsername3.setText(getLastLogin().get(9));
-        AdDashHomeLastDate3.setText(getLastLogin().get(10));
-        AdDashHomeLastTime3.setText(getLastLogin().get(11));
-        // Last user 4
-        AdDashHomeLastUsermode4.setText(getLastLogin().get(12));
-        AdDashHomeLastUsername4.setText(getLastLogin().get(13));
-        AdDashHomeLastDate4.setText(getLastLogin().get(14));
-        AdDashHomeLastTime4.setText(getLastLogin().get(15));
-
+        RecepDashHomePendingApp.setText(String.valueOf(adminHome.getAppointmentTypePlusComplaint()[0]));
+        RecepDashHomeApproveApp.setText(String.valueOf(adminHome.getAppointmentTypePlusComplaint()[1]));
+        RecepDashHomeCompApp.setText(String.valueOf(adminHome.getAppointmentTypePlusComplaint()[2]));
+        RecepDashHomeUndoneComp.setText(String.valueOf(adminHome.getAppointmentTypePlusComplaint()[3]));
     }
 
     public void realTimeGenerate(){

@@ -63,103 +63,83 @@ public class AdminDashboardController {
     @FXML
     private JFXButton AdDashHomeBtn;
 
+
     @FXML
     void show_home(MouseEvent event) throws IOException {
-        AdDashHomeBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
+        removeStyle();
         AdDashHomeBtn.getStyleClass().add("jfx-button-admin-vbox-dash-selected");
-        AdminDashAppointmentBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashReportsBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdDashRefRecBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashComplaintBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashEditUserBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashLogOutBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/NewHome.fxml"));
+
+        Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/AdDashNewHome.fxml"));
         AdminDashBorderpane.setCenter(appointmentPane);
     }
 
     @FXML
     void show_appointments(MouseEvent event) throws IOException {
-        AdminDashAppointmentBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
+        removeStyle();
         AdminDashAppointmentBtn.getStyleClass().add("jfx-button-admin-vbox-dash-selected");
-        AdminDashReportsBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdDashRefRecBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashComplaintBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashEditUserBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashLogOutBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdDashHomeBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
+
         Parent appointmentPane = FXMLLoader.load(getClass().getResource("/sample/view/AdDashAppointment.fxml"));
         AdminDashBorderpane.setCenter(appointmentPane);
     }
 
     @FXML
     void show_editUser(MouseEvent event) throws IOException {
-        AdminDashEditUserBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
+        removeStyle();
         AdminDashEditUserBtn.getStyleClass().add("jfx-button-admin-vbox-dash-selected");
-        AdminDashReportsBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdDashRefRecBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashComplaintBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashAppointmentBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashLogOutBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdDashHomeBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
+
         Parent userEditPane = FXMLLoader.load(getClass().getResource("/sample/view/AdDashEditUser.fxml"));
         AdminDashBorderpane.setCenter(userEditPane);
     }
 
     @FXML
     void show_complaint(MouseEvent event) throws IOException {
-        AdminDashComplaintBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
+        removeStyle();
         AdminDashComplaintBtn.getStyleClass().add("jfx-button-admin-vbox-dash-selected");
-        AdminDashReportsBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdDashRefRecBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashEditUserBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashAppointmentBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashLogOutBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdDashHomeBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
+
         Parent userComplaintPane = FXMLLoader.load(getClass().getResource("/sample/view/AdDashComplaint.fxml"));
         AdminDashBorderpane.setCenter(userComplaintPane);
     }
 
     @FXML
     void show_referenceRec(MouseEvent event) throws IOException {
-        AdDashRefRecBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
+        removeStyle();
         AdDashRefRecBtn.getStyleClass().add("jfx-button-admin-vbox-dash-selected");
-        AdminDashReportsBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");;
-        AdminDashComplaintBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashEditUserBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashAppointmentBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdminDashLogOutBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        AdDashHomeBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
+
         Parent userComplaintPane = FXMLLoader.load(getClass().getResource("/sample/view/AdDashReferenceRecords.fxml"));
         AdminDashBorderpane.setCenter(userComplaintPane);
     }
 
     @FXML
     void show_reports(MouseEvent event) throws IOException {
-        AdminDashReportsBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
+        removeStyle();
         AdminDashReportsBtn.getStyleClass().add("jfx-button-admin-vbox-dash-selected");
+
+        Parent userComplaintPane = FXMLLoader.load(getClass().getResource("/sample/view/AdReportsModule.fxml"));
+        AdminDashBorderpane.setCenter(userComplaintPane);
+    }
+
+    public void removeStyle(){
+        AdminDashReportsBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
         AdDashRefRecBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
         AdminDashComplaintBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
         AdminDashEditUserBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
         AdminDashAppointmentBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
         AdminDashLogOutBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
         AdDashHomeBtn.getStyleClass().remove("jfx-button-admin-vbox-dash-selected");
-        Parent userComplaintPane = FXMLLoader.load(getClass().getResource("/sample/view/AdReportsModule.fxml"));
-        AdminDashBorderpane.setCenter(userComplaintPane);
     }
-
 
 
     @FXML
     void initialize() throws IOException {
-
-        profile = "data/profile/img.png";
+        // set up the profile picture
+        profile = "src/sample/app/profile/img.png";
         FileInputStream profileStream = new FileInputStream(profile);
         Image proImg = new Image(profileStream);
         profileImg.setFill(new ImagePattern(proImg));
 
         AdDashHomeBtn.getStyleClass().add("jfx-button-admin-vbox-dash-selected");
 
-        Parent homePage = FXMLLoader.load(getClass().getResource("/sample/view/NewHome.fxml"));
+        Parent homePage = FXMLLoader.load(getClass().getResource("/sample/view/AdDashNewHome.fxml"));
         AdminDashBorderpane.setCenter(homePage);
 
         AdminDashLogOutBtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -181,7 +161,4 @@ public class AdminDashboardController {
         });
 
     }
-
-
-
 }

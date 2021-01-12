@@ -138,7 +138,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" x="5.0">
                                  <image>
-                                    <Image url="@../assets/images/dash-admin/dash-admin-reports.png" />
+                                    <Image url="@../assets/images/dash-admin/dash-admin-reports-new.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -185,11 +185,16 @@
                               <Insets left="5.0" right="5.0" top="2.0" />
                            </VBox.margin>
                         </JFXButton>
+                        <Label>
+                           <VBox.margin>
+                              <Insets left="5.0" top="125.0" />
+                           </VBox.margin>
+                        </Label>
                      </children>
                   </VBox>
                </left>
                <center>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
                </center>
             </BorderPane>
          </children>

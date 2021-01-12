@@ -1,9 +1,6 @@
 package sample.controller;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,11 +11,30 @@ import javafx.scene.layout.StackPane;
 import sample.model.*;
 
 import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
 import static java.time.LocalDate.parse;
 
 public class RecepEditPatientController {
+
+    private String[] userDetailArray ;
+
+    public void setUserDetailArray(String[] userDetailArray){
+        this.userDetailArray = userDetailArray;
+    }
+
+    public String[] getUserDetailArray(){
+        return userDetailArray;
+    }
+
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
     @FXML
     private StackPane EditPatientStackPane;
 
@@ -33,9 +49,6 @@ public class RecepEditPatientController {
 
     @FXML
     private JFXTextField EditPatientLastName;
-
-    @FXML
-    private JFXComboBox<String> EditPatientGender;
 
     @FXML
     private JFXTextField EditPatientIDCardNumber;
@@ -56,43 +69,53 @@ public class RecepEditPatientController {
     private JFXTextField EditPatientCity;
 
     @FXML
-    private JFXDatePicker EditPatientDOB;
-
-    @FXML
-    private JFXComboBox<String> EditPatientBloodGroup;
-
-    @FXML
-    private JFXTextField EditPatientAllergies;
-
-    @FXML
     private JFXButton EditPatientSaveChange;
+
+    @FXML
+    private JFXTextField EditUserEditCountry;
+
+    @FXML
+    private JFXTextArea EditPatientAllergies;
+
+    @FXML
+    private JFXTextField EditPatientUsername;
+
+    @FXML
+    private JFXTextField EditPatientEditPassword;
 
     @FXML
     void SaveChanges(MouseEvent event) {
         try{
-
-            ValidationController validate = new ValidationController(EditPatientStackPane, EditPatientAnchorPane, 1);
+            UserEditDelete newEditProfile = new UserEditDelete(1);
+            newEditProfile.UserDelete(RecepDashPatientController.PatientUsername);
+            ValidationController validate = new ValidationController(EditPatientStackPane, EditPatientAnchorPane,
+                    4);
             if(        validate.validatePhone(EditPatientPhoneNumber)
-                    && validate.validateNIC(EditPatientIDCardNumber))
-                   {
+                    && validate.validateUsername(EditPatientUsername)
+                    && validate.sameIDNo(EditPatientIDCardNumber)
+                    && validate.samePhoneNumber(EditPatientPhoneNumber)){
 
-                       RecepPatient editRecepPatient = new RecepPatient();
+                Patient editPatient = new Patient();
 
-                       editRecepPatient.setFirstName(EditPatientFirstName.getText().trim());
-                       editRecepPatient.setLastName(EditPatientLastName.getText().trim());
-                       editRecepPatient.setIdCardNo(EditPatientIDCardNumber.getText().trim());
-                       editRecepPatient.setGender(EditPatientGender.getValue());
-                       editRecepPatient.setPhoneNumber(EditPatientPhoneNumber.getText().trim());
-                       editRecepPatient.setMaritalStatus(EditPatientMaritalStatus.getValue());
-                       editRecepPatient.setdOB(EditPatientDOB.getValue());
-                       editRecepPatient.setAddressLine1(EditPatientAddressLine1.getText().trim());
-                       editRecepPatient.setAddressLine2(EditPatientAddressLine2.getText().trim());
-                       editRecepPatient.setCity(EditPatientCity.getText().trim());
-                       editRecepPatient.setBloodGroup(EditPatientBloodGroup.getValue());
-                       editRecepPatient.setAllergies(EditPatientAllergies.getText().trim());
+                editPatient.setFirstName(EditPatientFirstName.getText().trim());
+                editPatient.setLastName(EditPatientLastName.getText().trim());
+                editPatient.setUserName(EditPatientUsername.getText().trim());
+                editPatient.setIdNo(EditPatientIDCardNumber.getText().trim());
+                editPatient.setPassword(EditPatientEditPassword.getText().trim());
+                editPatient.setGender(getUserDetailArray()[6]);
+                editPatient.setPhoneNumber(EditPatientPhoneNumber.getText().trim());
+                editPatient.setMaritalStatus(EditPatientMaritalStatus.getValue());
+                editPatient.setDOB(LocalDate.parse(getUserDetailArray()[7]));
+                editPatient.setAddressLine1(EditPatientAddressLine1.getText().trim());
+                editPatient.setAddressLine2(EditPatientAddressLine2.getText().trim());
+                editPatient.setCity(EditPatientCity.getText().trim());
+                editPatient.setCountry(EditUserEditCountry.getText().trim());
+                editPatient.setProfilePicPath(getUserDetailArray()[13]);
+                editPatient.setBloodGroup(getUserDetailArray()[14]);
+                editPatient.setAllergies(GetSetTextArea.getText(EditPatientAllergies.getText().trim()));
 
-                RecepAddPatient.writeToFile(editRecepPatient);
-                validate.successfulUserCreation("Patient Record Successfully Updated");
+                UserAdd.writeToFile(editPatient, 2);
+                validate.successfulUserCreation("Patient Account Successfully Updated");
                 afterCreation();
             }
         } catch (Exception e) {
@@ -115,41 +138,22 @@ public class RecepEditPatientController {
         EditPatientMaritalStatus.getItems().add("Widowed");
         EditPatientMaritalStatus.getItems().add("Legally Separated");
 
-
-        // combo-box items for blood-group status at edit account
-        EditPatientBloodGroup.getItems().add("A+");
-        EditPatientBloodGroup.getItems().add("A-");
-        EditPatientBloodGroup.getItems().add("B+");
-        EditPatientBloodGroup.getItems().add("B-");
-        EditPatientBloodGroup.getItems().add("O+");
-        EditPatientBloodGroup.getItems().add("O-");
-        EditPatientBloodGroup.getItems().add("AB+");
-        EditPatientBloodGroup.getItems().add("AB-");
-
-        // combo-box items for gender at edit patient
-        EditPatientGender.getItems().add("Male");
-        EditPatientGender.getItems().add("Female");
-
-        RecepPatient editRecepPatient = new RecepPatient();
-        editRecepPatient.getRecepPatientDetailsArray(ReceptDashPatientRecordsController.PatientIDGlobal);
-        String[] PatientDetails = editRecepPatient.getRecepPatientDetails();
-        editRecepPatient.setRecepPatientDetails(PatientDetails);
-
-
-        EditPatientIDCardNumber.setText(PatientDetails[0]);
-        EditPatientFirstName.setText(PatientDetails[1]);
-        EditPatientLastName.setText(PatientDetails[2]);
-        EditPatientGender.setValue(PatientDetails[3]);
-        EditPatientDOB.setValue(parse(PatientDetails[4]));
-        EditPatientPhoneNumber.setText(PatientDetails[6]);
-        EditPatientMaritalStatus.setValue(PatientDetails[5]);
-        EditPatientAddressLine1.setText(PatientDetails[7]);
-        EditPatientAddressLine2.setText(PatientDetails[8]);
-        EditPatientCity.setText(PatientDetails[9]);
-        EditPatientBloodGroup.setValue(PatientDetails[10]);
-        EditPatientAllergies.setText(PatientDetails[11]);
-
-
+        UserEditDelete newEditProfile = new UserEditDelete(1);
+        newEditProfile.UserEdit(RecepDashPatientController.PatientUsername);
+        String[] PatientDetails = newEditProfile.getUserDetailArray();
+        setUserDetailArray(PatientDetails);
+        EditPatientUsername.setText(PatientDetails[0]);
+        EditPatientEditPassword.setText(PatientDetails[1]);
+        EditPatientFirstName.setText(PatientDetails[2]);
+        EditPatientLastName.setText(PatientDetails[3]);
+        EditPatientIDCardNumber.setText(PatientDetails[4]);
+        EditPatientPhoneNumber.setText(PatientDetails[5]);
+        EditPatientMaritalStatus.setValue(PatientDetails[8]);
+        EditPatientAddressLine1.setText(PatientDetails[9]);
+        EditPatientAddressLine2.setText(PatientDetails[10]);
+        EditPatientCity.setText(PatientDetails[11]);
+        EditUserEditCountry.setText(PatientDetails[12]);
+        EditPatientAllergies.setText(GetSetTextArea.setText(PatientDetails[15]));
     }
 
 

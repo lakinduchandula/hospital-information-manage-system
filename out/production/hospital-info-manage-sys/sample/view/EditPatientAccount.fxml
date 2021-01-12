@@ -6,8 +6,6 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -80,11 +78,6 @@
                         <Font size="14.0" />
                      </font>
                   </JFXTextField>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="527.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="48.0">
-                     <image>
-                        <Image url="@../assets/images/hims-base-img/EMR-hero.png" />
-                     </image>
-                  </ImageView>
                   <Pane layoutX="14.0" layoutY="298.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
                      <children>
                         <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Information for a specific Patient">
@@ -92,7 +85,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <JFXTextArea fx:id="EditPatientAllergies" focusColor="#424242" layoutX="17.0" layoutY="46.0" prefHeight="73.0" prefWidth="437.0" promptText="Allergies" unFocusColor="#424242">
+                        <JFXTextArea fx:id="EditPatientAllergies" focusColor="#424242" layoutX="17.0" layoutY="45.0" prefHeight="73.0" prefWidth="437.0" promptText="Allergies" unFocusColor="#424242">
                            <font>
                               <Font size="14.0" />
                            </font>

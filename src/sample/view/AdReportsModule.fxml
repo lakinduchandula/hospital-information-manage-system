@@ -12,18 +12,22 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-
 <StackPane fx:id="ReportsStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdReportsModuleController">
    <children>
       <AnchorPane fx:id="ReportAnchorPane" prefHeight="200.0" prefWidth="200.0">
          <children>
             <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #00838f;">
                <children>
-                  <Label layoutX="14.0" layoutY="8.0" text="Reports " textFill="WHITE">
+                  <Label layoutX="51.0" layoutY="10.0" styleClass="label-admin-dash-heading" stylesheets="@../assets/darkCss/dark-admin.css" text="Reports " textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="9.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" x="5.0">
+                     <image>
+                        <Image url="@../assets/images/dash-admin/dash-admin-reports-new.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
             <Pane layoutX="14.0" layoutY="58.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">

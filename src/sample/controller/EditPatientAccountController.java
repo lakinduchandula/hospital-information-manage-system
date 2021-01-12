@@ -104,7 +104,8 @@ public class EditPatientAccountController {
                 editPatient.setAddressLine2(EditUserEditAddLine2.getText().trim());
                 editPatient.setCity(EditUserEditAddCity.getText().trim());
                 editPatient.setCountry(EditUserEditAddCountry.getText().trim());
-                editPatient.setBloodGroup(getUserDetailArray()[13]);
+                editPatient.setProfilePicPath(getUserDetailArray()[13]);
+                editPatient.setBloodGroup(getUserDetailArray()[14]);
                 editPatient.setAllergies(GetSetTextArea.getText(EditPatientAllergies.getText().trim()));
 
                 UserAdd.writeToFile(editPatient, 2);
@@ -146,6 +147,6 @@ public class EditPatientAccountController {
         EditUserEditAddLine2.setText(PatientDetails[10]);
         EditUserEditAddCity.setText(PatientDetails[11]);
         EditUserEditAddCountry.setText(PatientDetails[12]);
-        EditPatientAllergies.setText(GetSetTextArea.setText(PatientDetails[14]));
+        EditPatientAllergies.setText(GetSetTextArea.setText(PatientDetails[15]));
     }
 }

@@ -1,0 +1,17 @@
+.jfx-button-recep-vbox-dash{
+    -jfx-button-type: FLAT;
+    -fx-background-color: #0277bd;
+    -fx-text-fill: rgba(255,255,255,0.87);
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: normal;
+}
+
+.jfx-button-recep-vbox-dash-selected{
+    -jfx-button-type: FLAT;
+    -fx-background-color: #002f6c;
+    -fx-text-fill: rgba(255,255,255,0.87);
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
