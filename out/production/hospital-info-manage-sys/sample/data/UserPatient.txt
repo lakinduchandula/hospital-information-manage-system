@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-pat~8898~Lakindu~Chandula~886845235V~0785476258~Male~1974-12-10~Unmarried~Add1~Add2~City~Country~A+~No IssuesUIOP
-
-=======
-pat~8898~Lakindu~Chandula~886845235V~0785476258~Male~1974-12-10~Unmarried~Add1~Add2~City~Country~null~No IssuesUIOPOkayUIOPnew issueUIOP
->>>>>>> 3b0bde6764cc6e1229abaa2a8693c2383e548775
+drave125~981656324V~Dave~Jackson~981656324V~0754215864~Male~1998-02-07~Unmarried~61~Wellfield Road~Roath~Cardiff~A-~itchingUIOPredness,UIOPa rash, including hives,UIOP~
+jessie586~976485851V~Jessie~Roberts~976485851V~0786645865~Female~1997-03-15~Unmarried~44-46~Morningside Road~Edinburgh~Scotland~AB+~itchingUIOPa rash, including hives,UIOPredness,UIOPitchingUIOP~
+rick556~8898~Rick~Rustels~991627468V~0156895745~Male~2000-07-19~Unmarried~27~Colmore Row~Birmingham~England~null~a rash, including hives,UIOPredness,UIOPitching,UIOPrednessUIOP

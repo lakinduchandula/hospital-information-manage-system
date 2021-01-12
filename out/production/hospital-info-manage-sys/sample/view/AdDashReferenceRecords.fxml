@@ -13,7 +13,7 @@
     <children>
         <AnchorPane fx:id="ReferenceRecAnch" prefHeight="576.0" prefWidth="790.0">
             <children>
-                <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #00838f;">
+                <Pane prefHeight="47.0" prefWidth="790.0" style="-fx-background-color: #00838f;">
                     <children>
                         <Label layoutX="14.0" layoutY="8.0" text="Reference Records" textFill="WHITE">
                             <font>

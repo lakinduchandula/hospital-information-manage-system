@@ -14,3 +14,10 @@
     -fx-background-color: #00c853;
     -fx-text-fill: white;
 }
+
+.label-admin-dash-home-date-time{
+    -fx-font-family: 'Source Sans Pro', sans-serif;;
+    -fx-font-size: 16px;
+    -fx-font-color: red;
+    -fx-font-weight: bold;
+}
