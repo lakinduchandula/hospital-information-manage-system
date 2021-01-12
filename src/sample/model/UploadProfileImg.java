@@ -44,7 +44,6 @@ public class UploadProfileImg {
                 .ExtensionFilter("Image Files", "*.jpg", "*.jpeg", "*.png");
         profileImage.getExtensionFilters().add(imageExtensions);
         File UploadProfile = profileImage.showOpenDialog(null);
-
         String imgPath = "data/profile/" + RandomID.getUniqueId() + ".jpg";
         try{
             copyFile(UploadProfile, new File(imgPath));
@@ -59,10 +58,10 @@ public class UploadProfileImg {
         File file = new File(oldImgPath);
         System.out.println(oldImgPath);
         if(file.exists()) {
-            System.out.println("File deleted successfully");
+//            System.out.println("File deleted successfully");
         }
         else {
-            System.out.println("Failed to delete the file");
+//            System.out.println("Failed to delete the file");
         }
     }
 

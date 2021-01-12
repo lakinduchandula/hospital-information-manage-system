@@ -7,6 +7,7 @@
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -22,20 +23,21 @@
          <children>
             <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #0277bd;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Label layoutX="14.0" layoutY="8.0" prefHeight="30.0" prefWidth="209.0" text="Visitor Records" textFill="WHITE">
+                  <Label layoutX="43.0" layoutY="8.0" prefHeight="30.0" prefWidth="209.0" styleClass="label-admin-dash-heading" stylesheets="@../assets/darkCss/dark-admin.css" text="Visitor Records" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
+                  <Separator layoutY="47.0" prefWidth="790.0" />
                </children>
             </Pane>
             <ScrollPane layoutY="48.0" prefHeight="625.0" prefWidth="779.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="625.0" prefWidth="792.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="625.0" prefWidth="775.0">
                      <children>
                         <JFXTabPane prefHeight="529.0" prefWidth="790.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <tabs>
-                              <Tab text="Add Visitor">
+                              <Tab text="Add Visitor Record">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -76,25 +78,20 @@
                                           </JFXTextField>
                                           <JFXTimePicker fx:id="AddVisitorTimeIn" defaultColor="#424242" layoutX="299.0" layoutY="190.0" prefHeight="25.0" prefWidth="210.0" promptText="Time In" />
                                           <JFXTimePicker fx:id="AddVisitorTimeOut" defaultColor="#424242" layoutX="300.0" layoutY="235.0" prefHeight="25.0" prefWidth="210.0" promptText="Time Out" />
-                                          <Label layoutX="24.0" layoutY="290.0" prefHeight="30.0" prefWidth="202.0" text="Attach Document (If Any)">
-                                             <font>
-                                                <Font size="14.0" />
-                                             </font>
-                                          </Label>
-                                          <JFXButton fx:id="AddVisitorDocAttachBtn" layoutX="273.0" layoutY="355.0" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #9be7ff;" text="Choose File" />
-                                          <JFXTextField fx:id="ComplaintActionTaken" focusColor="#424242" layoutX="26.0" layoutY="330.0" prefHeight="50.0" prefWidth="200.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                                          <JFXButton fx:id="AddVisitorDocAttachBtn" layoutX="302.0" layoutY="330.0" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #9be7ff;" text="Choose File" />
+                                          <JFXTextField fx:id="ComplaintActionTaken" focusColor="#424242" layoutX="24.0" layoutY="330.0" prefHeight="137.0" prefWidth="267.0" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                                              <font>
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <JFXButton fx:id="AddVisitorBtn" layoutX="535.0" layoutY="397.0" onMouseClicked="#Add_Visitor" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Visitor" textFill="WHITE">
+                                          <JFXButton fx:id="AddVisitorBtn" layoutX="538.0" layoutY="435.0" onMouseClicked="#Add_Visitor" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #00c853;" text="Add Visitor" textFill="WHITE">
                                              <font>
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </JFXButton>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="526.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="60.0">
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="553.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="98.0">
                                              <image>
-                                                <Image url="@../assets/images/hims-base-img/disruption-section-4.png" />
+                                                <Image url="@../assets/images/hims-base-img/EMR-hero-550x257.png" />
                                              </image>
                                           </ImageView>
                                           <JFXTextField fx:id="AddVisitorLastName" focusColor="#424242" layoutX="24.0" layoutY="100.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
@@ -107,6 +104,15 @@
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
+                                          <Pane layoutX="14.0" layoutY="284.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                                             <children>
+                                                <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Attach Documents">
+                                                   <font>
+                                                      <Font size="14.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </Pane>
                                        </children>
                                     </AnchorPane>
                                  </content>
@@ -118,7 +124,7 @@
                                     </ImageView>
                                  </graphic>
                               </Tab>
-                              <Tab text="Edit Visitor">
+                              <Tab text="Edit Visitor Record">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -141,9 +147,9 @@
                                                 <Font name="System Bold" size="14.0" />
                                              </font>
                                           </JFXButton>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="533.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="50.0">
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="533.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="50.0">
                                              <image>
-                                                <Image url="@../assets/images/hims-base-img/disruption-section-4.png" />
+                                                <Image url="@../assets/images/hims-base-img/IoT-hero.png" />
                                              </image>
                                           </ImageView>
                                           <BorderPane fx:id="EditVisitorBorderPane" layoutY="180.0" prefHeight="470.0" prefWidth="779.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -162,7 +168,7 @@
                                     </ImageView>
                                  </graphic>
                               </Tab>
-                              <Tab text="View Visitor">
+                              <Tab text="View Visitor Record">
                                  <content>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                        <children>
@@ -185,14 +191,14 @@
                                                 <Font size="14.0" />
                                              </font>
                                           </JFXTextField>
-                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="501.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="60.0">
+                                          <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="501.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="60.0">
                                              <image>
-                                                <Image url="@../assets/images/hims-base-img/disruption-section-4.png" />
+                                                <Image url="@../assets/images/hims-base-img/Lims-hero.png" />
                                              </image>
                                           </ImageView>
-                                          <BorderPane fx:id="ViewVisitorBorderPane" layoutY="171.0" prefHeight="514.0" prefWidth="845.0">
+                                          <BorderPane fx:id="ViewVisitorBorderPane" layoutY="197.0" prefHeight="488.0" prefWidth="845.0">
                                              <center>
-                                                <AnchorPane prefHeight="450.0" prefWidth="845.0" BorderPane.alignment="CENTER" />
+                                                <AnchorPane prefHeight="485.0" prefWidth="845.0" BorderPane.alignment="CENTER" />
                                              </center>
                                           </BorderPane>
                                        </children>
@@ -211,6 +217,11 @@
                   </AnchorPane>
               </content>
             </ScrollPane>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/dash-receptionist/dash-recep-visitor.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
