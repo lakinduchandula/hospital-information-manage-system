@@ -10,7 +10,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <StackPane fx:id="TakeAppointmentStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="311.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.TakeAppointmentController">
    <children>
       <BorderPane fx:id="TakeAppointmentBorderPane" prefHeight="200.0" prefWidth="200.0">
@@ -19,9 +18,9 @@
                <content>
                   <AnchorPane fx:id="TakeAppointmentAnchor" prefHeight="599.0" prefWidth="775.0">
                      <children>
-                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #8e99f3;">
                            <children>
-                              <Label layoutX="7.0" layoutY="5.0" prefHeight="20.0" prefWidth="304.0" text="Appointment Details">
+                              <Label layoutX="7.0" layoutY="5.0" prefHeight="20.0" prefWidth="304.0" stylesheets="@../assets/darkCss/dark-medical.css" text="Appointment Details">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -53,9 +52,9 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Pane layoutX="14.0" layoutY="167.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
+                        <Pane layoutX="14.0" layoutY="167.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #8e99f3;">
                            <children>
-                              <Label layoutX="7.0" layoutY="5.0" prefHeight="20.0" prefWidth="304.0" text="Appointment By (patient details)">
+                              <Label layoutX="7.0" layoutY="5.0" prefHeight="20.0" prefWidth="304.0" stylesheets="@../assets/darkCss/dark-medical.css" text="Appointment By (patient details)">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -132,9 +131,9 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Pane layoutX="14.0" layoutY="305.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
+                        <Pane layoutX="14.0" layoutY="305.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #8e99f3;">
                            <children>
-                              <Label layoutX="7.0" layoutY="5.0" prefHeight="20.0" prefWidth="304.0" text="Symptoms of disease">
+                              <Label layoutX="7.0" layoutY="5.0" prefHeight="20.0" prefWidth="304.0" stylesheets="@../assets/darkCss/dark-medical.css" text="Symptoms of disease">
                                  <font>
                                     <Font size="14.0" />
                                  </font>

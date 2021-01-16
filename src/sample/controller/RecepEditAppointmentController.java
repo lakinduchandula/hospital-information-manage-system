@@ -93,9 +93,11 @@ public class RecepEditAppointmentController {
         editAppointment.setAppointmentDate(EditAppointmentDate.getValue());
         editAppointment.setAppointmentTime(EditAppointmentTime.getValue());
         editAppointment.setAppointmentRecordStatus(EditAppointmentStatus.getValue());
+        editAppointment.setMOStaffID(editAppointment
+                .getIDFromName(EditAppointmentMO.getValue()));
 
         ReceptAddAppointment.writeToFile(editAppointment);
-        validate.successfulUserCreation("Appointment Successfully Updated");
+        validate.detailedMsg("Appointment", "Appointment was Successfully Updated");
         clearFields();
         afterCreation();
     }

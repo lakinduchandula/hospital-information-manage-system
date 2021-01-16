@@ -120,7 +120,6 @@ public class RecepUserSettingsController {
         try{
             UploadProfileImg receptionistImgEdit = new UploadProfileImg();
             UserEditDelete newEditProfile = new UserEditDelete(0);
-            System.out.println(getUserDetailArray()[13]);
             receptionistImgEdit.deleteOldProfileImg(getUserDetailArray()[13]);
             newEditProfile.UserDelete(LoginController.currentUser);
             ValidationController validate = new ValidationController(AccSettingsStackPane, AccSettingsAnchorPane,

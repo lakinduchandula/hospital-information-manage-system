@@ -35,25 +35,13 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#copyID" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
+                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="430.0" style="-fx-background-color: #8e99f3;">
                                  <children>
-                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Appointment List">
+                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" stylesheets="@../assets/darkCss/dark-medical.css" text="Appointment List">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </Label>
-                                    <JFXButton fx:id="CopyID" layoutX="476.0" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #757de8;" text="Copy ID">
-                                       <graphic>
-                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../assets/images/dash-medical/mo-dash-copy-id.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                       <font>
-                                          <Font size="13.0" />
-                                       </font>
-                                    </JFXButton>
                                  </children>
                               </Pane>
                               <TableView fx:id="TableAppointmentList" layoutX="29.0" layoutY="58.0" prefHeight="403.0" prefWidth="731.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
@@ -77,6 +65,23 @@
                                     <TableColumn fx:id="TableSymptoms" prefWidth="135.0" text="Symptoms" />
                                  </columns>
                               </TableView>
+                              <ImageView fx:id="Copy_info" fitHeight="30.0" fitWidth="30.0" layoutX="734.0" layoutY="14.0" onMouseClicked="#copy_tip" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/images/dash-medical/tip-for-copy-appointment.png" />
+                                 </image>
+                              </ImageView>
+                              <JFXButton fx:id="CopyID" layoutX="444.0" layoutY="14.0" onMouseClicked="#copyID" prefHeight="30.0" prefWidth="146.0" style="-fx-background-color: #373737;" text="Appointment ID" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/images/dash-medical/mo-dash-copy-id.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="Ebrima" size="14.0" />
+                                 </font>
+                              </JFXButton>
                            </children>
                         </AnchorPane>
                      </content>
@@ -107,9 +112,9 @@
                                     <Image url="@../assets/images/hims-base-img/platform.png" />
                                  </image>
                               </ImageView>
-                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
+                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #8e99f3;">
                                  <children>
-                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Enter Appointment ID from Appointments tab">
+                                    <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" stylesheets="@../assets/darkCss/dark-medical.css" text="Enter Appointment ID from Appointments tab">
                                        <font>
                                           <Font size="14.0" />
                                        </font>

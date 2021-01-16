@@ -28,6 +28,7 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
     private LocalTime appointmentTime;
     private String symptoms;
     private String medicalOfficer;
+    private String MOStaffID;
     private String medicalSpecialArea;
     private String appointmentRecordStatus;
     private ObservableList<Appointment> ApprovedAppointments = FXCollections.observableArrayList();
@@ -74,6 +75,8 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
         this.setAppointmentTime(time);
         this.setSymptoms(symptoms);
     }
+
+    public String getMOStaffID() {return MOStaffID;}
 
     public String getMedicalSpecialArea() {
         return medicalSpecialArea;
@@ -151,6 +154,8 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
         this.DeleteAppDetailsArray = DeleteAppDetailsArray ;
     }
 
+    public void setMOStaffID(String MOStaffID) { this.MOStaffID = MOStaffID; }
+
     public void setUserName(String userName) { this.userName = userName; }
 
     public void setFirstName(String firstName) { this.firstName = firstName; }
@@ -197,17 +202,19 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
             = appointmentRecordStatus; }
 
     public String toString() {
-        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s",getAppointmentNo(), getUserName(),
+        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s",getAppointmentNo(), getUserName(),
                 getFirstName(), getLastName(), getIdNo(), getPhoneNumber(), getGender(), getDOB(), getAddressLine1(),
                 getAddressLine2(), getCity(), getBloodGroup(), getSymptoms() , getAppointmentDate() ,
-                getAppointmentTime(), getMedicalOfficer(), getAppointmentRecordStatus(), getMedicalSpecialArea());
+                getAppointmentTime(), getMedicalOfficer(), getAppointmentRecordStatus(), getMedicalSpecialArea(),
+                getMOStaffID()
+        );
     }
 
     public void getApprovedAppointmentList(String username, String status){
         UserEditDelete newUser = new UserEditDelete(2);
         newUser.UserEdit(username);
         String[] userDetails = newUser.getUserDetailArray();
-        String reqDoctorDetail = "Dr. "+userDetails[2]+ " " + userDetails[3]+" - "+userDetails[13] ;
+        String reqDoctorDetail = "Dr. "+userDetails[2]+ " " + userDetails[3]+" - "+userDetails[14] ;
         File file = new File("src/sample/data/Appointment.txt");
         try(FileReader fileReader = new FileReader(file)) {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -215,13 +222,13 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
             String line = null ;
 
             while((line = bufferedReader.readLine()) != null) {
-                String[] userCredentials = line.split("~");
-                if(sameCredentials(userCredentials[15], reqDoctorDetail) && credentialValidation(userCredentials[16],
-                        status)){
-                    ApprovedAppointments.add(new Appointment(userCredentials[0], userCredentials[2],
-                            userCredentials[3], userCredentials[4], userCredentials[5], userCredentials[6],
-                            LocalDate.parse(userCredentials[13]), LocalTime.parse(userCredentials[14]),
-                            GetSetTextArea.setText(userCredentials[12]))
+                String[] appointmentDetails = line.split("~");
+                if(sameCredentials(appointmentDetails[18], userDetails[14])
+                        && credentialValidation(appointmentDetails[16], status)){
+                    ApprovedAppointments.add(new Appointment(appointmentDetails[0], appointmentDetails[2],
+                            appointmentDetails[3], appointmentDetails[4], appointmentDetails[5], appointmentDetails[6],
+                            LocalDate.parse(appointmentDetails[13]), LocalTime.parse(appointmentDetails[14]),
+                            GetSetTextArea.setText(appointmentDetails[12]))
                     );
                 }
             }
@@ -286,6 +293,33 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
         }catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public String getAppointmentMOStaffID(String DrOneLine){
+        File file = new File("src/sample/data/UserMedicalOfficer.txt");
+        try (FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+
+                String drStringLiteral = "Dr. "+userCredentials[2]+ " " + userCredentials[3]+" - "+userCredentials[14];
+
+                if(sameCredentials(drStringLiteral, DrOneLine)){
+                    return userCredentials[14];
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "Error ... Not Found, class Appointment - Line 311";
+    }
+
+    public String getIDFromName(String DrString){
+        String[] detailArray = DrString.split("-");
+        return detailArray[1].trim();
     }
 
     public boolean sameCredentials(String line1, String line2){

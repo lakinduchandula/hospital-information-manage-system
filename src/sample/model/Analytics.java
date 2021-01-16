@@ -9,8 +9,11 @@ import java.time.LocalTime;
 
 public class Analytics {
     private int[] AppointmentByMonth = new int[12];
+    private int[] AppointmentByMonthSpecificMO = new int[12];
     private int[] ComplaintsByMonth = new int[12];
     private int[] AppointmentTypePlusComplaint = new int[4];
+    private int[] AppointmentSpecificMOStatus = new int[3];
+
 
     public void setAppointmentByMonth(int[] AppointmentByMonth){
         this.AppointmentByMonth = AppointmentByMonth;
@@ -20,12 +23,28 @@ public class Analytics {
         this.ComplaintsByMonth = ComplaintByMonth;
     }
 
+    public void setAppointmentSpecificMOStatus(int[] AppointmentSpecificMOStatus){
+        this.AppointmentSpecificMOStatus = AppointmentSpecificMOStatus;
+    }
+
     public void setAppointmentTypePlusComplaint(int[] AppointmentTypePlusComplaint){
         this.AppointmentTypePlusComplaint = AppointmentTypePlusComplaint;
     }
 
+    public void setAppointmentByMonthSpecificMO(int[] AppointmentByMonthSpecificMO){
+        this.AppointmentByMonthSpecificMO = AppointmentByMonthSpecificMO;
+    }
+
     public int[] getAppointmentByMonth(){
         return AppointmentByMonth;
+    }
+
+    public int[] getAppointmentByMonthSpecificMO(){
+        return AppointmentByMonthSpecificMO;
+    }
+
+    public int[] getAppointmentSpecificMOStatus(){
+        return AppointmentSpecificMOStatus;
     }
 
     public int[] getAppointmentTypePlusComplaint(){
@@ -118,6 +137,65 @@ public class Analytics {
         }
     }
 
+    public void AppointmentCalculationsForSpecificMO(String DrFirstName, String DrLastName, String DrStaffID){
+        File file = new File("src/sample/data/Appointment.txt");
+        String DrStringLiteral = "Dr. "+DrFirstName+ " " +DrLastName+" - "+DrStaffID;
+
+        try(FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = null ;
+
+            while((line = bufferedReader.readLine()) != null) {
+                String[] appointmentDetail = line.split("~");
+                String[] date = appointmentDetail[13].split("-");
+
+                if(DrStringLiteral.equals(appointmentDetail[15])){
+                    switch (date[1]) {
+                        case "01" -> {
+                            this.AppointmentByMonthSpecificMO[0]++;
+                        }
+                        case "02" -> {
+                            this.AppointmentByMonthSpecificMO[1]++;
+                        }
+                        case "03" -> {
+                            this.AppointmentByMonthSpecificMO[2]++;
+                        }
+                        case "04" -> {
+                            this.AppointmentByMonthSpecificMO[3]++;
+                        }
+                        case "05" -> {
+                            this.AppointmentByMonthSpecificMO[4]++;
+                        }
+                        case "06" -> {
+                            this.AppointmentByMonthSpecificMO[5]++;
+                        }
+                        case "07" -> {
+                            this.AppointmentByMonthSpecificMO[6]++;
+                        }
+                        case "08" -> {
+                            this.AppointmentByMonthSpecificMO[7]++;
+                        }
+                        case "09" -> {
+                            this.AppointmentByMonthSpecificMO[8]++;
+                        }
+                        case "10" -> {
+                            this.AppointmentByMonthSpecificMO[9]++;
+                        }
+                        case "11" -> {
+                            this.AppointmentByMonthSpecificMO[10]++;
+                        }
+                        case "12" -> {
+                            this.AppointmentByMonthSpecificMO[11]++;
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void ComplaintCalculations(){
         File file = new File("src/sample/data/Complaint.txt");
         try(FileReader fileReader = new FileReader(file)) {
@@ -168,6 +246,38 @@ public class Analytics {
                 }
                 if((complaintDetail[10] == null) || (complaintDetail[10].equals("No Action"))){
                     this.AppointmentTypePlusComplaint[3]++;
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void AppointmentStatusSpecificMO(String DrFirstName, String DrLastName, String DrStaffID){
+        File file = new File("src/sample/data/Appointment.txt");
+        String DrStringLiteral = "Dr. "+DrFirstName+ " " +DrLastName+" - "+DrStaffID;
+
+        try(FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = null ;
+
+            while((line = bufferedReader.readLine()) != null) {
+                String[] appointmentDetail = line.split("~");
+
+                if(DrStringLiteral.equals(appointmentDetail[15])){
+
+                    switch (appointmentDetail[16]) {
+                        case "Pending" -> {
+                            this.AppointmentSpecificMOStatus[0]++;
+                        }
+                        case "Approved" -> {
+                            this.AppointmentSpecificMOStatus[1]++;
+                        }
+                        case "Completed" -> {
+                            this.AppointmentSpecificMOStatus[2]++;
+                        }
+                    }
                 }
             }
         }

@@ -160,6 +160,8 @@ public class ReceptDashAppointmentController {
                     newAppointment.setAppointmentDate(AddAppointmentAppointmentDate.getValue());
                     newAppointment.setAppointmentTime(AddAppointmentAppointmentTime.getValue());
                     newAppointment.setAppointmentRecordStatus(AddAppointmentAppointmentRecordStatus.getValue());
+                    newAppointment.setMOStaffID(newAppointment
+                            .getIDFromName(AddAppointmentAppointmentPrefferedMO.getValue()));
 
                     ReceptAddAppointment.writeToFile(newAppointment);
                     validate.successfulUserCreation("Appointment Successfully Created");

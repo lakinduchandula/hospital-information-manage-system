@@ -289,7 +289,7 @@ public class ValidationController {
         UserEditDelete newUser = new UserEditDelete(2);
         newUser.UserEdit(username);
         String[] userDetails = newUser.getUserDetailArray();
-        String reqDoctorDetail = "Dr. "+userDetails[2]+ " " + userDetails[3]+" - "+userDetails[13] ;
+        String reqDoctorDetail = "Dr. "+userDetails[2]+ " " + userDetails[3]+" - "+userDetails[14] ;
         File file = new File("src/sample/data/Appointment.txt");
         try(FileReader fileReader = new FileReader(file)) {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -297,9 +297,9 @@ public class ValidationController {
             String line = null ;
 
             while((line = bufferedReader.readLine()) != null) {
-                String[] userCredentials = line.split("~");
-                if(identicalCredentialValidation(userCredentials[15], reqDoctorDetail) && sameCredentialValidation(userCredentials[0],
-                        appointmentID)){
+                String[] AppointmentDetail = line.split("~");
+                if(identicalCredentialValidation(AppointmentDetail[18], userDetails[14])
+                        && sameCredentialValidation(AppointmentDetail[0], appointmentID)){
                     return true;
                 }
             }

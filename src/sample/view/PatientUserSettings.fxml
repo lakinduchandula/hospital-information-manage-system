@@ -28,7 +28,7 @@
                 </Pane>
                 <Pane layoutX="14.0" layoutY="58.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
                     <children>
-                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Edit Common Informations ">
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" stylesheets="@../assets/darkCss/dark-medical.css" text="Edit Common Informations ">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -82,7 +82,7 @@
                 </JFXTextField>
                 <Pane layoutX="14.0" layoutY="270.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #00acc1;">
                     <children>
-                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Edit Current Address Fields">
+                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" stylesheets="@../assets/darkCss/dark-medical.css" text="Edit Current Address Fields">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -112,7 +112,7 @@
                 </JFXTextField>
             <Pane layoutX="14.0" layoutY="402.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #ae52d4;">
                <children>
-                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Edit Allergies">
+                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" stylesheets="@../assets/darkCss/dark-medical.css" text="Edit Allergies">
                      <font>
                         <Font size="14.0" />
                      </font>

@@ -1,0 +1,23 @@
+.jfx-button-medical-vbox-dash{
+    -jfx-button-type: FLAT;
+    -fx-background-color:  #283593;
+    -fx-text-fill: rgba(255,255,255,0.87);
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: normal;
+}
+
+.jfx-button-medical-vbox-dash-selected{
+    -jfx-button-type: FLAT;
+    -fx-background-color: #000051;
+    -fx-text-fill: rgba(255,255,255,0.87);
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.label{
+    -fx-text-fill: #000000;
+    -fx-font-family: 'Noto Sans JP', sans-serif;;
+    -fx-font-size: 14px;
+}

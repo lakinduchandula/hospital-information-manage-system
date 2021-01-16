@@ -143,6 +143,7 @@ public class PatientDashAppointmentController {
             newAppointment.setAppointmentDate(AppointmentAddDate.getValue());
             newAppointment.setAppointmentTime(AppointmentAddTime.getValue());
             newAppointment.setAppointmentRecordStatus("Pending");
+            newAppointment.setMOStaffID(newAppointment.getIDFromName(AppointmentAddMO.getValue()));
 
             ReceptAddAppointment.writeToFile(newAppointment);
             MakeAppValidate.detailedMsg("Appointment Creation", "Appointment made Successfully");
