@@ -15,3 +15,38 @@
     -fx-font-size: 15px;
     -fx-font-weight: bold;
 }
+
+.tab .tab-label
+{
+    -fx-background-color: #0277bd;
+    -fx-font-family: 'Noto Sans JP', sans-serif;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER;
+    -fx-text-fill: White;
+    -fx-pref-width: 210px;
+    -fx-pref-height: 40px;
+}
+
+.tab:selected
+{
+    -fx-text-fill: White;
+    -fx-font-weight: bold;
+
+}
+.tab-header-background {
+    -fx-background-color: #0277bd;
+}
+
+.text-field-search{
+    -fx-font-family: 'Open Sans', sans-serif;
+    -fx-prompt-text-fill: #707070;
+    -fx-font-size: 15;
+    -fx-font-weight: italic;
+    -fx-padding: 1,1,1,1;
+    -fx-border-color: grey;
+    -fx-border-width: 2;
+    -fx-border-radius: 1;
+    -fx-border: gone;
+    -fx-background-color: white;
+    -fx-text-fill: #707070;
+}

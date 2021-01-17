@@ -76,6 +76,20 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
         this.setSymptoms(symptoms);
     }
 
+    public Appointment(String appointmentNo, String firstName, String lastName, String idNo, String phoneNumber,
+                       String gender, LocalDate date, LocalTime time, String symptoms, String status) {
+        this.setAppointmentNo(appointmentNo);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setIdNo(idNo);
+        this.setPhoneNumber(phoneNumber);
+        this.setGender(gender);
+        this.setAppointmentDate(date);
+        this.setAppointmentTime(time);
+        this.setSymptoms(symptoms);
+        this.setAppointmentRecordStatus(status);
+    }
+
     public String getMOStaffID() {return MOStaffID;}
 
     public String getMedicalSpecialArea() {
@@ -320,6 +334,50 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
     public String getIDFromName(String DrString){
         String[] detailArray = DrString.split("-");
         return detailArray[1].trim();
+    }
+
+    public void getPendingAppointmentList(String status){
+        UserEditDelete newUser = new UserEditDelete(2);
+        File file = new File("src/sample/data/Appointment.txt");
+        try(FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null ;
+
+            while((line = bufferedReader.readLine()) != null) {
+                String[] appointmentDetails = line.split("~");
+                if(credentialValidation(appointmentDetails[16], status)){
+                    ApprovedAppointments.add(new Appointment(appointmentDetails[0], appointmentDetails[2],
+                            appointmentDetails[3], appointmentDetails[4], appointmentDetails[5], appointmentDetails[6],
+                            LocalDate.parse(appointmentDetails[13]), LocalTime.parse(appointmentDetails[14]),
+                            GetSetTextArea.setText(appointmentDetails[12]), appointmentDetails[16]
+                    ));
+                }
+            }
+            setApprovedAppointments(ApprovedAppointments);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void makeAppointmentApprove(String appointmentID){
+        File file = new File("src/sample/data/Appointment.txt");
+        try(FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null ;
+
+            while((line = bufferedReader.readLine()) != null) {
+                String[] appointmentDetails = line.split("~");
+                if(credentialValidation(appointmentDetails[0], appointmentID)){
+                        appointmentDetails[16] = "Approved";
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean sameCredentials(String line1, String line2){

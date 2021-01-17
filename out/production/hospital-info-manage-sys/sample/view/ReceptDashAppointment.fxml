@@ -12,6 +12,9 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -40,7 +43,7 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="775.0">
                                     <children>
-                                        <JFXTabPane layoutX="-1.0" prefHeight="750.0" prefWidth="790.0" stylesheets="@../assets/DashStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <JFXTabPane layoutX="-1.0" prefHeight="750.0" prefWidth="790.0" stylesheets="@../assets/darkCss/dark-recep.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <tabs>
                                                 <Tab text="Add Appointment">
                                                     <content>
@@ -161,7 +164,7 @@
                                                     <graphic>
                                                         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
-                                                                <Image url="@../assets/images/dash-patient/add-appointment.png" />
+                                                                <Image url="@../assets/images/dash-receptionist/app-edit%20(2).png" />
                                                             </image>
                                                         </ImageView>
                                                     </graphic>
@@ -201,7 +204,7 @@
                                                     <graphic>
                                                         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
-                                                                <Image url="@../assets/images/dash-patient/edit-appointment.png" />
+                                                                <Image url="@../assets/images/dash-receptionist/app-edit%20(1).png" />
                                                             </image>
                                                         </ImageView>
                                                     </graphic>
@@ -245,11 +248,77 @@
                                                     <graphic>
                                                         <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
-                                                                <Image url="@../assets/images/dash-patient/delete-appointment.png" />
+                                                                <Image url="@../assets/images/dash-receptionist/app-del.png" />
                                                             </image>
                                                         </ImageView>
                                                     </graphic>
                                                 </Tab>
+                                    <Tab text="Pending Appointments">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
+                                                   <children>
+                                                      <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="556.0" text="Select Record and Change the Status or you can copy the Appointment ID to Clipboard">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </Pane>
+                                                <TableView fx:id="TablePendingAppointmentList" layoutX="22.0" layoutY="101.0" prefHeight="492.0" prefWidth="731.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="TableAppointmentID" prefWidth="97.0" text="Appointment ID" />
+                                                      <TableColumn prefWidth="75.0" text="Patient Name">
+                                                         <columns>
+                                                            <TableColumn fx:id="TableFirstName" prefWidth="75.0" text="First Name" />
+                                                            <TableColumn fx:id="TableLastName" prefWidth="75.0" text="Last Name" />
+                                                         </columns>
+                                                      </TableColumn>
+                                                      <TableColumn fx:id="TablePatientNIC" text="Patient NIC" />
+                                                      <TableColumn fx:id="TablePhoneNumber" prefWidth="90.0" text="Phone Number" />
+                                                      <TableColumn fx:id="TableGender" prefWidth="48.0" text="Gender" />
+                                                      <TableColumn prefWidth="135.0" text="Appointment">
+                                                         <columns>
+                                                            <TableColumn fx:id="TableDate" prefWidth="70.0" text="Date" />
+                                                            <TableColumn fx:id="TableTime" prefWidth="70.0" text="Time" />
+                                                         </columns>
+                                                      </TableColumn>
+                                                      <TableColumn fx:id="TableStatus" prefWidth="124.0" text="Status" />
+                                                   </columns>
+                                                </TableView>
+                                                <TextField fx:id="SearchBoxPending" layoutX="22.0" layoutY="58.0" prefHeight="29.0" prefWidth="373.0" promptText="Search with Name, NIC, Phone Number" styleClass="text-field-search" stylesheets="@../assets/darkCss/dark-recep.css">
+                                                   <font>
+                                                      <Font name="Onyx" size="12.0" />
+                                                   </font></TextField>
+                                                <JFXButton layoutX="409.0" layoutY="58.0" onMouseClicked="#copyID" prefHeight="28.0" prefWidth="165.0" style="-fx-background-color: #363636;" text="Appointment ID" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                   <graphic>
+                                                      <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../assets/images/dash-receptionist/dash-app-id-copy.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </JFXButton>
+                                                <JFXButton layoutX="588.0" layoutY="58.0" onMouseClicked="#approve_appointment" prefHeight="29.0" prefWidth="165.0" style="-fx-background-color: #1faa00;" text="Approve Appointment" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="System Bold" size="13.0" />
+                                                   </font>
+                                                </JFXButton>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                       <graphic>
+                                          <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../assets/images/dash-receptionist/app-pending.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Tab>
                                             </tabs>
                                         </JFXTabPane>
                                     </children>
