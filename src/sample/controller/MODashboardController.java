@@ -47,6 +47,14 @@ public class MODashboardController {
     private JFXButton Logout;
 
     @FXML
+    void show_account_Setting(MouseEvent event) throws IOException {
+        removeStyle();
+        MODashHome.getStyleClass().add("jfx-button-medical-vbox-dash-selected");
+        Parent complaint = FXMLLoader.load(getClass().getResource("/sample/view/MODashHome.fxml"));
+        MODashBorderPane.setCenter(complaint);
+    }
+
+    @FXML
     void show_home(MouseEvent event) throws IOException {
         removeStyle();
         MODashHome.getStyleClass().add("jfx-button-medical-vbox-dash-selected");

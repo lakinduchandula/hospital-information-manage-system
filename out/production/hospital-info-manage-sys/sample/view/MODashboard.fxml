@@ -35,7 +35,7 @@
                         <Separator layoutY="47.0" prefWidth="260.0" />
                      </children>
                   </Pane>
-                  <Pane prefHeight="72.0" prefWidth="260.0">
+                  <Pane onMouseClicked="#show_account_Setting" prefHeight="72.0" prefWidth="260.0">
                      <children>
                         <Circle fx:id="profileImg" fill="WHITE" layoutX="33.0" layoutY="36.0" radius="27.0" stroke="#283593" strokeType="INSIDE" />
                         <Label fx:id="UserFullName" layoutX="66.0" layoutY="19.0" prefHeight="17.0" prefWidth="179.0" text="Mr. Lakindu Chandula" textFill="WHITE">

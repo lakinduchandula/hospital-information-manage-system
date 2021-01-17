@@ -99,7 +99,7 @@ public class MODashHomeController {
         // appointment chart start
         XYChart.Series appointmentAll = new XYChart.Series();
         MOHome.AppointmentCalculations(); // call method to calculate appointment analytics
-        MOHome.AppointmentStatusSpecificMO(MOProfileDetail[2], MOProfileDetail[3], MOProfileDetail[14]);
+        MOHome.AppointmentStatusSpecificMO(MOProfileDetail[14]);
 
         // fill the graph with details
         appointmentAll.getData().add(new XYChart.Data("January", MOHome.getAppointmentByMonth()[0]));
@@ -122,7 +122,7 @@ public class MODashHomeController {
 
 
         XYChart.Series appointmentME = new XYChart.Series<>();
-        MOHome.AppointmentCalculationsForSpecificMO(MOProfileDetail[2], MOProfileDetail[3], MOProfileDetail[14]); // call method to calculate complaint analytics
+        MOHome.AppointmentCalculationsForSpecificMO(MOProfileDetail[14]); // call method to calculate complaint analytics
 
         appointmentME.getData().add(new XYChart.Data<>("January", MOHome.getAppointmentByMonthSpecificMO()[0]));
         appointmentME.getData().add(new XYChart.Data<>("February", MOHome.getAppointmentByMonthSpecificMO()[1]));

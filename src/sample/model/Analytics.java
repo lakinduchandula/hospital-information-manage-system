@@ -137,9 +137,9 @@ public class Analytics {
         }
     }
 
-    public void AppointmentCalculationsForSpecificMO(String DrFirstName, String DrLastName, String DrStaffID){
+    public void AppointmentCalculationsForSpecificMO(String MOStaffID){
         File file = new File("src/sample/data/Appointment.txt");
-        String DrStringLiteral = "Dr. "+DrFirstName+ " " +DrLastName+" - "+DrStaffID;
+        //String DrStringLiteral = "Dr. "+DrFirstName+ " " +DrLastName+" - "+DrStaffID;
 
         try(FileReader fileReader = new FileReader(file)) {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -149,7 +149,7 @@ public class Analytics {
                 String[] appointmentDetail = line.split("~");
                 String[] date = appointmentDetail[13].split("-");
 
-                if(DrStringLiteral.equals(appointmentDetail[15])){
+                if(MOStaffID.equals(appointmentDetail[18])){
                     switch (date[1]) {
                         case "01" -> {
                             this.AppointmentByMonthSpecificMO[0]++;
@@ -254,9 +254,9 @@ public class Analytics {
         }
     }
 
-    public void AppointmentStatusSpecificMO(String DrFirstName, String DrLastName, String DrStaffID){
+    public void AppointmentStatusSpecificMO(String MOStaffID){
         File file = new File("src/sample/data/Appointment.txt");
-        String DrStringLiteral = "Dr. "+DrFirstName+ " " +DrLastName+" - "+DrStaffID;
+        //String DrStringLiteral = "Dr. "+DrFirstName+ " " +DrLastName+" - "+DrStaffID;
 
         try(FileReader fileReader = new FileReader(file)) {
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -265,7 +265,7 @@ public class Analytics {
             while((line = bufferedReader.readLine()) != null) {
                 String[] appointmentDetail = line.split("~");
 
-                if(DrStringLiteral.equals(appointmentDetail[15])){
+                if(MOStaffID.equals(appointmentDetail[18])){
 
                     switch (appointmentDetail[16]) {
                         case "Pending" -> {

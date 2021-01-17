@@ -361,25 +361,6 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
         }
     }
 
-    public void makeAppointmentApprove(String appointmentID){
-        File file = new File("src/sample/data/Appointment.txt");
-        try(FileReader fileReader = new FileReader(file)) {
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-            String line = null ;
-
-            while((line = bufferedReader.readLine()) != null) {
-                String[] appointmentDetails = line.split("~");
-                if(credentialValidation(appointmentDetails[0], appointmentID)){
-                        appointmentDetails[16] = "Approved";
-                }
-            }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     public boolean sameCredentials(String line1, String line2){
         return line1.equals(line2);
     }
