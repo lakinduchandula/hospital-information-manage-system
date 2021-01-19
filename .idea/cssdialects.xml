@@ -3,6 +3,7 @@
   <component name="CssDialectMappings">
     <file url="file://$PROJECT_DIR$/src/sample/assets/darkCss/dark-admin.css" dialect="JavaFX" />
     <file url="file://$PROJECT_DIR$/src/sample/assets/darkCss/dark-medical.css" dialect="JavaFX" />
+    <file url="file://$PROJECT_DIR$/src/sample/assets/darkCss/dark-patient.css" dialect="JavaFX" />
     <file url="file://$PROJECT_DIR$/src/sample/assets/darkCss/dark-recep.css" dialect="JavaFX" />
   </component>
 </project>

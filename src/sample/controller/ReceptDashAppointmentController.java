@@ -187,7 +187,9 @@ public class ReceptDashAppointmentController {
                         && validate.validateExitingPatientUsername(AddAppointmentPatientUserName)
                 ) {
 
+                    Patient newPatient = new Patient();
                     Appointment newAppointment = new Appointment();
+
                     newAppointment.setAppointmentNo(AddAppointmentAppointmentNumber.getText().trim());
                     newAppointment.setFirstName(AddAppointmentPatientFirstname.getText().trim());
                     newAppointment.setLastName(AddAppointmentPatientLastname.getText().trim());
@@ -208,9 +210,12 @@ public class ReceptDashAppointmentController {
                     newAppointment.setAppointmentRecordStatus(AddAppointmentAppointmentRecordStatus.getValue());
                     newAppointment.setMOStaffID(newAppointment
                             .getIDFromName(AddAppointmentAppointmentPrefferedMO.getValue()));
+                    newAppointment.setPatientUniqueID(newPatient.getPatientGhostID(AddAppointmentPatientUserName
+                            .getText().trim()));
 
                     ReceptAddAppointment.writeToFile(newAppointment);
-                    validate.successfulUserCreation("Appointment Successfully Created");
+                    validate.detailedMsg("New Appointment",
+                            "Appointment will appear to the Selected Medical Officer");
                     clearFields();
                 }
             } else {
@@ -252,6 +257,7 @@ public class ReceptDashAppointmentController {
         editAppointment.setAppointmentTime(LocalTime.parse(appointmentDetails[14]));
         editAppointment.setAppointmentRecordStatus("Approved");
         editAppointment.setMOStaffID(appointmentDetails[18]);
+        editAppointment.setPatientUniqueID(appointmentDetails[19]);
 
         ReceptAddAppointment.writeToFile(editAppointment);
         validate.detailedMsg("Appointment Updated", "Selected Appointment No"

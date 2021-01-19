@@ -84,6 +84,7 @@ public class PatientDashComplaintController {
                 && !(ComplaintAddCompDisc.getText() == null)){
             try {
                 {
+                    Patient newPatient = new Patient();
                     ComplaintRecord newComplaintRecord = new ComplaintRecord();
 
                     newComplaintRecord.setFirstName(ComplaintAddFirstName.getText().trim());
@@ -96,6 +97,7 @@ public class PatientDashComplaintController {
                     newComplaintRecord.setComplaintType(ComplaintAddCompType.getValue());
                     newComplaintRecord.setDescription(GetSetTextArea.getText(ComplaintAddCompDisc.getText().trim()));
                     newComplaintRecord.setActionTaken("No Action");
+                    newComplaintRecord.setPatientGhostID(newPatient.getPatientGhostID(ComplaintAddUsername.getText().trim()));
 
                     ReceptAddComplaint.writeToFile(newComplaintRecord);
                     validate.successfulUserCreation("Complaint Record Successfully Created");

@@ -344,6 +344,7 @@ AdDashEditUserController {
                 newPatient.setBloodGroup(EditUserPatientBlood.getValue());
                 newPatient.setAllergies(GetSetTextArea.getText(PatientAddAllergies.getText().trim()));
                 newPatient.setProfilePicPath("src/sample/app/profile/default-profile-picture.png");
+                newPatient.setGhostUniqueID(RandomID.getUniqueId());
 
                 UserAdd.writeToFile(newPatient, 2);
                 validate.successfulUserCreation("Patient Account Successfully Created");

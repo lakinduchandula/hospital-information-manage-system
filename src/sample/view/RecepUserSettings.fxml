@@ -99,7 +99,7 @@
                   <Image url="@../assets/images/hims-base-img/doctor.png" />
                </image>
             </ImageView>
-            <JFXComboBox fx:id="AccSettingMarital" focusColor="#424242" layoutX="269.0" layoutY="349.0" prefHeight="25.0" prefWidth="200.0" promptText="Marital Status" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
+            <JFXComboBox fx:id="AccSettingMarital" focusColor="#424242" layoutX="270.0" layoutY="349.0" prefHeight="25.0" prefWidth="200.0" promptText="Marital Status" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
                <styleClass>
                   <String fx:value="combo-box-admin-dash" />
                   <String fx:value="choice-box-admin-dash" />

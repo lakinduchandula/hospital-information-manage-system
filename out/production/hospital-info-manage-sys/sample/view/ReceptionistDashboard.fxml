@@ -154,7 +154,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../assets/images/dash%20-%20Recept/patient%20accounts.png" />
+                                    <Image url="@../assets/images/dash-receptionist/dash-recep-pat-accounts.png" />
                                  </image>
                               </ImageView>
                            </graphic>

@@ -31,6 +31,7 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
     private String MOStaffID;
     private String medicalSpecialArea;
     private String appointmentRecordStatus;
+    private String patientUniqueID;
     private ObservableList<Appointment> ApprovedAppointments = FXCollections.observableArrayList();
 
     //Default Constructor
@@ -91,6 +92,8 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
     }
 
     public String getMOStaffID() {return MOStaffID;}
+
+    public String getPatientUniqueID() {return patientUniqueID;}
 
     public String getMedicalSpecialArea() {
         return medicalSpecialArea;
@@ -160,6 +163,10 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
         this.appointmentDetails = appointmentDetails;
     }
 
+    public void setPatientUniqueID(String patientUniqueID){
+        this.patientUniqueID = patientUniqueID;
+    }
+
     public void setMedicalSpecialArea(String medicalSpecialArea){
         this.medicalSpecialArea = medicalSpecialArea ;
     }
@@ -216,11 +223,11 @@ public class Appointment extends RecursiveTreeObject<Appointment> {
             = appointmentRecordStatus; }
 
     public String toString() {
-        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s",getAppointmentNo(), getUserName(),
+        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s",getAppointmentNo(), getUserName(),
                 getFirstName(), getLastName(), getIdNo(), getPhoneNumber(), getGender(), getDOB(), getAddressLine1(),
                 getAddressLine2(), getCity(), getBloodGroup(), getSymptoms() , getAppointmentDate() ,
                 getAppointmentTime(), getMedicalOfficer(), getAppointmentRecordStatus(), getMedicalSpecialArea(),
-                getMOStaffID()
+                getMOStaffID(), getPatientUniqueID()
         );
     }
 
