@@ -2,12 +2,16 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="576.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MODashboardController">
@@ -16,8 +20,59 @@
          <left>
             <VBox prefHeight="568.0" prefWidth="260.0" style="-fx-background-color: #283593;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="128.0" prefWidth="260.0" />
-                  <JFXButton fx:id="PatientDashAppointment" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_Appointments" prefHeight="35.0" prefWidth="260.0" text="Appoinments" textAlignment="RIGHT" textFill="WHITE">
+                  <Pane prefHeight="49.0" prefWidth="260.0">
+                     <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="22.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/hims-base-img/icons8-hospital-35.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="67.0" layoutY="13.0" text="Master Helth Care" textFill="#f8f8f8">
+                           <font>
+                              <Font name="Roboto Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutY="47.0" prefWidth="260.0" />
+                     </children>
+                  </Pane>
+                  <Pane onMouseClicked="#show_account_Setting" prefHeight="72.0" prefWidth="260.0">
+                     <children>
+                        <Circle fx:id="profileImg" fill="WHITE" layoutX="33.0" layoutY="36.0" radius="27.0" stroke="#283593" strokeType="INSIDE" />
+                        <Label fx:id="UserFullName" layoutX="66.0" layoutY="19.0" prefHeight="17.0" prefWidth="179.0" text="Mr. Lakindu Chandula" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="UserUsername" layoutX="66.0" layoutY="34.0" prefHeight="17.0" prefWidth="179.0" text="#lakinduchandula" textFill="#cdc5c5">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Separator prefWidth="260.0" />
+                  <JFXButton fx:id="MODashHome" alignment="BASELINE_LEFT" graphicTextGap="10.0" onMouseClicked="#show_home" prefHeight="42.0" prefWidth="260.0" styleClass="jfx-button-medical-vbox-dash" stylesheets="@../assets/darkCss/dark-medical.css" text="Home" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/dash-admin/dash-admin-home.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="2.0" />
+                     </VBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="PatientDashAppointment" alignment="BASELINE_LEFT" graphicTextGap="10.0" onMouseClicked="#show_Appointments" prefHeight="42.0" prefWidth="260.0" styleClass="jfx-button-medical-vbox-dash" stylesheets="@../assets/darkCss/dark-medical.css" text="Appoinments" textAlignment="RIGHT" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -28,26 +83,32 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
                      <VBox.margin>
                         <Insets left="5.0" right="5.0" top="2.0" />
                      </VBox.margin>
                   </JFXButton>
-                  <JFXButton fx:id="PatientDashUserBtn" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#show_user_settings" prefHeight="35.0" prefWidth="260.0" text="Account Settings" textAlignment="RIGHT" textFill="WHITE">
+                  <JFXButton fx:id="PatientDashUserBtn" alignment="BASELINE_LEFT" graphicTextGap="10.0" onMouseClicked="#show_user_settings" prefHeight="42.0" prefWidth="260.0" styleClass="jfx-button-medical-vbox-dash" stylesheets="@../assets/darkCss/dark-medical.css" text="Account Settings" textAlignment="RIGHT" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/images/dash-admin/dash-admin-user-settings.png" />
+                              <Image url="@../assets/images/dash-receptionist/user-settings.png" />
                            </image>
                         </ImageView>
                      </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
                      <VBox.margin>
                         <Insets left="5.0" right="5.0" top="2.0" />
                      </VBox.margin>
                   </JFXButton>
-                  <JFXButton fx:id="Logout" alignment="BASELINE_LEFT" graphicTextGap="20.0" onMouseClicked="#logout" prefHeight="35.0" prefWidth="260.0" text="Sign Out" textAlignment="RIGHT" textFill="WHITE">
+                  <JFXButton fx:id="Logout" alignment="BASELINE_LEFT" graphicTextGap="10.0" onMouseClicked="#logout" prefHeight="42.0" prefWidth="260.0" styleClass="jfx-button-medical-vbox-dash" stylesheets="@../assets/darkCss/dark-medical.css" text="Sign Out" textAlignment="RIGHT" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -58,6 +119,9 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
                      <VBox.margin>
                         <Insets left="5.0" right="5.0" top="2.0" />
                      </VBox.margin>

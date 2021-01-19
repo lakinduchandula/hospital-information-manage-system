@@ -28,7 +28,7 @@
             </Pane>
             <Pane layoutX="14.0" layoutY="227.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
                <children>
-                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Edit Common Informations ">
+                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" stylesheets="@../assets/darkCss/dark-medical.css" text="Edit Common Informations ">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -45,7 +45,7 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="AccSettingsAddress1" focusColor="#424242" layoutX="32.0" layoutY="482.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 1" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+            <JFXTextField fx:id="AccSettingsAddress1" focusColor="#424242" layoutX="33.0" layoutY="482.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 1" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
                <font>
                   <Font size="14.0" />
                </font>
@@ -82,7 +82,7 @@
             </JFXTextField>
             <Pane layoutX="14.0" layoutY="440.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #00acc1;">
                <children>
-                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Edit Current Address Fields">
+                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" stylesheets="@../assets/darkCss/dark-medical.css" text="Edit Current Address Fields">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -99,7 +99,7 @@
                   <Image url="@../assets/images/hims-base-img/doctor.png" />
                </image>
             </ImageView>
-            <JFXComboBox fx:id="AccSettingMarital" focusColor="#424242" layoutX="269.0" layoutY="349.0" prefHeight="25.0" prefWidth="200.0" promptText="Marital Status" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
+            <JFXComboBox fx:id="AccSettingMarital" focusColor="#424242" layoutX="270.0" layoutY="349.0" prefHeight="25.0" prefWidth="200.0" promptText="Marital Status" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
                <styleClass>
                   <String fx:value="combo-box-admin-dash" />
                   <String fx:value="choice-box-admin-dash" />
@@ -112,7 +112,7 @@
             </JFXTextField>
             <Pane layoutX="14.0" layoutY="57.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #5eb8ff;">
                <children>
-                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Change your own profile Image">
+                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" stylesheets="@../assets/darkCss/dark-medical.css" text="Change your own profile Image">
                      <font>
                         <Font size="14.0" />
                      </font>

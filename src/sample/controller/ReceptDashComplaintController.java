@@ -103,6 +103,7 @@ public class ReceptDashComplaintController {
                 ) {
 
                     ComplaintRecord newComplaintRecord = new ComplaintRecord();
+                    Patient newPatient = new Patient();
 
                     newComplaintRecord.setFirstName(AddComplaintFirstName.getText().trim());
                     newComplaintRecord.setLastName(AddComplaintLastName.getText().trim());
@@ -114,6 +115,7 @@ public class ReceptDashComplaintController {
                     newComplaintRecord.setComplaintType(AddComplaintType.getValue());
                     newComplaintRecord.setDescription(GetSetTextArea.getText(AddComplaintDescription.getText().trim()));
                     newComplaintRecord.setActionTaken(AddComplaintActionTaken.getText().trim());
+                    newComplaintRecord.setPatientGhostID(newPatient.getPatientGhostID(AddComplaintUsername.getText().trim()));
 
                     ReceptAddComplaint.writeToFile(newComplaintRecord);
                     validate.successfulUserCreation("Complaint Record Successfully Created");

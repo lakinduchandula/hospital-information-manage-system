@@ -3,17 +3,23 @@ package sample.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import sample.model.AdReference;
-import sample.model.MedicalOfficer;
-import sample.model.UserAdd;
-import sample.model.UserEditDelete;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
+import sample.model.*;
 
 public class MOUserSettingsController {
 
@@ -73,15 +79,38 @@ public class MOUserSettingsController {
     private JFXComboBox<String> AccSettingMarital;
 
     @FXML
+    private JFXComboBox<String> AccSettingsSpeciality;
+
+    @FXML
     private JFXTextField AccSettingsPassword;
 
     @FXML
-    private JFXComboBox<String> AccSettingsSpeciality;
+    private Circle UserSettingsProfile;
+
+    @FXML
+    private ImageView AddImage;
+
+    @FXML
+    private Label userFullName;
+
+    @FXML
+    private Label userUsername;
+
+    @FXML
+    private Label userStaffID;
+
+    @FXML
+    private Label userSpecialArea;
+
+    String profileImgPath;
+
 
     @FXML
     void update_Account(MouseEvent event) {
         try{
+            UploadProfileImg MOImgEdit = new UploadProfileImg();
             UserEditDelete newEditProfile = new UserEditDelete(2);
+            MOImgEdit.deleteOldProfileImg(getUserDetailArray()[13]);
             newEditProfile.UserDelete(LoginController.currentUser);
             ValidationController validate = new ValidationController(AccSettingsStackPane, AccSettingsAnchorPane,
                     2);
@@ -106,11 +135,12 @@ public class MOUserSettingsController {
                 editMOUserSettings.setAddressLine2(AccSettingsAddress2.getText().trim());
                 editMOUserSettings.setCity(AccSettingsCity.getText().trim());
                 editMOUserSettings.setCountry(AccSettingsCountry.getText().trim());
-                editMOUserSettings.setProfilePicPath(getUserDetailArray()[13]);
+                editMOUserSettings.setProfilePicPath(profileImgPath);
                 editMOUserSettings.setStaffID(getUserDetailArray()[14]);
                 editMOUserSettings.setStaffEmail(getUserDetailArray()[15]);
                 editMOUserSettings.setDateOfJoin(LocalDate.parse(getUserDetailArray()[16]));
                 editMOUserSettings.setSpecialtyArea(AccSettingsSpeciality.getValue());
+                UserDetailsTop();
 
                 UserAdd.writeToFile(editMOUserSettings, 3);
                 validate.successfulUserCreation("Medical Officer Account Successfully Updated");
@@ -121,8 +151,18 @@ public class MOUserSettingsController {
         }
     }
 
+    public void add_profile_pic(MouseEvent mouseEvent) throws IOException {
+
+        UploadProfileImg receptionistImg = new UploadProfileImg();
+        profileImgPath = receptionistImg.uploadProfilePicture(getUserDetailArray()[13]);
+
+        FileInputStream profileStream = new FileInputStream(profileImgPath);
+        Image proImg = new Image(profileStream);
+        UserSettingsProfile.setFill(new ImagePattern(proImg));
+    }
+
     @FXML
-    void initialize() {
+    void initialize() throws FileNotFoundException {
         // combo-box items for marital status at create user account
         AccSettingMarital.getItems().add("Unmarried");
         AccSettingMarital.getItems().add("Married");
@@ -137,6 +177,7 @@ public class MOUserSettingsController {
         newEditProfile.UserEdit(LoginController.currentUser);
         String[] MODetails = newEditProfile.getUserDetailArray();
         setUserDetailArray(MODetails);
+
         AccSettingsUsername.setText(MODetails[0]);
         AccSettingsPassword.setText(MODetails[1]);
         AccSettingsFirstName.setText(MODetails[2]);
@@ -149,5 +190,24 @@ public class MOUserSettingsController {
         AccSettingsCity.setText(MODetails[11]);
         AccSettingsCountry.setText(MODetails[12]);
         AccSettingsSpeciality.setValue(MODetails[17]);
+
+        // set text to label under change own profile image tab
+        userFullName.setText(MODetails[2]+" "+MODetails[3]);
+        userUsername.setText("#"+MODetails[0]);
+        userStaffID.setText(MODetails[14]);
+        userSpecialArea.setText(MODetails[17]);
+
+        // set up the profile picture
+        profileImgPath = MODetails[13];
+        FileInputStream profileStream = new FileInputStream(profileImgPath);
+        Image proImg = new Image(profileStream);
+        UserSettingsProfile.setFill(new ImagePattern(proImg));
+    }
+
+    public void UserDetailsTop(){
+        // set text to label under change own profile image tab
+        userFullName.setText(AccSettingsFirstName.getText().trim()+" "+AccSettingsLastName.getText().trim());
+        userUsername.setText("#"+AccSettingsUsername.getText().trim());
+        userSpecialArea.setText(AccSettingsSpeciality.getValue());
     }
 }

@@ -1,16 +1,14 @@
 package sample.controller;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 
 import java.io.IOException;
-import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ResourceBundle;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,15 +26,6 @@ import sample.model.Appointment;
 public class MODashAppointmentController {
 
     public static String appointmentID;
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private JFXButton CopyID;
 
     @FXML
     private TableView<Appointment> TableAppointmentList;
@@ -75,9 +64,6 @@ public class MODashAppointmentController {
     private JFXTextField MOTakeAppointment;
 
     @FXML
-    private JFXButton TakeAppointment;
-
-    @FXML
     private StackPane MODashAppStackPane;
 
     @FXML
@@ -103,13 +89,25 @@ public class MODashAppointmentController {
 
         ObservableList<TablePosition> selectedCells = TableAppointmentList.getSelectionModel().getSelectedCells() ;
 
-
         // add appointment to the table which are belongs to this login user medical officer
         Appointment tableAppointment = new Appointment();
         tableAppointment.getApprovedAppointmentList(LoginController.currentUser, "Approved");
         ObservableList<Appointment> appointmentList = FXCollections.observableArrayList(tableAppointment.getApprovedAppointments());
         TableAppointmentList.setItems(appointmentList);
 
+        // selecting first item of the table
+        TableAppointmentList.getSelectionModel().selectFirst();
+
+    }
+
+    @FXML
+    void copy_tip(MouseEvent event) {
+        ValidationController copyMsg = new ValidationController(MODashAppStackPane, MODashAppAnchor,
+                2);
+        copyMsg.detailedMsg("Copy - Appointment ID",
+                "When you click on \"Appointment ID\" Selected appointment's ID will \n" +
+                        "Copied to clipboard and Paste it to the Take Appointment Tab"
+        );
     }
 
     @FXML
@@ -127,16 +125,20 @@ public class MODashAppointmentController {
 
     @FXML
     void copyID(MouseEvent event) {
-        TablePosition pos = TableAppointmentList.getSelectionModel().getSelectedCells().get(0);
-        int row = pos.getRow();
+        Appointment appointment = TableAppointmentList.getSelectionModel().getSelectedItem();
 
-        // Item here is the table view type:
-        Appointment item = TableAppointmentList.getItems().get(row);
+        String copyText = appointment.getAppointmentNo();
+        final Clipboard clipboard = Clipboard.getSystemClipboard();
+        final ClipboardContent content = new ClipboardContent();
+        content.putString(copyText);
+        clipboard.setContent(content);
 
-        TableColumn col = pos.getTableColumn();
-
-        // this gives the value in the selected cell:
-        String data = (String) col.getCellObservableValue(item).getValue();
-        System.out.println(data);
+        ValidationController copyMsg = new ValidationController(MODashAppStackPane, MODashAppAnchor,
+                2);
+        copyMsg.detailedMsg("Appointment ID Copied", "Selected Appointment ID (" + copyText +
+                ") was copied to the clipboard\n" +
+                "now you can past it to the Take Appointment Tab");
+        MOTakeAppointment.setText(copyText);
     }
+
 }

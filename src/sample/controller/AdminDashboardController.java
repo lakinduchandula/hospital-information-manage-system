@@ -132,7 +132,7 @@ public class AdminDashboardController {
     @FXML
     void initialize() throws IOException {
         // set up the profile picture
-        profile = "src/sample/app/profile/img.png";
+        profile = "data/profile/a60173dc98.jpg";
         FileInputStream profileStream = new FileInputStream(profile);
         Image proImg = new Image(profileStream);
         profileImg.setFill(new ImagePattern(proImg));

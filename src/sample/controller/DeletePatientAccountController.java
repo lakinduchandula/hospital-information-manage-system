@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import sample.model.GetSetTextArea;
 import sample.model.UserEditDelete;
 
 public class DeletePatientAccountController {
@@ -120,6 +121,6 @@ public class DeletePatientAccountController {
         ViewUserCity.setText(PatientDetails[11]);
         ViewUserCountry.setText(PatientDetails[12]);
         ViewUserBloodGroup.setText(PatientDetails[14]);
-        ViewUserAllergies.setText(PatientDetails[15]);
+        ViewUserAllergies.setText(GetSetTextArea.setText(PatientDetails[15]));
     }
 }

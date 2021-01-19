@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="ReferenceRecStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdDashReferenceRecordsController">
+<StackPane fx:id="ReferenceRecStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/darkCss/dark-admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdDashReferenceRecordsController">
     <children>
-        <AnchorPane fx:id="ReferenceRecAnch" prefHeight="576.0" prefWidth="790.0">
+        <AnchorPane fx:id="ReferenceRecAnch" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/darkCss/dark-admin.css">
             <children>
                 <Pane prefHeight="47.0" prefWidth="790.0" style="-fx-background-color: #00838f;">
                     <children>

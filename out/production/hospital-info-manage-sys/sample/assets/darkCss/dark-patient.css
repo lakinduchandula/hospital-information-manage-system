@@ -1,0 +1,25 @@
+.jfx-button-patient-vbox-dash{
+    -jfx-button-type: FLAT;
+    -fx-background-color:  #38006b;
+    -fx-text-fill: rgba(255,255,255,0.87);
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: normal;
+}
+
+.jfx-button-patient-vbox-dash-selected{
+    -jfx-button-type: FLAT;
+    -fx-background-color: #bf360c;
+    -fx-text-fill: rgba(255,255,255,0.87);
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.button-raised-patient-dash {
+    -fx-font-size: 14px;
+    -fx-background-color: #38006b;
+    -fx-pref-width: 85;
+    -fx-pref-height: 30;
+    -fx-text-fill: White;
+}

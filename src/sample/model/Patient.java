@@ -1,5 +1,8 @@
 package sample.model;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.time.LocalDate;
 
 public class Patient extends User {
@@ -7,6 +10,7 @@ public class Patient extends User {
     private String allergies;
     private ComplaintRecord complaint;
     private Appointment appointment;
+    private String ghostUniqueID;
 
     //Constructors
     public Patient (){
@@ -25,6 +29,10 @@ public class Patient extends User {
     //Getters and Setters
     public String getBloodGroup(){
         return bloodGroup;
+    }
+
+    public String getGhostUniqueID(){
+        return ghostUniqueID;
     }
 
     public String getAllergies(){
@@ -55,6 +63,10 @@ public class Patient extends User {
         this.appointment = appointment;
     }
 
+    public void setGhostUniqueID(String ghostUniqueID) {
+        this.ghostUniqueID = ghostUniqueID;
+    }
+
     public ComplaintRecord addComplaint(){
         return complaint;
     }
@@ -69,9 +81,35 @@ public class Patient extends User {
     public void viewAppointment(Appointment appointment){
     }
 
+    public String getPatientGhostID(String username){
+        File file = new File("src/sample/data/UserPatient.txt");
+        try(FileReader fileReader = new FileReader(file)) {
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line = null ;
+
+            while((line = bufferedReader.readLine()) != null) {
+                String[] userCredentials = line.split("~");
+
+                if(credentialValidation(userCredentials[0], username)){
+                    return userCredentials[16];
+                }
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "User not found-patient.java-line-102";
+    }
+
+    public boolean credentialValidation(String userName, String username) {
+        return username.equals(userName);
+    }
+
     @Override
     public String toString() {
-        return super.toString() + String.format("~%s~%s", getBloodGroup(), getAllergies());
+        return super.toString() + String.format("~%s~%s~%s~", getBloodGroup(), getAllergies(),
+                 getGhostUniqueID());
     }
 }
 

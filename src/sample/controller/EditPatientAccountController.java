@@ -107,6 +107,7 @@ public class EditPatientAccountController {
                 editPatient.setProfilePicPath(getUserDetailArray()[13]);
                 editPatient.setBloodGroup(getUserDetailArray()[14]);
                 editPatient.setAllergies(GetSetTextArea.getText(EditPatientAllergies.getText().trim()));
+                editPatient.setGhostUniqueID(getUserDetailArray()[16]);
 
                 UserAdd.writeToFile(editPatient, 2);
                 validate.successfulUserCreation("Patient Account Successfully Updated");

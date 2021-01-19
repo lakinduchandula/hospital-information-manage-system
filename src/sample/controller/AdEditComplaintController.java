@@ -23,6 +23,16 @@ import sample.model.ReceptAddComplaint;
 
 public class AdEditComplaintController {
 
+    private String[] complaintDetails;
+
+    public void setComplaintDetails(String[] complaintDetails) {
+        this.complaintDetails = complaintDetails;
+    }
+
+    public String[] getComplaintDetails(){
+        return complaintDetails;
+    }
+
     @FXML
     private ResourceBundle resources;
 
@@ -91,6 +101,7 @@ public class AdEditComplaintController {
         updateComplaintRecord.setComplaintType(ViewComplaintType.getText());
         updateComplaintRecord.setDescription(GetSetTextArea.getText(ComplaintBodyMsg.getText()));
         updateComplaintRecord.setActionTaken(GetSetTextArea.getText(AdEditEnterAction.getText()));
+        updateComplaintRecord.setPatientGhostID(getComplaintDetails()[11]);
 
         ReceptAddComplaint.writeToFile(updateComplaintRecord);
         validate.detailedMsg("Update Complaint","Complaint Record Successfully updated");
@@ -108,6 +119,7 @@ public class AdEditComplaintController {
         ComplaintRecord viewComplaintRecord = new ComplaintRecord();
         viewComplaintRecord.getComplaintDetailsArray(AdDashComplaintController.complaintID);
         String[] complaintDetails = viewComplaintRecord.getComplaintDetails();
+        setComplaintDetails(complaintDetails);
 
         ViewComplaintID.setText(complaintDetails[0]);
         ViewComplaintUsername.setText(complaintDetails[1]);

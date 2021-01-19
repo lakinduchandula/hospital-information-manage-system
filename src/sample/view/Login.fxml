@@ -14,7 +14,7 @@
 
 <StackPane fx:id="loginRootStack" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginController">
    <children>
-      <AnchorPane fx:id="loginRootAnchorPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../assets/styles.css">
+      <AnchorPane fx:id="loginRootAnchorPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../assets/tabstyle.css">
          <children>
             <AnchorPane layoutX="700.0" prefHeight="576.0" prefWidth="350.0" style="-fx-background-color: #304ffe;">
                <children>

@@ -5,16 +5,18 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="AccSettingsStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MOUserSettingsController">
+<StackPane fx:id="AccSettingsStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/darkCss/dark-medical.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.MOUserSettingsController">
     <children>
-        <AnchorPane fx:id="AccSettingsAnchorPane" prefHeight="200.0" prefWidth="200.0">
+        <AnchorPane fx:id="AccSettingsAnchorPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../assets/darkCss/dark-medical.css">
             <children>
                 <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #283593;">
                     <children>
@@ -25,100 +27,153 @@
                         </Label>
                     </children>
                 </Pane>
-                <Pane layoutX="14.0" layoutY="58.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
-                    <children>
-                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Edit Common Informations ">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
+            <ScrollPane layoutY="48.0" prefHeight="603.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="775.0">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="183.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #8e99f3;">
+                           <children>
+                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" styleClass="label-heading" stylesheets="@../assets/darkCss/dark-medical.css" text="Edit Common Informations ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <JFXTextField fx:id="AccSettingsCity" focusColor="#424242" layoutX="33.0" layoutY="475.0" prefHeight="25.0" prefWidth="200.0" promptText="City" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="AccSettingsAddress2" focusColor="#424242" layoutX="270.0" layoutY="433.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 2" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="AccSettingsAddress1" focusColor="#424242" layoutX="33.0" layoutY="433.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 1" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="AccSettingsUserID" focusColor="#424242" layoutX="270.0" layoutY="264.0" prefHeight="25.0" prefWidth="200.0" promptText="ID Card Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="AccSettingsPhoneNumber" focusColor="#424242" layoutX="33.0" layoutY="348.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="AccSettingsUsername" focusColor="#424242" layoutX="33.0" layoutY="264.0" prefHeight="25.0" prefWidth="200.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="AccSettingsLastName" focusColor="#424242" layoutX="270.0" layoutY="222.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="AccSettingsCountry" focusColor="#424242" layoutX="270.0" layoutY="475.0" prefHeight="25.0" prefWidth="200.0" promptText="Country" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="AccSettingsFirstName" focusColor="#424242" layoutX="33.0" layoutY="222.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Pane layoutX="14.0" layoutY="394.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #00acc1;">
+                           <children>
+                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" styleClass="label-heading" stylesheets="@../assets/darkCss/dark-medical.css" text="Edit Current Address Fields">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <JFXButton fx:id="AccSettingsUpdateBtn" layoutX="535.0" layoutY="599.0" onMouseClicked="#update_Account" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #ff9100;" styleClass="#00c853" text="Update Account" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView fitHeight="170.0" fitWidth="177.0" layoutX="588.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/hims-base-img/doctor.png" />
+                           </image>
+                        </ImageView>
+                        <JFXComboBox fx:id="AccSettingMarital" focusColor="#424242" layoutX="270.0" layoutY="306.0" prefHeight="25.0" prefWidth="200.0" promptText="Marital Status" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
+                           <styleClass>
+                              <String fx:value="combo-box-admin-dash" />
+                              <String fx:value="choice-box-admin-dash" />
+                           </styleClass>
+                        </JFXComboBox>
+                        <Pane layoutX="14.0" layoutY="523.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #8e99f3;">
+                           <children>
+                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" styleClass="label-heading" stylesheets="@../assets/darkCss/dark-medical.css" text="Change Specility Area">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <JFXComboBox fx:id="AccSettingsSpeciality" focusColor="#424242" layoutX="33.0" layoutY="569.0" prefHeight="30.0" prefWidth="200.0" promptText="Speciality Area" styleClass="choice-box-admin-dash" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242" />
+                        <JFXTextField fx:id="AccSettingsPassword" focusColor="#424242" layoutX="33.0" layoutY="306.0" prefHeight="25.0" prefWidth="200.0" promptText="Password" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <Pane layoutX="14.0" layoutY="9.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #8e99f3;">
+                           <children>
+                              <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" styleClass="label-heading" stylesheets="@../assets/darkCss/dark-medical.css" text="Change your own profile Image">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Circle fx:id="UserSettingsProfile" fill="WHITE" layoutX="86.0" layoutY="110.0" radius="63.0" stroke="WHITE" strokeType="INSIDE" />
+                        <ImageView fx:id="AddImage" fitHeight="20.0" fitWidth="20.0" layoutX="123.0" layoutY="144.0" onMouseClicked="#add_profile_pic" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/images/dash-receptionist/dash-recep-profile-pic.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="userFullName" layoutX="180.0" layoutY="74.0" prefHeight="25.0" prefWidth="200.0" text="B. Lakindu Chandula">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
                         </Label>
-                    </children>
-                </Pane>
-                <JFXTextField fx:id="AccSettingsCity" focusColor="#424242" layoutX="33.0" layoutY="353.0" prefHeight="25.0" prefWidth="200.0" promptText="City" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </JFXTextField>
-                <JFXTextField fx:id="AccSettingsAddress2" focusColor="#424242" layoutX="270.0" layoutY="312.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 2" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </JFXTextField>
-                <JFXTextField fx:id="AccSettingsAddress1" focusColor="#424242" layoutX="32.0" layoutY="312.0" prefHeight="25.0" prefWidth="200.0" promptText="Address Line 1" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </JFXTextField>
-                <JFXTextField fx:id="AccSettingsUserID" focusColor="#424242" layoutX="270.0" layoutY="139.0" prefHeight="25.0" prefWidth="200.0" promptText="ID Card Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </JFXTextField>
-                <JFXTextField fx:id="AccSettingsPhoneNumber" focusColor="#424242" layoutX="33.0" layoutY="221.0" prefHeight="25.0" prefWidth="200.0" promptText="Phone Number" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </JFXTextField>
-                <JFXTextField fx:id="AccSettingsUsername" focusColor="#424242" layoutX="33.0" layoutY="139.0" prefHeight="25.0" prefWidth="200.0" promptText="Username" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </JFXTextField>
-                <JFXTextField fx:id="AccSettingsLastName" focusColor="#424242" layoutX="270.0" layoutY="98.0" prefHeight="25.0" prefWidth="200.0" promptText="Last Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </JFXTextField>
-                <JFXTextField fx:id="AccSettingsCountry" focusColor="#424242" layoutX="270.0" layoutY="353.0" prefHeight="25.0" prefWidth="200.0" promptText="Country" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </JFXTextField>
-                <JFXTextField fx:id="AccSettingsFirstName" focusColor="#424242" layoutX="33.0" layoutY="98.0" prefHeight="25.0" prefWidth="200.0" promptText="First Name" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </JFXTextField>
-                <Pane layoutX="14.0" layoutY="270.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #00acc1;">
-                    <children>
-                        <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Edit Current Address Fields">
-                            <font>
-                                <Font size="14.0" />
-                            </font>
+                        <Label fx:id="userUsername" layoutX="180.0" layoutY="93.0" prefHeight="25.0" prefWidth="200.0" text="#lakinduchandula" textFill="#5e5e5e">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
                         </Label>
-                    </children>
-                </Pane>
-                <JFXButton fx:id="AccSettingsUpdateBtn" layoutX="546.0" layoutY="522.0" onMouseClicked="#update_Account" prefHeight="40.0" prefWidth="230.0" style="-fx-background-color: #ff9100;" styleClass="#00c853" text="Update Account" textFill="WHITE">
-                    <font>
-                        <Font name="System Bold" size="14.0" />
-                    </font>
-                </JFXButton>
-                <ImageView fitHeight="170.0" fitWidth="177.0" layoutX="575.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../assets/images/hims-base-img/doctor.png" />
-                    </image>
-                </ImageView>
-                <JFXComboBox fx:id="AccSettingMarital" focusColor="#424242" layoutX="269.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" promptText="Marital Status" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242">
-                    <styleClass>
-                        <String fx:value="combo-box-admin-dash" />
-                        <String fx:value="choice-box-admin-dash" />
-                    </styleClass>
-                </JFXComboBox>
-                <JFXTextField fx:id="AccSettingsPassword" focusColor="#424242" layoutX="33.0" layoutY="180.0" prefHeight="25.0" prefWidth="200.0" promptText="Password" styleClass="text-input-common-admin-dash" stylesheets="@../assets/styles.css" unFocusColor="#424242">
-                    <font>
-                        <Font size="14.0" />
-                    </font>
-                </JFXTextField>
-            <Pane layoutX="14.0" layoutY="406.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #757de8;">
-               <children>
-                  <Label layoutX="4.0" layoutY="6.0" prefHeight="20.0" prefWidth="304.0" text="Edit Common Informations ">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <JFXComboBox fx:id="AccSettingsSpeciality" focusColor="#424242" layoutX="32.0" layoutY="449.0" prefHeight="30.0" prefWidth="200.0" promptText="Speciality Area" styleClass="choice-box-admin-dash" stylesheets="@../assets/adminDashStyle.css" unFocusColor="#424242" />
+                        <Label layoutX="180.0" layoutY="111.0" prefHeight="25.0" prefWidth="200.0" text="Medical Officer" textFill="#030202">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userStaffID" layoutX="180.0" layoutY="147.0" prefHeight="25.0" prefWidth="200.0" text="STAFF00001">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userSpecialArea" layoutX="180.0" layoutY="129.0" prefHeight="25.0" prefWidth="200.0" text="Specility Area">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="180.0" layoutY="50.0" prefHeight="25.0" prefWidth="200.0" text="Hello!" textFill="#283593">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
             </children>
         </AnchorPane>
     </children>

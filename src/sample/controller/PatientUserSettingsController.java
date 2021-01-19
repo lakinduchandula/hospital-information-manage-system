@@ -7,10 +7,12 @@ import com.jfoenix.controls.JFXTextField;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -22,13 +24,13 @@ import sample.model.*;
 
 public class PatientUserSettingsController {
 
-    private String[] userDetailArray ;
+    private String[] userDetailArray;
 
-    public void setUserDetailArray(String[] userDetailArray){
+    public void setUserDetailArray(String[] userDetailArray) {
         this.userDetailArray = userDetailArray;
     }
 
-    public String[] getUserDetailArray(){
+    public String[] getUserDetailArray() {
         return userDetailArray;
     }
 
@@ -84,17 +86,48 @@ public class PatientUserSettingsController {
     private JFXTextArea AccSettingAllergies;
 
     @FXML
+    private Label userFullName;
+
+    @FXML
+    private Label userUsername;
+
+    @FXML
+    private Label userStaffID;
+
+    @FXML
+    private Label userEmailAddress;
+
+    @FXML
+    private Circle UserSettingsProfile;
+
+    private String profileImgPath;
+
+    @FXML
+    private ImageView AddImage;
+
+    public void add_profile_pic(MouseEvent mouseEvent) throws IOException {
+
+        UploadProfileImg patientImgEdit = new UploadProfileImg();
+        profileImgPath = patientImgEdit.uploadProfilePicture(getUserDetailArray()[13]);
+
+        FileInputStream profileStream = new FileInputStream(profileImgPath);
+        Image proImg = new Image(profileStream);
+        UserSettingsProfile.setFill(new ImagePattern(proImg));
+    }
+
+    @FXML
     void update_Account(MouseEvent event) {
-        try{
+        try {
+            UploadProfileImg patientImgEdit = new UploadProfileImg();
             UserEditDelete newEditProfile = new UserEditDelete(1);
             newEditProfile.UserDelete(LoginController.currentUser);
             ValidationController validate = new ValidationController(AccSettingsStackPane, AccSettingsAnchorPane,
                     4);
-            if(        validate.validatePhone(AccSettingsPhoneNumber)
+            if (validate.validatePhone(AccSettingsPhoneNumber)
                     && validate.validateUsername(AccSettingsUsername)
                     && validate.validateNIC(AccSettingsUserID)
                     && validate.sameIDNo(AccSettingsUserID)
-                    && validate.samePhoneNumber(AccSettingsPhoneNumber)){
+                    && validate.samePhoneNumber(AccSettingsPhoneNumber)) {
 
                 Patient editPatientUser = new Patient();
 
@@ -111,8 +144,11 @@ public class PatientUserSettingsController {
                 editPatientUser.setAddressLine2(AccSettingsAddress2.getText().trim());
                 editPatientUser.setCity(AccSettingsCity.getText().trim());
                 editPatientUser.setCountry(AccSettingsCountry.getText().trim());
-                editPatientUser.setProfilePicPath(getUserDetailArray()[13]);
+                editPatientUser.setProfilePicPath(profileImgPath);
                 editPatientUser.setAllergies(GetSetTextArea.getText(AccSettingAllergies.getText().trim()));
+                editPatientUser.setGhostUniqueID(getUserDetailArray()[16]);
+                editPatientUser.setBloodGroup(getUserDetailArray()[11]);
+                UserDetailsTop();
 
                 UserAdd.writeToFile(editPatientUser, 2);
                 validate.successfulUserCreation("Patient Account Successfully Updated");
@@ -124,15 +160,24 @@ public class PatientUserSettingsController {
 
     @FXML
     void initialize() throws FileNotFoundException {
+        // instantiation
+        UserEditDelete newEditProfile = new UserEditDelete(1);
+        newEditProfile.UserEdit(LoginController.currentUser);
+        String[] patientDetails = newEditProfile.getUserDetailArray();
+        setUserDetailArray(patientDetails);
+
+        // set up the profile picture
+        profileImgPath = patientDetails[13];
+        FileInputStream profileStream = new FileInputStream(profileImgPath);
+        Image proImg = new Image(profileStream);
+        UserSettingsProfile.setFill(new ImagePattern(proImg));
+
         // combo-box items for marital status at create user account
         AccSettingMarital.getItems().add("Unmarried");
         AccSettingMarital.getItems().add("Married");
         AccSettingMarital.getItems().add("Divorced");
         AccSettingMarital.getItems().add("Widowed");
         AccSettingMarital.getItems().add("Legally Separated");
-
-        UserEditDelete newEditProfile = new UserEditDelete(1);
-        newEditProfile.UserEdit(LoginController.currentUser);
 
         String[] PatientDetails = newEditProfile.getUserDetailArray();
         setUserDetailArray(PatientDetails);
@@ -149,5 +194,18 @@ public class PatientUserSettingsController {
         AccSettingsCity.setText(PatientDetails[11]);
         AccSettingsCountry.setText(PatientDetails[12]);
         AccSettingAllergies.setText(GetSetTextArea.setText(PatientDetails[15]));
+
+        userStaffID.setText(AccSettingsUserID.getText());
+        userEmailAddress.setText(AccSettingsPhoneNumber.getText());
+
+
+        UserDetailsTop();
+    }
+
+    public void UserDetailsTop() {
+        // set text to label under change own profile image tab
+        userFullName.setText(AccSettingsFirstName.getText().trim() + " " + AccSettingsLastName.getText().trim());
+        userUsername.setText("#" + AccSettingsUsername.getText().trim());
+
     }
 }

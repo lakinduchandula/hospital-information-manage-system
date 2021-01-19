@@ -141,6 +141,8 @@ public class TakeAppointmentController {
         saveEndAppointment.setAppointmentDate(LocalDate.parse(getTakeAppointmentDetails()[13]));
         saveEndAppointment.setMedicalOfficer(getTakeAppointmentDetails()[15]);
         saveEndAppointment.setMedicalSpecialArea(getTakeAppointmentDetails()[17]);
+        saveEndAppointment.setMOStaffID(saveEndAppointment.getIDFromName(getTakeAppointmentDetails()[15]));
+        saveEndAppointment.setPatientUniqueID(getTakeAppointmentDetails()[11]);
 
         ReceptAddAppointment.writeToFile(saveEndAppointment);
         validation.successfulUserCreation("Appointment Successfully Created");

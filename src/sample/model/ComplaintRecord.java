@@ -19,6 +19,7 @@ public class ComplaintRecord {
     private String description;
     private String actionTaken;
     private File attachDocORNote;
+    private String patientGhostID;
 
     //Variable Constructor
 
@@ -61,6 +62,10 @@ public class ComplaintRecord {
         return this.complaintType;
     }
 
+    public String getPatientGhostID(){
+        return this.patientGhostID;
+    }
+
     public String getFirstName() { return this.firstName; }
 
     public String getLastName() { return this.lastName; }
@@ -92,7 +97,7 @@ public class ComplaintRecord {
     }
 
 
-
+    public void setPatientGhostID(String patientGhostID) { this.patientGhostID = patientGhostID;}
 
     public void setComplaintType(String complaintType){
         this.complaintType = complaintType;
@@ -130,9 +135,9 @@ public class ComplaintRecord {
     }
 
     public String toString() {
-        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s",getComplaintID(),getUsername(),getFirstName(),
+        return String.format("%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s~%s",getComplaintID(),getUsername(),getFirstName(),
                 getLastName(), getIdNum(), getPhoneNum() , getCurrentDate() , getComplaintType(),
-                getDescription() , getAttachDocORNote() , getActionTaken());
+                getDescription() , getAttachDocORNote() , getActionTaken(), getPatientGhostID());
     }
 
     public void getComplaintDetailsArray(String complaintID) {

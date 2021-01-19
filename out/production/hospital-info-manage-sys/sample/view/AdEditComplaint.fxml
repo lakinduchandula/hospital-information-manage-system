@@ -11,13 +11,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="ViewComplaintStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="285.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdEditComplaintController">
+<StackPane fx:id="ViewComplaintStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="285.0" prefWidth="775.0" stylesheets="@../assets/darkCss/dark-admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdEditComplaintController">
    <children>
       <BorderPane fx:id="AdEditCompBorder" prefHeight="200.0" prefWidth="200.0">
          <center>
             <ScrollPane fx:id="ViewComplaintBorderPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <content>
-                  <AnchorPane fx:id="AdEditCompAnchor" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="760.0">
+                  <AnchorPane fx:id="AdEditCompAnchor" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="760.0" stylesheets="@../assets/darkCss/dark-admin.css">
                      <children>
                         <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
                            <children>

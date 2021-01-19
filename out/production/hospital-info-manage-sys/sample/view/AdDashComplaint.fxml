@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="AdDashCompStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdDashComplaintController">
+<StackPane fx:id="AdDashCompStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/darkCss/dark-admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdDashComplaintController">
    <children>
-      <AnchorPane fx:id="AdDashCompAnchor" prefHeight="576.0" prefWidth="790.0">
+      <AnchorPane fx:id="AdDashCompAnchor" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/darkCss/dark-admin.css">
          <children>
             <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #00838f;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             <AnchorPane prefHeight="722.0" prefWidth="790.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

@@ -16,10 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
-import sample.model.AdReference;
-import sample.model.GetSetTextArea;
-import sample.model.Patient;
-import sample.model.UserAdd;
+import sample.model.*;
 
 public class RecepDashPatientController {
 
@@ -129,6 +126,7 @@ public class RecepDashPatientController {
                 newPatient.setBloodGroup(AddPatientBloodGroup.getValue());
                 newPatient.setAllergies(GetSetTextArea.getText(PatientAddAllergies.getText().trim()));
                 newPatient.setProfilePicPath("src/sample/app/profile/default-profile-picture.png");
+                newPatient.setGhostUniqueID(RandomID.getUniqueId());
 
                 UserAdd.writeToFile(newPatient, 2);
                 validate.successfulUserCreation("Patient Account Successfully Created");

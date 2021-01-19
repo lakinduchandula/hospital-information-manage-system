@@ -123,6 +123,7 @@ public class PatientDashAppointmentController {
                 && !(AppointmentAddDate.getValue() == null)
                 && !(AppointmentAddTime.getValue() == null)) {
 
+            Patient newPatient = new Patient();
             Appointment newAppointment = new Appointment();
 
             newAppointment.setAppointmentNo(AppointmentAddID.getText().trim());
@@ -143,6 +144,8 @@ public class PatientDashAppointmentController {
             newAppointment.setAppointmentDate(AppointmentAddDate.getValue());
             newAppointment.setAppointmentTime(AppointmentAddTime.getValue());
             newAppointment.setAppointmentRecordStatus("Pending");
+            newAppointment.setMOStaffID(newAppointment.getIDFromName(AppointmentAddMO.getValue()));
+            newAppointment.setPatientUniqueID(newPatient.getPatientGhostID(getPatientDetailArray()[0]));
 
             ReceptAddAppointment.writeToFile(newAppointment);
             MakeAppValidate.detailedMsg("Appointment Creation", "Appointment made Successfully");
