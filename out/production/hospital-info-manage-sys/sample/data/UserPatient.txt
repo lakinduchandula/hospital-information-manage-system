@@ -1,4 +1,1 @@
-lak~8898~Lakindu~Chandula~991623361V~0752094801~Male~1999-06-10~Unmarried~121/A~Maharanugegoda~Ragama~Sri Lanka~data/profile/1d7a1ed2f6.jpg~AB+~No No = TestingUIOP~82833f5c05~
-dio~8898~Hello~Dio~887456587V~0754215468~Male~2020-11-16~Unmarried~Add1A~Add2~City~Country~src/sample/app/profile/default-profile-picture.png~AB+~Test TestUIOP~9e2924705a~
-new~994658776V~NewPatient~NewOne~994658776V~0745204801~Female~2020-08-03~Unmarried~Add~ADD2~City~Country~src/sample/app/profile/default-profile-picture.png~O-~Checking ErrorUIOP~421565a701~
-frank~8898~Frank~Hello~996558523V~0745326589~Male~2020-11-25~Unmarried~Add1~Add2~City~Country~data/profile/fb70922129.jpg~null~Testing ErrorsUIOP~null~
+lakinduchandula~8898~Lakindu Chandula~Samarasinghe~991623361V~0752094801~Male~1999-06-10~Unmarried~121/A~ABC Rd~Ragama~Sri Lanka~data/profile/2501af049a.jpg~Ragama~Testing DataUIOPTesting DataUIOPTesting DataUIOP~81b0dc5eae~

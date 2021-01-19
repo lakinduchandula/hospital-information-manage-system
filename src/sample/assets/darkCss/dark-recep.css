@@ -50,3 +50,11 @@
     -fx-background-color: white;
     -fx-text-fill: #707070;
 }
+
+.button-raised-recep-dash {
+    -fx-font-size: 14px;
+    -fx-background-color: #0277bd;
+    -fx-pref-width: 85;
+    -fx-pref-height: 30;
+    -fx-text-fill: White;
+}

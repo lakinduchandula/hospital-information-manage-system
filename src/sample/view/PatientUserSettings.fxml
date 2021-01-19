@@ -91,7 +91,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </JFXButton>
-                        <ImageView fitHeight="170.0" fitWidth="177.0" layoutX="614.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="170.0" fitWidth="177.0" layoutX="590.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/images/hims-base-img/doctor.png" />
                            </image>
@@ -145,7 +145,7 @@
                               <Font size="14.0" />
                            </font>
                         </JFXTextArea>
-                        <Label fx:id="userFullName" layoutX="180.0" layoutY="76.0" prefHeight="25.0" prefWidth="200.0" text="B. Lakindu Chandula">
+                        <Label fx:id="userFullName" layoutX="180.0" layoutY="76.0" prefHeight="25.0" prefWidth="356.0" text="B. Lakindu Chandula">
                            <font>
                               <Font size="16.0" />
                            </font>

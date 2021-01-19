@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="DeletePatientStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.DeleteMOAccountController">
+<StackPane fx:id="DeletePatientStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="760.0" stylesheets="@../assets/darkCss/dark-admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.DeleteMOAccountController">
     <children>
         <BorderPane fx:id="DeletePatientBorder" prefHeight="200.0" prefWidth="200.0">
             <center>
-                <AnchorPane fx:id="DeletePatientAnchor" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                <AnchorPane fx:id="DeletePatientAnchor" prefHeight="200.0" prefWidth="200.0" stylesheets="@../assets/darkCss/dark-admin.css" BorderPane.alignment="CENTER">
                     <children>
                         <Pane layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="576.0" style="-fx-background-color: #64b5f6;">
                             <children>

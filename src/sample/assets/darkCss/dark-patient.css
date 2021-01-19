@@ -15,3 +15,11 @@
     -fx-font-size: 15px;
     -fx-font-weight: bold;
 }
+
+.button-raised-patient-dash {
+    -fx-font-size: 14px;
+    -fx-background-color: #38006b;
+    -fx-pref-width: 85;
+    -fx-pref-height: 30;
+    -fx-text-fill: White;
+}

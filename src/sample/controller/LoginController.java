@@ -192,7 +192,7 @@ public class LoginController {
         JFXDialog dialog = new JFXDialog(userStackPane, dialogLayout, JFXDialog.DialogTransition.TOP);
 
         for (JFXButton controlButton : controls) {
-            controlButton.getStyleClass().add("button-raised");
+            controlButton.getStyleClass().add("button-raised-login");
             controlButton.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent mouseEvent) -> dialog.close());
         }
 

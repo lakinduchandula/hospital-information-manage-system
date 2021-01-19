@@ -16,8 +16,16 @@
     -fx-font-weight: bold;
 }
 
-.label{
+.label-heading{
     -fx-text-fill: #000000;
     -fx-font-family: 'Noto Sans JP', sans-serif;;
     -fx-font-size: 14px;
+}
+
+.button-raised-mo-dash {
+    -fx-font-size: 14px;
+    -fx-background-color: #283593;
+    -fx-pref-width: 85;
+    -fx-pref-height: 30;
+    -fx-text-fill: White;
 }

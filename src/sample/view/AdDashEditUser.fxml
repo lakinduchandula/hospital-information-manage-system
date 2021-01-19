@@ -19,9 +19,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="EditUserStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdDashEditUserController">
+<StackPane fx:id="EditUserStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="790.0" stylesheets="@../assets/darkCss/dark-admin.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.AdDashEditUserController">
    <children>
-      <AnchorPane fx:id="EditUserAnchor" prefHeight="645.0" prefWidth="790.0">
+      <AnchorPane fx:id="EditUserAnchor" prefHeight="645.0" prefWidth="790.0" stylesheets="@../assets/darkCss/dark-admin.css">
          <children>
             <Pane prefHeight="48.0" prefWidth="790.0" style="-fx-background-color: #00838f;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
