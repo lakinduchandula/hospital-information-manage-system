@@ -41,12 +41,12 @@
                         <Pane prefHeight="72.0" prefWidth="260.0">
                            <children>
                               <Circle fx:id="profileImg" fill="WHITE" layoutX="33.0" layoutY="36.0" radius="27.0" stroke="#00838f" strokeType="INSIDE" />
-                              <Label layoutX="66.0" layoutY="19.0" prefHeight="17.0" prefWidth="179.0" text="Mr. Lakindu Chandula" textFill="WHITE">
+                              <Label layoutX="66.0" layoutY="19.0" prefHeight="17.0" prefWidth="179.0" text="Mr. John Doe" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="66.0" layoutY="34.0" prefHeight="17.0" prefWidth="179.0" text="#lakinduchandula" textFill="WHITE">
+                              <Label layoutX="66.0" layoutY="34.0" prefHeight="17.0" prefWidth="179.0" text="#JohnDoe" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
